@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1: A Nova Arquitetura da IA em 2026 | FEI Nível 3S</title>
+  <meta name="description" content="Como a IA atual funciona: raciocínio contínuo, memória persistente e planejamento de longo prazo">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'nivel-1': '#3B82F6',
+            'nivel-2': '#9b59b6',
+            'nivel-3a': '#10B981',
+            'nivel-3s': '#F59E0B',
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+  </style>
+</head>
+<body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-3s bg-clip-text text-transparent">
+            FEI - Engenharia de Intencao
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-3s">Inicio</a>
+          <a href="../niveis/nivel-3s.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-3s">Nivel 3S</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <nav class="flex text-sm" aria-label="Breadcrumb">
+        <a href="../index.html" class="text-nivel-3s hover:text-orange-700">Inicio</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <a href="../niveis/nivel-3s.html" class="text-nivel-3s hover:text-orange-700">Nivel 3S</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <span class="text-neutral-600 dark:text-neutral-400">Modulo 1</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-nivel-3s to-orange-600 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Modulo 1
+        </span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Nivel 3S - Sistemas Intencionais 2026
+        </span>
+        <span class="inline-block px-4 py-2 bg-white/30 rounded-full text-sm font-semibold">
+          Estado da Arte 2026
+        </span>
+      </div>
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">
+        A Nova Arquitetura da IA em 2026
+      </h1>
+      <p class="text-xl text-white/90">
+        Do "agora" para "longo prazo": raciocinio continuo, memoria persistente e planejamento estrategico
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-12 bg-neutral-50 dark:bg-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Download Button -->
+      <div class="flex justify-end mb-6">
+        <a href="../downloads/nivel-3s-modulo-1.md" download class="px-6 py-3 bg-nivel-3s text-white rounded-lg font-semibold hover:bg-orange-600 inline-flex items-center gap-2">
+          <span>Download MD</span>
+        </a>
+      </div>
+
+      <!-- Introducao -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
+          Introducao
+        </h2>
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          2026 marca uma <strong>ruptura definitiva</strong> na forma como interagimos com IA. O que antes era uma ferramenta de resposta instantanea se transformou em <strong>sistemas completos</strong> capazes de operar por semanas ou meses de forma autonoma.
+        </p>
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          Neste modulo, voce vai entender como a arquitetura moderna da IA funciona em 2026: <strong>raciocinio continuo</strong>, <strong>memoria persistente</strong>, <strong>planejamento de longo prazo</strong> e <strong>execucao baseada em intencao composta</strong>.
+        </p>
+        <div class="bg-nivel-3s/10 border-l-4 border-nivel-3s p-6 rounded-lg">
+          <h3 class="font-bold text-nivel-3s mb-2">O que voce vai dominar neste modulo:</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Entender como a IA atual processa raciocinio continuo. Descobrir como memoria persistente permite aprendizado de longo prazo. Aprender a diferenca entre IA de curto prazo e IA de missao estendida. Preparar-se para projetar sistemas que operam como "times completos de especialistas".
+          </p>
+        </div>
+      </div>
+
+      <!-- Como a IA Atual Funciona -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Como a IA Atual Funciona (2025-2026)
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+
+          <!-- Raciocinio Continuo -->
+          <div class="bg-nivel-3s/10 p-6 rounded-lg border-l-4 border-nivel-3s">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+              1. Raciocinio Continuo
+            </h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              A IA nao apenas responde - ela <strong>pensa continuamente</strong> antes de agir.
+            </p>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded text-sm">
+              <strong>Como funciona:</strong><br>
+              - Analisa multiplas solucoes<br>
+              - Avalia pros e contras de cada abordagem<br>
+              - Refina o raciocinio iterativamente<br>
+              - Autocorrige antes de entregar
+            </div>
+            <div class="mt-3 bg-orange-50 dark:bg-orange-900/20 p-3 rounded text-xs">
+              <strong>Exemplo:</strong> Antes de criar um plano de marketing, a IA avalia o publico, compara estrategias, simula resultados e ajusta a abordagem.
+            </div>
+          </div>
+
+          <!-- Memoria Persistente -->
+          <div class="bg-nivel-3s/10 p-6 rounded-lg border-l-4 border-nivel-3s">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+              2. Memoria Persistente
+            </h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              A IA <strong>lembra de tudo</strong> ao longo de semanas, meses ou anos.
+            </p>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded text-sm">
+              <strong>O que e armazenado:</strong><br>
+              - Preferencias do usuario<br>
+              - Estilos de trabalho<br>
+              - Decisoes anteriores<br>
+              - Padroes de comportamento
+            </div>
+            <div class="mt-3 bg-orange-50 dark:bg-orange-900/20 p-3 rounded text-xs">
+              <strong>Exemplo:</strong> A IA lembra que voce prefere tons formais, usa linguagem tecnica e sempre revisa conteudo antes de publicar.
+            </div>
+          </div>
+
+          <!-- Delegacao Interna -->
+          <div class="bg-nivel-3s/10 p-6 rounded-lg border-l-4 border-nivel-3s">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+              3. Delegacao Interna
+            </h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              A IA <strong>coordena multiplos processos internos</strong> simultaneamente.
+            </p>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded text-sm">
+              <strong>Funcionalidades:</strong><br>
+              - Divide tarefas em sub-processos<br>
+              - Executa acoes paralelas<br>
+              - Integra resultados parciais<br>
+              - Valida consistencia
+            </div>
+            <div class="mt-3 bg-orange-50 dark:bg-orange-900/20 p-3 rounded text-xs">
+              <strong>Exemplo:</strong> Ao criar um relatorio, a IA pesquisa dados, gera graficos, escreve analises e formata tudo em paralelo.
+            </div>
+          </div>
+
+          <!-- Autocorrecao -->
+          <div class="bg-nivel-3s/10 p-6 rounded-lg border-l-4 border-nivel-3s">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+              4. Autocorrecao Antes da Saida
+            </h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              A IA <strong>valida seu proprio trabalho</strong> antes de entregar.
+            </p>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded text-sm">
+              <strong>Processo de validacao:</strong><br>
+              - Revisa logica interna<br>
+              - Verifica consistencia de dados<br>
+              - Detecta erros ou contradicoes<br>
+              - Ajusta e refina automaticamente
+            </div>
+            <div class="mt-3 bg-orange-50 dark:bg-orange-900/20 p-3 rounded text-xs">
+              <strong>Exemplo:</strong> Antes de enviar um email, a IA verifica tom, ortografia, clareza e alinhamento com o contexto.
+            </div>
+          </div>
+
+          <!-- Planejamento de Longo Prazo -->
+          <div class="bg-nivel-3s/10 p-6 rounded-lg border-l-4 border-nivel-3s">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+              5. Planejamento de Longo Prazo
+            </h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              A IA cria <strong>estrategias estendidas</strong> que se desdobram ao longo do tempo.
+            </p>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded text-sm">
+              <strong>Caracteristicas:</strong><br>
+              - Define objetivos de semanas ou meses<br>
+              - Cria milestones intermediarios<br>
+              - Ajusta plano conforme evolucao<br>
+              - Monitora progresso autonomamente
+            </div>
+            <div class="mt-3 bg-orange-50 dark:bg-orange-900/20 p-3 rounded text-xs">
+              <strong>Exemplo:</strong> A IA planeja uma campanha de conteudo de 90 dias, criando calendarios, temas e ajustando conforme resultados.
+            </div>
+          </div>
+
+          <!-- Execucao Baseada em Intencao -->
+          <div class="bg-nivel-3s/10 p-6 rounded-lg border-l-4 border-nivel-3s">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+              6. Execucao Baseada em Intencao Composta
+            </h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              A IA opera com base em <strong>objetivos macro</strong>, nao tarefas isoladas.
+            </p>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded text-sm">
+              <strong>O que isso significa:</strong><br>
+              - Voce define "o que" quer alcancar<br>
+              - A IA descobre "como" chegar la<br>
+              - A execucao e autonoma e adaptativa<br>
+              - Resultados sao validados continuamente
+            </div>
+            <div class="mt-3 bg-orange-50 dark:bg-orange-900/20 p-3 rounded text-xs">
+              <strong>Exemplo:</strong> Voce define "Quero aumentar vendas em 30%". A IA cria estrategias, testa abordagens e ajusta tacticas.
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Capacidade de Operar Como Time -->
+        <div class="bg-gradient-to-r from-nivel-3s/20 to-orange-500/20 p-8 rounded-lg border-2 border-nivel-3s">
+          <h3 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
+            7. Capacidade de Operar como um Time Inteiro de Especialistas
+          </h3>
+          <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+            A IA moderna nao e um unico agente - e um <strong>ecossistema de especializacoes</strong> trabalhando em conjunto.
+          </p>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <h4 class="font-bold text-nivel-3s mb-2">Especialistas</h4>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                Cada funcao tem um "especialista virtual" dedicado
+              </p>
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <h4 class="font-bold text-nivel-3s mb-2">Coordenacao</h4>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                Um orquestrador central gerencia todos os especialistas
+              </p>
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <h4 class="font-bold text-nivel-3s mb-2">Validacao</h4>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                Auditores internos garantem qualidade em cada etapa
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- A Grande Mudanca -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          A Grande Mudanca: Do "Agora" para o "Longo Prazo"
+        </h2>
+
+        <div class="space-y-6">
+
+          <!-- Antes: Resposta Imediata -->
+          <div class="bg-red-50 dark:bg-red-900/20 p-6 rounded-lg border-l-4 border-red-500">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+              Antes (ate 2024): "O que voce quer agora?"
+            </h3>
+            <div class="space-y-2 text-neutral-700 dark:text-neutral-300">
+              <p><strong>Paradigma:</strong> Perguntas e respostas instantaneas</p>
+              <p><strong>Memoria:</strong> Apenas durante a conversa</p>
+              <p><strong>Planejamento:</strong> Tarefas isoladas</p>
+              <p><strong>Execucao:</strong> Manual, passo a passo</p>
+            </div>
+            <div class="mt-4 bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Exemplo tipico:</strong><br>
+              Usuario: "Escreva um email de follow-up."<br>
+              IA: [Escreve email]<br>
+              Usuario: "Agora agende para amanha."<br>
+              IA: [Instrucoes para agendar]
+            </div>
+          </div>
+
+          <!-- Depois: Missao de Longo Prazo -->
+          <div class="bg-nivel-3s/10 p-6 rounded-lg border-l-4 border-nivel-3s">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+              Agora (2025-2026): "O que voce quer construir ao longo das proximas semanas ou meses?"
+            </h3>
+            <div class="space-y-2 text-neutral-700 dark:text-neutral-300">
+              <p><strong>Paradigma:</strong> Objetivos estrategicos de longo prazo</p>
+              <p><strong>Memoria:</strong> Persistente por semanas, meses ou anos</p>
+              <p><strong>Planejamento:</strong> Missoes complexas e evolutivas</p>
+              <p><strong>Execucao:</strong> Autonoma, adaptativa e supervisionada</p>
+            </div>
+            <div class="mt-4 bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Exemplo moderno:</strong><br>
+              Usuario: "Gerencie minha presenca online de forma consistente e estrategica."<br>
+              IA:<br>
+              - Cria calendario de conteudo de 90 dias<br>
+              - Escreve posts alinhados com marca<br>
+              - Agenda publicacoes<br>
+              - Monitora engajamento<br>
+              - Ajusta estrategia conforme resultados<br>
+              - Envia relatorios semanais<br>
+              - Sugere otimizacoes proativas
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Comparacao Visual -->
+        <div class="mt-8 bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 p-8 rounded-lg">
+          <h3 class="text-2xl font-bold text-center text-neutral-900 dark:text-neutral-100 mb-6">
+            A Transformacao em Numeros
+          </h3>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white dark:bg-neutral-700 p-6 rounded-lg text-center">
+              <div class="text-4xl font-bold text-red-500 mb-2">1 tarefa</div>
+              <div class="text-sm text-neutral-600 dark:text-neutral-400">Paradigma antigo: 1 comando = 1 acao</div>
+            </div>
+            <div class="text-4xl font-bold text-center flex items-center justify-center">→</div>
+            <div class="bg-white dark:bg-neutral-700 p-6 rounded-lg text-center">
+              <div class="text-4xl font-bold text-nivel-3s mb-2">1 missao</div>
+              <div class="text-sm text-neutral-600 dark:text-neutral-400">Paradigma 2026: 1 intencao = 100+ acoes</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exemplo Pratico Completo -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Exemplo Pratico: Sistema de Longo Prazo em Acao
+        </h2>
+
+        <div class="bg-nivel-3s/10 p-6 rounded-lg mb-6">
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+            Cenario: "Quero que minha empresa cresça 50% nos proximos 6 meses"
+          </h3>
+          <p class="text-sm text-neutral-700 dark:text-neutral-300">
+            Veja como um sistema intencional 2026 operaria essa missao:
+          </p>
+        </div>
+
+        <div class="space-y-4">
+
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-10 h-10 bg-nivel-3s text-white rounded-full flex items-center justify-center font-bold">
+              1
+            </div>
+            <div class="flex-1 bg-neutral-50 dark:bg-neutral-700 p-4 rounded-lg">
+              <h4 class="font-bold mb-2">Planejamento Estrategico (Semana 1)</h4>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                O sistema analisa mercado, define KPIs, cria roadmap de 6 meses com milestones mensais e identifica areas criticas de crescimento.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-10 h-10 bg-nivel-3s text-white rounded-full flex items-center justify-center font-bold">
+              2
+            </div>
+            <div class="flex-1 bg-neutral-50 dark:bg-neutral-700 p-4 rounded-lg">
+              <h4 class="font-bold mb-2">Execucao Continua (Meses 1-6)</h4>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">
+                O sistema opera autonomamente:
+              </p>
+              <ul class="text-xs space-y-1 text-neutral-700 dark:text-neutral-300">
+                <li>- Cria campanhas de marketing semanais</li>
+                <li>- Otimiza processos operacionais</li>
+                <li>- Monitora metricas diariamente</li>
+                <li>- Ajusta estrategias conforme dados</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-10 h-10 bg-nivel-3s text-white rounded-full flex items-center justify-center font-bold">
+              3
+            </div>
+            <div class="flex-1 bg-neutral-50 dark:bg-neutral-700 p-4 rounded-lg">
+              <h4 class="font-bold mb-2">Monitoramento e Adaptacao</h4>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                O sistema detecta quando algo nao esta funcionando e ajusta automaticamente. Envia relatorios semanais com insights e recomendacoes.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-10 h-10 bg-nivel-3s text-white rounded-full flex items-center justify-center font-bold">
+              4
+            </div>
+            <div class="flex-1 bg-neutral-50 dark:bg-neutral-700 p-4 rounded-lg">
+              <h4 class="font-bold mb-2">Evolucao Autonoma</h4>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                O sistema aprende com sucessos e falhas, otimiza processos internos, descobre padroes no comportamento do usuario e melhora continuamente.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-10 h-10 bg-nivel-3s text-white rounded-full flex items-center justify-center font-bold">
+              5
+            </div>
+            <div class="flex-1 bg-green-50 dark:bg-green-900/20 p-4 rounded-lg border-2 border-nivel-3s">
+              <h4 class="font-bold mb-2">Resultado (Mes 6)</h4>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                O sistema entrega relatorio completo com crescimento alcancado, analise do que funcionou, recomendacoes para os proximos 6 meses e documentacao de todo o processo.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mt-6 bg-nivel-3s/10 p-4 rounded-lg border-l-4 border-nivel-3s">
+          <p class="text-sm text-neutral-700 dark:text-neutral-300">
+            <strong>Diferenca fundamental:</strong> Voce nao gerenciou 1000 tarefas isoladas. Voce definiu 1 intencao macro e o sistema operou autonomamente por 6 meses, aprendendo, adaptando e evoluindo.
+          </p>
+        </div>
+      </div>
+
+      <!-- Conclusao -->
+      <div class="bg-gradient-to-r from-nivel-3s to-orange-600 text-white rounded-xl p-8">
+        <h2 class="text-3xl font-bold mb-4">Conclusao do Modulo</h2>
+        <p class="text-lg mb-6">
+          Voce entendeu a nova arquitetura da IA em 2026: sistemas que pensam continuamente, lembram persistentemente e operam de forma autonoma por semanas ou meses.
+        </p>
+        <div class="bg-white/10 backdrop-blur p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-xl mb-2">O que voce dominou:</h3>
+          <ul class="space-y-2">
+            <li>Como raciocinio continuo funciona na pratica</li>
+            <li>O papel da memoria persistente em sistemas de longo prazo</li>
+            <li>A diferenca entre IA de curto prazo e IA de missao estendida</li>
+            <li>Como sistemas modernos operam como times completos</li>
+            <li>A grande mudanca do "agora" para o "longo prazo"</li>
+          </ul>
+        </div>
+        <div class="flex gap-4">
+          <a href="../niveis/nivel-3s.html" class="px-6 py-3 bg-white text-nivel-3s rounded-lg font-semibold hover:bg-neutral-100 inline-flex items-center gap-2">
+            <span>Voltar ao Nivel 3S</span>
+          </a>
+          <a href="nivel-3s-modulo-2.html" class="px-6 py-3 bg-white/20 text-white rounded-lg font-semibold hover:bg-white/30 inline-flex items-center gap-2">
+            <span>Proximo Modulo</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold text-white mb-4">FEI - Engenharia de Intencao</h3>
+          <p class="text-sm">Formacao completa para dominar a nova era da IA</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Niveis</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../niveis/nivel-1.html" class="hover:text-white">Nivel 1: Fundamentos</a></li>
+            <li><a href="../niveis/nivel-2.html" class="hover:text-white">Nivel 2: Programa Completo</a></li>
+            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Nivel 3A: Agentes</a></li>
+            <li><a href="../niveis/nivel-3s.html" class="hover:text-white">Nivel 3S: Sistemas 2026</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../index.html" class="hover:text-white">Inicio</a></li>
+            <li><a href="../niveis/nivel-3s.html" class="hover:text-white">Voltar ao Nivel 3S</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-neutral-800 mt-8 pt-8 text-center text-sm">
+        <p>&copy; 2025 FEI - Formacao em Engenharia de Intencao.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>
