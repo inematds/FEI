@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo 3: Fundamentos da Engenharia de Intencao | FEI Nivel 2</title>
+  <meta name="description" content="Domine as 7 etapas da Engenharia de Intencao: objetivo, intencao, criterios, contexto, raciocinio, delegacao e formato">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'nivel-1': '#3B82F6',
+            'nivel-2': '#9b59b6',
+            'nivel-3a': '#10B981',
+            'nivel-3s': '#F59E0B',
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+  </style>
+</head>
+<body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-2 bg-clip-text text-transparent">
+            FEI - Engenharia de Intencao
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-2">Inicio</a>
+          <a href="../niveis/nivel-2.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-2">Nivel 2</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <nav class="flex text-sm" aria-label="Breadcrumb">
+        <a href="../index.html" class="text-nivel-2 hover:text-purple-700">Inicio</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <a href="../niveis/nivel-2.html" class="text-nivel-2 hover:text-purple-700">Nivel 2</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <span class="text-neutral-600 dark:text-neutral-400">Modulo 3</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-nivel-2 to-purple-600 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Modulo 3
+        </span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Nivel 2 - Programa Completo
+        </span>
+      </div>
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">
+        Fundamentos da Engenharia de Intencao
+      </h1>
+      <p class="text-xl text-white/90">
+        As 7 etapas para comunicar intencoes claras e precisas
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-12 bg-neutral-50 dark:bg-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Download Button -->
+      <div class="flex justify-end mb-6">
+        <a href="../downloads/nivel-2-modulo-3.md" download class="px-6 py-3 bg-nivel-2 text-white rounded-lg font-semibold hover:bg-purple-600 inline-flex items-center gap-2">
+          <span>Download MD</span>
+        </a>
+      </div>
+
+      <!-- Introducao -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
+          Introducao
+        </h2>
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          Este e o modulo mais importante de toda a formacao. Aqui voce vai aprender a <strong>estrutura completa</strong> para comunicar intencoes com clareza, precisao e profundidade.
+        </p>
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          A Engenharia de Intencao se baseia em <strong>7 componentes fundamentais</strong> que, quando combinados, transformam prompts vagos em instrucoes estrategicas e eficazes.
+        </p>
+        <div class="bg-nivel-2/10 border-l-4 border-nivel-2 p-6 rounded-lg">
+          <h3 class="font-bold text-nivel-2 mb-2">O que voce vai dominar</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Ao final deste modulo, voce tera o <strong>blueprint oficial</strong> da Engenharia de Intencao e sabera construir prompts que funcionam em qualquer contexto.
+          </p>
+        </div>
+      </div>
+
+      <!-- As 7 Etapas -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          As 7 Etapas da Engenharia de Intencao
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-4 mb-8">
+          <div class="bg-nivel-2 text-white p-4 rounded-lg text-center">
+            <div class="text-3xl font-bold mb-1">1</div>
+            <div class="font-semibold">Objetivo</div>
+          </div>
+          <div class="bg-nivel-2 text-white p-4 rounded-lg text-center">
+            <div class="text-3xl font-bold mb-1">2</div>
+            <div class="font-semibold">Intencao</div>
+          </div>
+          <div class="bg-nivel-2 text-white p-4 rounded-lg text-center">
+            <div class="text-3xl font-bold mb-1">3</div>
+            <div class="font-semibold">Criterios</div>
+          </div>
+          <div class="bg-nivel-2 text-white p-4 rounded-lg text-center">
+            <div class="text-3xl font-bold mb-1">4</div>
+            <div class="font-semibold">Contexto</div>
+          </div>
+          <div class="bg-nivel-2 text-white p-4 rounded-lg text-center">
+            <div class="text-3xl font-bold mb-1">5</div>
+            <div class="font-semibold">Raciocinio</div>
+          </div>
+          <div class="bg-nivel-2 text-white p-4 rounded-lg text-center">
+            <div class="text-3xl font-bold mb-1">6</div>
+            <div class="font-semibold">Delegacao</div>
+          </div>
+          <div class="bg-nivel-2 text-white p-4 rounded-lg text-center col-span-full md:col-span-1 md:col-start-2">
+            <div class="text-3xl font-bold mb-1">7</div>
+            <div class="font-semibold">Formato</div>
+          </div>
+        </div>
+
+        <p class="text-neutral-600 dark:text-neutral-400 text-center">
+          Cada etapa tem uma funcao especifica. Vamos detalhar cada uma.
+        </p>
+      </div>
+
+      <!-- Etapa 1: Objetivo -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="bg-nivel-2 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">1</div>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Objetivo: O Que Voce Quer
+          </h2>
+        </div>
+
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          O objetivo responde: <strong>"O QUE voce quer que a IA produza?"</strong>
+        </p>
+
+        <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-neutral-900 dark:text-neutral-100 mb-3">Estrutura do Objetivo</h3>
+          <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+            <li><strong>Acao:</strong> verbo claro (criar, analisar, resumir, gerar, planejar)</li>
+            <li><strong>Artefato:</strong> o que sera criado (texto, plano, relatorio, estrategia)</li>
+            <li><strong>Escopo:</strong> limites claros (quantos, sobre o que, com que profundidade)</li>
+          </ul>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-red-50 dark:bg-red-900/20 p-4 rounded border-2 border-red-500">
+            <h4 class="font-bold text-red-700 dark:text-red-400 mb-2">Objetivo Vago</h4>
+            <pre class="text-sm text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap">
+"Me ajuda com marketing"</pre>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-2">
+              Muito amplo, nao especifica o artefato
+            </p>
+          </div>
+
+          <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded border-2 border-green-500">
+            <h4 class="font-bold text-green-700 dark:text-green-400 mb-2">Objetivo Claro</h4>
+            <pre class="text-sm text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap">
+"Criar um plano de marketing de 90 dias
+para lancamento de produto digital"</pre>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-2">
+              Acao clara, artefato definido, escopo delimitado
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Etapa 2: Intencao -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="bg-nivel-2 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">2</div>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Intencao: Para Quem, Para Que, Impacto
+          </h2>
+        </div>
+
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          A intencao responde: <strong>"PARA QUEM e PARA QUE voce esta criando isso?"</strong>
+        </p>
+
+        <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-neutral-900 dark:text-neutral-100 mb-3">Componentes da Intencao</h3>
+          <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+            <li><strong>Audiencia:</strong> quem vai consumir/usar isso</li>
+            <li><strong>Proposito:</strong> qual problema resolve ou objetivo alcanca</li>
+            <li><strong>Impacto desejado:</strong> como voce quer que a pessoa se sinta ou aja</li>
+          </ul>
+        </div>
+
+        <div class="bg-nivel-2/10 p-6 rounded-lg border-l-4 border-nivel-2">
+          <h4 class="font-bold text-neutral-900 dark:text-neutral-100 mb-3">Exemplo Completo</h4>
+          <div class="space-y-3 text-neutral-700 dark:text-neutral-300">
+            <p><strong>Objetivo:</strong> Criar um roteiro de video</p>
+            <p><strong>Intencao:</strong></p>
+            <ul class="ml-6 space-y-1">
+              <li>- <strong>Para quem:</strong> empreendedores iniciantes (sem conhecimento tecnico)</li>
+              <li>- <strong>Para que:</strong> mostrar como usar IA para automatizar tarefas repetitivas</li>
+              <li>- <strong>Impacto:</strong> que sintam que e simples e possivel comecar hoje</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Etapa 3: Criterios de Qualidade -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="bg-nivel-2 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">3</div>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Criterios de Qualidade
+          </h2>
+        </div>
+
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          Criterios definem <strong>"como avaliar se a resposta e boa"</strong>.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
+            <h3 class="font-bold text-neutral-900 dark:text-neutral-100 mb-3">Tipos de Criterios</h3>
+            <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+              <li><strong>Tom:</strong> profissional, casual, motivacional, tecnico</li>
+              <li><strong>Profundidade:</strong> superficial, moderado, profundo</li>
+              <li><strong>Estilo:</strong> direto, didatico, narrativo, analitico</li>
+              <li><strong>Complexidade:</strong> simples, intermediario, avancado</li>
+            </ul>
+          </div>
+
+          <div class="bg-nivel-2/10 p-6 rounded-lg border-2 border-nivel-2">
+            <h3 class="font-bold text-neutral-900 dark:text-neutral-100 mb-3">Exemplo Pratico</h3>
+            <pre class="text-sm text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap">
+Criterios de qualidade:
+
+- Tom: acessivel mas respeitoso
+- Evite jargao tecnico desnecessario
+- Use exemplos praticos a cada conceito
+- Seja direto: maximo 3 frases por ideia</pre>
+          </div>
+        </div>
+
+        <div class="bg-yellow-50 dark:bg-yellow-900/20 p-6 rounded-lg border-l-4 border-yellow-500">
+          <h4 class="font-bold text-yellow-700 dark:text-yellow-400 mb-2">Cuidado!</h4>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Nao confunda criterios com formato. <strong>Criterios sao qualitativos</strong> (como deve ser), <strong>formato e estrutural</strong> (como deve estar organizado).
+          </p>
+        </div>
+      </div>
+
+      <!-- Etapa 4: Contexto Relevante -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="bg-nivel-2 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">4</div>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Contexto Relevante (E Apenas o Necessario)
+          </h2>
+        </div>
+
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          Contexto e <strong>tudo que a IA precisa saber</strong> para produzir uma resposta precisa. Mas cuidado: <strong>contexto excessivo confunde</strong>.
+        </p>
+
+        <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-neutral-900 dark:text-neutral-100 mb-3">O Que Incluir no Contexto</h3>
+          <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+            <li><strong>Situacao atual:</strong> onde voce esta agora</li>
+            <li><strong>Dados relevantes:</strong> informacoes especificas necessarias</li>
+            <li><strong>Restricoes:</strong> limitacoes reais (prazo, orcamento, recursos)</li>
+            <li><strong>Historico (se relevante):</strong> o que ja foi tentado</li>
+          </ul>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-red-50 dark:bg-red-900/20 p-4 rounded border-2 border-red-500">
+            <h4 class="font-bold text-red-700 dark:text-red-400 mb-2">Contexto Excessivo</h4>
+            <pre class="text-sm text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap">
+Tenho 32 anos, trabalho em TI, gosto de ler,
+fiz faculdade de Engenharia, moro em SP,
+trabalho remoto, tenho 2 gatos...
+
+Preciso de um plano de estudos.</pre>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-2">
+              Informacoes irrelevantes diluem o foco
+            </p>
+          </div>
+
+          <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded border-2 border-green-500">
+            <h4 class="font-bold text-green-700 dark:text-green-400 mb-2">Contexto Relevante</h4>
+            <pre class="text-sm text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap">
+Contexto:
+- Area: desenvolvimento backend
+- Disponibilidade: 1h por dia, 5 dias/semana
+- Nivel atual: intermediario
+- Objetivo: aprender arquitetura de sistemas</pre>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-2">
+              So o essencial para orientar a resposta
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-nivel-2/10 p-6 rounded-lg mt-6">
+          <h4 class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">Regra do Contexto Minimo</h4>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Inclua apenas contexto que <strong>muda a resposta</strong>. Se remover uma informacao e a resposta ideal continua a mesma, essa informacao e desnecessaria.
+          </p>
+        </div>
+      </div>
+
+      <!-- Etapa 5: Estrategia de Raciocinio -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="bg-nivel-2 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">5</div>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Estrategia de Raciocinio
+          </h2>
+        </div>
+
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          Em tarefas complexas, voce pode <strong>sugerir uma abordagem</strong> de raciocinio. Mas lembre-se: IA moderna raciocina por padrao.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-6">
+          <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
+            <h3 class="font-bold text-neutral-900 dark:text-neutral-100 mb-3">Raciocinio Critico</h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+              Para analises, avaliacoes, decisoes
+            </p>
+            <pre class="text-xs text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap">
+"Analise pros e contras antes de sugerir"</pre>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
+            <h3 class="font-bold text-neutral-900 dark:text-neutral-100 mb-3">Raciocinio Criativo</h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+              Para ideacao, brainstorming, inovacao
+            </p>
+            <pre class="text-xs text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap">
+"Explore angulos nao convencionais"</pre>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
+            <h3 class="font-bold text-neutral-900 dark:text-neutral-100 mb-3">Raciocinio Tecnico</h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+              Para solucoes, processos, sistemas
+            </p>
+            <pre class="text-xs text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap">
+"Mostre o raciocinio passo a passo"</pre>
+          </div>
+        </div>
+
+        <div class="bg-yellow-50 dark:bg-yellow-900/20 p-6 rounded-lg border-l-4 border-yellow-500">
+          <h4 class="font-bold text-yellow-700 dark:text-yellow-400 mb-2">Quando usar?</h4>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            So especifique estrategia de raciocinio em tarefas <strong>realmente complexas</strong> ou quando voce quer ver o processo de pensamento da IA.
+          </p>
+        </div>
+      </div>
+
+      <!-- Etapa 6: Delegacao Inteligente -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="bg-nivel-2 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">6</div>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Delegacao Inteligente
+          </h2>
+        </div>
+
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          Esta e a etapa mais poderosa: ensinar a IA a <strong>pedir o que ela precisa</strong> antes de responder.
+        </p>
+
+        <div class="bg-nivel-2/10 p-6 rounded-lg mb-6 border-l-4 border-nivel-2">
+          <h3 class="font-bold text-nivel-2 mb-3">Por que isso e revolucionario?</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Voce nao precisa adivinhar tudo que a IA precisa saber. Ela <strong>pergunta ativamente</strong> o que falta.
+          </p>
+        </div>
+
+        <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border-2 border-green-500 mb-6">
+          <h4 class="font-bold text-green-700 dark:text-green-400 mb-3">Exemplo de Delegacao</h4>
+          <pre class="text-sm text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap">
+Objetivo: Criar plano de marketing
+
+Delegacao:
+Antes de criar o plano, me pergunte:
+- Qual o orcamento disponivel?
+- Qual o publico-alvo especifico?
+- Quais canais ja foram testados?
+- Qual o prazo para primeiros resultados?</pre>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
+            <h4 class="font-bold text-neutral-900 dark:text-neutral-100 mb-3">Sem Delegacao</h4>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300">
+              Usuario tenta adivinhar tudo que a IA precisa → prompt gigante → informacao excessiva
+            </p>
+          </div>
+
+          <div class="bg-nivel-2/10 p-6 rounded-lg border-2 border-nivel-2">
+            <h4 class="font-bold text-neutral-900 dark:text-neutral-100 mb-3">Com Delegacao</h4>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300">
+              IA identifica lacunas → faz perguntas estrategicas → usuario responde so o necessario
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Etapa 7: Formato de Saida -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="bg-nivel-2 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">7</div>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Formato de Saida
+          </h2>
+        </div>
+
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          Especifique o formato <strong>apenas quando ele e essencial</strong> para o uso da resposta.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
+            <h3 class="font-bold text-neutral-900 dark:text-neutral-100 mb-3">Quando Especificar Formato</h3>
+            <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+              <li>- Integracao tecnica (JSON, CSV, SQL)</li>
+              <li>- Templates especificos (AIDA, PAS)</li>
+              <li>- Apresentacoes (slides, relatorios)</li>
+              <li>- Documentacao (markdown, latex)</li>
+            </ul>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
+            <h3 class="font-bold text-neutral-900 dark:text-neutral-100 mb-3">Quando Deixar Livre</h3>
+            <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+              <li>- Textos explicativos</li>
+              <li>- Analises e avaliacoes</li>
+              <li>- Brainstorming e ideacao</li>
+              <li>- Conversas exploratoriass</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-nivel-2/10 p-6 rounded-lg">
+          <h4 class="font-bold text-neutral-900 dark:text-neutral-100 mb-3">Exemplo de Formato Necessario</h4>
+          <pre class="text-sm text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap">
+Formato de saida:
+Tabela markdown com 3 colunas:
+- Estrategia
+- Investimento estimado
+- ROI esperado (90 dias)</pre>
+        </div>
+      </div>
+
+      <!-- Blueprint Oficial -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Blueprint Oficial da Engenharia de Intencao
+        </h2>
+
+        <div class="bg-gradient-to-br from-nivel-2/10 to-purple-100 dark:from-nivel-2/20 dark:to-purple-900/20 p-8 rounded-xl">
+          <pre class="text-sm text-neutral-800 dark:text-neutral-200 whitespace-pre-wrap font-mono">
+<strong class="text-nivel-2">1. OBJETIVO</strong>
+[Acao] + [Artefato] + [Escopo]
+
+<strong class="text-nivel-2">2. INTENCAO</strong>
+Para quem: [audiencia especifica]
+Para que: [problema/objetivo]
+Impacto desejado: [como a pessoa deve se sentir/agir]
+
+<strong class="text-nivel-2">3. CRITERIOS DE QUALIDADE</strong>
+- Tom: [profissional/casual/tecnico/motivacional]
+- Profundidade: [superficial/moderado/profundo]
+- Estilo: [direto/didatico/narrativo/analitico]
+- [outros criterios relevantes]
+
+<strong class="text-nivel-2">4. CONTEXTO</strong>
+Situacao atual: [onde voce esta]
+Dados relevantes: [informacoes especificas]
+Restricoes: [limitacoes reais]
+
+<strong class="text-nivel-2">5. RACIOCINIO (opcional)</strong>
+[Critico/Criativo/Tecnico - apenas se necessario]
+
+<strong class="text-nivel-2">6. DELEGACAO</strong>
+Antes de responder, pergunte:
+- [pergunta 1]
+- [pergunta 2]
+- [pergunta N]
+
+<strong class="text-nivel-2">7. FORMATO (opcional)</strong>
+[Estrutura especifica - apenas se essencial]
+</pre>
+        </div>
+      </div>
+
+      <!-- 10 Prompts-Modelo -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          10 Prompts-Modelo Baseados na Estrutura
+        </h2>
+
+        <div class="space-y-6">
+          <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
+            <h3 class="font-bold text-nivel-2 mb-3">Modelo 1: Plano de Acao</h3>
+            <pre class="text-sm text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap">
+<strong>Objetivo:</strong> Criar plano de acao de 30 dias para [objetivo]
+
+<strong>Intencao:</strong>
+Para quem: [eu/equipe/cliente]
+Para que: alcancar [resultado especifico]
+Impacto: que seja claro e executavel imediatamente
+
+<strong>Delegacao:</strong>
+Antes de criar o plano, me pergunte sobre recursos disponiveis e prioridades.</pre>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
+            <h3 class="font-bold text-nivel-2 mb-3">Modelo 2: Analise Critica</h3>
+            <pre class="text-sm text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap">
+<strong>Objetivo:</strong> Analisar [proposta/ideia/estrategia] de forma critica
+
+<strong>Intencao:</strong>
+Para que: identificar pontos fracos antes de executar
+Impacto: decisao informada e consciente dos riscos
+
+<strong>Criterios:</strong>
+- Tom: honesto mas construtivo
+- Profundidade: analise detalhada
+- Inclua alternativas aos pontos fracos</pre>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
+            <h3 class="font-bold text-nivel-2 mb-3">Modelo 3: Conteudo Educacional</h3>
+            <pre class="text-sm text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap">
+<strong>Objetivo:</strong> Criar explicacao didatica sobre [conceito]
+
+<strong>Intencao:</strong>
+Para quem: [nivel de conhecimento]
+Para que: entender e aplicar o conceito
+Impacto: sentir que e simples e acessivel
+
+<strong>Criterios:</strong>
+- Use analogias do cotidiano
+- Exemplos praticos a cada 2 paragrafos
+- Evite jargao sem explicacao</pre>
+          </div>
+        </div>
+
+        <div class="text-center mt-6">
+          <p class="text-neutral-600 dark:text-neutral-400">
+            Download completo com os 10 modelos disponivel no arquivo MD
+          </p>
+        </div>
+      </div>
+
+      <!-- Conclusao -->
+      <div class="bg-gradient-to-r from-nivel-2 to-purple-600 text-white rounded-xl p-8">
+        <h2 class="text-3xl font-bold mb-4">Conclusao do Modulo</h2>
+        <p class="text-lg mb-6">
+          Voce agora possui o <strong>blueprint completo</strong> da Engenharia de Intencao. Estas 7 etapas sao a base de tudo que vem a seguir.
+        </p>
+        <div class="bg-white/10 backdrop-blur p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-xl mb-2">O que voce dominou:</h3>
+          <ul class="space-y-2">
+            <li>As 7 etapas fundamentais da Engenharia de Intencao</li>
+            <li>Quando usar cada componente</li>
+            <li>Blueprint oficial reutilizavel</li>
+            <li>10 prompts-modelo prontos para adaptar</li>
+            <li>Diferenca entre criterios e formato</li>
+          </ul>
+        </div>
+        <div class="flex gap-4">
+          <a href="../niveis/nivel-2.html" class="px-6 py-3 bg-white text-nivel-2 rounded-lg font-semibold hover:bg-neutral-100 inline-flex items-center gap-2">
+            <span>Voltar ao Nivel 2</span>
+          </a>
+          <a href="nivel-2-modulo-4.html" class="px-6 py-3 bg-white/20 text-white rounded-lg font-semibold hover:bg-white/30 inline-flex items-center gap-2">
+            <span>Proximo Modulo</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold text-white mb-4">FEI - Engenharia de Intencao</h3>
+          <p class="text-sm">Formacao completa para dominar a nova era da IA</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Niveis</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../niveis/nivel-1.html" class="hover:text-white">Nivel 1: Fundamentos</a></li>
+            <li><a href="../niveis/nivel-2.html" class="hover:text-white">Nivel 2: Programa Completo</a></li>
+            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Nivel 3A: Agentes</a></li>
+            <li><a href="../niveis/nivel-3s.html" class="hover:text-white">Nivel 3S: Sistemas 2026</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../index.html" class="hover:text-white">Inicio</a></li>
+            <li><a href="../niveis/nivel-2.html" class="hover:text-white">Voltar ao Nivel 2</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-neutral-800 mt-8 pt-8 text-center text-sm">
+        <p>&copy; 2025 FEI - Formacao em Engenharia de Intencao.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>

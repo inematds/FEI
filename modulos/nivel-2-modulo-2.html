@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo 2: Como Funciona a IA Moderna | FEI Nivel 2</title>
+  <meta name="description" content="Entenda raciocinio estruturado interno, interpretacao contextual e por que modelos modernos preferem clareza">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'nivel-1': '#3B82F6',
+            'nivel-2': '#9b59b6',
+            'nivel-3a': '#10B981',
+            'nivel-3s': '#F59E0B',
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+  </style>
+</head>
+<body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-2 bg-clip-text text-transparent">
+            FEI - Engenharia de Intencao
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-2">Inicio</a>
+          <a href="../niveis/nivel-2.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-2">Nivel 2</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <nav class="flex text-sm" aria-label="Breadcrumb">
+        <a href="../index.html" class="text-nivel-2 hover:text-purple-700">Inicio</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <a href="../niveis/nivel-2.html" class="text-nivel-2 hover:text-purple-700">Nivel 2</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <span class="text-neutral-600 dark:text-neutral-400">Modulo 2</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-nivel-2 to-purple-600 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Modulo 2
+        </span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Nivel 2 - Programa Completo
+        </span>
+      </div>
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">
+        Como Funciona a IA Moderna
+      </h1>
+      <p class="text-xl text-white/90">
+        Raciocinio estruturado, interpretacao contextual e o novo papel do usuario
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-12 bg-neutral-50 dark:bg-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Download Button -->
+      <div class="flex justify-end mb-6">
+        <a href="../downloads/nivel-2-modulo-2.md" download class="px-6 py-3 bg-nivel-2 text-white rounded-lg font-semibold hover:bg-purple-600 inline-flex items-center gap-2">
+          <span>Download MD</span>
+        </a>
+      </div>
+
+      <!-- Introducao -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
+          Introducao
+        </h2>
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          Modelos de IA moderna nao sao simples ferramentas que executam comandos. Eles <strong>interpretam intencao</strong>, <strong>planejam estrategicamente</strong> e <strong>raciocinam antes de responder</strong>.
+        </p>
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          Neste modulo, voce vai entender exatamente <strong>como</strong> a IA moderna funciona por dentro, <strong>por que</strong> ela prefere clareza a comandos detalhados, e <strong>como</strong> voce deve se posicionar como comunicador estrategico.
+        </p>
+        <div class="bg-nivel-2/10 border-l-4 border-nivel-2 p-6 rounded-lg">
+          <h3 class="font-bold text-nivel-2 mb-2">Objetivo deste modulo</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Transformar sua relacao com IA: de <strong>usuario que da comandos</strong> para <strong>comunicador estrategico</strong> que expressa intencoes claras.
+          </p>
+        </div>
+      </div>
+
+      <!-- Raciocinio Estruturado Interno -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          1. Raciocinio Estruturado Interno (Chain of Thought Implicito)
+        </h2>
+
+        <div class="mb-6">
+          <h3 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
+            O que e Chain of Thought (CoT)?
+          </h3>
+          <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+            Chain of Thought e a capacidade da IA de <strong>pensar passo a passo</strong> antes de responder. Em modelos antigos, voce precisava <strong>pedir explicitamente</strong> que a IA fizesse isso.
+          </p>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Em modelos modernos, esse raciocinio acontece <strong>automaticamente</strong> nos bastidores.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-red-50 dark:bg-red-900/20 p-6 rounded-lg border-2 border-red-500">
+            <h4 class="font-bold text-red-700 dark:text-red-400 mb-3">Antes (GPT-3)</h4>
+            <pre class="text-sm text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap font-mono mb-3">
+Resolva: 25% de 480
+
+Pense passo a passo:
+1. Converta porcentagem em decimal
+2. Multiplique pelo valor
+3. Apresente o resultado</pre>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400">
+              Era necessario <strong>forcar</strong> o raciocinio passo a passo
+            </p>
+          </div>
+
+          <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border-2 border-green-500">
+            <h4 class="font-bold text-green-700 dark:text-green-400 mb-3">Agora (GPT-5, Claude Opus)</h4>
+            <pre class="text-sm text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap font-mono mb-3">
+Quanto e 25% de 480?</pre>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-3">
+              A IA <strong>raciocina internamente</strong> e ja apresenta a resposta com clareza
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-nivel-2/10 p-6 rounded-lg">
+          <h4 class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">Por que isso mudou?</h4>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Modelos modernos foram treinados com <strong>milhoes de exemplos de raciocinio</strong>. Eles aprenderam a pensar antes de responder <strong>sem precisar de instrucao</strong>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Interpretacao Contextual -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          2. Interpretacao Contextual
+        </h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+            IA moderna <strong>entende o contexto implicito</strong> do seu pedido. Ela nao precisa que voce especifique cada detalhe - ela <strong>infere</strong> com base no objetivo.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <div class="border-l-4 border-nivel-2 pl-6">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+              Exemplo 1: Adaptacao de Tom
+            </h3>
+            <div class="bg-neutral-50 dark:bg-neutral-700 p-4 rounded mb-3">
+              <h4 class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">Prompt:</h4>
+              <pre class="text-sm text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap">
+Explique inteligencia artificial para uma crianca de 8 anos.</pre>
+            </div>
+            <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded border border-green-500">
+              <h4 class="font-bold text-green-700 dark:text-green-400 mb-2">O que a IA entende automaticamente:</h4>
+              <ul class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+                <li>- Usar linguagem simples</li>
+                <li>- Evitar termos tecnicos</li>
+                <li>- Criar analogias com o cotidiano</li>
+                <li>- Ser breve e direto</li>
+                <li>- Usar exemplos visiveis (brinquedos, desenhos)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="border-l-4 border-nivel-2 pl-6">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+              Exemplo 2: Inferencia de Objetivo
+            </h3>
+            <div class="bg-neutral-50 dark:bg-neutral-700 p-4 rounded mb-3">
+              <h4 class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">Prompt:</h4>
+              <pre class="text-sm text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap">
+Preciso apresentar isso para investidores na proxima segunda.</pre>
+            </div>
+            <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded border border-green-500">
+              <h4 class="font-bold text-green-700 dark:text-green-400 mb-2">O que a IA infere:</h4>
+              <ul class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+                <li>- Tom profissional e objetivo</li>
+                <li>- Foco em resultados e ROI</li>
+                <li>- Formato executivo (slides, sumario)</li>
+                <li>- Dados quantitativos relevantes</li>
+                <li>- Urgencia (prazo proximo)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-nivel-2/10 p-6 rounded-lg mt-6">
+          <h4 class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">Principio Fundamental</h4>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            <strong>Quanto mais voce especifica detalhes obvios, mais confusa fica a intencao.</strong> IA moderna funciona melhor com clareza de objetivo do que com microgerenciamento.
+          </p>
+        </div>
+      </div>
+
+      <!-- Capacidade de "Adivinhar" Objetivos -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          3. Capacidade de "Adivinhar" Objetivos Mal Formulados
+        </h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+            Um dos avancos mais impressionantes dos modelos modernos e a capacidade de <strong>interpretar o que voce realmente quer</strong>, mesmo quando voce nao sabe explicar direito.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+              Exemplo Real: Pedido Ambiguo
+            </h3>
+            <div class="bg-white dark:bg-neutral-600 p-4 rounded mb-3">
+              <pre class="text-sm text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap">
+Usuario: "Faz um negocio para eu organizar minhas tarefas melhor"</pre>
+            </div>
+            <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded border border-green-500">
+              <h4 class="font-bold text-green-700 dark:text-green-400 mb-2">Resposta da IA Moderna:</h4>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+                "Entendi que voce quer organizar melhor suas tarefas. Posso ajudar de varias formas. O que se encaixa melhor?"
+              </p>
+              <ul class="text-sm space-y-2 text-neutral-700 dark:text-neutral-300">
+                <li><strong>1.</strong> Um template de organizacao semanal</li>
+                <li><strong>2.</strong> Um sistema de priorizacao (matriz Eisenhower)</li>
+                <li><strong>3.</strong> Um checklist diario personalizado</li>
+                <li><strong>4.</strong> Um metodo de blocos de tempo (time blocking)</li>
+              </ul>
+            </div>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-3">
+              A IA <strong>nao executa cegamente</strong>. Ela <strong>pergunta</strong> para entender a intencao real.
+            </p>
+          </div>
+
+          <div class="bg-nivel-2/10 p-6 rounded-lg border-l-4 border-nivel-2">
+            <h4 class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">O que mudou?</h4>
+            <p class="text-neutral-700 dark:text-neutral-300">
+              <strong>Modelos antigos:</strong> Respondiam literalmente ao que foi pedido<br>
+              <strong>Modelos modernos:</strong> Tentam entender a intencao por tras do pedido
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Por Que Modelos Modernos Preferem Clareza -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          4. Por Que Modelos Modernos Preferem Clareza a Comandos
+        </h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+            Existe uma diferenca fundamental entre <strong>clareza</strong> e <strong>detalhamento excessivo</strong>.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-red-50 dark:bg-red-900/20 p-6 rounded-lg">
+            <h3 class="text-xl font-bold text-red-700 dark:text-red-400 mb-3">Detalhamento Excessivo</h3>
+            <pre class="text-sm text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap font-mono">
+Crie um texto de 300 palavras.
+Use tom profissional.
+Evite jargao tecnico.
+Divida em 3 paragrafos.
+Cada paragrafo deve ter 4 frases.
+Comece com uma pergunta retorica.
+Use bullets no segundo paragrafo.
+Termine com call to action.</pre>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-3">
+              Restricoes excessivas <strong>limitam</strong> a criatividade e adaptabilidade da IA
+            </p>
+          </div>
+
+          <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg">
+            <h3 class="text-xl font-bold text-green-700 dark:text-green-400 mb-3">Clareza de Intencao</h3>
+            <pre class="text-sm text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap font-mono">
+Crie um texto profissional e acessivel
+para apresentar nossa solucao a empresas
+de medio porte.
+
+Foco: convencer que vale a pena testar.</pre>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-3">
+              IA escolhe <strong>automaticamente</strong> estrutura, tom e formato ideais
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-nivel-2/10 p-6 rounded-lg">
+          <h4 class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">Regra de Ouro</h4>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            <strong>Especifique o "O QUE" e o "POR QUE". Deixe o "COMO" para a IA.</strong>
+          </p>
+        </div>
+      </div>
+
+      <!-- O Novo Papel do Usuario -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          5. O Novo Papel do Usuario: Comunicador Estrategico
+        </h2>
+
+        <div class="mb-6">
+          <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+            Trabalhar com IA moderna exige uma <strong>mudanca de mentalidade</strong>: voce nao e mais um programador de comandos, mas sim um <strong>comunicador estrategico</strong>.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
+              <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Papel Antigo: Programador</h3>
+              <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+                <li>- Especificar cada etapa</li>
+                <li>- Fornecer exemplos multiplos</li>
+                <li>- Definir formato detalhado</li>
+                <li>- Criar templates rigidos</li>
+                <li>- Microgerenciar o processo</li>
+              </ul>
+            </div>
+
+            <div class="bg-nivel-2/10 p-6 rounded-lg border-2 border-nivel-2">
+              <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Papel Moderno: Comunicador</h3>
+              <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+                <li>- Expressar intencao clara</li>
+                <li>- Definir objetivo e audiencia</li>
+                <li>- Fornecer contexto relevante</li>
+                <li>- Confiar na interpretacao da IA</li>
+                <li>- Refinar colaborativamente</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border-2 border-green-500">
+            <h3 class="font-bold text-green-700 dark:text-green-400 mb-3">Exemplo Pratico: E-mail Profissional</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="font-bold text-neutral-900 dark:text-neutral-100 mb-2 text-sm">Abordagem Antiga</h4>
+                <pre class="text-xs text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap font-mono">
+Crie um e-mail.
+Cumprimento formal.
+2 paragrafos.
+Primeiro: contexto.
+Segundo: pedido.
+Tom respeitoso.
+Use "Atenciosamente".</pre>
+              </div>
+              <div>
+                <h4 class="font-bold text-neutral-900 dark:text-neutral-100 mb-2 text-sm">Abordagem Moderna</h4>
+                <pre class="text-xs text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap font-mono">
+Preciso pedir uma extensao de prazo
+para o projeto X.
+
+Contexto: problemas tecnicos imprevistos.
+
+Tom: profissional mas proximo
+(trabalho com essa pessoa ha 2 anos).</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-nivel-2/10 p-6 rounded-lg mt-6">
+          <h4 class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">Transformacao Mental</h4>
+          <p class="text-neutral-700 dark:text-neutral-300 text-lg">
+            Pare de pensar: <strong>"Como eu programo a IA para fazer isso?"</strong><br>
+            Comece a pensar: <strong>"Como eu comunico o que eu preciso?"</strong>
+          </p>
+        </div>
+      </div>
+
+      <!-- Mini-Mapa Mental -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Mini-Mapa Mental: Como IA Moderna Funciona
+        </h2>
+
+        <div class="bg-gradient-to-br from-nivel-2/10 to-purple-100 dark:from-nivel-2/20 dark:to-purple-900/20 p-8 rounded-xl">
+          <div class="text-center mb-8">
+            <div class="inline-block bg-nivel-2 text-white px-6 py-3 rounded-lg font-bold text-xl">
+              IA MODERNA
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white dark:bg-neutral-700 p-6 rounded-lg shadow-sm">
+              <div class="text-nivel-2 font-bold text-lg mb-3">1. RECEBE</div>
+              <ul class="text-sm space-y-2 text-neutral-700 dark:text-neutral-300">
+                <li>- Sua intencao</li>
+                <li>- Contexto fornecido</li>
+                <li>- Objetivo declarado</li>
+              </ul>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-700 p-6 rounded-lg shadow-sm">
+              <div class="text-nivel-2 font-bold text-lg mb-3">2. PROCESSA</div>
+              <ul class="text-sm space-y-2 text-neutral-700 dark:text-neutral-300">
+                <li>- Interpreta contexto</li>
+                <li>- Planeja estrategia</li>
+                <li>- Raciocina internamente</li>
+                <li>- Identifica lacunas</li>
+              </ul>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-700 p-6 rounded-lg shadow-sm">
+              <div class="text-nivel-2 font-bold text-lg mb-3">3. ENTREGA</div>
+              <ul class="text-sm space-y-2 text-neutral-700 dark:text-neutral-300">
+                <li>- Resposta estruturada</li>
+                <li>- Formato adaptado</li>
+                <li>- Perguntas (se necessario)</li>
+                <li>- Alternativas relevantes</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-6 bg-white dark:bg-neutral-700 p-6 rounded-lg">
+            <h4 class="font-bold text-neutral-900 dark:text-neutral-100 mb-3">Feedback Loop</h4>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300">
+              A IA moderna <strong>aprende com a conversa</strong>. Cada resposta sua refina o entendimento dela sobre o que voce realmente quer.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conclusao -->
+      <div class="bg-gradient-to-r from-nivel-2 to-purple-600 text-white rounded-xl p-8">
+        <h2 class="text-3xl font-bold mb-4">Conclusao do Modulo</h2>
+        <p class="text-lg mb-6">
+          Voce agora entende <strong>como a IA moderna funciona internamente</strong> e por que ela exige uma abordagem completamente diferente dos modelos antigos.
+        </p>
+        <div class="bg-white/10 backdrop-blur p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-xl mb-2">O que voce dominou:</h3>
+          <ul class="space-y-2">
+            <li>Raciocinio estruturado interno (Chain of Thought implicito)</li>
+            <li>Interpretacao contextual automatica</li>
+            <li>Como a IA "adivinha" objetivos mal formulados</li>
+            <li>Por que clareza funciona melhor que comandos</li>
+            <li>Seu novo papel: comunicador estrategico</li>
+          </ul>
+        </div>
+        <div class="flex gap-4">
+          <a href="../niveis/nivel-2.html" class="px-6 py-3 bg-white text-nivel-2 rounded-lg font-semibold hover:bg-neutral-100 inline-flex items-center gap-2">
+            <span>Voltar ao Nivel 2</span>
+          </a>
+          <a href="nivel-2-modulo-3.html" class="px-6 py-3 bg-white/20 text-white rounded-lg font-semibold hover:bg-white/30 inline-flex items-center gap-2">
+            <span>Proximo Modulo</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold text-white mb-4">FEI - Engenharia de Intencao</h3>
+          <p class="text-sm">Formacao completa para dominar a nova era da IA</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Niveis</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../niveis/nivel-1.html" class="hover:text-white">Nivel 1: Fundamentos</a></li>
+            <li><a href="../niveis/nivel-2.html" class="hover:text-white">Nivel 2: Programa Completo</a></li>
+            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Nivel 3A: Agentes</a></li>
+            <li><a href="../niveis/nivel-3s.html" class="hover:text-white">Nivel 3S: Sistemas 2026</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../index.html" class="hover:text-white">Inicio</a></li>
+            <li><a href="../niveis/nivel-2.html" class="hover:text-white">Voltar ao Nivel 2</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-neutral-800 mt-8 pt-8 text-center text-sm">
+        <p>&copy; 2025 FEI - Formacao em Engenharia de Intencao.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>
