@@ -1,0 +1,133 @@
+
+
+# ⚙️ **MÓDULO EXTRA — AGENTES E SISTEMAS AUTÔNOMOS NA ENGENHARIA DE INTENÇÃO**
+
+## **Objetivos de Aprendizagem**
+
+* Entender o que são agentes modernos e como funcionam.
+* Criar agentes orientados por intenção.
+* Organizar sistemas multiagentes para tarefas complexas.
+* Aprender a delegar processos inteiros para a IA.
+* Dominar a estrutura de “papéis funcionais” orientados por intenção.
+
+---
+
+## **Conteúdo do Módulo**
+
+### 🔹 **1. O que são agentes modernos?**
+
+* Da IA “respondente” para IA “autônoma”.
+* Diferença entre:
+
+  * Chatbots
+  * Assistentes
+  * Agentes
+  * Sistemas multiagentes
+  * Workers (tarefas repetitivas)
+* Como agentes usam memória, raciocínio e ferramentas.
+
+---
+
+### 🔹 **2. A Engenharia de Intenção aplicada a agentes**
+
+Cada agente precisa de:
+
+1. **Objetivo primário**
+2. **Intenção (qual o papel dele no sistema)**
+3. **Critérios de qualidade**
+4. **Contexto funcional**
+5. **Responsabilidades claras**
+6. **Limites de atuação**
+7. **Formatos de saída padrão**
+8. **Protocolos de colaboração com outros agentes**
+
+---
+
+### 🔹 **3. Tipos de agentes**
+
+* Agente pesquisador
+* Agente escritor
+* Agente analista de dados
+* Agente planejador estratégico
+* Agente consultor
+* Agente codificador
+* Agente otimizador
+* Agente professor/mentor
+* Agente organizador (orquestrador)
+* Agente de tomada de decisão
+
+---
+
+### 🔹 **4. Multiagentes — como eles trabalham juntos**
+
+* Pipeline linear
+* Pipeline paralelo
+* Sistema hierárquico (chefe → especialistas)
+* Ciclo iterativo controlado por intenção
+* Delegação cruzada
+
+---
+
+### 🔹 **5. Como criar um agente com Engenharia de Intenção**
+
+Estrutura:
+
+1. **Nome do agente**
+2. **Missão**
+3. **Intenção**
+4. **Limites**
+5. **Processo interno de raciocínio**
+6. **Protocolos de validação**
+7. **Ações possíveis**
+8. **Comunicação com o usuário**
+9. **Comunicação com outros agentes**
+
+---
+
+### 🔹 **6. Projetos práticos usando agentes**
+
+#### **Projeto 1 — Sistema de 3 agentes para criar um curso completo**
+
+* Agente pesquisador
+* Agente estruturador
+* Agente escritor
+
+#### **Projeto 2 — Sistema de agentes para negócios**
+
+* Agente de análise de mercado
+* Agente de estratégia
+* Agente de execução
+* Agente de métricas
+
+#### **Projeto 3 — Pipeline multiagente para conteúdo diário**
+
+* Pesquisador
+* Roteirista
+* Editor
+* Optimizador de engajamento
+
+#### **Projeto 4 — Agente autônomo para melhoria contínua**
+
+* Loop de melhoria → agir → revisar → agir
+
+---
+
+### 🔹 **7. Boas práticas e segurança**
+
+* Controle de intenção
+* Verificação de coerência
+* Supervisão humana
+* Limitação de escopo
+* Critérios de parada
+
+---
+
+# 🎉 **O resultado final:**
+
+Seu curso não será só sobre “como pedir coisas para a IA”, mas sim:
+
+👉 **Como construir sistemas inteligentes completos**, profissionais, escaláveis e replicáveis.
+
+Isso transforma sua formação em algo muito mais valioso.
+
+---

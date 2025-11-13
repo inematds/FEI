@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nível 1: Fundamentos | FEI</title>
+  <meta name="description" content="Fundamentos da Engenharia de Intenção - Base obrigatória">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'nivel-1': '#3B82F6',
+            'nivel-2': '#9b59b6',
+            'nivel-3a': '#10B981',
+            'nivel-3s': '#F59E0B',
+            success: '#22C55E',
+            warning: '#F59E0B',
+            error: '#EF4444',
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+
+    /* Modal System */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
+    }
+
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: auto;
+      padding: 0;
+      width: 90%;
+      max-width: 1000px;
+      max-height: 90vh;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 20px 25px rgba(0,0,0,0.3);
+    }
+
+    .dark .modal-content {
+      background-color: #1f2937;
+    }
+
+    .modal-header {
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid #e5e7eb;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .dark .modal-header {
+      border-bottom-color: #374151;
+    }
+
+    .modal-body {
+      padding: 2rem;
+      overflow-y: auto;
+      max-height: calc(90vh - 80px);
+    }
+
+    .close-modal {
+      color: #9ca3af;
+      font-size: 2rem;
+      font-weight: 700;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .close-modal:hover {
+      color: #ef4444;
+    }
+  </style>
+</head>
+<body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-2 bg-clip-text text-transparent">
+            🎓 FEI - Engenharia de Intenção
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-1">Início</a>
+          <a href="../index.html#niveis" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-1">Níveis</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden text-neutral-700 dark:text-neutral-300">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-neutral-800 border-t border-neutral-200 dark:border-neutral-700">
+      <div class="px-4 py-2 space-y-1">
+        <a href="../index.html" class="block px-3 py-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-700">Início</a>
+        <a href="../index.html#niveis" class="block px-3 py-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-700">Níveis</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <nav class="flex text-sm" aria-label="Breadcrumb">
+        <a href="../index.html" class="text-nivel-1 hover:text-blue-700 dark:hover:text-blue-400">Início</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <span class="text-neutral-600 dark:text-neutral-400">Nível 1</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-nivel-1 to-blue-600 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Obrigatório
+        </span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          7 Módulos
+        </span>
+      </div>
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">
+        🔵 Nível 1: Fundamentos da Engenharia de Intenção
+      </h1>
+      <p class="text-xl text-white/90 mb-6">
+        Entenda a evolução dos prompts e domine os conceitos fundamentais da nova era da IA
+      </p>
+      <div class="grid md:grid-cols-3 gap-4 mt-8">
+        <div class="bg-white/10 backdrop-blur p-4 rounded-lg">
+          <div class="text-2xl font-bold">7</div>
+          <div class="text-sm text-blue-100">Módulos</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur p-4 rounded-lg">
+          <div class="text-2xl font-bold">Base</div>
+          <div class="text-sm text-blue-100">Para todos os níveis</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur p-4 rounded-lg">
+          <div class="text-2xl font-bold">Essencial</div>
+          <div class="text-sm text-blue-100">Conhecimento fundamental</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-12 bg-neutral-50 dark:bg-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Módulo 1 -->
+      <div class="chapter-card bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-8 mb-8 border-2 border-transparent hover:border-nivel-1 transition-all">
+        <div class="mb-6">
+          <span class="inline-block px-3 py-1 bg-nivel-1/10 text-nivel-1 rounded-full text-sm font-semibold mb-3">
+            Módulo 1
+          </span>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+            📘 Entendendo a Evolução
+          </h2>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            A jornada da Engenharia de Prompts até a Engenharia de Intenção
+          </p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap gap-3 mb-6">
+          <button onclick="openModal('modulo-1')" class="px-6 py-3 bg-nivel-1 text-white rounded-lg font-semibold hover:opacity-90 transition-all flex items-center gap-2">
+            <span>📖</span>
+            <span>Ver em Modal</span>
+          </button>
+          <a href="../modulos/modulo-1.html" class="px-6 py-3 bg-transparent border-2 border-nivel-1 text-nivel-1 dark:text-nivel-1 rounded-lg font-semibold hover:bg-nivel-1 hover:text-white transition-all flex items-center gap-2">
+            <span>📄</span>
+            <span>Abrir Página Completa</span>
+          </a>
+          <a href="../downloads/nivel-1-modulo-1.md" download class="px-6 py-3 bg-transparent border-2 border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 rounded-lg font-semibold hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-all flex items-center gap-2">
+            <span>📥</span>
+            <span>Download MD</span>
+          </a>
+        </div>
+
+        <div class="mb-4">
+          <h3 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-3 text-lg">
+            📚 Tópicos-chave do módulo:
+          </h3>
+
+          <ul class="topics-list space-y-0.5">
+            <!-- Tópico 1 -->
+            <li class="topic-item" data-topic="m1-1">
+              <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+                🔎 O que era Engenharia de Prompts (versão antiga)
+              </button>
+              <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-nivel-1">
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">O que é:</strong> A técnica antiga de usar truques, templates rígidos e palavras específicas para contornar as falhas de compreensão dos modelos antigos.
+                </p>
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Por que aprender:</strong> Entender o que não funciona mais ajuda a evitar práticas obsoletas e focar no que realmente importa.
+                </p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Conceitos chave:</strong> Templates rígidos, gatilhos de comportamento, "Finja ser...", limitações dos modelos antigos.
+                </p>
+              </div>
+            </li>
+
+            <!-- Tópico 2 -->
+            <li class="topic-item" data-topic="m1-2">
+              <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+                🧠 O que mudou nos modelos modernos
+              </button>
+              <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-nivel-1">
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">O que é:</strong> Modelos atuais entendem intenção, possuem autocorreção, ajustam ton e contexto, e detectam ambiguidade sem precisar de truques.
+                </p>
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Por que aprender:</strong> A mudança tecnológica exige uma mudança de mentalidade — de "hackear" para "comunicar claramente".
+                </p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Conceitos chave:</strong> Compreensão de intenção, autocorreção, linguagem natural, planejamento interno.
+                </p>
+              </div>
+            </li>
+
+            <!-- Tópico 3 -->
+            <li class="topic-item" data-topic="m1-3">
+              <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+                🌟 O nascimento da Engenharia de Intenção
+              </button>
+              <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-nivel-1">
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">O que é:</strong> Nova abordagem focada em definir objetivos claros, especificar intenções, dar contexto relevante e estabelecer critérios de qualidade.
+                </p>
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Por que aprender:</strong> É comunicação estratégica, não magia. A base para trabalhar profissionalmente com IA moderna.
+                </p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Conceitos chave:</strong> Objetivo real, intenção, contexto relevante, critérios de qualidade, co-criação com IA.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Módulo 2 -->
+      <div class="chapter-card bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-8 mb-8 border-2 border-transparent hover:border-nivel-1 transition-all">
+        <div class="mb-6">
+          <span class="inline-block px-3 py-1 bg-nivel-1/10 text-nivel-1 rounded-full text-sm font-semibold mb-3">
+            Módulo 2
+          </span>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+            📘 Conceitos Fundamentais da Nova Engenharia de Intenção
+          </h2>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            A estrutura mestre para comunicar com IA moderna
+          </p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap gap-3 mb-6">
+          <button onclick="openModal('modulo-2')" class="px-6 py-3 bg-nivel-1 text-white rounded-lg font-semibold hover:opacity-90 transition-all flex items-center gap-2">
+            <span>📖</span>
+            <span>Ver em Modal</span>
+          </button>
+          <a href="../modulos/modulo-2.html" class="px-6 py-3 bg-transparent border-2 border-nivel-1 text-nivel-1 dark:text-nivel-1 rounded-lg font-semibold hover:bg-nivel-1 hover:text-white transition-all flex items-center gap-2">
+            <span>📄</span>
+            <span>Abrir Página Completa</span>
+          </a>
+          <a href="../downloads/nivel-1-modulo-2.md" download class="px-6 py-3 bg-transparent border-2 border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 rounded-lg font-semibold hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-all flex items-center gap-2">
+            <span>📥</span>
+            <span>Download MD</span>
+          </a>
+        </div>
+
+        <div class="mb-4">
+          <h3 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-3 text-lg">
+            📚 Tópicos-chave do módulo:
+          </h3>
+
+          <ul class="topics-list space-y-0.5">
+            <!-- Tópico 1 -->
+            <li class="topic-item" data-topic="m2-1">
+              <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+                🧩 Estrutura Mestre: Os 7 Pilares
+              </button>
+              <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-nivel-1">
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">O que é:</strong> Framework completo com 7 componentes: Objetivo, Intenção, Critérios de Qualidade, Contexto, Estratégia de Raciocínio, Delegação Inteligente e Formato de Saída.
+                </p>
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Por que aprender:</strong> Esta estrutura é a base profissional para qualquer interação produtiva com IA.
+                </p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Conceitos chave:</strong> Objetivo, intenção, critérios, contexto essencial, raciocínio estratégico, delegação, formato de saída.
+                </p>
+              </div>
+            </li>
+
+            <!-- Tópico 2 -->
+            <li class="topic-item" data-topic="m2-2">
+              <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+                🎯 Objetivo vs Intenção
+              </button>
+              <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-nivel-1">
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">O que é:</strong> Objetivo é "o que você quer"; Intenção é "para que serve, para quem é, qual o impacto esperado".
+                </p>
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Por que aprender:</strong> A distinção entre os dois melhora drasticamente a qualidade das respostas da IA.
+                </p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Conceitos chave:</strong> Objetivo direto, propósito maior, público-alvo, impacto esperado.
+                </p>
+              </div>
+            </li>
+
+            <!-- Tópico 3 -->
+            <li class="topic-item" data-topic="m2-3">
+              <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+                ✅ Critérios de Qualidade
+              </button>
+              <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-nivel-1">
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">O que é:</strong> Parâmetros claros para julgar se a resposta da IA está adequada: clareza, profundidade, criatividade, praticidade, etc.
+                </p>
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Por que aprender:</strong> Sem critérios explícitos, a IA não sabe o que você considera "bom" ou "ruim".
+                </p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Conceitos chave:</strong> Clareza, profundidade, criatividade, precisão técnica, praticidade.
+                </p>
+              </div>
+            </li>
+
+            <!-- Tópico 4 -->
+            <li class="topic-item" data-topic="m2-4">
+              <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+                🔄 Delegação Inteligente
+              </button>
+              <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-nivel-1">
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">O que é:</strong> Instruir a IA a pedir mais informações quando necessário, ao invés de assumir ou inventar dados.
+                </p>
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Por que aprender:</strong> Transforma a IA de "executora cega" para "parceira colaborativa" que questiona e esclarece.
+                </p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Conceitos chave:</strong> Perguntas da IA, esclarecimento proativo, colaboração ativa.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Módulo 3 -->
+      <div class="chapter-card bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-8 mb-8 border-2 border-transparent hover:border-nivel-1 transition-all">
+        <div class="mb-6">
+          <span class="inline-block px-3 py-1 bg-nivel-1/10 text-nivel-1 rounded-full text-sm font-semibold mb-3">
+            Módulo 3
+          </span>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+            📘 Exemplos Concretos
+          </h2>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            Comparação lado a lado: método antigo vs. método moderno
+          </p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap gap-3 mb-6">
+          <button onclick="openModal('modulo-3')" class="px-6 py-3 bg-nivel-1 text-white rounded-lg font-semibold hover:opacity-90 transition-all flex items-center gap-2">
+            <span>📖</span>
+            <span>Ver em Modal</span>
+          </button>
+          <a href="../modulos/modulo-3.html" class="px-6 py-3 bg-transparent border-2 border-nivel-1 text-nivel-1 dark:text-nivel-1 rounded-lg font-semibold hover:bg-nivel-1 hover:text-white transition-all flex items-center gap-2">
+            <span>📄</span>
+            <span>Abrir Página Completa</span>
+          </a>
+          <a href="../downloads/nivel-1-modulo-3.md" download class="px-6 py-3 bg-transparent border-2 border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 rounded-lg font-semibold hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-all flex items-center gap-2">
+            <span>📥</span>
+            <span>Download MD</span>
+          </a>
+        </div>
+
+        <div class="mb-4">
+          <h3 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-3 text-lg">
+            📚 Tópicos-chave do módulo:
+          </h3>
+
+          <ul class="topics-list space-y-0.5">
+            <!-- Tópico 1 -->
+            <li class="topic-item" data-topic="m3-1">
+              <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+                🔥 Exemplo: Criar um plano de marketing
+              </button>
+              <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-nivel-1">
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">O que é:</strong> Comparação entre prompt antigo rígido ("Finja ser especialista... siga template") vs. intenção moderna (objetivo + público + critérios + contexto).
+                </p>
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Por que aprender:</strong> Ver a diferença prática ajuda a internalizar o novo método.
+                </p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Conceitos chave:</strong> Rigidez vs. flexibilidade, artificial vs. natural, templates vs. intenção.
+                </p>
+              </div>
+            </li>
+
+            <!-- Tópico 2 -->
+            <li class="topic-item" data-topic="m3-2">
+              <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+                ✉️ Exemplo: Escrever e-mail profissional
+              </button>
+              <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-nivel-1">
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">O que é:</strong> Demonstração de como especificar intenção, tom e critérios torna a comunicação muito mais eficaz que simplesmente "responda como especialista".
+                </p>
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Por que aprender:</strong> Exemplo prático aplicável ao dia a dia profissional.
+                </p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Conceitos chave:</strong> Tom cordial, objetividade, contexto profissional, clareza comunicativa.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Módulo 4 -->
+      <div class="chapter-card bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-8 mb-8 border-2 border-transparent hover:border-nivel-1 transition-all">
+        <div class="mb-6">
+          <span class="inline-block px-3 py-1 bg-nivel-1/10 text-nivel-1 rounded-full text-sm font-semibold mb-3">
+            Módulo 4
+          </span>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+            📘 Exercícios Práticos
+          </h2>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            Treino fundamental para internalizar a nova abordagem
+          </p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap gap-3 mb-6">
+          <button onclick="openModal('modulo-4')" class="px-6 py-3 bg-nivel-1 text-white rounded-lg font-semibold hover:opacity-90 transition-all flex items-center gap-2">
+            <span>📖</span>
+            <span>Ver em Modal</span>
+          </button>
+          <a href="../modulos/modulo-4.html" class="px-6 py-3 bg-transparent border-2 border-nivel-1 text-nivel-1 dark:text-nivel-1 rounded-lg font-semibold hover:bg-nivel-1 hover:text-white transition-all flex items-center gap-2">
+            <span>📄</span>
+            <span>Abrir Página Completa</span>
+          </a>
+          <a href="../downloads/nivel-1-modulo-4.md" download class="px-6 py-3 bg-transparent border-2 border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 rounded-lg font-semibold hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-all flex items-center gap-2">
+            <span>📥</span>
+            <span>Download MD</span>
+          </a>
+        </div>
+
+        <div class="mb-4">
+          <h3 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-3 text-lg">
+            📚 Tópicos-chave do módulo:
+          </h3>
+
+          <ul class="topics-list space-y-0.5">
+            <!-- Tópico 1 -->
+            <li class="topic-item" data-topic="m4-1">
+              <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+                🧪 Exercício 1: Converter prompts antigos
+              </button>
+              <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-nivel-1">
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">O que é:</strong> Prática de pegar prompts ruins ("Finja que é especialista...") e convertê-los usando a estrutura moderna.
+                </p>
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Por que aprender:</strong> A conversão ativa treina o cérebro para pensar na nova lógica.
+                </p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Conceitos chave:</strong> Conversão prática, estrutura vs. improvisação, clareza de intenção.
+                </p>
+              </div>
+            </li>
+
+            <!-- Tópico 2 -->
+            <li class="topic-item" data-topic="m4-2">
+              <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+                🤔 Exercício 2: IA deve fazer perguntas
+              </button>
+              <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-nivel-1">
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">O que é:</strong> Treinar a IA para pedir informações antes de responder ("Qual nicho? Qual ticket? Qual público?").
+                </p>
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Por que aprender:</strong> Demonstra delegação inteligente funcionando na prática.
+                </p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Conceitos chave:</strong> Perguntas da IA, clarificação proativa, colaboração ativa.
+                </p>
+              </div>
+            </li>
+
+            <!-- Tópico 3 -->
+            <li class="topic-item" data-topic="m4-3">
+              <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+                🎨 Exercício 3: Treinar critérios de qualidade
+              </button>
+              <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-nivel-1">
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">O que é:</strong> Fazer a mesma tarefa 3 vezes com critérios diferentes (clareza / criatividade / profundidade técnica) e observar como a resposta muda.
+                </p>
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Por que aprender:</strong> Compreender o poder dos critérios de qualidade na prática.
+                </p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Conceitos chave:</strong> Critérios variados, impacto nos resultados, controle fino de output.
+                </p>
+              </div>
+            </li>
+
+            <!-- Tópico 4 -->
+            <li class="topic-item" data-topic="m4-4">
+              <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+                🔄 Exercício 4: Ajuste iterativo
+              </button>
+              <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-nivel-1">
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">O que é:</strong> Praticar refinamento contínuo: "Melhore a versão anterior aumentando profundidade e reduzindo redundância".
+                </p>
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Por que aprender:</strong> Ensina que a primeira versão não precisa ser perfeita — co-criação é iterativa.
+                </p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Conceitos chave:</strong> Iteração, refinamento progressivo, melhoria contínua.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Módulo 5 -->
+      <div class="chapter-card bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-8 mb-8 border-2 border-transparent hover:border-nivel-1 transition-all">
+        <div class="mb-6">
+          <span class="inline-block px-3 py-1 bg-nivel-1/10 text-nivel-1 rounded-full text-sm font-semibold mb-3">
+            Módulo 5
+          </span>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+            📘 Casos de Uso Reais
+          </h2>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            Aplicações práticas em diferentes áreas profissionais
+          </p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap gap-3 mb-6">
+          <button onclick="openModal('modulo-5')" class="px-6 py-3 bg-nivel-1 text-white rounded-lg font-semibold hover:opacity-90 transition-all flex items-center gap-2">
+            <span>📖</span>
+            <span>Ver em Modal</span>
+          </button>
+          <a href="../modulos/modulo-5.html" class="px-6 py-3 bg-transparent border-2 border-nivel-1 text-nivel-1 dark:text-nivel-1 rounded-lg font-semibold hover:bg-nivel-1 hover:text-white transition-all flex items-center gap-2">
+            <span>📄</span>
+            <span>Abrir Página Completa</span>
+          </a>
+          <a href="../downloads/nivel-1-modulo-5.md" download class="px-6 py-3 bg-transparent border-2 border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 rounded-lg font-semibold hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-all flex items-center gap-2">
+            <span>📥</span>
+            <span>Download MD</span>
+          </a>
+        </div>
+
+        <div class="mb-4">
+          <h3 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-3 text-lg">
+            📚 Tópicos-chave do módulo:
+          </h3>
+
+          <ul class="topics-list space-y-0.5">
+            <!-- Tópico 1 -->
+            <li class="topic-item" data-topic="m5-1">
+              <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+                📚 Criar cursos e conteúdo educacional
+              </button>
+              <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-nivel-1">
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">O que é:</strong> Usar Engenharia de Intenção para estruturar e desenvolver cursos, materiais didáticos e programas educacionais completos.
+                </p>
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Por que aprender:</strong> Área de alta demanda e valor — intenção clara = conteúdo de qualidade.
+                </p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Conceitos chave:</strong> Estruturação pedagógica, público-alvo, objetivos de aprendizagem, progressão didática.
+                </p>
+              </div>
+            </li>
+
+            <!-- Tópico 2 -->
+            <li class="topic-item" data-topic="m5-2">
+              <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+                💼 Criar estratégias de negócios
+              </button>
+              <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-nivel-1">
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">O que é:</strong> Aplicar intenção para análise de mercado, planejamento estratégico, posicionamento e modelos de negócio.
+                </p>
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Por que aprender:</strong> IA como parceira estratégica para decisões empresariais complexas.
+                </p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Conceitos chave:</strong> Análise estratégica, contexto de mercado, critérios de viabilidade, cenários alternativos.
+                </p>
+              </div>
+            </li>
+
+            <!-- Tópico 3 -->
+            <li class="topic-item" data-topic="m5-3">
+              <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+                🔍 Pesquisa e análise avançada
+              </button>
+              <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-nivel-1">
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">O que é:</strong> Conduzir pesquisas profundas, sínteses complexas e análises críticas com precisão e rigor metodológico.
+                </p>
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Por que aprender:</strong> Pesquisa bem estruturada economiza horas de trabalho e produz insights de qualidade superior.
+                </p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Conceitos chave:</strong> Profundidade analítica, fontes confiáveis, síntese crítica, raciocínio estruturado.
+                </p>
+              </div>
+            </li>
+
+            <!-- Tópico 4 -->
+            <li class="topic-item" data-topic="m5-4">
+              <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+                💻 Programação assistida
+              </button>
+              <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-nivel-1">
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">O que é:</strong> Usar intenção para especificar requisitos de código, arquitetura, testes e documentação técnica.
+                </p>
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Por que aprender:</strong> Desenvolvedores com boa comunicação de intenção aumentam produtividade drasticamente.
+                </p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Conceitos chave:</strong> Requisitos funcionais, padrões de código, casos de teste, contexto técnico.
+                </p>
+              </div>
+            </li>
+
+            <!-- Tópico 5 -->
+            <li class="topic-item" data-topic="m5-5">
+              <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+                ✍️ Criação de conteúdo
+              </button>
+              <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-nivel-1">
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">O que é:</strong> Produzir artigos, roteiros, posts, e-books e materiais com tom, estilo e profundidade controlados por intenção.
+                </p>
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Por que aprender:</strong> Criadores de conteúdo profissionais precisam dominar essa habilidade.
+                </p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Conceitos chave:</strong> Tom de voz, público-alvo, formato de saída, profundidade editorial.
+                </p>
+              </div>
+            </li>
+
+            <!-- Tópico 6 -->
+            <li class="topic-item" data-topic="m5-6">
+              <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+                🧩 Resolução de problemas complexos
+              </button>
+              <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-nivel-1">
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">O que é:</strong> Usar IA para diagnóstico, análise de causa-raiz, modelagem de cenários e tomada de decisão estratégica.
+                </p>
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Por que aprender:</strong> Problemas complexos exigem intenção bem estruturada para serem resolvidos efetivamente.
+                </p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Conceitos chave:</strong> Análise sistêmica, pensamento crítico, modelagem de cenários, decisões baseadas em dados.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Módulo 6 -->
+      <div class="chapter-card bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-8 mb-8 border-2 border-transparent hover:border-nivel-1 transition-all">
+        <div class="mb-6">
+          <span class="inline-block px-3 py-1 bg-nivel-1/10 text-nivel-1 rounded-full text-sm font-semibold mb-3">
+            Módulo 6
+          </span>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+            📘 A Síntese da Transformação
+          </h2>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            A grande mudança de paradigma resumida
+          </p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap gap-3 mb-6">
+          <button onclick="openModal('modulo-6')" class="px-6 py-3 bg-nivel-1 text-white rounded-lg font-semibold hover:opacity-90 transition-all flex items-center gap-2">
+            <span>📖</span>
+            <span>Ver em Modal</span>
+          </button>
+          <a href="../modulos/modulo-6.html" class="px-6 py-3 bg-transparent border-2 border-nivel-1 text-nivel-1 dark:text-nivel-1 rounded-lg font-semibold hover:bg-nivel-1 hover:text-white transition-all flex items-center gap-2">
+            <span>📄</span>
+            <span>Abrir Página Completa</span>
+          </a>
+          <a href="../downloads/nivel-1-modulo-6.md" download class="px-6 py-3 bg-transparent border-2 border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 rounded-lg font-semibold hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-all flex items-center gap-2">
+            <span>📥</span>
+            <span>Download MD</span>
+          </a>
+        </div>
+
+        <div class="mb-4">
+          <h3 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-3 text-lg">
+            📚 Tópicos-chave do módulo:
+          </h3>
+
+          <ul class="topics-list space-y-0.5">
+            <!-- Tópico 1 -->
+            <li class="topic-item" data-topic="m6-1">
+              <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+                🔥 A evolução, não a morte
+              </button>
+              <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-nivel-1">
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">O que é:</strong> Entender que a Engenharia de Prompts não morreu — ela evoluiu para Engenharia de Intenção.
+                </p>
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Por que aprender:</strong> Quem entende a antiga tem vantagem gigante na nova era.
+                </p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Conceitos chave:</strong> Evolução vs. ruptura, continuidade do conhecimento, adaptação progressiva.
+                </p>
+              </div>
+            </li>
+
+            <!-- Tópico 2 -->
+            <li class="topic-item" data-topic="m6-2">
+              <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+                🎯 Comunicar intenção com precisão
+              </button>
+              <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-nivel-1">
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">O que é:</strong> O jogo deixou de ser "escrever truques" e virou "comunicar intenção com precisão".
+                </p>
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Por que aprender:</strong> Esta é a habilidade-chave do profissional moderno com IA.
+                </p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Conceitos chave:</strong> Precisão comunicativa, clareza estratégica, pensamento estruturado.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Módulo 7 -->
+      <div class="chapter-card bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-8 mb-8 border-2 border-transparent hover:border-nivel-1 transition-all">
+        <div class="mb-6">
+          <span class="inline-block px-3 py-1 bg-nivel-1/10 text-nivel-1 rounded-full text-sm font-semibold mb-3">
+            Módulo 7
+          </span>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+            📘 Programa da Formação Completa
+          </h2>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            O roadmap completo da jornada de aprendizagem
+          </p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap gap-3 mb-6">
+          <button onclick="openModal('modulo-7')" class="px-6 py-3 bg-nivel-1 text-white rounded-lg font-semibold hover:opacity-90 transition-all flex items-center gap-2">
+            <span>📖</span>
+            <span>Ver em Modal</span>
+          </button>
+          <a href="../modulos/modulo-7.html" class="px-6 py-3 bg-transparent border-2 border-nivel-1 text-nivel-1 dark:text-nivel-1 rounded-lg font-semibold hover:bg-nivel-1 hover:text-white transition-all flex items-center gap-2">
+            <span>📄</span>
+            <span>Abrir Página Completa</span>
+          </a>
+          <a href="../downloads/nivel-1-modulo-7.md" download class="px-6 py-3 bg-transparent border-2 border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 rounded-lg font-semibold hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-all flex items-center gap-2">
+            <span>📥</span>
+            <span>Download MD</span>
+          </a>
+        </div>
+
+        <div class="mb-4">
+          <h3 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-3 text-lg">
+            📚 Tópicos-chave do módulo:
+          </h3>
+
+          <ul class="topics-list space-y-0.5">
+            <!-- Tópico 1 -->
+            <li class="topic-item" data-topic="m7-1">
+              <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+                🗺️ Os 9 pilares da formação
+              </button>
+              <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-nivel-1">
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">O que é:</strong> Estrutura pedagógica completa: morte dos prompts antigos, funcionamento da IA, intenção, exemplos, exercícios, projetos, avaliação e certificação.
+                </p>
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Por que aprender:</strong> Visão completa do caminho de aprendizagem te prepara psicologicamente para a jornada.
+                </p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Conceitos chave:</strong> Progressão pedagógica, teoria+prática, avaliação, certificação.
+                </p>
+              </div>
+            </li>
+
+            <!-- Tópico 2 -->
+            <li class="topic-item" data-topic="m7-2">
+              <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+                📈 Próximos passos: Nível 2
+              </button>
+              <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-nivel-1">
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">O que é:</strong> Visão do Nível 2 (Programa Completo) com 15 casos reais, 12 exercícios e 4 projetos práticos.
+                </p>
+                <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Por que aprender:</strong> Saber o que vem a seguir motiva a continuar a formação.
+                </p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  <strong class="text-nivel-1">Conceitos chave:</strong> Casos reais, exercícios progressivos, projetos hands-on, domínio completo.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="bg-gradient-to-r from-nivel-1 to-blue-600 rounded-2xl p-8 text-center text-white">
+        <h3 class="text-2xl font-bold mb-4">Próximo Passo: Nível 2</h3>
+        <p class="text-lg mb-6">
+          Agora que você domina os fundamentos, aprofunde com o Programa Completo
+        </p>
+        <a href="nivel-2.html" class="inline-block px-8 py-4 bg-white text-nivel-1 rounded-lg font-bold hover:bg-neutral-100 transition-all">
+          Ir para Nível 2
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold text-white mb-4">FEI - Engenharia de Intenção</h3>
+          <p class="text-sm">Formação completa para dominar a nova era da IA</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Níveis</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="nivel-1.html" class="hover:text-white">Nível 1: Fundamentos</a></li>
+            <li><a href="nivel-2.html" class="hover:text-white">Nível 2: Programa Completo</a></li>
+            <li><a href="nivel-3a.html" class="hover:text-white">Nível 3A: Agentes</a></li>
+            <li><a href="nivel-3s.html" class="hover:text-white">Nível 3S: Sistemas 2026</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../index.html" class="hover:text-white">Início</a></li>
+            <li><a href="../index.html#niveis" class="hover:text-white">Todos os Níveis</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-neutral-800 mt-8 pt-8 text-center text-sm">
+        <p>&copy; 2025 FEI - Formação em Engenharia de Intenção.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modals -->
+  <!-- Modal Módulo 1 -->
+  <div id="modulo-1" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">
+          📘 Módulo 1: Entendendo a Evolução
+        </h2>
+        <span class="close-modal">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+          A Engenharia de Prompts surgiu porque os modelos antigos tinham falhas de compreensão. Precisávamos de truques, templates rígidos, palavras específicas e gatilhos de comportamento.
+        </p>
+        <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">O que mudou</h3>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+          Modelos atuais (GPT-5, Claude 3.7+) entendem intenção, possuem autocorreção, ajustam tom e contexto, detectam ambiguidade, e interpretam linguagem humana natural sem precisar de truques.
+        </p>
+        <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Engenharia de Intenção</h3>
+        <p class="text-neutral-700 dark:text-neutral-300">
+          A nova abordagem significa: definir o objetivo real, especificar o porquê, dar contexto relevante, estabelecer critérios de qualidade, delegar para a IA o plano de ação, e revisar e refinar junto com a IA (co-criação).
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Módulo 2 -->
+  <div id="modulo-2" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">
+          📘 Módulo 2: Conceitos Fundamentais
+        </h2>
+        <span class="close-modal">&times;</span>
+      </div>
+      <div class="modal-body">
+        <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Estrutura Mestre (7 pilares)</h3>
+        <ol class="list-decimal list-inside space-y-2 text-neutral-700 dark:text-neutral-300 mb-4">
+          <li><strong>Objetivo:</strong> O que você realmente quer</li>
+          <li><strong>Intenção:</strong> Para que serve, pra quem é, qual o impacto</li>
+          <li><strong>Critérios de Qualidade:</strong> Como julgar se a resposta está boa</li>
+          <li><strong>Contexto Essencial:</strong> O que a IA precisa saber (e apenas isso)</li>
+          <li><strong>Estratégia de Raciocínio:</strong> Como você quer que ela pense</li>
+          <li><strong>Delegação Inteligente:</strong> IA deve pedir mais informações quando necessário</li>
+          <li><strong>Formato de Saída:</strong> Tabela, passos, lista, artigo, código, etc.</li>
+        </ol>
+        <p class="text-neutral-700 dark:text-neutral-300">
+          Esta é a estrutura profissional para qualquer interação produtiva com IA moderna.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Módulo 3 -->
+  <div id="modulo-3" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">
+          📘 Módulo 3: Exemplos Concretos
+        </h2>
+        <span class="close-modal">&times;</span>
+      </div>
+      <div class="modal-body">
+        <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Exemplo: Plano de Marketing</h3>
+        <div class="bg-red-50 dark:bg-red-900/20 p-4 rounded-lg mb-4">
+          <h4 class="font-bold text-red-700 dark:text-red-400 mb-2">❌ Método Antigo:</h4>
+          <p class="text-sm text-neutral-700 dark:text-neutral-300">"Finja ser um especialista em marketing. Siga exatamente este template: 1. Público-alvo 2. Estratégia 3. Métricas..."</p>
+          <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-2"><strong>Problemas:</strong> rígido, artificial, não adapta à intenção, exige esforço do usuário.</p>
+        </div>
+        <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
+          <h4 class="font-bold text-green-700 dark:text-green-400 mb-2">✅ Método Moderno:</h4>
+          <p class="text-sm text-neutral-700 dark:text-neutral-300">
+            <strong>Objetivo:</strong> Criar um plano de marketing para um produto digital iniciante.<br>
+            <strong>Intenção:</strong> O plano será usado por pequenos empresários sem experiência.<br>
+            <strong>Critérios:</strong> clareza, simplicidade, foco em ações reais.<br>
+            <strong>Contexto:</strong> produto de ticket baixo, público brasileiro, foco orgânico.<br>
+            <strong>Raciocínio:</strong> use raciocínio crítico e ofereça 3 alternativas comparativas.<br>
+            <strong>Formato:</strong> tabela + resumo final.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Módulo 4 -->
+  <div id="modulo-4" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">
+          📘 Módulo 4: Exercícios Práticos
+        </h2>
+        <span class="close-modal">&times;</span>
+      </div>
+      <div class="modal-body">
+        <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">4 Exercícios Essenciais</h3>
+        <div class="space-y-4">
+          <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+            <h4 class="font-bold text-nivel-1 mb-2">🧪 Exercício 1: Converter prompts antigos</h4>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300">Pegue prompts ruins e converta usando a estrutura moderna (Objetivo + Intenção + Critérios + Contexto).</p>
+          </div>
+          <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+            <h4 class="font-bold text-nivel-1 mb-2">🤔 Exercício 2: IA deve fazer perguntas</h4>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300">Ensine a IA a pedir mais informações antes de responder (Qual nicho? Ticket? Público?).</p>
+          </div>
+          <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+            <h4 class="font-bold text-nivel-1 mb-2">🎨 Exercício 3: Treinar critérios</h4>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300">Faça a mesma tarefa 3x com critérios diferentes (clareza / criatividade / profundidade) e observe as diferenças.</p>
+          </div>
+          <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+            <h4 class="font-bold text-nivel-1 mb-2">🔄 Exercício 4: Ajuste iterativo</h4>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300">Pratique refinamento: "Melhore a versão anterior aumentando profundidade e reduzindo redundância".</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Módulo 5 -->
+  <div id="modulo-5" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">
+          📘 Módulo 5: Casos de Uso Reais
+        </h2>
+        <span class="close-modal">&times;</span>
+      </div>
+      <div class="modal-body">
+        <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">6 Áreas de Aplicação</h3>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="border-l-4 border-nivel-1 pl-4">
+            <h4 class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">📚 Criar cursos</h4>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300">Estruturar e desenvolver conteúdo educacional completo.</p>
+          </div>
+          <div class="border-l-4 border-nivel-1 pl-4">
+            <h4 class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">💼 Estratégias de negócios</h4>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300">Análise de mercado, planejamento e decisões empresariais.</p>
+          </div>
+          <div class="border-l-4 border-nivel-1 pl-4">
+            <h4 class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">🔍 Pesquisa avançada</h4>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300">Pesquisas profundas, sínteses e análises críticas.</p>
+          </div>
+          <div class="border-l-4 border-nivel-1 pl-4">
+            <h4 class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">💻 Programação assistida</h4>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300">Especificar requisitos, arquitetura e documentação técnica.</p>
+          </div>
+          <div class="border-l-4 border-nivel-1 pl-4">
+            <h4 class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">✍️ Criação de conteúdo</h4>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300">Artigos, roteiros, posts com tom e estilo controlados.</p>
+          </div>
+          <div class="border-l-4 border-nivel-1 pl-4">
+            <h4 class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">🧩 Problemas complexos</h4>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300">Diagnóstico, análise e tomada de decisão estratégica.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Módulo 6 -->
+  <div id="modulo-6" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">
+          📘 Módulo 6: A Síntese da Transformação
+        </h2>
+        <span class="close-modal">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="bg-gradient-to-r from-nivel-1 to-blue-600 text-white p-6 rounded-lg mb-6">
+          <h3 class="text-2xl font-bold mb-4">🔥 A Grande Transformação</h3>
+          <p class="text-lg mb-4">
+            A Engenharia de Prompts não morreu — ela evoluiu para Engenharia de Intenção.
+          </p>
+          <p class="text-white/90">
+            Quem entende a antiga tem vantagem gigante na nova era.
+          </p>
+        </div>
+        <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">A Mudança de Paradigma</h3>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+          O jogo deixou de ser <strong>"escrever truques"</strong> e virou <strong>"comunicar intenção com precisão"</strong>.
+        </p>
+        <p class="text-neutral-700 dark:text-neutral-300">
+          Esta é a habilidade-chave do profissional moderno com IA: clareza estratégica, precisão comunicativa e pensamento estruturado.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Módulo 7 -->
+  <div id="modulo-7" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">
+          📘 Módulo 7: Programa da Formação Completa
+        </h2>
+        <span class="close-modal">&times;</span>
+      </div>
+      <div class="modal-body">
+        <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Estrutura Completa (9 Pilares)</h3>
+        <ol class="list-decimal list-inside space-y-3 text-neutral-700 dark:text-neutral-300">
+          <li><strong>Introdução</strong> — A morte dos prompts antigos</li>
+          <li><strong>Funcionamento da IA moderna</strong> — Como modelos pensam</li>
+          <li><strong>Por que intenção manda</strong> — O novo paradigma</li>
+          <li><strong>Estrutura moderna de intenção</strong> — Os 7 pilares</li>
+          <li><strong>Exemplos reais</strong> — 15 casos práticos</li>
+          <li><strong>Exercícios progressivos</strong> — Iniciante → avançado</li>
+          <li><strong>Projetos práticos</strong> — 4 grandes projetos hands-on</li>
+          <li><strong>Avaliação final</strong> — Criar um sistema de intenção completo</li>
+          <li><strong>Certificação</strong> — Opcional para seu programa</li>
+        </ol>
+        <div class="mt-6 p-4 bg-nivel-1/10 rounded-lg">
+          <p class="text-center text-neutral-700 dark:text-neutral-300">
+            <strong>Próximo passo:</strong> Continue sua jornada no Nível 2 com o Programa Completo
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>

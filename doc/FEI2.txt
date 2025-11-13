@@ -1,0 +1,286 @@
+
+
+# 🎓 **PROGRAMA COMPLETO DA FORMAÇÃO**
+
+### **A NOVA ERA — DA ENGENHARIA DE PROMPTS À ENGENHARIA DE INTENÇÃO**
+
+---
+
+# 📍 **Visão Geral da Formação**
+
+A formação prepara o aluno para dominar a nova lógica dos modelos modernos de IA, ensinando a construir interações estratégicas, precisas e produtivas com sistemas inteligentes.
+
+Ao final, o participante será capaz de:
+
+✔ pensar como designer de intenções
+✔ conduzir IA em tarefas simples e complexas
+✔ co-criar com IA com precisão, clareza e profundidade
+✔ abandonar truques antigos e usar comunicação estratégica
+✔ estruturar objetivos, critérios, contexto, raciocínio e formato
+✔ aplicar Engenharia de Intenção em áreas reais: conteúdo, negócios, pesquisa, código, educação, operações e tomada de decisão
+
+---
+
+# 🧭 **Estrutura do Programa**
+
+A formação está organizada em:
+
+* **7 Módulos**
+* **15 Casos Reais**
+* **12 Exercícios Progressivos**
+* **4 Projetos Práticos**
+* **Avaliação Final**
+* **Certificação**
+
+---
+
+# ━━━━━━━━━━━━━━━━━━━
+
+# 📘 **MÓDULO 1 — A Morte da Engenharia de Prompts Antiga**
+
+### **Objetivos de aprendizagem**
+
+* Entender *por que* a engenharia de prompts tradicional ficou obsoleta.
+* Reconhecer práticas antigas que não funcionam mais.
+* Compreender a evolução dos modelos de linguagem.
+
+### **Conteúdo**
+
+1. A história dos prompts: de GPT-3 a GPT-5
+2. O problema dos modelos antigos:
+
+   * baixa interpretação
+   * dependência de truques
+   * necessidade de templates rígidos
+3. Exemplos reais de prompts ultrapassados
+4. Por que as “gambiarras” deixaram de funcionar
+5. Como modelos modernos pensam e planejam
+
+### **Entregáveis deste módulo**
+
+* Lista de “sintomas” de prompts antigos
+* Glossário comparativo: antigo x moderno
+
+---
+
+# ━━━━━━━━━━━━━━━━━━━
+
+# 📘 **MÓDULO 2 — Como Funciona a IA Moderna**
+
+### **Objetivos de aprendizagem**
+
+* Entender como modelos avançados interpretam intenção.
+* Aprender como funcionam planejamento interno, raciocínio e autocorreção.
+* Identificar as vantagens de usar linguagem natural.
+
+### **Conteúdo**
+
+1. Raciocínio estruturado interno (Chain of Thought implícito)
+2. Interpretação contextual
+3. Capacidade de “adivinhar” objetivos mal formulados
+4. Por que modelos modernos preferem clareza a comandos
+5. O novo papel do usuário: comunicador estratégico
+
+### **Entregáveis**
+
+* Mini-mapa mental sobre o funcionamento de modelos modernos
+
+---
+
+# ━━━━━━━━━━━━━━━━━━━
+
+# 📘 **MÓDULO 3 — Fundamentos da Engenharia de Intenção**
+
+### **Objetivos de aprendizagem**
+
+* Aprender a estrutura moderna de intenção.
+* Saber como comunicar objetivos de forma clara e funcional.
+* Dominar as 7 etapas da Engenharia de Intenção.
+
+### **Conteúdo**
+
+A estrutura completa:
+
+1. **Objetivo** — o que você quer
+2. **Intenção** — para quem, para quê, impacto
+3. **Critérios de qualidade**
+4. **Contexto relevante (e apenas o necessário)**
+5. **Estratégia de raciocínio**
+6. **Delegação inteligente (IA deve pedir dados)**
+7. **Formato de saída**
+
+### **Entregáveis**
+
+* Blueprint oficial da Engenharia de Intenção
+* 10 prompts-modelo baseados na estrutura
+
+---
+
+# ━━━━━━━━━━━━━━━━━━━
+
+# 📘 **MÓDULO 4 — Domínio Prático com Exemplos Reais**
+
+### **Objetivos de aprendizagem**
+
+* Ver a diferença clara entre métodos antigos e modernos.
+* Treinar a construção de intenções completas.
+
+### **Conteúdo**
+
+* 15 casos reais, incluindo:
+
+  1. Plano de marketing
+  2. E-mail profissional
+  3. Roteiro de vídeo
+  4. Análise crítica de concorrência
+  5. Criação de curso
+  6. Projeto de software
+  7. Pesquisa profunda
+  8. Reescrita de texto
+  9. Melhoria iterativa
+  10. Ações para negócios
+  11. Estratégias de conteúdo
+  12. Sistematização de processos
+  13. Entrevistas e diagnósticos
+  14. Criação de frameworks
+  15. Planejamento estratégico
+
+### **Entregáveis**
+
+* 15 modelos prontos para copiar e adaptar
+
+---
+
+# ━━━━━━━━━━━━━━━━━━━
+
+# 📘 **MÓDULO 5 — Exercícios Progressivos (a parte mais importante)**
+
+### **Objetivos**
+
+* Transformar o aluno de executor → *designer de intenção*.
+* Ensinar a IA a pedir dados antes de responder.
+* Desenvolver a habilidade de gerar instruções de alta precisão.
+
+### **Exercícios**
+
+1. Converter 5 prompts antigos em intenção
+2. Construir uma intenção completa do zero
+3. Ensinar a IA a perguntar antes de responder
+4. Critérios de qualidade: comparar respostas
+5. Raciocínio crítico vs. criativo vs. técnico
+6. Melhoria iterativa com revisão guiada
+7. Refinar objetivos ambíguos
+8. Criar intenções para tarefas complexas
+9. Criar intenções para tarefas pequenas
+10. Criar intenção para contexto emocional
+11. Criar intenção para análise profunda
+12. Criar intenção para decisões estratégicas
+
+Cada exercício evolui lentamente o aluno.
+
+---
+
+# ━━━━━━━━━━━━━━━━━━━
+
+# 📘 **MÓDULO 6 — Projetos Práticos (Hands-On)**
+
+Quatro grandes projetos:
+
+### **Projeto 1 — Criar um Sistema Pessoal de Intenção (SPI)**
+
+O aluno monta sua própria estrutura de intenção para:
+
+* trabalho
+* estudo
+* negócios
+* criação de conteúdo
+
+### **Projeto 2 — Criar uma Ferramenta Baseada em IA**
+
+Ex.:
+
+* planejador
+* analista
+* resumidor
+* gerador de estratégias
+* assistente educacional
+
+### **Projeto 3 — Construir um Processo Completo com IA**
+
+Do início ao fim, usando intenção para:
+
+* diagnóstico
+* plano
+* execução
+* revisão
+
+### **Projeto 4 — Criar Conteúdo Completo com Intenção**
+
+Pode ser:
+
+* e-book
+* curso
+* série de vídeos
+* artigo longo
+
+---
+
+# ━━━━━━━━━━━━━━━━━━━
+
+# 📘 **MÓDULO 7 — Avaliação Final + Certificação**
+
+### **Prova Prática Final**
+
+O aluno deve criar:
+
+1. Uma intenção completa
+2. Um sistema de intenção
+3. Um processo assistido por IA
+4. Um caso de uso real da sua área
+
+### **Critérios de avaliação**
+
+* Clareza
+* Estrutura
+* Profundidade
+* Critérios bem definidos
+* Delegação adequada
+* Coerência entre objetivo e formato
+
+### **Certificação (opcional)**
+
+Emitida após análise da prova final.
+
+---
+
+# 🎉 **PARTE EXTRA (exclusiva para sua formação)**
+
+## **Biblioteca de Templates**
+
+Mais de 40 modelos, incluindo:
+
+* análise
+* planejamento
+* conteúdo
+* negócios
+* educação
+* vendas
+* gestão
+* produtividade
+* tomada de decisão
+
+## **Área de Membros**
+
+* vídeos
+* downloads
+* checklists
+* exercícios automatizados
+* desafios semanais
+
+## **Mentorias ao Vivo (opcional)**
+
+Sugestão de cronograma:
+
+* 4 encontros
+* 90 minutos cada
+* revisão de projetos e dúvidas
