@@ -3,13 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 1: A Morte da Engenharia de Prompts Antiga | FEI Nível 2</title>
-  <meta name="description" content="A evolução completa dos prompts de GPT-3 a GPT-5 e por que as técnicas antigas ficaram obsoletas">
+  <title>Modulo 1: A Morte da Engenharia de Prompts Antiga | FEI Nivel 2</title>
+  <meta name="description" content="Historia, evolucao e por que os truques antigos nao funcionam mais">
 
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Tailwind Config -->
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -26,51 +23,36 @@
     }
   </script>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
-    }
-    .preload * {
-      transition: none !important;
-    }
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    }
+    * { transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out; }
+    .preload * { transition: none !important; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
   </style>
 </head>
 <body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
 
-  <!-- Navigation -->
   <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <div class="flex items-center">
-          <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-2 bg-clip-text text-transparent">
-            FEI - Engenharia de Intencao
-          </a>
+          <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-2 bg-clip-text text-transparent">FEI - Engenharia de Intencao</a>
         </div>
         <div class="hidden md:flex items-center space-x-8">
           <a href="../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-2">Inicio</a>
           <a href="../niveis/nivel-2.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-2">Nivel 2</a>
           <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-            </svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
-            </svg>
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
           </button>
         </div>
       </div>
     </div>
   </nav>
 
-  <!-- Breadcrumb -->
   <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
       <nav class="flex text-sm" aria-label="Breadcrumb">
@@ -83,555 +65,169 @@
     </div>
   </div>
 
-  <!-- Hero Section -->
   <section class="bg-gradient-to-r from-nivel-2 to-purple-600 py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
       <div class="flex items-center gap-4 mb-4">
-        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
-          Modulo 1
-        </span>
-        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
-          Nivel 2 - Programa Completo
-        </span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">Modulo 1</span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">Nivel 2 - Programa Completo</span>
       </div>
-      <h1 class="text-4xl lg:text-5xl font-bold mb-4">
-        A Morte da Engenharia de Prompts Antiga
-      </h1>
-      <p class="text-xl text-white/90">
-        Da historia dos prompts GPT-3 a GPT-5 ate a nova era da IA
-      </p>
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">A Morte da Engenharia de Prompts Antiga</h1>
+      <p class="text-xl text-white/90">Historia, Evolucao e Por Que os Truques Antigos Nao Funcionam Mais</p>
     </div>
   </section>
 
-  <!-- Content -->
   <section class="py-12 bg-neutral-50 dark:bg-neutral-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <!-- Download Button -->
       <div class="flex justify-end mb-6">
         <a href="../downloads/nivel-2-modulo-1.md" download class="px-6 py-3 bg-nivel-2 text-white rounded-lg font-semibold hover:bg-purple-600 inline-flex items-center gap-2">
           <span>Download MD</span>
         </a>
       </div>
 
-      <!-- Introducao -->
       <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
-        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
-          Introducao
-        </h2>
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">Introducao</h2>
         <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
-          A engenharia de prompts tradicional nasceu como uma necessidade tecnica: os primeiros modelos de IA eram limitados, exigiam truques elaborados e dependiam de templates rigidos para funcionar.
-        </p>
-        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
-          Com o surgimento de modelos modernos como GPT-4, GPT-5, Claude Opus e Gemini Ultra, essa realidade mudou drasticamente. A IA agora <strong>pensa</strong>, <strong>planeja</strong> e <strong>interpreta contexto</strong> de forma autonoma.
+          A engenharia de prompts antiga morreu. Nao em 2025, mas gradualmente desde 2023. Este modulo explica como chegamos aqui e por que as tecnicas antigas nao funcionam mais.
         </p>
         <div class="bg-nivel-2/10 border-l-4 border-nivel-2 p-6 rounded-lg">
           <h3 class="font-bold text-nivel-2 mb-2">Por que isso importa?</h3>
           <p class="text-neutral-700 dark:text-neutral-300">
-            Este modulo mostra <strong>exatamente</strong> quais tecnicas antigas pararam de funcionar, <strong>por que</strong> pararam, e <strong>o que</strong> veio substituir. Voce vera a evolucao completa dos prompts ao longo de 5 geracoes de modelos.
+            Entender a evolucao historica e essencial para dominar a nova abordagem. Voce precisa desaprender tecnicas ultrapassadas antes de aprender as modernas.
           </p>
         </div>
       </div>
 
-      <!-- Linha do Tempo Completa -->
       <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
-        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
-          A Historia dos Prompts: GPT-3 a GPT-5
-        </h2>
-
-        <div class="relative border-l-4 border-nivel-2 pl-8 space-y-8">
-
-          <!-- GPT-3 (2020-2021) -->
-          <div class="relative">
-            <div class="absolute -left-10 w-6 h-6 bg-red-500 rounded-full border-4 border-white dark:border-neutral-800"></div>
-            <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
-              <div class="text-red-500 font-bold text-sm mb-1">2020-2021 | GPT-3</div>
-              <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
-                A Era dos Truques e Gambiarras
-              </h3>
-              <p class="text-neutral-700 dark:text-neutral-300 mb-3">
-                Modelos limitados exigiam prompts altamente estruturados. Era comum usar:
-              </p>
-              <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
-                <li><strong>Few-shot learning:</strong> fornecer 5-10 exemplos antes de pedir algo</li>
-                <li><strong>Templates rigidos:</strong> "Voce e um [X], faca [Y] seguindo [Z]"</li>
-                <li><strong>Repeticao de instrucoes:</strong> repetir comandos 2-3 vezes para garantir execucao</li>
-                <li><strong>Delimitadores explicitos:</strong> usar ### ou --- para separar secoes</li>
-                <li><strong>Proibicoes explicitas:</strong> "Nao invente dados", "Nao seja criativo"</li>
-              </ul>
-              <div class="mt-4 bg-red-100 dark:bg-red-900/30 p-4 rounded border border-red-300">
-                <strong>Problema:</strong> Baixa interpretacao, respostas genericas, necessidade de microgerenciamento constante.
-              </div>
-            </div>
-          </div>
-
-          <!-- GPT-3.5 (2022) -->
-          <div class="relative">
-            <div class="absolute -left-10 w-6 h-6 bg-orange-500 rounded-full border-4 border-white dark:border-neutral-800"></div>
-            <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
-              <div class="text-orange-500 font-bold text-sm mb-1">2022 | GPT-3.5 (ChatGPT)</div>
-              <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
-                Primeiras Melhorias de Interpretacao
-              </h3>
-              <p class="text-neutral-700 dark:text-neutral-300 mb-3">
-                O ChatGPT trouxe melhor compreensao de contexto, mas ainda precisava de tecnicas especificas:
-              </p>
-              <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
-                <li><strong>Personas explicitas:</strong> "Atue como um professor de fisica..."</li>
-                <li><strong>Chain-of-thought manual:</strong> "Pense passo a passo..."</li>
-                <li><strong>Formatacao estrita:</strong> especificar JSON, tabelas, bullet points</li>
-                <li><strong>Restricoes de tom:</strong> "Use tom profissional/casual/tecnico"</li>
-              </ul>
-              <div class="mt-4 bg-orange-100 dark:bg-orange-900/30 p-4 rounded border border-orange-300">
-                <strong>Melhoria:</strong> Menos dependencia de exemplos, mas ainda exigia instrucoes detalhadas.
-              </div>
-            </div>
-          </div>
-
-          <!-- GPT-4 (2023) -->
-          <div class="relative">
-            <div class="absolute -left-10 w-6 h-6 bg-yellow-500 rounded-full border-4 border-white dark:border-neutral-800"></div>
-            <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
-              <div class="text-yellow-600 font-bold text-sm mb-1">2023 | GPT-4</div>
-              <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
-                O Salto Qualitativo
-              </h3>
-              <p class="text-neutral-700 dark:text-neutral-300 mb-3">
-                GPT-4 comecou a <strong>raciocinar internamente</strong>. Muitas tecnicas antigas se tornaram redundantes:
-              </p>
-              <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
-                <li><strong>Interpretacao contextual:</strong> entende objetivos nao explicitos</li>
-                <li><strong>Chain-of-thought implicito:</strong> nao precisa pedir "pense passo a passo"</li>
-                <li><strong>Autocorrecao:</strong> detecta ambiguidades e pergunta quando necessario</li>
-                <li><strong>Adaptacao de formato:</strong> escolhe a melhor estrutura para a resposta</li>
-              </ul>
-              <div class="mt-4 bg-yellow-100 dark:bg-yellow-900/30 p-4 rounded border border-yellow-500">
-                <strong>Transicao:</strong> Prompts comecaram a ficar mais simples e baseados em intencao.
-              </div>
-            </div>
-          </div>
-
-          <!-- Claude Opus / GPT-4.5 (2024) -->
-          <div class="relative">
-            <div class="absolute -left-10 w-6 h-6 bg-blue-500 rounded-full border-4 border-white dark:border-neutral-800"></div>
-            <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
-              <div class="text-blue-500 font-bold text-sm mb-1">2024 | Claude Opus, GPT-4.5</div>
-              <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
-                IA como Colaborador Estrategico
-              </h3>
-              <p class="text-neutral-700 dark:text-neutral-300 mb-3">
-                Modelos avancados passaram a <strong>co-criar</strong> com o usuario:
-              </p>
-              <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
-                <li><strong>Planejamento autonomo:</strong> divide tarefas complexas em etapas</li>
-                <li><strong>Questionamento ativo:</strong> pede informacoes que faltam</li>
-                <li><strong>Refinamento iterativo:</strong> melhora a propria resposta sem ser solicitado</li>
-                <li><strong>Contextualizacao profunda:</strong> lembra conversas anteriores e adapta estilo</li>
-              </ul>
-              <div class="mt-4 bg-blue-100 dark:bg-blue-900/30 p-4 rounded border border-blue-500">
-                <strong>Mudanca:</strong> Usuarios comecaram a expressar intencao ao inves de comandos.
-              </div>
-            </div>
-          </div>
-
-          <!-- GPT-5 / Modelos 2025 -->
-          <div class="relative">
-            <div class="absolute -left-10 w-6 h-6 bg-green-500 rounded-full border-4 border-white dark:border-neutral-800"></div>
-            <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border-2 border-green-500">
-              <div class="text-green-600 dark:text-green-400 font-bold text-sm mb-1">2025 | GPT-5, Gemini 2.0, Claude 4</div>
-              <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
-                Era da Engenharia de Intencao
-              </h3>
-              <p class="text-neutral-700 dark:text-neutral-300 mb-3">
-                Modelos modernos <strong>preferem clareza de objetivo</strong> a instrucoes detalhadas:
-              </p>
-              <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
-                <li><strong>Raciocinio estruturado nativo:</strong> pensa antes de responder automaticamente</li>
-                <li><strong>Interpretacao de intencao:</strong> entende "o que voce realmente quer"</li>
-                <li><strong>Delegacao inteligente:</strong> identifica quando precisa de mais dados</li>
-                <li><strong>Multimodalidade profunda:</strong> combina texto, imagem, codigo, analise</li>
-              </ul>
-              <div class="mt-4 bg-green-100 dark:bg-green-900/30 p-4 rounded border border-green-500">
-                <strong>Revolucao:</strong> Engenharia de Prompts evolui para Engenharia de Intencao.
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Exemplos de Prompts Ultrapassados -->
-      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
-        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
-          Exemplos Reais de Prompts Ultrapassados
-        </h2>
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">Linha do Tempo da Evolucao</h2>
 
         <div class="space-y-6">
-
-          <!-- Exemplo 1 -->
-          <div class="border-l-4 border-red-500 pl-6">
-            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
-              1. Few-Shot Learning Excessivo
-            </h3>
-            <div class="bg-red-50 dark:bg-red-900/20 p-4 rounded mb-3">
-              <h4 class="font-bold text-red-700 dark:text-red-400 mb-2">Tecnica Antiga (GPT-3)</h4>
-              <pre class="text-sm text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap font-mono">
-Classifique o sentimento das seguintes frases:
-
-Exemplo 1:
-Frase: "Adorei o produto!"
-Sentimento: Positivo
-
-Exemplo 2:
-Frase: "Pessimo atendimento"
-Sentimento: Negativo
-
-Exemplo 3:
-Frase: "Poderia ser melhor"
-Sentimento: Neutro
-
-Agora classifique:
-Frase: "Recomendo muito!"
-Sentimento:</pre>
-            </div>
-            <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded border border-green-500">
-              <h4 class="font-bold text-green-700 dark:text-green-400 mb-2">Abordagem Moderna (2025)</h4>
-              <pre class="text-sm text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap font-mono">
-Analise o sentimento da frase: "Recomendo muito!"</pre>
-              <p class="text-xs mt-2 text-neutral-600 dark:text-neutral-400">
-                <strong>Por que funciona:</strong> Modelos modernos ja sabem o que e analise de sentimento. Nao precisam de exemplos basicos.
-              </p>
-            </div>
+          <div class="border-l-4 border-blue-500 pl-6">
+            <div class="text-sm text-blue-600 dark:text-blue-400 font-semibold">2020-2022: Era dos Truques</div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">GPT-3 e Prompt Engineering 1.0</h3>
+            <p class="text-neutral-700 dark:text-neutral-300">
+              Modelos eram limitados, entao truques funcionavam: roleplay, "pense passo a passo", formatos rigidos.
+            </p>
           </div>
 
-          <!-- Exemplo 2 -->
-          <div class="border-l-4 border-red-500 pl-6">
-            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
-              2. Personas Forcadas
-            </h3>
-            <div class="bg-red-50 dark:bg-red-900/20 p-4 rounded mb-3">
-              <h4 class="font-bold text-red-700 dark:text-red-400 mb-2">Tecnica Antiga</h4>
-              <pre class="text-sm text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap font-mono">
-Voce e um professor de matematica com 30 anos de experiencia.
-Voce e paciente, didatico e sempre usa exemplos praticos.
-Voce nunca usa termos tecnicos sem explicar.
-
-Explique o Teorema de Pitagoras para um aluno de 12 anos.</pre>
-            </div>
-            <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded border border-green-500">
-              <h4 class="font-bold text-green-700 dark:text-green-400 mb-2">Abordagem Moderna</h4>
-              <pre class="text-sm text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap font-mono">
-Explique o Teorema de Pitagoras para um aluno de 12 anos de forma didatica e com exemplos praticos.</pre>
-              <p class="text-xs mt-2 text-neutral-600 dark:text-neutral-400">
-                <strong>Por que funciona:</strong> IA moderna adapta tom e complexidade automaticamente quando voce especifica a audiencia.
-              </p>
-            </div>
+          <div class="border-l-4 border-nivel-2 pl-6">
+            <div class="text-sm text-nivel-2 font-semibold">2023: Transicao</div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">GPT-4 e o Grande Salto</h3>
+            <p class="text-neutral-700 dark:text-neutral-300">
+              Modelos ganharam raciocinio interno, chain-of-thought implicito, compreensao contextual profunda.
+            </p>
           </div>
 
-          <!-- Exemplo 3 -->
-          <div class="border-l-4 border-red-500 pl-6">
-            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
-              3. Chain-of-Thought Manual
-            </h3>
-            <div class="bg-red-50 dark:bg-red-900/20 p-4 rounded mb-3">
-              <h4 class="font-bold text-red-700 dark:text-red-400 mb-2">Tecnica Antiga</h4>
-              <pre class="text-sm text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap font-mono">
-Resolva o seguinte problema. Pense passo a passo:
-
-Problema: Uma loja vendeu 120 produtos em janeiro e 150 em fevereiro.
-Qual foi o aumento percentual?
-
-Passo 1: Calcule a diferenca
-Passo 2: Divida pela quantidade inicial
-Passo 3: Multiplique por 100</pre>
-            </div>
-            <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded border border-green-500">
-              <h4 class="font-bold text-green-700 dark:text-green-400 mb-2">Abordagem Moderna</h4>
-              <pre class="text-sm text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap font-mono">
-Uma loja vendeu 120 produtos em janeiro e 150 em fevereiro.
-Qual foi o aumento percentual? Mostre o raciocinio.</pre>
-              <p class="text-xs mt-2 text-neutral-600 dark:text-neutral-400">
-                <strong>Por que funciona:</strong> IA moderna raciocina internamente. Voce so precisa pedir "mostre o raciocinio" se quiser ver os passos.
-              </p>
-            </div>
+          <div class="border-l-4 border-green-500 pl-6">
+            <div class="text-sm text-green-600 dark:text-green-400 font-semibold">2024-2025: Nova Era</div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">Engenharia de Intencao</h3>
+            <p class="text-neutral-700 dark:text-neutral-300">
+              Truques antigos atrapalham. Modelos modernos precisam de intencao clara, contexto relevante, delegacao inteligente.
+            </p>
           </div>
-
-          <!-- Exemplo 4 -->
-          <div class="border-l-4 border-red-500 pl-6">
-            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
-              4. Formatacao Microscopica
-            </h3>
-            <div class="bg-red-50 dark:bg-red-900/20 p-4 rounded mb-3">
-              <h4 class="font-bold text-red-700 dark:text-red-400 mb-2">Tecnica Antiga</h4>
-              <pre class="text-sm text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap font-mono">
-Liste 5 beneficios do exercicio fisico.
-
-Formato:
-- Use bullet points
-- Cada item deve ter entre 10-15 palavras
-- Comece cada item com um verbo de acao
-- Nao use termos tecnicos
-- Use tom motivacional</pre>
-            </div>
-            <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded border border-green-500">
-              <h4 class="font-bold text-green-700 dark:text-green-400 mb-2">Abordagem Moderna</h4>
-              <pre class="text-sm text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap font-mono">
-Liste 5 beneficios do exercicio fisico de forma motivacional e acessivel.</pre>
-              <p class="text-xs mt-2 text-neutral-600 dark:text-neutral-400">
-                <strong>Por que funciona:</strong> IA moderna escolhe o melhor formato para transmitir a informacao. Especifique apenas o que realmente importa.
-              </p>
-            </div>
-          </div>
-
         </div>
       </div>
 
-      <!-- Por Que as Gambiarras Deixaram de Funcionar -->
       <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
-        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
-          Por Que as "Gambiarras" Deixaram de Funcionar
-        </h2>
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">Tecnicas Antigas que Nao Funcionam Mais</h2>
 
-        <div class="space-y-6">
-
-          <div class="bg-nivel-2/10 p-6 rounded-lg border-l-4 border-nivel-2">
-            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
-              1. Raciocinio Estruturado Interno
-            </h3>
-            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
-              Modelos modernos <strong>ja pensam antes de responder</strong>. Pedir "pense passo a passo" e redundante porque a IA ja faz isso internamente.
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-red-50 dark:bg-red-900/20 p-6 rounded-lg border-l-4 border-red-500">
+            <h3 class="font-bold text-red-700 dark:text-red-400 mb-3">Roleplay Excessivo</h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">
+              "Voce e um especialista com 20 anos de experiencia..."
             </p>
-            <div class="bg-white dark:bg-neutral-700 p-4 rounded text-sm">
-              <strong>Analogia:</strong> E como pedir para um engenheiro "verifique suas contas" - ele ja faz isso naturalmente.
+            <div class="text-xs text-neutral-600 dark:text-neutral-400">
+              Por que nao funciona: Modelos modernos ja acessam conhecimento completo sem fingir ser alguem.
             </div>
           </div>
 
-          <div class="bg-nivel-2/10 p-6 rounded-lg border-l-4 border-nivel-2">
-            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
-              2. Capacidade de Inferencia Contextual
-            </h3>
-            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
-              A IA moderna <strong>entende contexto implicito</strong>. Quando voce diz "explique para um aluno", ela sabe que deve simplificar, usar exemplos e evitar jargoes.
+          <div class="bg-red-50 dark:bg-red-900/20 p-6 rounded-lg border-l-4 border-red-500">
+            <h3 class="font-bold text-red-700 dark:text-red-400 mb-3">Formatos Rigidos</h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">
+              "Use exatamente esta estrutura de 10 secoes..."
             </p>
-            <div class="bg-white dark:bg-neutral-700 p-4 rounded text-sm">
-              <strong>Antes:</strong> Precisava especificar tom, vocabulario, estrutura<br>
-              <strong>Agora:</strong> Basta dizer "para quem" e "para que"
+            <div class="text-xs text-neutral-600 dark:text-neutral-400">
+              Por que nao funciona: Engessa criatividade e pode gerar conteudo irrelevante so para preencher formato.
             </div>
           </div>
 
-          <div class="bg-nivel-2/10 p-6 rounded-lg border-l-4 border-nivel-2">
-            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
-              3. Aprendizado de Padroes Complexos
-            </h3>
-            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
-              IA foi treinada em milhoes de exemplos reais. Ela <strong>ja conhece os padroes</strong> de analise de sentimento, resumo, traducao, codigo, etc.
+          <div class="bg-red-50 dark:bg-red-900/20 p-6 rounded-lg border-l-4 border-red-500">
+            <h3 class="font-bold text-red-700 dark:text-red-400 mb-3">Chain-of-Thought Explicito</h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">
+              "Pense passo a passo e mostre seu raciocinio..."
             </p>
-            <div class="bg-white dark:bg-neutral-700 p-4 rounded text-sm">
-              <strong>Resultado:</strong> Few-shot learning so e util para tarefas muito especificas ou nichos raros.
+            <div class="text-xs text-neutral-600 dark:text-neutral-400">
+              Por que nao funciona: Modelos modernos ja fazem isso internamente sem precisar mostrar.
             </div>
           </div>
 
-          <div class="bg-nivel-2/10 p-6 rounded-lg border-l-4 border-nivel-2">
-            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
-              4. Preferencia por Clareza Natural
-            </h3>
-            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
-              Prompts excessivamente estruturados podem <strong>confundir</strong> a IA moderna, criando restricoes desnecessarias.
+          <div class="bg-red-50 dark:bg-red-900/20 p-6 rounded-lg border-l-4 border-red-500">
+            <h3 class="font-bold text-red-700 dark:text-red-400 mb-3">Microgerenciamento</h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">
+              "Use palavras de transicao. Comece cada paragrafo com..."
             </p>
-            <div class="bg-white dark:bg-neutral-700 p-4 rounded text-sm">
-              <strong>Principio:</strong> Quanto mais natural sua comunicacao, melhor a IA consegue adivinhar sua intencao real.
+            <div class="text-xs text-neutral-600 dark:text-neutral-400">
+              Por que nao funciona: Modelos sabem escrever bem. Foco excessivo em forma mata qualidade do conteudo.
             </div>
           </div>
-
         </div>
       </div>
 
-      <!-- Como Modelos Modernos Pensam -->
-      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
-        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
-          Como Modelos Modernos Pensam e Planejam
-        </h2>
-
-        <div class="grid md:grid-cols-2 gap-6 mb-6">
-
-          <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
-            <h3 class="text-lg font-bold text-neutral-900 dark:text-neutral-100 mb-3">
-              Processo Interno da IA Moderna
-            </h3>
-            <ol class="space-y-3 text-sm text-neutral-700 dark:text-neutral-300">
-              <li><strong>1. Interpretacao:</strong> Entende o objetivo por tras do pedido</li>
-              <li><strong>2. Planejamento:</strong> Divide em etapas logicas</li>
-              <li><strong>3. Execucao:</strong> Realiza cada etapa internamente</li>
-              <li><strong>4. Validacao:</strong> Verifica se a resposta atende o objetivo</li>
-              <li><strong>5. Apresentacao:</strong> Formata de forma clara e util</li>
-            </ol>
-          </div>
-
-          <div class="bg-nivel-2/10 p-6 rounded-lg border-2 border-nivel-2">
-            <h3 class="text-lg font-bold text-neutral-900 dark:text-neutral-100 mb-3">
-              O Que Mudou na Pratica
-            </h3>
-            <ul class="space-y-3 text-sm text-neutral-700 dark:text-neutral-300">
-              <li><strong>Antes:</strong> Voce especificava "como" fazer</li>
-              <li><strong>Agora:</strong> Voce especifica "o que" e "por que"</li>
-              <li><strong>Antes:</strong> IA seguia instrucoes cegamente</li>
-              <li><strong>Agora:</strong> IA questiona e adapta quando necessario</li>
-              <li><strong>Antes:</strong> Precisava de templates rigidos</li>
-              <li><strong>Agora:</strong> Linguagem natural funciona melhor</li>
-            </ul>
-          </div>
-
-        </div>
-
-        <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border-2 border-green-500">
-          <h3 class="font-bold text-green-700 dark:text-green-400 mb-2">Insight Fundamental</h3>
-          <p class="text-neutral-700 dark:text-neutral-300">
-            <strong>Modelos modernos sao colaboradores, nao ferramentas.</strong> Eles preferem que voce explique o problema e deixe que eles decidam a melhor forma de resolver. Quanto mais voce microgerencia, pior o resultado.
-          </p>
-        </div>
-      </div>
-
-      <!-- Sintomas de Prompts Antigos -->
-      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
-        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
-          Checklist: Sintomas de Prompts Antigos
-        </h2>
-        <p class="text-neutral-700 dark:text-neutral-300 mb-6">
-          Identifique se voce ainda esta usando tecnicas ultrapassadas:
+      <div class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 p-6 rounded-lg mb-8">
+        <h3 class="font-bold text-yellow-700 dark:text-yellow-400 mb-2">Ponto Critico</h3>
+        <p class="text-neutral-700 dark:text-neutral-300">
+          As tecnicas antigas nao eram ruins na epoca - eram necessarias para modelos limitados. O erro e continuar usando elas em 2025 quando os modelos evoluiram drasticamente.
         </p>
-
-        <div class="space-y-4">
-          <div class="flex items-start gap-3 p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
-            <span class="text-2xl">❌</span>
-            <div>
-              <h4 class="font-bold text-neutral-900 dark:text-neutral-100">Voce fornece 5+ exemplos antes de fazer um pedido simples</h4>
-              <p class="text-sm text-neutral-600 dark:text-neutral-400">Few-shot excessivo so confunde a IA moderna</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-3 p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
-            <span class="text-2xl">❌</span>
-            <div>
-              <h4 class="font-bold text-neutral-900 dark:text-neutral-100">Voce escreve personas elaboradas no inicio de cada prompt</h4>
-              <p class="text-sm text-neutral-600 dark:text-neutral-400">IA adapta tom automaticamente quando voce diz o objetivo</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-3 p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
-            <span class="text-2xl">❌</span>
-            <div>
-              <h4 class="font-bold text-neutral-900 dark:text-neutral-100">Voce especifica formato em detalhes microscopicos</h4>
-              <p class="text-sm text-neutral-600 dark:text-neutral-400">IA escolhe a melhor estrutura para transmitir a informacao</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-3 p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
-            <span class="text-2xl">❌</span>
-            <div>
-              <h4 class="font-bold text-neutral-900 dark:text-neutral-100">Voce usa delimitadores como ### ou --- entre secoes</h4>
-              <p class="text-sm text-neutral-600 dark:text-neutral-400">IA moderna entende estrutura semantica sem marcadores</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-3 p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
-            <span class="text-2xl">❌</span>
-            <div>
-              <h4 class="font-bold text-neutral-900 dark:text-neutral-100">Voce pede "pense passo a passo" em tarefas simples</h4>
-              <p class="text-sm text-neutral-600 dark:text-neutral-400">Chain-of-thought e nativo em modelos modernos</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-3 p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
-            <span class="text-2xl">❌</span>
-            <div>
-              <h4 class="font-bold text-neutral-900 dark:text-neutral-100">Voce lista multiplas proibicoes ("nao invente dados", "nao seja criativo")</h4>
-              <p class="text-sm text-neutral-600 dark:text-neutral-400">IA moderna ja tem guardrails de seguranca e precisao</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-3 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg border-2 border-green-500">
-            <span class="text-2xl">✅</span>
-            <div>
-              <h4 class="font-bold text-neutral-900 dark:text-neutral-100">Solucao Moderna</h4>
-              <p class="text-sm text-neutral-600 dark:text-neutral-400">
-                <strong>Comunique intencao:</strong> "Preciso de [resultado] para [audiencia] porque [objetivo]"
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
 
-      <!-- Glossario Comparativo -->
       <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
-        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
-          Glossario: Antigo vs Moderno
-        </h2>
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">A Nova Realidade: 3 Mudancas Fundamentais</h2>
 
-        <div class="overflow-x-auto">
-          <table class="w-full text-sm">
-            <thead>
-              <tr class="bg-neutral-100 dark:bg-neutral-700">
-                <th class="p-4 text-left font-bold">Termo Antigo</th>
-                <th class="p-4 text-left font-bold">Termo Moderno</th>
-                <th class="p-4 text-left font-bold">Mudanca de Mentalidade</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-neutral-200 dark:divide-neutral-700">
-              <tr>
-                <td class="p-4">Engenharia de Prompts</td>
-                <td class="p-4 font-bold text-nivel-2">Engenharia de Intencao</td>
-                <td class="p-4">De "como fazer" para "o que alcançar"</td>
-              </tr>
-              <tr>
-                <td class="p-4">Few-shot learning</td>
-                <td class="p-4 font-bold text-nivel-2">Contexto relevante</td>
-                <td class="p-4">De exemplos multiplos para contexto especifico</td>
-              </tr>
-              <tr>
-                <td class="p-4">Persona explicita</td>
-                <td class="p-4 font-bold text-nivel-2">Audiencia e objetivo</td>
-                <td class="p-4">De "atue como X" para "crie para Y"</td>
-              </tr>
-              <tr>
-                <td class="p-4">Chain-of-thought manual</td>
-                <td class="p-4 font-bold text-nivel-2">Raciocinio implicito</td>
-                <td class="p-4">De forcar passos para confiar na IA</td>
-              </tr>
-              <tr>
-                <td class="p-4">Template rigido</td>
-                <td class="p-4 font-bold text-nivel-2">Linguagem natural</td>
-                <td class="p-4">De estrutura forcada para comunicacao fluida</td>
-              </tr>
-              <tr>
-                <td class="p-4">Formatacao detalhada</td>
-                <td class="p-4 font-bold text-nivel-2">Formato adaptativo</td>
-                <td class="p-4">De especificar tudo para deixar IA decidir</td>
-              </tr>
-              <tr>
-                <td class="p-4">Comando</td>
-                <td class="p-4 font-bold text-nivel-2">Colaboracao</td>
-                <td class="p-4">De dar ordens para dialogar</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="space-y-6">
+          <div class="bg-nivel-2/10 p-6 rounded-lg">
+            <h3 class="text-xl font-bold text-nivel-2 mb-3">1. Raciocinio Interno</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Modelos modernos tem raciocinio interno sofisticado. Nao precisamos mais dizer "pense passo a passo".
+            </p>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded text-sm">
+              <strong>Antes:</strong> "Liste todas as opcoes e avalie cada uma"<br>
+              <strong>Agora:</strong> "Qual a melhor opcao para X considerando Y?"
+            </div>
+          </div>
+
+          <div class="bg-nivel-2/10 p-6 rounded-lg">
+            <h3 class="text-xl font-bold text-nivel-2 mb-3">2. Compreensao Contextual</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Modelos entendem nuances, restricoes implicitas, objetivos subjacentes.
+            </p>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded text-sm">
+              <strong>Antes:</strong> Listas exaustivas de restricoes<br>
+              <strong>Agora:</strong> Contexto relevante e objetivos claros
+            </div>
+          </div>
+
+          <div class="bg-nivel-2/10 p-6 rounded-lg">
+            <h3 class="text-xl font-bold text-nivel-2 mb-3">3. Delegacao Inteligente</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Modelos podem fazer perguntas estrategicas antes de executar.
+            </p>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded text-sm">
+              <strong>Antes:</strong> Voce adivinha tudo e especifica demais<br>
+              <strong>Agora:</strong> Modelo pergunta o que precisa saber
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Conclusao -->
       <div class="bg-gradient-to-r from-nivel-2 to-purple-600 text-white rounded-xl p-8">
         <h2 class="text-3xl font-bold mb-4">Conclusao do Modulo</h2>
         <p class="text-lg mb-6">
-          Voce aprendeu a historia completa da evolucao dos prompts e entende <strong>exatamente por que</strong> as tecnicas antigas ficaram obsoletas.
+          A engenharia de prompts antiga morreu porque os modelos evoluiram. Agora precisamos de uma nova abordagem: <strong>Engenharia de Intencao</strong>.
         </p>
         <div class="bg-white/10 backdrop-blur p-6 rounded-lg mb-6">
-          <h3 class="font-bold text-xl mb-2">O que voce dominou:</h3>
-          <ul class="space-y-2">
-            <li>A evolucao de GPT-3 a GPT-5 e modelos modernos</li>
-            <li>Tecnicas ultrapassadas que ainda sao ensinadas</li>
-            <li>Por que gambiarras deixaram de funcionar</li>
-            <li>Como modelos modernos pensam e planejam</li>
-            <li>Sintomas de prompts antigos vs abordagem moderna</li>
-          </ul>
+          <h3 class="font-bold text-xl mb-2">Proximos Passos:</h3>
+          <p>No Modulo 2, voce vai entender exatamente COMO os modelos modernos funcionam internamente e por que isso muda tudo.</p>
         </div>
         <div class="flex gap-4">
           <a href="../niveis/nivel-2.html" class="px-6 py-3 bg-white text-nivel-2 rounded-lg font-semibold hover:bg-neutral-100 inline-flex items-center gap-2">
@@ -646,7 +242,6 @@ Liste 5 beneficios do exercicio fisico de forma motivacional e acessivel.</pre>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-3 gap-8">
