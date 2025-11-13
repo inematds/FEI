@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 6: 4 Projetos Práticos | FEI Nível 3A</title>
+  <meta name="description" content="Implemente 4 projetos reais com sistemas de agentes">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'nivel-1': '#3B82F6',
+            'nivel-2': '#9b59b6',
+            'nivel-3a': '#10B981',
+            'nivel-3s': '#F59E0B',
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+  </style>
+</head>
+<body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-3a bg-clip-text text-transparent">
+            FEI - Engenharia de Intencao
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-3a">Inicio</a>
+          <a href="../niveis/nivel-3a.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-3a">Nivel 3A</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <nav class="flex text-sm" aria-label="Breadcrumb">
+        <a href="../index.html" class="text-nivel-3a hover:text-green-700">Inicio</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <a href="../niveis/nivel-3a.html" class="text-nivel-3a hover:text-green-700">Nivel 3A</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <span class="text-neutral-600 dark:text-neutral-400">Modulo 6</span>
+      </nav>
+    </div>
+  </div>
+
+  <section class="bg-gradient-to-r from-nivel-3a to-green-600 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">Modulo 6</span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">Nivel 3A</span>
+      </div>
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">4 Projetos Praticos com Agentes</h1>
+      <p class="text-xl text-white/90">Implemente sistemas reais e aplicaveis imediatamente</p>
+    </div>
+  </section>
+
+  <section class="py-12 bg-neutral-50 dark:bg-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-end mb-6">
+        <a href="../downloads/nivel-3a-modulo-6.md" download class="px-6 py-3 bg-nivel-3a text-white rounded-lg font-semibold hover:bg-green-600">Download MD</a>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold mb-4">Introducao</h2>
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          Teoria e fundamental, mas <strong>pratica transforma conhecimento em habilidade</strong>. Neste modulo, voce implementara 4 projetos completos usando sistemas de agentes.
+        </p>
+        <div class="bg-nivel-3a/10 border-l-4 border-nivel-3a p-6 rounded-lg">
+          <h3 class="font-bold text-nivel-3a mb-2">O que voce vai dominar:</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">4 projetos reais e aplicaveis. Diferentes arquiteturas multiagentes. Implementacao pratica end-to-end.</p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-8 rounded-xl shadow-lg">
+          <div class="text-4xl font-bold mb-2">Projeto 1</div>
+          <h3 class="text-2xl font-bold mb-3">Curso Completo</h3>
+          <p class="mb-4">Sistema de 3 agentes para criar cursos online do zero</p>
+          <div class="bg-white/20 p-4 rounded-lg text-sm">
+            <strong>Arquitetura:</strong> Pipeline Linear<br>
+            <strong>Agentes:</strong> Pesquisador → Estruturador → Escritor
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-purple-500 to-purple-600 text-white p-8 rounded-xl shadow-lg">
+          <div class="text-4xl font-bold mb-2">Projeto 2</div>
+          <h3 class="text-2xl font-bold mb-3">Analise de Negocios</h3>
+          <p class="mb-4">Sistema paralelo para estrategia empresarial completa</p>
+          <div class="bg-white/20 p-4 rounded-lg text-sm">
+            <strong>Arquitetura:</strong> Pipeline Paralelo<br>
+            <strong>Agentes:</strong> Mercado + Estrategia + Execucao + Metricas
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-nivel-3a to-green-600 text-white p-8 rounded-xl shadow-lg">
+          <div class="text-4xl font-bold mb-2">Projeto 3</div>
+          <h3 class="text-2xl font-bold mb-3">Conteudo Diario</h3>
+          <p class="mb-4">Pipeline automatizado para criar conteudo de alta qualidade</p>
+          <div class="bg-white/20 p-4 rounded-lg text-sm">
+            <strong>Arquitetura:</strong> Ciclo Iterativo<br>
+            <strong>Agentes:</strong> Pesquisador → Roteirista → Editor → Otimizador
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-orange-500 to-red-600 text-white p-8 rounded-xl shadow-lg">
+          <div class="text-4xl font-bold mb-2">Projeto 4</div>
+          <h3 class="text-2xl font-bold mb-3">Melhoria Continua</h3>
+          <p class="mb-4">Agente autonomo que se auto-otimiza continuamente</p>
+          <div class="bg-white/20 p-4 rounded-lg text-sm">
+            <strong>Arquitetura:</strong> Loop Autonomo<br>
+            <strong>Ciclo:</strong> Executar → Avaliar → Melhorar → Repetir
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold mb-6">Comparacao dos Projetos</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-nivel-3a text-white">
+              <tr>
+                <th class="p-3">Projeto</th>
+                <th class="p-3">Arquitetura</th>
+                <th class="p-3">Velocidade</th>
+                <th class="p-3">Complexidade</th>
+                <th class="p-3">Melhor Para</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-neutral-200 dark:divide-neutral-700">
+              <tr><td class="p-3 font-semibold">Curso Completo</td><td class="p-3">Pipeline Linear</td><td class="p-3">Media</td><td class="p-3">Baixa</td><td class="p-3">Processos sequenciais</td></tr>
+              <tr><td class="p-3 font-semibold">Analise Negocios</td><td class="p-3">Paralelo</td><td class="p-3">Alta</td><td class="p-3">Media</td><td class="p-3">Multi-perspectiva</td></tr>
+              <tr><td class="p-3 font-semibold">Conteudo Diario</td><td class="p-3">Iterativo</td><td class="p-3">Variavel</td><td class="p-3">Media</td><td class="p-3">Qualidade > velocidade</td></tr>
+              <tr><td class="p-3 font-semibold">Melhoria Continua</td><td class="p-3">Loop</td><td class="p-3">Adaptativa</td><td class="p-3">Alta</td><td class="p-3">Otimizacao progressiva</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-r from-nivel-3a to-green-600 text-white rounded-xl p-8">
+        <h2 class="text-3xl font-bold mb-4">Conclusao do Modulo</h2>
+        <p class="text-lg mb-6">Voce implementou 4 projetos praticos reais que demonstram diferentes arquiteturas de sistemas multiagentes.</p>
+        <div class="bg-white/10 backdrop-blur p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-xl mb-2">O que voce dominou:</h3>
+          <ul class="space-y-2">
+            <li>Pipeline Linear para processos estruturados</li>
+            <li>Sistema Paralelo para analises complexas</li>
+            <li>Ciclos Iterativos para garantir qualidade</li>
+            <li>Loops Autonomos para melhoria continua</li>
+          </ul>
+        </div>
+        <div class="flex gap-4">
+          <a href="../niveis/nivel-3a.html" class="px-6 py-3 bg-white text-nivel-3a rounded-lg font-semibold hover:bg-neutral-100">Voltar ao Nivel 3A</a>
+          <a href="nivel-3a-modulo-7.html" class="px-6 py-3 bg-white/20 text-white rounded-lg font-semibold hover:bg-white/30">Proximo Modulo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold text-white mb-4">FEI - Engenharia de Intencao</h3>
+          <p class="text-sm">Formacao completa para dominar a nova era da IA</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Niveis</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../niveis/nivel-1.html" class="hover:text-white">Nivel 1: Fundamentos</a></li>
+            <li><a href="../niveis/nivel-2.html" class="hover:text-white">Nivel 2: Programa Completo</a></li>
+            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Nivel 3A: Agentes</a></li>
+            <li><a href="../niveis/nivel-3s.html" class="hover:text-white">Nivel 3S: Sistemas 2026</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../index.html" class="hover:text-white">Inicio</a></li>
+            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Voltar ao Nivel 3A</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-neutral-800 mt-8 pt-8 text-center text-sm">
+        <p>&copy; 2025 FEI - Formacao em Engenharia de Intencao.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/app.js"></script>
+</body>
+</html>

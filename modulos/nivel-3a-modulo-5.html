@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 5: Como Criar um Agente | FEI Nível 3A</title>
+  <meta name="description" content="Aprenda a criar agentes especializados usando Engenharia de Intenção">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'nivel-1': '#3B82F6',
+            'nivel-2': '#9b59b6',
+            'nivel-3a': '#10B981',
+            'nivel-3s': '#F59E0B',
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+  </style>
+</head>
+<body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-3a bg-clip-text text-transparent">
+            FEI - Engenharia de Intencao
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-3a">Inicio</a>
+          <a href="../niveis/nivel-3a.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-3a">Nivel 3A</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <nav class="flex text-sm" aria-label="Breadcrumb">
+        <a href="../index.html" class="text-nivel-3a hover:text-green-700">Inicio</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <a href="../niveis/nivel-3a.html" class="text-nivel-3a hover:text-green-700">Nivel 3A</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <span class="text-neutral-600 dark:text-neutral-400">Modulo 5</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-nivel-3a to-green-600 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Modulo 5
+        </span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Nivel 3A - Agentes e Sistemas Autonomos
+        </span>
+      </div>
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">
+        Como Criar um Agente com Engenharia de Intencao
+      </h1>
+      <p class="text-xl text-white/90">
+        Estrutura completa para projetar agentes especializados e eficazes
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-12 bg-neutral-50 dark:bg-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Download Button -->
+      <div class="flex justify-end mb-6">
+        <a href="../downloads/nivel-3a-modulo-5.md" download class="px-6 py-3 bg-nivel-3a text-white rounded-lg font-semibold hover:bg-green-600 inline-flex items-center gap-2">
+          <span>Download MD</span>
+        </a>
+      </div>
+
+      <!-- Introducao -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
+          Introducao
+        </h2>
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          Criar um agente eficaz nao e apenas escrever "voce e um assistente que...". E um processo estruturado que define <strong>identidade, missao, limites e comportamentos</strong> do agente.
+        </p>
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          Neste modulo, voce aprendera a <strong>estrutura completa de 9 componentes</strong> para criar agentes profissionais usando Engenharia de Intencao.
+        </p>
+        <div class="bg-nivel-3a/10 border-l-4 border-nivel-3a p-6 rounded-lg">
+          <h3 class="font-bold text-nivel-3a mb-2">O que voce vai dominar:</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            A estrutura de 9 componentes para criar agentes. Como definir identidade e missao clara. Como estabelecer limites e responsabilidades. Como criar protocolos de comunicacao eficazes.
+          </p>
+        </div>
+      </div>
+
+      <!-- Os 9 Componentes -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Os 9 Componentes Essenciais de um Agente
+        </h2>
+
+        <div class="space-y-6">
+          <div class="bg-nivel-3a/10 p-6 rounded-lg">
+            <div class="grid md:grid-cols-3 gap-4">
+              <div class="bg-white dark:bg-neutral-700 p-4 rounded text-center">
+                <div class="text-2xl font-bold text-nivel-3a mb-1">1</div>
+                <div class="text-sm font-semibold">Nome do Agente</div>
+              </div>
+              <div class="bg-white dark:bg-neutral-700 p-4 rounded text-center">
+                <div class="text-2xl font-bold text-nivel-3a mb-1">2</div>
+                <div class="text-sm font-semibold">Missao</div>
+              </div>
+              <div class="bg-white dark:bg-neutral-700 p-4 rounded text-center">
+                <div class="text-2xl font-bold text-nivel-3a mb-1">3</div>
+                <div class="text-sm font-semibold">Intencao</div>
+              </div>
+              <div class="bg-white dark:bg-neutral-700 p-4 rounded text-center">
+                <div class="text-2xl font-bold text-nivel-3a mb-1">4</div>
+                <div class="text-sm font-semibold">Limites</div>
+              </div>
+              <div class="bg-white dark:bg-neutral-700 p-4 rounded text-center">
+                <div class="text-2xl font-bold text-nivel-3a mb-1">5</div>
+                <div class="text-sm font-semibold">Raciocinio Interno</div>
+              </div>
+              <div class="bg-white dark:bg-neutral-700 p-4 rounded text-center">
+                <div class="text-2xl font-bold text-nivel-3a mb-1">6</div>
+                <div class="text-sm font-semibold">Protocolos de Validacao</div>
+              </div>
+              <div class="bg-white dark:bg-neutral-700 p-4 rounded text-center">
+                <div class="text-2xl font-bold text-nivel-3a mb-1">7</div>
+                <div class="text-sm font-semibold">Acoes Possiveis</div>
+              </div>
+              <div class="bg-white dark:bg-neutral-700 p-4 rounded text-center">
+                <div class="text-2xl font-bold text-nivel-3a mb-1">8</div>
+                <div class="text-sm font-semibold">Comunicacao Usuario</div>
+              </div>
+              <div class="bg-white dark:bg-neutral-700 p-4 rounded text-center">
+                <div class="text-2xl font-bold text-nivel-3a mb-1">9</div>
+                <div class="text-sm font-semibold">Comunicacao Agentes</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Componente 1: Nome do Agente -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-nivel-3a text-white rounded-full flex items-center justify-center text-xl font-bold">
+            1
+          </div>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Nome do Agente
+          </h2>
+        </div>
+
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          O nome define a <strong>identidade</strong> e o <strong>papel</strong> do agente no sistema.
+        </p>
+
+        <div class="bg-nivel-3a/10 p-6 rounded-lg mb-4">
+          <h3 class="font-bold mb-3">Boas Praticas para Nomes</h3>
+          <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+            <li><strong>Seja descritivo:</strong> O nome deve indicar a funcao (ex: "Agente Pesquisador de Mercado")</li>
+            <li><strong>Use substantivos claros:</strong> Evite nomes genericos como "Helper" ou "Assistant"</li>
+            <li><strong>Inclua especialidade:</strong> "Agente Analista de SEO" e melhor que "Agente de Analise"</li>
+            <li><strong>Mantenha consistencia:</strong> Use padroes em sistemas multiagentes</li>
+          </ul>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded border-l-4 border-nivel-3a">
+            <h4 class="font-bold text-nivel-3a mb-2">Bons Exemplos</h4>
+            <ul class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+              <li>Agente Pesquisador de Tendencias de IA</li>
+              <li>Agente Escritor de Conteudo Educacional</li>
+              <li>Agente Otimizador de Performance Web</li>
+              <li>Agente Coordenador de Projetos</li>
+            </ul>
+          </div>
+          <div class="bg-red-50 dark:bg-red-900/20 p-4 rounded border-l-4 border-red-500">
+            <h4 class="font-bold text-red-600 mb-2">Exemplos Ruins</h4>
+            <ul class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+              <li>Helper Bot</li>
+              <li>Assistant 1</li>
+              <li>Agent X</li>
+              <li>Smart AI</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Componente 2: Missao -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-nivel-3a text-white rounded-full flex items-center justify-center text-xl font-bold">
+            2
+          </div>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Missao
+          </h2>
+        </div>
+
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          A missao define <strong>o que o agente faz</strong> e <strong>qual problema ele resolve</strong>.
+        </p>
+
+        <div class="bg-nivel-3a/10 p-6 rounded-lg mb-4">
+          <h3 class="font-bold mb-3">Estrutura de uma Boa Missao</h3>
+          <div class="bg-white dark:bg-neutral-700 p-4 rounded mb-3">
+            <code class="text-sm">
+              [Verbo de acao] + [Objeto] + [Para quem/onde] + [Resultado esperado]
+            </code>
+          </div>
+          <p class="text-sm text-neutral-700 dark:text-neutral-300">
+            <strong>Exemplo:</strong> "Pesquisar e sintetizar informacoes sobre tendencias de IA para profissionais de tecnologia, gerando relatorios claros e acionaveis."
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="bg-white dark:bg-neutral-700 p-6 rounded border-l-4 border-nivel-3a">
+            <h4 class="font-bold mb-2">Exemplo 1: Agente Escritor</h4>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300">
+              <strong>Missao:</strong> "Criar conteudo escrito de alta qualidade sobre marketing digital para pequenas empresas, mantendo tom acessivel e incluindo exemplos praticos acionaveis."
+            </p>
+          </div>
+          <div class="bg-white dark:bg-neutral-700 p-6 rounded border-l-4 border-nivel-3a">
+            <h4 class="font-bold mb-2">Exemplo 2: Agente Analista</h4>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300">
+              <strong>Missao:</strong> "Analisar dados de vendas e comportamento de usuarios para identificar padroes, gerar insights acionaveis e recomendar estrategias de crescimento baseadas em evidencia."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Componente 3: Intencao -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-nivel-3a text-white rounded-full flex items-center justify-center text-xl font-bold">
+            3
+          </div>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Intencao
+          </h2>
+        </div>
+
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          A intencao define <strong>por que o agente existe</strong> e <strong>qual valor ele entrega</strong>.
+        </p>
+
+        <div class="bg-nivel-3a/10 p-6 rounded-lg mb-4">
+          <h3 class="font-bold mb-3">Missao vs Intencao</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <h4 class="font-bold text-blue-600 mb-2">Missao (O QUE)</h4>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                Descreve a acao concreta que o agente realiza.
+              </p>
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <h4 class="font-bold text-nivel-3a mb-2">Intencao (POR QUE)</h4>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                Explica o proposito e o impacto desejado.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="bg-white dark:bg-neutral-700 p-6 rounded border-l-4 border-nivel-3a">
+            <h4 class="font-bold mb-2">Exemplo: Agente Pesquisador</h4>
+            <div class="space-y-2 text-sm">
+              <div><strong>Missao:</strong> "Buscar e sintetizar informacoes relevantes sobre topicos especificos."</div>
+              <div class="text-nivel-3a"><strong>Intencao:</strong> "Economizar tempo do usuario, fornecendo informacao curada e confiavel que permita tomar decisoes informadas rapidamente, eliminando a necessidade de pesquisa manual extensa."</div>
+            </div>
+          </div>
+          <div class="bg-white dark:bg-neutral-700 p-6 rounded border-l-4 border-nivel-3a">
+            <h4 class="font-bold mb-2">Exemplo: Agente Otimizador</h4>
+            <div class="space-y-2 text-sm">
+              <div><strong>Missao:</strong> "Analisar sistemas existentes e identificar oportunidades de melhoria."</div>
+              <div class="text-nivel-3a"><strong>Intencao:</strong> "Maximizar eficiencia e resultados dos processos do usuario, reduzindo desperdicio de recursos e aumentando ROI atraves de ajustes baseados em dados."</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Componente 4: Limites -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-nivel-3a text-white rounded-full flex items-center justify-center text-xl font-bold">
+            4
+          </div>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Limites
+          </h2>
+        </div>
+
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          Limites definem <strong>o que o agente NAO deve fazer</strong> e <strong>onde para sua responsabilidade</strong>.
+        </p>
+
+        <div class="bg-red-50 dark:bg-red-900/20 p-6 rounded-lg mb-4 border-l-4 border-red-500">
+          <h3 class="font-bold text-red-600 mb-3">Por que Limites sao Criticos</h3>
+          <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+            Sem limites claros, agentes podem:
+          </p>
+          <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+            <li>Tentar resolver problemas fora de sua especialidade</li>
+            <li>Fornecer informacoes incorretas com confianca</li>
+            <li>Gastar recursos desnecessariamente</li>
+            <li>Criar conflitos com outros agentes</li>
+          </ul>
+        </div>
+
+        <div class="bg-white dark:bg-neutral-700 p-6 rounded-lg mb-4">
+          <h3 class="font-bold mb-3">Tipos de Limites</h3>
+          <div class="space-y-4">
+            <div>
+              <h4 class="font-semibold text-nivel-3a mb-2">1. Limites de Escopo</h4>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong>Exemplo:</strong> "Voce analisa APENAS metricas de marketing digital. Nao forneca analises financeiras ou operacionais."
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-nivel-3a mb-2">2. Limites de Acao</h4>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong>Exemplo:</strong> "Voce pode SUGERIR mudancas de codigo, mas nunca execute alteracoes sem aprovacao explicita."
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-nivel-3a mb-2">3. Limites de Conhecimento</h4>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong>Exemplo:</strong> "Se voce nao tem certeza sobre uma informacao, SEMPRE indique incerteza e sugira fontes adicionais."
+              </p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-nivel-3a mb-2">4. Limites Eticos</h4>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong>Exemplo:</strong> "Nunca sugira estrategias que envolvam desinformacao, manipulacao ou praticas antiéticas."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Componente 5: Processo Interno de Raciocinio -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-nivel-3a text-white rounded-full flex items-center justify-center text-xl font-bold">
+            5
+          </div>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Processo Interno de Raciocinio
+          </h2>
+        </div>
+
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          Define <strong>como o agente pensa</strong> antes de agir - seu framework mental.
+        </p>
+
+        <div class="bg-nivel-3a/10 p-6 rounded-lg mb-4">
+          <h3 class="font-bold mb-3">Estrutura de Raciocinio (Chain of Thought)</h3>
+          <div class="space-y-3">
+            <div class="flex gap-3 items-start">
+              <div class="w-8 h-8 bg-nivel-3a text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
+              <div>
+                <h4 class="font-semibold">Entender o Pedido</h4>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">O que exatamente o usuario quer? Qual e a intencao real?</p>
+              </div>
+            </div>
+            <div class="flex gap-3 items-start">
+              <div class="w-8 h-8 bg-nivel-3a text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
+              <div>
+                <h4 class="font-semibold">Identificar o que Falta</h4>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">Quais informacoes/ferramentas preciso para resolver isso?</p>
+              </div>
+            </div>
+            <div class="flex gap-3 items-start">
+              <div class="w-8 h-8 bg-nivel-3a text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">3</div>
+              <div>
+                <h4 class="font-semibold">Planejar a Abordagem</h4>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">Qual a melhor sequencia de acoes para alcançar o resultado?</p>
+              </div>
+            </div>
+            <div class="flex gap-3 items-start">
+              <div class="w-8 h-8 bg-nivel-3a text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">4</div>
+              <div>
+                <h4 class="font-semibold">Executar com Validacao</h4>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">Realizar acoes e validar qualidade em cada etapa.</p>
+              </div>
+            </div>
+            <div class="flex gap-3 items-start">
+              <div class="w-8 h-8 bg-nivel-3a text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">5</div>
+              <div>
+                <h4 class="font-semibold">Revisar e Ajustar</h4>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">O resultado atende aos criterios? Se nao, o que precisa melhorar?</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Componentes 6-9 Resumo -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Componentes 6-9: Protocolos e Comunicacao
+        </h2>
+
+        <div class="space-y-6">
+          <!-- Componente 6 -->
+          <div class="border-l-4 border-nivel-3a pl-6">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-10 h-10 bg-nivel-3a text-white rounded-full flex items-center justify-center font-bold">6</div>
+              <h3 class="text-xl font-bold">Protocolos de Validacao</h3>
+            </div>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Criterios objetivos para avaliar se o trabalho esta completo e atende aos padroes de qualidade.
+            </p>
+            <div class="bg-neutral-50 dark:bg-neutral-700 p-4 rounded text-sm">
+              <strong>Exemplo:</strong> "Antes de entregar um artigo, valide: (1) Tem entre 1500-2000 palavras, (2) Inclui exemplos praticos, (3) Tom e consistente, (4) Sem erros gramaticais, (5) CTA claro no final."
+            </div>
+          </div>
+
+          <!-- Componente 7 -->
+          <div class="border-l-4 border-nivel-3a pl-6">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-10 h-10 bg-nivel-3a text-white rounded-full flex items-center justify-center font-bold">7</div>
+              <h3 class="text-xl font-bold">Acoes Possiveis</h3>
+            </div>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Lista clara das ferramentas e acoes que o agente pode executar.
+            </p>
+            <div class="bg-neutral-50 dark:bg-neutral-700 p-4 rounded text-sm">
+              <strong>Exemplo:</strong> "Voce pode: (1) Buscar na web, (2) Ler documentos PDF, (3) Executar analises de dados em Python, (4) Gerar visualizacoes, (5) Criar resumos estruturados."
+            </div>
+          </div>
+
+          <!-- Componente 8 -->
+          <div class="border-l-4 border-nivel-3a pl-6">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-10 h-10 bg-nivel-3a text-white rounded-full flex items-center justify-center font-bold">8</div>
+              <h3 class="text-xl font-bold">Comunicacao com o Usuario</h3>
+            </div>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Como o agente deve se comunicar: tom, formato, nivel de detalhe.
+            </p>
+            <div class="bg-neutral-50 dark:bg-neutral-700 p-4 rounded text-sm">
+              <strong>Exemplo:</strong> "Use tom profissional mas acessivel. Sempre explique seu raciocinio. Formate resultados em topicos claros. Se houver incerteza, seja explicito sobre isso."
+            </div>
+          </div>
+
+          <!-- Componente 9 -->
+          <div class="border-l-4 border-nivel-3a pl-6">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-10 h-10 bg-nivel-3a text-white rounded-full flex items-center justify-center font-bold">9</div>
+              <h3 class="text-xl font-bold">Comunicacao com Outros Agentes</h3>
+            </div>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Como o agente interage com outros agentes no sistema multiagente.
+            </p>
+            <div class="bg-neutral-50 dark:bg-neutral-700 p-4 rounded text-sm">
+              <strong>Exemplo:</strong> "Ao receber tarefa do Coordenador, confirme entendimento e prazo estimado. Ao entregar para proximo agente, inclua contexto e criterios de qualidade esperados."
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Template Completo -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Template Completo de Agente
+        </h2>
+
+        <div class="bg-neutral-900 text-green-400 p-6 rounded-lg font-mono text-sm overflow-x-auto">
+<pre>
+# AGENTE: [Nome Descritivo do Agente]
+
+## MISSAO
+[O que o agente faz - acao concreta e resultado esperado]
+
+## INTENCAO
+[Por que o agente existe - valor e impacto entregue]
+
+## LIMITES
+- Escopo: [O que esta dentro/fora do escopo]
+- Acoes: [O que pode/nao pode fazer]
+- Conhecimento: [Como lidar com incertezas]
+- Etica: [Principios que nao podem ser violados]
+
+## PROCESSO DE RACIOCINIO
+1. Entender o pedido e a intencao real
+2. Identificar informacoes/ferramentas necessarias
+3. Planejar sequencia de acoes
+4. Executar com validacao continua
+5. Revisar qualidade e ajustar se necessario
+
+## PROTOCOLOS DE VALIDACAO
+Antes de entregar, verificar:
+- [Criterio 1]
+- [Criterio 2]
+- [Criterio 3]
+
+## ACOES POSSIVEIS
+- [Ferramenta/Acao 1]
+- [Ferramenta/Acao 2]
+- [Ferramenta/Acao 3]
+
+## COMUNICACAO COM USUARIO
+- Tom: [profissional/casual/tecnico]
+- Formato: [estruturado/narrativo/bullet points]
+- Nivel de detalhe: [resumido/detalhado/adaptativo]
+- Transparencia: [sempre explicar raciocinio/mostrar incertezas]
+
+## COMUNICACAO COM OUTROS AGENTES
+- Ao receber: [Como confirmar entendimento]
+- Ao entregar: [Que contexto incluir]
+- Formato de dados: [Estrutura padrao de comunicacao]
+</pre>
+        </div>
+
+        <div class="mt-6 bg-nivel-3a/10 p-4 rounded-lg border-l-4 border-nivel-3a">
+          <p class="text-sm text-neutral-700 dark:text-neutral-300">
+            <strong>Dica:</strong> Salve este template e use-o sempre que criar um novo agente. Personalizar cada secao garante agentes especializados e eficazes.
+          </p>
+        </div>
+      </div>
+
+      <!-- Conclusao -->
+      <div class="bg-gradient-to-r from-nivel-3a to-green-600 text-white rounded-xl p-8">
+        <h2 class="text-3xl font-bold mb-4">Conclusao do Modulo</h2>
+        <p class="text-lg mb-6">
+          Voce dominou a estrutura completa de 9 componentes para criar agentes profissionais usando Engenharia de Intencao.
+        </p>
+        <div class="bg-white/10 backdrop-blur p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-xl mb-2">O que voce dominou:</h3>
+          <ul class="space-y-2">
+            <li>Como definir nome e identidade clara</li>
+            <li>Estrutura de missao e intencao</li>
+            <li>Como estabelecer limites eficazes</li>
+            <li>Framework de raciocinio interno</li>
+            <li>Protocolos de validacao e comunicacao</li>
+            <li>Template completo reutilizavel</li>
+          </ul>
+        </div>
+        <div class="flex gap-4">
+          <a href="../niveis/nivel-3a.html" class="px-6 py-3 bg-white text-nivel-3a rounded-lg font-semibold hover:bg-neutral-100 inline-flex items-center gap-2">
+            <span>Voltar ao Nivel 3A</span>
+          </a>
+          <a href="nivel-3a-modulo-6.html" class="px-6 py-3 bg-white/20 text-white rounded-lg font-semibold hover:bg-white/30 inline-flex items-center gap-2">
+            <span>Proximo Modulo</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold text-white mb-4">FEI - Engenharia de Intencao</h3>
+          <p class="text-sm">Formacao completa para dominar a nova era da IA</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Niveis</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../niveis/nivel-1.html" class="hover:text-white">Nivel 1: Fundamentos</a></li>
+            <li><a href="../niveis/nivel-2.html" class="hover:text-white">Nivel 2: Programa Completo</a></li>
+            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Nivel 3A: Agentes</a></li>
+            <li><a href="../niveis/nivel-3s.html" class="hover:text-white">Nivel 3S: Sistemas 2026</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../index.html" class="hover:text-white">Inicio</a></li>
+            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Voltar ao Nivel 3A</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-neutral-800 mt-8 pt-8 text-center text-sm">
+        <p>&copy; 2025 FEI - Formacao em Engenharia de Intencao.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>

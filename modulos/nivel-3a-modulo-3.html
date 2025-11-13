@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3: 10 Tipos de Agentes | FEI Nível 3A</title>
+  <meta name="description" content="Conheça os 10 principais tipos de agentes e suas aplicações práticas">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'nivel-1': '#3B82F6',
+            'nivel-2': '#9b59b6',
+            'nivel-3a': '#10B981',
+            'nivel-3s': '#F59E0B',
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+  </style>
+</head>
+<body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-3a bg-clip-text text-transparent">
+            FEI - Engenharia de Intencao
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-3a">Inicio</a>
+          <a href="../niveis/nivel-3a.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-3a">Nivel 3A</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <nav class="flex text-sm" aria-label="Breadcrumb">
+        <a href="../index.html" class="text-nivel-3a hover:text-green-700">Inicio</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <a href="../niveis/nivel-3a.html" class="text-nivel-3a hover:text-green-700">Nivel 3A</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <span class="text-neutral-600 dark:text-neutral-400">Modulo 3</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-nivel-3a to-green-600 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Modulo 3
+        </span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Nivel 3A - Agentes e Sistemas Autonomos
+        </span>
+      </div>
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">
+        10 Tipos de Agentes Especializados
+      </h1>
+      <p class="text-xl text-white/90">
+        Conheca os principais tipos de agentes e quando usar cada um
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-12 bg-neutral-50 dark:bg-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Download Button -->
+      <div class="flex justify-end mb-6">
+        <a href="../downloads/nivel-3a-modulo-3.md" download class="px-6 py-3 bg-nivel-3a text-white rounded-lg font-semibold hover:bg-green-600 inline-flex items-center gap-2">
+          <span>Download MD</span>
+        </a>
+      </div>
+
+      <!-- Introducao -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
+          Introducao
+        </h2>
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          Assim como um time de especialistas, cada agente pode ter um <strong>papel especifico</strong> no seu sistema. Nao existe "agente universal" - o poder esta em escolher o agente certo para cada tarefa.
+        </p>
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          Neste modulo, voce conhecera os <strong>10 principais tipos de agentes</strong>, suas caracteristicas, aplicacoes praticas e quando usar cada um.
+        </p>
+        <div class="bg-nivel-3a/10 border-l-4 border-nivel-3a p-6 rounded-lg">
+          <h3 class="font-bold text-nivel-3a mb-2">O que voce vai dominar:</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Compreender os 10 tipos principais de agentes especializados. Aprender quando e como usar cada tipo. Descobrir como combinar diferentes agentes para criar sistemas poderosos.
+          </p>
+        </div>
+      </div>
+
+      <!-- Agente 1: Pesquisador -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-nivel-3a text-white rounded-full flex items-center justify-center text-xl font-bold">
+            1
+          </div>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Agente Pesquisador
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Missao Principal</h3>
+            <p class="text-neutral-700 dark:text-neutral-300">
+              Coletar, analisar e sintetizar informacoes de multiplas fontes para responder perguntas complexas ou construir conhecimento sobre um topico.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Ferramentas Principais</h3>
+            <ul class="space-y-1 text-neutral-700 dark:text-neutral-300">
+              <li>Busca na web (Google, Bing, APIs)</li>
+              <li>Acesso a bases de dados</li>
+              <li>Leitura de documentos (PDF, articles)</li>
+              <li>Analise de fontes credíveis</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-nivel-3a/10 p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-lg mb-3">Exemplos de Uso</h3>
+          <div class="space-y-3">
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Pesquisa de Mercado:</strong> "Analise as tendencias de IA em 2025 e identifique oportunidades de negocio."
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Revisao Academica:</strong> "Busque os ultimos estudos sobre aprendizado de maquina aplicado a saude."
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Analise Competitiva:</strong> "Pesquise estrategias dos 5 maiores concorrentes no mercado de SaaS."
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-green-50 dark:bg-green-900/20 border-l-4 border-nivel-3a p-6 rounded-lg">
+          <h3 class="font-bold mb-2">Quando usar</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Quando voce precisa de <strong>informacao atualizada e confiavel</strong> antes de tomar decisoes ou criar conteudo. Ideal para iniciar projetos complexos.
+          </p>
+        </div>
+      </div>
+
+      <!-- Agente 2: Escritor -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-nivel-3a text-white rounded-full flex items-center justify-center text-xl font-bold">
+            2
+          </div>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Agente Escritor
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Missao Principal</h3>
+            <p class="text-neutral-700 dark:text-neutral-300">
+              Criar conteudo escrito de alta qualidade, adaptado ao publico-alvo, mantendo consistencia de tom, estilo e mensagem.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Ferramentas Principais</h3>
+            <ul class="space-y-1 text-neutral-700 dark:text-neutral-300">
+              <li>Templates de estrutura</li>
+              <li>Analise de SEO</li>
+              <li>Verificacao de tom e estilo</li>
+              <li>Formatacao automatica</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-nivel-3a/10 p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-lg mb-3">Exemplos de Uso</h3>
+          <div class="space-y-3">
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Blog Posts:</strong> "Escreva um artigo de 2000 palavras sobre 'Como implementar IA em pequenas empresas'."
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Copy de Vendas:</strong> "Crie uma pagina de vendas persuasiva para um curso online de Python."
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Scripts de Video:</strong> "Escreva roteiro para video do YouTube sobre produtividade (10 minutos)."
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-green-50 dark:bg-green-900/20 border-l-4 border-nivel-3a p-6 rounded-lg">
+          <h3 class="font-bold mb-2">Quando usar</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Quando voce precisa <strong>produzir conteudo em escala</strong> mantendo qualidade consistente. Ideal para marketing de conteudo e educacao.
+          </p>
+        </div>
+      </div>
+
+      <!-- Agente 3: Analista de Dados -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-nivel-3a text-white rounded-full flex items-center justify-center text-xl font-bold">
+            3
+          </div>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Agente Analista de Dados
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Missao Principal</h3>
+            <p class="text-neutral-700 dark:text-neutral-300">
+              Processar dados brutos, identificar padroes, gerar insights acionaveis e criar visualizacoes que comuniquem resultados claramente.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Ferramentas Principais</h3>
+            <ul class="space-y-1 text-neutral-700 dark:text-neutral-300">
+              <li>Python/R para analise</li>
+              <li>SQL para queries</li>
+              <li>Bibliotecas de visualizacao</li>
+              <li>Modelos estatisticos</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-nivel-3a/10 p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-lg mb-3">Exemplos de Uso</h3>
+          <div class="space-y-3">
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Analise de Vendas:</strong> "Analise os dados de vendas dos ultimos 6 meses e identifique produtos com maior potencial."
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Metricas de Usuario:</strong> "Processe os dados de comportamento do usuario e sugira melhorias de UX."
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Previsao de Tendencias:</strong> "Analise historico de dados e preveja demanda para o proximo trimestre."
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-green-50 dark:bg-green-900/20 border-l-4 border-nivel-3a p-6 rounded-lg">
+          <h3 class="font-bold mb-2">Quando usar</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Quando voce tem <strong>grandes volumes de dados</strong> e precisa extrair insights para tomar decisoes baseadas em evidencia.
+          </p>
+        </div>
+      </div>
+
+      <!-- Agente 4: Planejador Estrategico -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-nivel-3a text-white rounded-full flex items-center justify-center text-xl font-bold">
+            4
+          </div>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Agente Planejador Estrategico
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Missao Principal</h3>
+            <p class="text-neutral-700 dark:text-neutral-300">
+              Criar planos detalhados, definir objetivos, priorizar acoes e estruturar roadmaps para alcançar resultados complexos.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Ferramentas Principais</h3>
+            <ul class="space-y-1 text-neutral-700 dark:text-neutral-300">
+              <li>Frameworks de planejamento</li>
+              <li>Analise SWOT</li>
+              <li>OKRs e KPIs</li>
+              <li>Priorizacao de tarefas</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-nivel-3a/10 p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-lg mb-3">Exemplos de Uso</h3>
+          <div class="space-y-3">
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Planejamento de Produto:</strong> "Crie roadmap de 12 meses para lancamento de novo produto SaaS."
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Estrategia de Marketing:</strong> "Desenvolva plano de marketing completo para Q1 2025 com orçamento de $50k."
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Transformacao Digital:</strong> "Estruture plano de implementacao de IA em todos os departamentos."
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-green-50 dark:bg-green-900/20 border-l-4 border-nivel-3a p-6 rounded-lg">
+          <h3 class="font-bold mb-2">Quando usar</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Quando voce precisa <strong>estruturar projetos complexos</strong> com multiplas etapas, recursos limitados e objetivos ambiciosos.
+          </p>
+        </div>
+      </div>
+
+      <!-- Agente 5: Consultor -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-nivel-3a text-white rounded-full flex items-center justify-center text-xl font-bold">
+            5
+          </div>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Agente Consultor
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Missao Principal</h3>
+            <p class="text-neutral-700 dark:text-neutral-300">
+              Analisar problemas complexos, diagnosticar causas raiz, e recomendar solucoes customizadas baseadas em melhores praticas.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Ferramentas Principais</h3>
+            <ul class="space-y-1 text-neutral-700 dark:text-neutral-300">
+              <li>Frameworks de consultoria</li>
+              <li>Analise diagnostica</li>
+              <li>Benchmarking</li>
+              <li>Recomendacoes acionaveis</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-nivel-3a/10 p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-lg mb-3">Exemplos de Uso</h3>
+          <div class="space-y-3">
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Consultoria de Negocios:</strong> "Por que minhas vendas cairam 30% no ultimo trimestre? O que fazer?"
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Consultoria Tecnica:</strong> "Nossa arquitetura de software nao esta escalando. Qual a melhor solucao?"
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Consultoria de Processos:</strong> "Como otimizar nosso fluxo de atendimento ao cliente?"
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-green-50 dark:bg-green-900/20 border-l-4 border-nivel-3a p-6 rounded-lg">
+          <h3 class="font-bold mb-2">Quando usar</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Quando voce enfrenta <strong>problemas complexos</strong> e precisa de diagnostico profissional e recomendacoes especializadas.
+          </p>
+        </div>
+      </div>
+
+      <!-- Agente 6: Codificador -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-nivel-3a text-white rounded-full flex items-center justify-center text-xl font-bold">
+            6
+          </div>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Agente Codificador
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Missao Principal</h3>
+            <p class="text-neutral-700 dark:text-neutral-300">
+              Escrever, testar, depurar e otimizar codigo seguindo boas praticas e padroes de qualidade estabelecidos.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Ferramentas Principais</h3>
+            <ul class="space-y-1 text-neutral-700 dark:text-neutral-300">
+              <li>IDEs e editores</li>
+              <li>Frameworks e bibliotecas</li>
+              <li>Ferramentas de teste</li>
+              <li>Controle de versao (Git)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-nivel-3a/10 p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-lg mb-3">Exemplos de Uso</h3>
+          <div class="space-y-3">
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Desenvolvimento Web:</strong> "Crie um sistema de autenticacao completo usando Node.js e JWT."
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Automacao:</strong> "Escreva script Python para processar 10.000 arquivos CSV e gerar relatorio."
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>API Development:</strong> "Desenvolva API RESTful para sistema de gerenciamento de usuarios."
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-green-50 dark:bg-green-900/20 border-l-4 border-nivel-3a p-6 rounded-lg">
+          <h3 class="font-bold mb-2">Quando usar</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Quando voce precisa <strong>implementar solucoes tecnicas</strong> rapidamente com codigo limpo, testado e documentado.
+          </p>
+        </div>
+      </div>
+
+      <!-- Agente 7: Otimizador -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-nivel-3a text-white rounded-full flex items-center justify-center text-xl font-bold">
+            7
+          </div>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Agente Otimizador
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Missao Principal</h3>
+            <p class="text-neutral-700 dark:text-neutral-300">
+              Analisar processos, sistemas ou conteudos existentes e identificar oportunidades de melhoria para maximizar eficiencia e resultados.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Ferramentas Principais</h3>
+            <ul class="space-y-1 text-neutral-700 dark:text-neutral-300">
+              <li>Analise de performance</li>
+              <li>Testes A/B</li>
+              <li>Metricas de qualidade</li>
+              <li>Benchmarking</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-nivel-3a/10 p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-lg mb-3">Exemplos de Uso</h3>
+          <div class="space-y-3">
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Otimizacao de SEO:</strong> "Analise meu site e sugira melhorias para rankear melhor no Google."
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Performance de Codigo:</strong> "Otimize este algoritmo para processar dados 10x mais rapido."
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Conversao de Vendas:</strong> "Melhore minha landing page para aumentar taxa de conversao."
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-green-50 dark:bg-green-900/20 border-l-4 border-nivel-3a p-6 rounded-lg">
+          <h3 class="font-bold mb-2">Quando usar</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Quando voce ja tem algo funcionando, mas precisa <strong>melhorar resultados</strong> atraves de ajustes e otimizacoes.
+          </p>
+        </div>
+      </div>
+
+      <!-- Agente 8: Professor/Mentor -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-nivel-3a text-white rounded-full flex items-center justify-center text-xl font-bold">
+            8
+          </div>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Agente Professor/Mentor
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Missao Principal</h3>
+            <p class="text-neutral-700 dark:text-neutral-300">
+              Ensinar conceitos complexos de forma clara, adaptar explicacoes ao nivel do aluno, e guiar o aprendizado progressivo.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Ferramentas Principais</h3>
+            <ul class="space-y-1 text-neutral-700 dark:text-neutral-300">
+              <li>Metodos pedagogicos</li>
+              <li>Exemplos praticos</li>
+              <li>Exercicios progressivos</li>
+              <li>Feedback construtivo</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-nivel-3a/10 p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-lg mb-3">Exemplos de Uso</h3>
+          <div class="space-y-3">
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Ensino de Programacao:</strong> "Me ensine Python do zero com exercicios praticos progressivos."
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Mentoria de Negocios:</strong> "Me guie na criacao da minha primeira startup passo a passo."
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Tutoria Academica:</strong> "Explique calculo diferencial de forma visual e intuitiva."
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-green-50 dark:bg-green-900/20 border-l-4 border-nivel-3a p-6 rounded-lg">
+          <h3 class="font-bold mb-2">Quando usar</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Quando voce precisa <strong>aprender algo novo</strong> ou desenvolver habilidades com acompanhamento personalizado.
+          </p>
+        </div>
+      </div>
+
+      <!-- Agente 9: Organizador/Orquestrador -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-nivel-3a text-white rounded-full flex items-center justify-center text-xl font-bold">
+            9
+          </div>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Agente Organizador/Orquestrador
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Missao Principal</h3>
+            <p class="text-neutral-700 dark:text-neutral-300">
+              Coordenar multiplos agentes, gerenciar fluxos de trabalho, delegar tarefas e garantir que todos os componentes trabalhem em harmonia.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Ferramentas Principais</h3>
+            <ul class="space-y-1 text-neutral-700 dark:text-neutral-300">
+              <li>Gerenciamento de workflows</li>
+              <li>Delegacao inteligente</li>
+              <li>Monitoramento de progresso</li>
+              <li>Integracao de resultados</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-nivel-3a/10 p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-lg mb-3">Exemplos de Uso</h3>
+          <div class="space-y-3">
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Coordenacao de Projeto:</strong> "Gerencie criacao de curso completo coordenando pesquisador, escritor e editor."
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Pipeline de Conteudo:</strong> "Organize producao diaria de 5 posts de blog com 3 agentes especializados."
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Sistema Multi-etapas:</strong> "Coordene analise de mercado → estrategia → execucao → metricas."
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-green-50 dark:bg-green-900/20 border-l-4 border-nivel-3a p-6 rounded-lg">
+          <h3 class="font-bold mb-2">Quando usar</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Quando voce tem <strong>multiplos agentes trabalhando juntos</strong> e precisa de coordenacao centralizada e inteligente.
+          </p>
+        </div>
+      </div>
+
+      <!-- Agente 10: Tomada de Decisao -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-nivel-3a text-white rounded-full flex items-center justify-center text-xl font-bold">
+            10
+          </div>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Agente de Tomada de Decisao
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Missao Principal</h3>
+            <p class="text-neutral-700 dark:text-neutral-300">
+              Avaliar opcoes complexas, ponderar pros e contras, considerar riscos e recomendar a melhor decisao baseada em criterios objetivos.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Ferramentas Principais</h3>
+            <ul class="space-y-1 text-neutral-700 dark:text-neutral-300">
+              <li>Analise de trade-offs</li>
+              <li>Matriz de decisao</li>
+              <li>Avaliacao de riscos</li>
+              <li>Modelos de priorizacao</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-nivel-3a/10 p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-lg mb-3">Exemplos de Uso</h3>
+          <div class="space-y-3">
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Decisoes Estrategicas:</strong> "Devo expandir para mercado internacional ou focar em crescimento local?"
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Escolhas Tecnicas:</strong> "Qual stack tecnologica usar: MERN, LAMP ou Serverless?"
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Priorizacao:</strong> "Entre 10 features, quais 3 devo desenvolver primeiro?"
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-green-50 dark:bg-green-900/20 border-l-4 border-nivel-3a p-6 rounded-lg">
+          <h3 class="font-bold mb-2">Quando usar</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Quando voce enfrenta <strong>decisoes criticas</strong> com multiplas variaveis e precisa de analise objetiva para escolher o melhor caminho.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tabela Comparativa -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Tabela Comparativa: Quando Usar Cada Agente
+        </h2>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left">
+            <thead class="bg-nivel-3a text-white">
+              <tr>
+                <th class="p-3">Agente</th>
+                <th class="p-3">Melhor Para</th>
+                <th class="p-3">Evitar Quando</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-neutral-200 dark:divide-neutral-700">
+              <tr>
+                <td class="p-3 font-semibold">Pesquisador</td>
+                <td class="p-3">Precisa de informacao atualizada</td>
+                <td class="p-3">Ja tem todos os dados</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Escritor</td>
+                <td class="p-3">Producao de conteudo em escala</td>
+                <td class="p-3">Tarefa requer analise tecnica</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Analista de Dados</td>
+                <td class="p-3">Grandes volumes de dados</td>
+                <td class="p-3">Dados sao simples ou qualitativos</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Planejador</td>
+                <td class="p-3">Projetos complexos multi-fase</td>
+                <td class="p-3">Tarefa e simples e direta</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Consultor</td>
+                <td class="p-3">Problemas sem solucao clara</td>
+                <td class="p-3">Solucao ja esta definida</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Codificador</td>
+                <td class="p-3">Implementacao tecnica</td>
+                <td class="p-3">Problema e conceitual, nao tecnico</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Otimizador</td>
+                <td class="p-3">Melhorar algo existente</td>
+                <td class="p-3">Comecando do zero</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Professor</td>
+                <td class="p-3">Aprendizado progressivo</td>
+                <td class="p-3">Apenas precisa de resposta rapida</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Orquestrador</td>
+                <td class="p-3">Multiplos agentes trabalhando</td>
+                <td class="p-3">Tarefa pode ser feita por 1 agente</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Tomador de Decisao</td>
+                <td class="p-3">Decisoes complexas e criticas</td>
+                <td class="p-3">Decisao e obvia ou trivial</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Conclusao -->
+      <div class="bg-gradient-to-r from-nivel-3a to-green-600 text-white rounded-xl p-8">
+        <h2 class="text-3xl font-bold mb-4">Conclusao do Modulo</h2>
+        <p class="text-lg mb-6">
+          Voce conheceu os 10 principais tipos de agentes especializados e aprendeu quando usar cada um para maximizar resultados.
+        </p>
+        <div class="bg-white/10 backdrop-blur p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-xl mb-2">O que voce dominou:</h3>
+          <ul class="space-y-2">
+            <li>Os 10 tipos principais de agentes e suas especialidades</li>
+            <li>Quando usar cada tipo de agente</li>
+            <li>Como combinar agentes para resolver problemas complexos</li>
+            <li>Criterios para escolher o agente certo para cada situacao</li>
+          </ul>
+        </div>
+        <div class="flex gap-4">
+          <a href="../niveis/nivel-3a.html" class="px-6 py-3 bg-white text-nivel-3a rounded-lg font-semibold hover:bg-neutral-100 inline-flex items-center gap-2">
+            <span>Voltar ao Nivel 3A</span>
+          </a>
+          <a href="nivel-3a-modulo-4.html" class="px-6 py-3 bg-white/20 text-white rounded-lg font-semibold hover:bg-white/30 inline-flex items-center gap-2">
+            <span>Proximo Modulo</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold text-white mb-4">FEI - Engenharia de Intencao</h3>
+          <p class="text-sm">Formacao completa para dominar a nova era da IA</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Niveis</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../niveis/nivel-1.html" class="hover:text-white">Nivel 1: Fundamentos</a></li>
+            <li><a href="../niveis/nivel-2.html" class="hover:text-white">Nivel 2: Programa Completo</a></li>
+            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Nivel 3A: Agentes</a></li>
+            <li><a href="../niveis/nivel-3s.html" class="hover:text-white">Nivel 3S: Sistemas 2026</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../index.html" class="hover:text-white">Inicio</a></li>
+            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Voltar ao Nivel 3A</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-neutral-800 mt-8 pt-8 text-center text-sm">
+        <p>&copy; 2025 FEI - Formacao em Engenharia de Intencao.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>

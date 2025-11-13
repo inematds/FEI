@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 4: Sistemas Multiagentes | FEI Nível 3A</title>
+  <meta name="description" content="Aprenda como múltiplos agentes trabalham juntos para resolver problemas complexos">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'nivel-1': '#3B82F6',
+            'nivel-2': '#9b59b6',
+            'nivel-3a': '#10B981',
+            'nivel-3s': '#F59E0B',
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+  </style>
+</head>
+<body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-3a bg-clip-text text-transparent">
+            FEI - Engenharia de Intencao
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-3a">Inicio</a>
+          <a href="../niveis/nivel-3a.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-3a">Nivel 3A</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <nav class="flex text-sm" aria-label="Breadcrumb">
+        <a href="../index.html" class="text-nivel-3a hover:text-green-700">Inicio</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <a href="../niveis/nivel-3a.html" class="text-nivel-3a hover:text-green-700">Nivel 3A</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <span class="text-neutral-600 dark:text-neutral-400">Modulo 4</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-nivel-3a to-green-600 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Modulo 4
+        </span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Nivel 3A - Agentes e Sistemas Autonomos
+        </span>
+      </div>
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">
+        Sistemas Multiagentes
+      </h1>
+      <p class="text-xl text-white/90">
+        Como multiplos agentes trabalham juntos para resolver problemas complexos
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-12 bg-neutral-50 dark:bg-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Download Button -->
+      <div class="flex justify-end mb-6">
+        <a href="../downloads/nivel-3a-modulo-4.md" download class="px-6 py-3 bg-nivel-3a text-white rounded-lg font-semibold hover:bg-green-600 inline-flex items-center gap-2">
+          <span>Download MD</span>
+        </a>
+      </div>
+
+      <!-- Introducao -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
+          Introducao
+        </h2>
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          Um agente sozinho e poderoso. Mas <strong>multiplos agentes trabalhando juntos</strong> podem resolver problemas que seriam impossiveis para um agente individual.
+        </p>
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          Sistemas multiagentes sao como <strong>times de especialistas</strong> - cada um com seu papel, trabalhando de forma coordenada para alcançar um objetivo comum.
+        </p>
+        <div class="bg-nivel-3a/10 border-l-4 border-nivel-3a p-6 rounded-lg">
+          <h3 class="font-bold text-nivel-3a mb-2">O que voce vai dominar:</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            5 arquiteturas de sistemas multiagentes. Como coordenar agentes para trabalharem juntos. Quando usar cada tipo de arquitetura. Como implementar comunicacao eficiente entre agentes.
+          </p>
+        </div>
+      </div>
+
+      <!-- Arquitetura 1: Pipeline Linear -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 bg-nivel-3a text-white rounded-full flex items-center justify-center text-xl font-bold">
+            1
+          </div>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Pipeline Linear (Sequencial)
+          </h2>
+        </div>
+
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+          Agentes trabalham em <strong>sequencia</strong> - a saida de um agente e a entrada do proximo. Como uma linha de montagem.
+        </p>
+
+        <div class="bg-nivel-3a/10 p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-lg mb-4">Fluxo do Pipeline</h3>
+          <div class="flex items-center gap-2 overflow-x-auto pb-4">
+            <div class="bg-green-100 dark:bg-green-900/30 p-4 rounded-lg border-2 border-nivel-3a min-w-[150px] text-center">
+              <div class="font-bold">Agente 1</div>
+              <div class="text-sm">Pesquisador</div>
+            </div>
+            <div class="text-2xl text-nivel-3a">→</div>
+            <div class="bg-green-100 dark:bg-green-900/30 p-4 rounded-lg border-2 border-nivel-3a min-w-[150px] text-center">
+              <div class="font-bold">Agente 2</div>
+              <div class="text-sm">Estruturador</div>
+            </div>
+            <div class="text-2xl text-nivel-3a">→</div>
+            <div class="bg-green-100 dark:bg-green-900/30 p-4 rounded-lg border-2 border-nivel-3a min-w-[150px] text-center">
+              <div class="font-bold">Agente 3</div>
+              <div class="text-sm">Escritor</div>
+            </div>
+            <div class="text-2xl text-nivel-3a">→</div>
+            <div class="bg-nivel-3a text-white p-4 rounded-lg min-w-[150px] text-center font-bold">
+              Resultado Final
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg">
+            <h3 class="font-bold text-nivel-3a mb-3">Vantagens</h3>
+            <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+              <li>Facil de entender e implementar</li>
+              <li>Cada etapa e especializada</li>
+              <li>Resultados previsíveis</li>
+              <li>Facil debugar problemas</li>
+            </ul>
+          </div>
+          <div class="bg-red-50 dark:bg-red-900/20 p-6 rounded-lg">
+            <h3 class="font-bold text-red-600 mb-3">Desvantagens</h3>
+            <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+              <li>Se um agente falha, tudo para</li>
+              <li>Nao ha paralelizacao</li>
+              <li>Tempo total = soma de todos</li>
+              <li>Rigido, pouca adaptacao</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-neutral-700 p-6 rounded-lg border-l-4 border-nivel-3a">
+          <h3 class="font-bold mb-3">Exemplo Pratico: Criacao de Artigo</h3>
+          <div class="space-y-3 text-sm">
+            <div><strong>1. Agente Pesquisador:</strong> "Busca informacoes sobre IA em educacao"</div>
+            <div><strong>2. Agente Estruturador:</strong> "Organiza informacoes em topicos e subtopicos"</div>
+            <div><strong>3. Agente Escritor:</strong> "Escreve artigo completo baseado na estrutura"</div>
+            <div><strong>4. Agente Editor:</strong> "Revisa e melhora qualidade do texto"</div>
+            <div class="text-nivel-3a font-bold">Resultado: Artigo completo e revisado</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arquitetura 2: Pipeline Paralelo -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 bg-nivel-3a text-white rounded-full flex items-center justify-center text-xl font-bold">
+            2
+          </div>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Pipeline Paralelo
+          </h2>
+        </div>
+
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+          Multiplos agentes trabalham <strong>simultaneamente</strong> em tarefas independentes, e os resultados sao combinados no final.
+        </p>
+
+        <div class="bg-nivel-3a/10 p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-lg mb-4">Fluxo Paralelo</h3>
+          <div class="space-y-4">
+            <div class="text-center">
+              <div class="inline-block bg-blue-100 dark:bg-blue-900/30 p-3 rounded-lg border-2 border-blue-500 font-bold">
+                Tarefa Inicial
+              </div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-4">
+              <div class="bg-green-100 dark:bg-green-900/30 p-4 rounded-lg border-2 border-nivel-3a text-center">
+                <div class="font-bold">Agente A</div>
+                <div class="text-sm">Pesquisa Tecnica</div>
+              </div>
+              <div class="bg-green-100 dark:bg-green-900/30 p-4 rounded-lg border-2 border-nivel-3a text-center">
+                <div class="font-bold">Agente B</div>
+                <div class="text-sm">Analise Mercado</div>
+              </div>
+              <div class="bg-green-100 dark:bg-green-900/30 p-4 rounded-lg border-2 border-nivel-3a text-center">
+                <div class="font-bold">Agente C</div>
+                <div class="text-sm">Estudo Competitivo</div>
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="inline-block bg-nivel-3a text-white p-3 rounded-lg font-bold">
+                Agente Integrador → Resultado Final
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg">
+            <h3 class="font-bold text-nivel-3a mb-3">Vantagens</h3>
+            <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+              <li>Muito mais rapido</li>
+              <li>Especialistas trabalhando juntos</li>
+              <li>Resultados mais ricos</li>
+              <li>Escalavel facilmente</li>
+            </ul>
+          </div>
+          <div class="bg-red-50 dark:bg-red-900/20 p-6 rounded-lg">
+            <h3 class="font-bold text-red-600 mb-3">Desvantagens</h3>
+            <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+              <li>Mais complexo de coordenar</li>
+              <li>Precisa de agente integrador</li>
+              <li>Maior custo de processamento</li>
+              <li>Pode haver conflitos de info</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-neutral-700 p-6 rounded-lg border-l-4 border-nivel-3a">
+          <h3 class="font-bold mb-3">Exemplo Pratico: Analise Empresarial Completa</h3>
+          <div class="space-y-3 text-sm">
+            <div><strong>Agente A:</strong> "Analisa metricas financeiras"</div>
+            <div><strong>Agente B:</strong> "Avalia satisfacao de clientes"</div>
+            <div><strong>Agente C:</strong> "Estuda posicionamento de mercado"</div>
+            <div><strong>Agente D:</strong> "Analisa eficiencia operacional"</div>
+            <div><strong>Agente Integrador:</strong> "Combina todas analises em relatorio executivo"</div>
+            <div class="text-nivel-3a font-bold">Resultado: Diagnostico completo em tempo reduzido</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arquitetura 3: Sistema Hierarquico -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 bg-nivel-3a text-white rounded-full flex items-center justify-center text-xl font-bold">
+            3
+          </div>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Sistema Hierarquico (Chefe → Especialistas)
+          </h2>
+        </div>
+
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+          Um <strong>agente coordenador</strong> distribui tarefas para agentes especializados e integra os resultados. Como um gerente liderando uma equipe.
+        </p>
+
+        <div class="bg-nivel-3a/10 p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-lg mb-4">Estrutura Hierarquica</h3>
+          <div class="space-y-4">
+            <div class="text-center">
+              <div class="inline-block bg-purple-100 dark:bg-purple-900/30 p-4 rounded-lg border-2 border-purple-500 font-bold text-lg">
+                Agente Coordenador (Chefe)
+              </div>
+            </div>
+            <div class="flex justify-center gap-8">
+              <div class="text-2xl text-purple-500">↓</div>
+              <div class="text-2xl text-purple-500">↓</div>
+              <div class="text-2xl text-purple-500">↓</div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-4">
+              <div class="bg-green-100 dark:bg-green-900/30 p-4 rounded-lg border-2 border-nivel-3a text-center">
+                <div class="font-bold">Especialista 1</div>
+                <div class="text-sm">Pesquisa</div>
+              </div>
+              <div class="bg-green-100 dark:bg-green-900/30 p-4 rounded-lg border-2 border-nivel-3a text-center">
+                <div class="font-bold">Especialista 2</div>
+                <div class="text-sm">Analise</div>
+              </div>
+              <div class="bg-green-100 dark:bg-green-900/30 p-4 rounded-lg border-2 border-nivel-3a text-center">
+                <div class="font-bold">Especialista 3</div>
+                <div class="text-sm">Execucao</div>
+              </div>
+            </div>
+            <div class="flex justify-center gap-8">
+              <div class="text-2xl text-purple-500">↑</div>
+              <div class="text-2xl text-purple-500">↑</div>
+              <div class="text-2xl text-purple-500">↑</div>
+            </div>
+            <div class="text-center">
+              <div class="inline-block bg-nivel-3a text-white p-3 rounded-lg font-bold">
+                Resultado Integrado
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg">
+            <h3 class="font-bold text-nivel-3a mb-3">Vantagens</h3>
+            <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+              <li>Coordenacao inteligente</li>
+              <li>Adaptacao dinamica</li>
+              <li>Decisoes centralizadas</li>
+              <li>Facil adicionar especialistas</li>
+            </ul>
+          </div>
+          <div class="bg-red-50 dark:bg-red-900/20 p-6 rounded-lg">
+            <h3 class="font-bold text-red-600 mb-3">Desvantagens</h3>
+            <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+              <li>Depende do coordenador</li>
+              <li>Gargalo se mal projetado</li>
+              <li>Custo de coordenacao</li>
+              <li>Complexidade de comunicacao</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-neutral-700 p-6 rounded-lg border-l-4 border-nivel-3a">
+          <h3 class="font-bold mb-3">Exemplo Pratico: Desenvolvimento de Produto</h3>
+          <div class="space-y-3 text-sm">
+            <div><strong>Coordenador:</strong> "Preciso criar MVP de app mobile em 30 dias"</div>
+            <div class="ml-4"><strong>→ Delega para Agente Planejador:</strong> "Crie roadmap detalhado"</div>
+            <div class="ml-4"><strong>→ Delega para Agente Pesquisador:</strong> "Analise apps similares"</div>
+            <div class="ml-4"><strong>→ Delega para Agente Codificador:</strong> "Desenvolva features prioritarias"</div>
+            <div class="ml-4"><strong>→ Delega para Agente Testador:</strong> "Valide qualidade"</div>
+            <div><strong>Coordenador:</strong> "Integra tudo e entrega MVP completo"</div>
+            <div class="text-nivel-3a font-bold">Resultado: Produto desenvolvido com coordenacao eficiente</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arquitetura 4: Ciclo Iterativo -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 bg-nivel-3a text-white rounded-full flex items-center justify-center text-xl font-bold">
+            4
+          </div>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Ciclo Iterativo Controlado por Intencao
+          </h2>
+        </div>
+
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+          Agentes trabalham em <strong>ciclos de melhoria continua</strong> - executam, avaliam, ajustam e repetem ate alcançar o objetivo desejado.
+        </p>
+
+        <div class="bg-nivel-3a/10 p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-lg mb-4">Fluxo do Ciclo</h3>
+          <div class="flex items-center justify-center gap-4 flex-wrap">
+            <div class="bg-green-100 dark:bg-green-900/30 p-4 rounded-lg border-2 border-nivel-3a text-center w-40">
+              <div class="font-bold">1. Executar</div>
+            </div>
+            <div class="text-2xl text-nivel-3a">→</div>
+            <div class="bg-blue-100 dark:bg-blue-900/30 p-4 rounded-lg border-2 border-blue-500 text-center w-40">
+              <div class="font-bold">2. Avaliar</div>
+            </div>
+            <div class="text-2xl text-nivel-3a">→</div>
+            <div class="bg-yellow-100 dark:bg-yellow-900/30 p-4 rounded-lg border-2 border-yellow-500 text-center w-40">
+              <div class="font-bold">3. Ajustar</div>
+            </div>
+            <div class="text-2xl text-nivel-3a">↻</div>
+            <div class="text-sm text-neutral-600 dark:text-neutral-400 w-full text-center mt-4">
+              Repete ate criterios de qualidade serem atingidos
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg">
+            <h3 class="font-bold text-nivel-3a mb-3">Vantagens</h3>
+            <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+              <li>Melhoria continua automatica</li>
+              <li>Resultados de alta qualidade</li>
+              <li>Auto-correcao de erros</li>
+              <li>Adaptacao ao feedback</li>
+            </ul>
+          </div>
+          <div class="bg-red-50 dark:bg-red-900/20 p-6 rounded-lg">
+            <h3 class="font-bold text-red-600 mb-3">Desvantagens</h3>
+            <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+              <li>Pode ser lento</li>
+              <li>Custo maior (multiplas iteracoes)</li>
+              <li>Precisa criterios claros</li>
+              <li>Risco de loops infinitos</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-neutral-700 p-6 rounded-lg border-l-4 border-nivel-3a">
+          <h3 class="font-bold mb-3">Exemplo Pratico: Criacao de Copy de Vendas</h3>
+          <div class="space-y-3 text-sm">
+            <div><strong>Iteracao 1:</strong> Agente Escritor cria primeira versao</div>
+            <div><strong>→ Avaliacao:</strong> Agente Analisador verifica persuasao, clareza, CTA (Score: 6/10)</div>
+            <div><strong>→ Ajuste:</strong> Reescreve melhorando pontos fracos</div>
+            <div><strong>Iteracao 2:</strong> Nova versao criada</div>
+            <div><strong>→ Avaliacao:</strong> Score melhora para 8/10</div>
+            <div><strong>→ Ajuste:</strong> Refinamentos finais</div>
+            <div><strong>Iteracao 3:</strong> Versao final</div>
+            <div><strong>→ Avaliacao:</strong> Score: 9.5/10 - Criterios atingidos!</div>
+            <div class="text-nivel-3a font-bold">Resultado: Copy otimizada atraves de ciclos de melhoria</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arquitetura 5: Delegacao Cruzada -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 bg-nivel-3a text-white rounded-full flex items-center justify-center text-xl font-bold">
+            5
+          </div>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Delegacao Cruzada (Colaborativa)
+          </h2>
+        </div>
+
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+          Agentes <strong>colaboram diretamente</strong> uns com os outros, pedindo ajuda, validando ideias e construindo solucoes juntos. Como um time trabalhando de forma organica.
+        </p>
+
+        <div class="bg-nivel-3a/10 p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-lg mb-4">Fluxo Colaborativo</h3>
+          <div class="space-y-4">
+            <div class="grid md:grid-cols-3 gap-4">
+              <div class="bg-green-100 dark:bg-green-900/30 p-4 rounded-lg border-2 border-nivel-3a text-center">
+                <div class="font-bold">Agente A</div>
+                <div class="text-xs mt-2">Pode pedir ajuda a B ou C</div>
+              </div>
+              <div class="bg-blue-100 dark:bg-blue-900/30 p-4 rounded-lg border-2 border-blue-500 text-center">
+                <div class="font-bold">Agente B</div>
+                <div class="text-xs mt-2">Pode pedir ajuda a A ou C</div>
+              </div>
+              <div class="bg-purple-100 dark:bg-purple-900/30 p-4 rounded-lg border-2 border-purple-500 text-center">
+                <div class="font-bold">Agente C</div>
+                <div class="text-xs mt-2">Pode pedir ajuda a A ou B</div>
+              </div>
+            </div>
+            <div class="text-center text-sm text-neutral-600 dark:text-neutral-400">
+              Comunicacao bidirecional entre todos os agentes
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg">
+            <h3 class="font-bold text-nivel-3a mb-3">Vantagens</h3>
+            <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+              <li>Flexibilidade maxima</li>
+              <li>Solucoes criativas</li>
+              <li>Validacao cruzada</li>
+              <li>Conhecimento compartilhado</li>
+            </ul>
+          </div>
+          <div class="bg-red-50 dark:bg-red-900/20 p-6 rounded-lg">
+            <h3 class="font-bold text-red-600 mb-3">Desvantagens</h3>
+            <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+              <li>Mais complexo de implementar</li>
+              <li>Pode ser caotico</li>
+              <li>Dificil rastrear decisoes</li>
+              <li>Risco de conflitos</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-neutral-700 p-6 rounded-lg border-l-4 border-nivel-3a">
+          <h3 class="font-bold mb-3">Exemplo Pratico: Criacao de Estrategia de Marketing</h3>
+          <div class="space-y-3 text-sm">
+            <div><strong>Agente Estrategista:</strong> "Precisamos aumentar conversoes"</div>
+            <div><strong>→ Pede a Agente Pesquisador:</strong> "Quais sao as melhores praticas?"</div>
+            <div><strong>→ Pesquisador consulta Analista:</strong> "Quais sao nossos dados atuais?"</div>
+            <div><strong>→ Analista retorna insights para Pesquisador</strong></div>
+            <div><strong>→ Pesquisador entrega info para Estrategista</strong></div>
+            <div><strong>→ Estrategista pede a Escritor:</strong> "Crie copy baseado nisso"</div>
+            <div><strong>→ Escritor consulta Otimizador:</strong> "Como melhorar CTAs?"</div>
+            <div><strong>→ Otimizador da sugestoes</strong></div>
+            <div><strong>→ Escritor finaliza copy</strong></div>
+            <div class="text-nivel-3a font-bold">Resultado: Estrategia co-criada com input de multiplos especialistas</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Qual Arquitetura Escolher -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Qual Arquitetura Escolher?
+        </h2>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left">
+            <thead class="bg-nivel-3a text-white">
+              <tr>
+                <th class="p-3">Arquitetura</th>
+                <th class="p-3">Use Quando</th>
+                <th class="p-3">Evite Quando</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-neutral-200 dark:divide-neutral-700">
+              <tr>
+                <td class="p-3 font-semibold">Pipeline Linear</td>
+                <td class="p-3">Processo tem etapas claras e sequenciais</td>
+                <td class="p-3">Precisa de velocidade maxima</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Pipeline Paralelo</td>
+                <td class="p-3">Tarefas sao independentes e podem rodar juntas</td>
+                <td class="p-3">Tarefas dependem umas das outras</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Hierarquico</td>
+                <td class="p-3">Precisa de coordenacao inteligente e adaptativa</td>
+                <td class="p-3">Processo e simples e direto</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Ciclo Iterativo</td>
+                <td class="p-3">Qualidade e mais importante que velocidade</td>
+                <td class="p-3">Precisa de resultado rapido</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Delegacao Cruzada</td>
+                <td class="p-3">Problema complexo sem caminho claro</td>
+                <td class="p-3">Precisa de processo previsivel</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Conclusao -->
+      <div class="bg-gradient-to-r from-nivel-3a to-green-600 text-white rounded-xl p-8">
+        <h2 class="text-3xl font-bold mb-4">Conclusao do Modulo</h2>
+        <p class="text-lg mb-6">
+          Voce dominou as 5 principais arquiteturas de sistemas multiagentes e sabe quando usar cada uma.
+        </p>
+        <div class="bg-white/10 backdrop-blur p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-xl mb-2">O que voce dominou:</h3>
+          <ul class="space-y-2">
+            <li>Pipeline Linear para processos sequenciais</li>
+            <li>Pipeline Paralelo para velocidade maxima</li>
+            <li>Sistema Hierarquico para coordenacao inteligente</li>
+            <li>Ciclo Iterativo para melhoria continua</li>
+            <li>Delegacao Cruzada para colaboracao organica</li>
+            <li>Criterios para escolher a arquitetura certa</li>
+          </ul>
+        </div>
+        <div class="flex gap-4">
+          <a href="../niveis/nivel-3a.html" class="px-6 py-3 bg-white text-nivel-3a rounded-lg font-semibold hover:bg-neutral-100 inline-flex items-center gap-2">
+            <span>Voltar ao Nivel 3A</span>
+          </a>
+          <a href="nivel-3a-modulo-5.html" class="px-6 py-3 bg-white/20 text-white rounded-lg font-semibold hover:bg-white/30 inline-flex items-center gap-2">
+            <span>Proximo Modulo</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold text-white mb-4">FEI - Engenharia de Intencao</h3>
+          <p class="text-sm">Formacao completa para dominar a nova era da IA</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Niveis</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../niveis/nivel-1.html" class="hover:text-white">Nivel 1: Fundamentos</a></li>
+            <li><a href="../niveis/nivel-2.html" class="hover:text-white">Nivel 2: Programa Completo</a></li>
+            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Nivel 3A: Agentes</a></li>
+            <li><a href="../niveis/nivel-3s.html" class="hover:text-white">Nivel 3S: Sistemas 2026</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../index.html" class="hover:text-white">Inicio</a></li>
+            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Voltar ao Nivel 3A</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-neutral-800 mt-8 pt-8 text-center text-sm">
+        <p>&copy; 2025 FEI - Formacao em Engenharia de Intencao.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>

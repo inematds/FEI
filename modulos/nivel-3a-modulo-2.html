@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 2: Engenharia de Intenção Aplicada a Agentes | FEI Nível 3A</title>
+  <meta name="description" content="8 elementos essenciais para criar agentes orientados por intenção">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'nivel-1': '#3B82F6',
+            'nivel-2': '#9b59b6',
+            'nivel-3a': '#10B981',
+            'nivel-3s': '#F59E0B',
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+  </style>
+</head>
+<body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-3a bg-clip-text text-transparent">
+            FEI - Engenharia de Intencao
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-3a">Inicio</a>
+          <a href="../niveis/nivel-3a.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-3a">Nivel 3A</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <nav class="flex text-sm" aria-label="Breadcrumb">
+        <a href="../index.html" class="text-nivel-3a hover:text-green-700">Inicio</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <a href="../niveis/nivel-3a.html" class="text-nivel-3a hover:text-green-700">Nivel 3A</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <span class="text-neutral-600 dark:text-neutral-400">Modulo 2</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-nivel-3a to-green-600 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Modulo 2
+        </span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Nivel 3A - Agentes e Sistemas Autonomos
+        </span>
+      </div>
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">
+        Engenharia de Intencao Aplicada a Agentes
+      </h1>
+      <p class="text-xl text-white/90">
+        8 elementos essenciais que todo agente precisa para funcionar perfeitamente
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-12 bg-neutral-50 dark:bg-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Download Button -->
+      <div class="flex justify-end mb-6">
+        <a href="../downloads/nivel-3a-modulo-2.md" download class="px-6 py-3 bg-nivel-3a text-white rounded-lg font-semibold hover:bg-green-600 inline-flex items-center gap-2">
+          <span>Download MD</span>
+        </a>
+      </div>
+
+      <!-- Introducao -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
+          Introducao
+        </h2>
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          Criar um agente nao e simplesmente dizer "voce e um pesquisador" ou "atue como analista". Agentes modernos precisam de uma <strong>estrutura clara de intencao</strong> que define:
+        </p>
+        <ul class="space-y-2 text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          <li><strong>O que</strong> ele deve alcançar</li>
+          <li><strong>Como</strong> ele deve pensar</li>
+          <li><strong>Quando</strong> deve agir ou perguntar</li>
+          <li><strong>Onde</strong> estao seus limites</li>
+        </ul>
+        <div class="bg-nivel-3a/10 border-l-4 border-nivel-3a p-6 rounded-lg">
+          <h3 class="font-bold text-nivel-3a mb-2">O que voce vai dominar neste modulo:</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Os 8 elementos fundamentais para criar agentes orientados por intencao. Como definir o papel, missao, criterios de qualidade e limites de cada agente. Como garantir que agentes ajam de forma previsivel e confiavel.
+          </p>
+        </div>
+      </div>
+
+      <!-- 8 Elementos Fundamentais -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Os 8 Elementos que Cada Agente Precisa
+        </h2>
+
+        <div class="space-y-6">
+
+          <!-- Elemento 1: Objetivo Primario -->
+          <div class="border-2 border-nivel-3a rounded-lg p-6 bg-green-50 dark:bg-green-900/20">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-nivel-3a text-white rounded-full flex items-center justify-center font-bold text-xl">
+                1
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+                  Objetivo Primario
+                </h3>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+                  <strong>O que e:</strong> A razao de existir do agente. O resultado final que ele deve entregar.
+                </p>
+                <div class="bg-white dark:bg-neutral-700 p-4 rounded-lg mb-3">
+                  <h4 class="font-bold mb-2">Exemplos:</h4>
+                  <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <li><strong>Agente Pesquisador:</strong> "Encontrar informacoes relevantes, confiáveis e atualizadas sobre um topico especifico."</li>
+                    <li><strong>Agente Escritor:</strong> "Transformar informacoes em conteudo claro, engajante e estruturado."</li>
+                    <li><strong>Agente Analista:</strong> "Processar dados e identificar insights acionaveis."</li>
+                  </ul>
+                </div>
+                <div class="bg-nivel-3a/10 p-3 rounded text-sm">
+                  <strong>Por que importa:</strong> Sem objetivo claro, o agente nao sabe o que priorizar e pode produzir resultados irrelevantes.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Elemento 2: Intencao (Papel Funcional) -->
+          <div class="border-2 border-nivel-3a rounded-lg p-6 bg-green-50 dark:bg-green-900/20">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-nivel-3a text-white rounded-full flex items-center justify-center font-bold text-xl">
+                2
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+                  Intencao (Papel Funcional no Sistema)
+                </h3>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+                  <strong>O que e:</strong> O papel que o agente desempenha dentro de um sistema maior. Como ele contribui para o objetivo geral.
+                </p>
+                <div class="bg-white dark:bg-neutral-700 p-4 rounded-lg mb-3">
+                  <h4 class="font-bold mb-2">Exemplos:</h4>
+                  <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <li><strong>Agente Pesquisador:</strong> "Voce e o responsavel por alimentar o sistema com dados de qualidade. Outros agentes dependem da precisao da sua pesquisa."</li>
+                    <li><strong>Agente Revisor:</strong> "Voce e o filtro de qualidade. Valide se o conteudo esta alinhado aos criterios antes de prosseguir."</li>
+                    <li><strong>Agente Coordenador:</strong> "Voce organiza o trabalho dos outros agentes e garante que tudo flua de forma eficiente."</li>
+                  </ul>
+                </div>
+                <div class="bg-nivel-3a/10 p-3 rounded text-sm">
+                  <strong>Por que importa:</strong> A intencao define como o agente colabora com outros agentes e toma decisoes contextuais.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Elemento 3: Criterios de Qualidade -->
+          <div class="border-2 border-nivel-3a rounded-lg p-6 bg-green-50 dark:bg-green-900/20">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-nivel-3a text-white rounded-full flex items-center justify-center font-bold text-xl">
+                3
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+                  Criterios de Qualidade
+                </h3>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+                  <strong>O que e:</strong> Padroes mensuráveis que definem quando o trabalho do agente esta completo e correto.
+                </p>
+                <div class="bg-white dark:bg-neutral-700 p-4 rounded-lg mb-3">
+                  <h4 class="font-bold mb-2">Exemplos:</h4>
+                  <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <li><strong>Para Agente Pesquisador:</strong><br>- Fontes devem ser de 2023-2025<br>- Minimo 5 fontes confiáveis<br>- Incluir dados quantitativos quando possível</li>
+                    <li><strong>Para Agente Escritor:</strong><br>- Parágrafos com 3-5 frases<br>- Tom profissional e acessível<br>- Exemplos práticos em cada seção</li>
+                    <li><strong>Para Agente Analista:</strong><br>- Insights devem ser acionáveis<br>- Apresentar dados em gráficos quando relevante<br>- Conclusões baseadas em evidências</li>
+                  </ul>
+                </div>
+                <div class="bg-nivel-3a/10 p-3 rounded text-sm">
+                  <strong>Por que importa:</strong> Criterios objetivos impedem que o agente entregue trabalho incompleto ou fora do padrao.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Elemento 4: Contexto Funcional -->
+          <div class="border-2 border-nivel-3a rounded-lg p-6 bg-green-50 dark:bg-green-900/20">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-nivel-3a text-white rounded-full flex items-center justify-center font-bold text-xl">
+                4
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+                  Contexto Funcional
+                </h3>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+                  <strong>O que e:</strong> Informacoes que o agente precisa saber sobre o ambiente, usuario ou projeto para tomar decisoes corretas.
+                </p>
+                <div class="bg-white dark:bg-neutral-700 p-4 rounded-lg mb-3">
+                  <h4 class="font-bold mb-2">Exemplos:</h4>
+                  <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <li><strong>Contexto de Usuario:</strong> "O usuario e um empreendedor que prefere comunicacao direta e objetiva."</li>
+                    <li><strong>Contexto de Projeto:</strong> "Este projeto e urgente - priorize velocidade sobre detalhes secundarios."</li>
+                    <li><strong>Contexto de Industria:</strong> "O publico-alvo e da area de tecnologia - use termos tecnicos sem medo."</li>
+                  </ul>
+                </div>
+                <div class="bg-nivel-3a/10 p-3 rounded text-sm">
+                  <strong>Por que importa:</strong> Sem contexto, o agente pode fazer suposicoes erradas e entregar resultados que nao se encaixam na necessidade real.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Elemento 5: Responsabilidades Claras -->
+          <div class="border-2 border-nivel-3a rounded-lg p-6 bg-green-50 dark:bg-green-900/20">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-nivel-3a text-white rounded-full flex items-center justify-center font-bold text-xl">
+                5
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+                  Responsabilidades Claras
+                </h3>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+                  <strong>O que e:</strong> Lista explicita do que o agente DEVE fazer e o que esta FORA do seu escopo.
+                </p>
+                <div class="bg-white dark:bg-neutral-700 p-4 rounded-lg mb-3">
+                  <h4 class="font-bold mb-2">Exemplo - Agente Pesquisador:</h4>
+                  <div class="grid md:grid-cols-2 gap-4 text-sm">
+                    <div class="bg-green-50 dark:bg-green-900/30 p-3 rounded">
+                      <h5 class="font-bold text-green-700 dark:text-green-400 mb-2">RESPONSAVEL POR:</h5>
+                      <ul class="space-y-1 text-neutral-700 dark:text-neutral-300">
+                        <li>Buscar fontes confiáveis</li>
+                        <li>Validar atualidade dos dados</li>
+                        <li>Organizar informações por relevância</li>
+                        <li>Citar fontes corretamente</li>
+                      </ul>
+                    </div>
+                    <div class="bg-red-50 dark:bg-red-900/30 p-3 rounded">
+                      <h5 class="font-bold text-red-700 dark:text-red-400 mb-2">NAO E RESPONSAVEL POR:</h5>
+                      <ul class="space-y-1 text-neutral-700 dark:text-neutral-300">
+                        <li>Escrever o conteúdo final</li>
+                        <li>Formatar documentos</li>
+                        <li>Decidir estrutura do projeto</li>
+                        <li>Validar com o cliente final</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-nivel-3a/10 p-3 rounded text-sm">
+                  <strong>Por que importa:</strong> Evita que agentes tentem fazer mais do que devem, ou que deixem lacunas por achar que "nao e comigo".
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Elemento 6: Limites de Atuacao -->
+          <div class="border-2 border-nivel-3a rounded-lg p-6 bg-green-50 dark:bg-green-900/20">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-nivel-3a text-white rounded-full flex items-center justify-center font-bold text-xl">
+                6
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+                  Limites de Atuacao
+                </h3>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+                  <strong>O que e:</strong> Restricoes explicitas que impedem o agente de sair do controle ou tomar decisoes arriscadas.
+                </p>
+                <div class="bg-white dark:bg-neutral-700 p-4 rounded-lg mb-3">
+                  <h4 class="font-bold mb-2">Exemplos:</h4>
+                  <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <li><strong>Limite de Autonomia:</strong> "Se encontrar informacoes conflitantes, SEMPRE pergunte ao usuario qual fonte priorizar."</li>
+                    <li><strong>Limite de Tempo:</strong> "Pesquise por no maximo 15 minutos. Se nao encontrar dados suficientes, informe ao usuario."</li>
+                    <li><strong>Limite de Custo:</strong> "Use apenas ferramentas gratuitas. Nunca sugira servicos pagos sem autorizacao."</li>
+                    <li><strong>Limite de Privacidade:</strong> "Nunca busque ou armazene informacoes pessoais de terceiros sem consentimento."</li>
+                  </ul>
+                </div>
+                <div class="bg-nivel-3a/10 p-3 rounded text-sm">
+                  <strong>Por que importa:</strong> Limites garantem que o agente opere de forma segura e previsível, sem causar problemas inesperados.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Elemento 7: Formatos de Saida Padrao -->
+          <div class="border-2 border-nivel-3a rounded-lg p-6 bg-green-50 dark:bg-green-900/20">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-nivel-3a text-white rounded-full flex items-center justify-center font-bold text-xl">
+                7
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+                  Formatos de Saida Padrao
+                </h3>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+                  <strong>O que e:</strong> Estrutura padronizada para as entregas do agente, facilitando integracao com outros agentes ou sistemas.
+                </p>
+                <div class="bg-white dark:bg-neutral-700 p-4 rounded-lg mb-3">
+                  <h4 class="font-bold mb-2">Exemplo - Agente Pesquisador:</h4>
+                  <pre class="text-xs text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap bg-neutral-50 dark:bg-neutral-600 p-3 rounded">
+## Resultado da Pesquisa
+
+**Topico:** [nome do topico]
+**Data da Pesquisa:** [data]
+
+### Principais Descobertas
+1. [Descoberta 1]
+2. [Descoberta 2]
+3. [Descoberta 3]
+
+### Fontes Consultadas
+- [Fonte 1 - Link - Data]
+- [Fonte 2 - Link - Data]
+- [Fonte 3 - Link - Data]
+
+### Insights Chave
+- [Insight 1]
+- [Insight 2]
+
+### Proximos Passos Sugeridos
+[O que fazer com essas informacoes]</pre>
+                </div>
+                <div class="bg-nivel-3a/10 p-3 rounded text-sm">
+                  <strong>Por que importa:</strong> Formatos padronizados tornam as saidas previsiveis, facilitando automacao e integracao entre agentes.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Elemento 8: Protocolos de Colaboracao -->
+          <div class="border-2 border-nivel-3a rounded-lg p-6 bg-green-50 dark:bg-green-900/20">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-nivel-3a text-white rounded-full flex items-center justify-center font-bold text-xl">
+                8
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+                  Protocolos de Colaboracao com Outros Agentes
+                </h3>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+                  <strong>O que e:</strong> Regras de como o agente interage com outros agentes em um sistema multiagente.
+                </p>
+                <div class="bg-white dark:bg-neutral-700 p-4 rounded-lg mb-3">
+                  <h4 class="font-bold mb-2">Exemplos:</h4>
+                  <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <li><strong>Delegacao:</strong> "Ao finalizar a pesquisa, passe o resultado para o Agente Escritor usando o formato padrao."</li>
+                    <li><strong>Validacao:</strong> "Antes de entregar ao usuario, envie o conteudo para o Agente Revisor validar."</li>
+                    <li><strong>Escalacao:</strong> "Se encontrar um problema que nao pode resolver, notifique o Agente Coordenador imediatamente."</li>
+                    <li><strong>Feedback:</strong> "Apos receber feedback do Agente Revisor, ajuste o trabalho e reenvie."</li>
+                  </ul>
+                </div>
+                <div class="bg-nivel-3a/10 p-3 rounded text-sm">
+                  <strong>Por que importa:</strong> Em sistemas multiagentes, a colaboracao eficiente e crucial. Protocolos claros evitam gargalos e retrabalho.
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Template Completo de Agente -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Template Completo: Criando um Agente com Engenharia de Intencao
+        </h2>
+
+        <div class="bg-nivel-3a/10 p-6 rounded-lg mb-6">
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Use este template como base para criar qualquer agente. Preencha cada secao com informacoes especificas do seu projeto:
+          </p>
+        </div>
+
+        <div class="bg-neutral-900 text-neutral-100 p-6 rounded-lg">
+          <pre class="text-sm whitespace-pre-wrap font-mono">
+# AGENTE: [Nome do Agente]
+
+## 1. OBJETIVO PRIMARIO
+[Defina claramente o resultado final que este agente deve entregar]
+
+## 2. INTENCAO (Papel Funcional)
+[Explique qual o papel deste agente no sistema maior e como ele contribui]
+
+## 3. CRITERIOS DE QUALIDADE
+[Liste padroes mensuraveis que definem um trabalho bem feito]
+- Criterio 1: [descricao]
+- Criterio 2: [descricao]
+- Criterio 3: [descricao]
+
+## 4. CONTEXTO FUNCIONAL
+[Forneça informacoes importantes sobre o usuario, projeto ou ambiente]
+- Usuario: [perfil do usuario]
+- Projeto: [caracteristicas do projeto]
+- Restricoes: [limitacoes a considerar]
+
+## 5. RESPONSABILIDADES
+### Voce e RESPONSAVEL por:
+- [Responsabilidade 1]
+- [Responsabilidade 2]
+- [Responsabilidade 3]
+
+### Voce NAO e responsavel por:
+- [Nao-responsabilidade 1]
+- [Nao-responsabilidade 2]
+
+## 6. LIMITES DE ATUACAO
+- Autonomia: [ate onde pode decidir sozinho]
+- Tempo: [limites de tempo]
+- Recursos: [limites de ferramentas/custos]
+- Privacidade: [restricoes de dados]
+
+## 7. FORMATO DE SAIDA PADRAO
+[Estrutura que voce SEMPRE deve usar nas entregas]
+
+```
+[Template da saida do agente]
+```
+
+## 8. PROTOCOLOS DE COLABORACAO
+- Proxima etapa: [para qual agente passar o trabalho]
+- Validacao: [quem valida seu trabalho]
+- Escalacao: [quando e como pedir ajuda]
+- Feedback: [como receber e aplicar feedback]
+
+---
+
+## INSTRUCOES DE OPERACAO
+[Passos que o agente deve seguir ao executar uma tarefa]
+
+1. [Passo 1]
+2. [Passo 2]
+3. [Passo 3]
+4. [Validar criterios de qualidade]
+5. [Entregar no formato padrao]
+</pre>
+        </div>
+      </div>
+
+      <!-- Exemplo Pratico Completo -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Exemplo Pratico: Agente Pesquisador Completo
+        </h2>
+
+        <div class="bg-neutral-900 text-neutral-100 p-6 rounded-lg">
+          <pre class="text-sm whitespace-pre-wrap font-mono">
+# AGENTE: Pesquisador de Conteudo
+
+## 1. OBJETIVO PRIMARIO
+Encontrar informacoes relevantes, atualizadas e confiaveis sobre topicos especificos,
+organizando-as de forma que possam ser facilmente utilizadas por outros agentes ou usuarios.
+
+## 2. INTENCAO (Papel Funcional)
+Voce e o primeiro agente no pipeline de criacao de conteudo. Sua pesquisa alimenta
+o trabalho de todos os outros agentes. A qualidade do produto final depende diretamente
+da precisao e profundidade da sua pesquisa.
+
+## 3. CRITERIOS DE QUALIDADE
+- Todas as fontes devem ser de 2023-2025 (maximo 2 anos)
+- Minimo de 5 fontes confiáveis e diversas
+- Incluir dados quantitativos quando disponiveis
+- Citar fontes com link e data de acesso
+- Informacoes devem ser verificaveis
+
+## 4. CONTEXTO FUNCIONAL
+- Usuario: Criador de conteudo educacional
+- Projeto: Criar materiais didaticos para profissionais de tecnologia
+- Restricoes: Apenas fontes gratuitas e publicas
+
+## 5. RESPONSABILIDADES
+### Voce e RESPONSAVEL por:
+- Buscar fontes confiáveis e atualizadas
+- Validar veracidade das informacoes
+- Organizar dados por relevância
+- Identificar gaps de informacao
+- Citar todas as fontes corretamente
+
+### Voce NAO e responsavel por:
+- Escrever o conteudo final
+- Formatar documentos
+- Validar com o cliente final
+- Decidir a estrutura do curso
+
+## 6. LIMITES DE ATUACAO
+- Autonomia: Pode decidir quais fontes usar, mas deve informar quando encontrar
+  informacoes conflitantes
+- Tempo: Maximo 20 minutos por topico. Se nao encontrar dados suficientes,
+  informe ao usuario
+- Recursos: Apenas ferramentas gratuitas (Google, Wikipedia academica,
+  papers publicos)
+- Privacidade: Nunca busque informacoes pessoais de terceiros
+
+## 7. FORMATO DE SAIDA PADRAO
+
+```markdown
+## RESULTADO DA PESQUISA
+
+**Topico:** [nome do topico]
+**Data da Pesquisa:** [data]
+**Tempo Investido:** [minutos]
+
+### PRINCIPAIS DESCOBERTAS
+1. [Descoberta 1 - com fonte]
+2. [Descoberta 2 - com fonte]
+3. [Descoberta 3 - com fonte]
+
+### FONTES CONSULTADAS
+- [Titulo] - [URL] - Acessado em [data]
+- [Titulo] - [URL] - Acessado em [data]
+- [Titulo] - [URL] - Acessado em [data]
+
+### INSIGHTS CHAVE
+- [Insight acionavel 1]
+- [Insight acionavel 2]
+
+### GAPS IDENTIFICADOS
+- [Informacao que nao foi encontrada]
+- [Area que precisa de pesquisa adicional]
+
+### PROXIMOS PASSOS SUGERIDOS
+[O que fazer com essas informacoes]
+```
+
+## 8. PROTOCOLOS DE COLABORACAO
+- Proxima etapa: Apos finalizar, passe o resultado para o Agente Estruturador
+- Validacao: Nao precisa de validacao, mas informe se encontrou informacoes conflitantes
+- Escalacao: Se o topico for muito tecnico e nao encontrar fontes confiaveis,
+  notifique o Agente Coordenador
+- Feedback: Se o Agente Escritor pedir mais informacoes, priorize essa pesquisa adicional
+
+---
+
+## INSTRUCOES DE OPERACAO
+
+1. Receba o topico a ser pesquisado
+2. Identifique 3-5 termos-chave relacionados
+3. Busque em fontes confiáveis (sites academicos, blogs especializados, docs oficiais)
+4. Valide a data das informacoes (maximo 2 anos)
+5. Organize as descobertas por relevância
+6. Identifique gaps de informacao
+7. Formate a saida usando o template padrao
+8. Envie para o proximo agente no pipeline
+</pre>
+        </div>
+      </div>
+
+      <!-- Conclusao -->
+      <div class="bg-gradient-to-r from-nivel-3a to-green-600 text-white rounded-xl p-8">
+        <h2 class="text-3xl font-bold mb-4">Conclusao do Modulo</h2>
+        <p class="text-lg mb-6">
+          Voce dominou os 8 elementos fundamentais para criar agentes orientados por intencao. Agora voce pode projetar agentes que sao previsiveis, confiaveis e trabalham bem em equipe.
+        </p>
+        <div class="bg-white/10 backdrop-blur p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-xl mb-2">O que voce dominou:</h3>
+          <ul class="space-y-2">
+            <li>Os 8 elementos essenciais de cada agente</li>
+            <li>Como definir objetivo, intencao e criterios de qualidade</li>
+            <li>Como estabelecer limites e responsabilidades claras</li>
+            <li>Como criar formatos de saida padronizados</li>
+            <li>Como configurar protocolos de colaboracao entre agentes</li>
+            <li>Template completo para criar qualquer agente</li>
+          </ul>
+        </div>
+        <div class="flex gap-4">
+          <a href="nivel-3a-modulo-1.html" class="px-6 py-3 bg-white text-nivel-3a rounded-lg font-semibold hover:bg-neutral-100 inline-flex items-center gap-2">
+            <span>Modulo Anterior</span>
+          </a>
+          <a href="nivel-3a-modulo-3.html" class="px-6 py-3 bg-white/20 text-white rounded-lg font-semibold hover:bg-white/30 inline-flex items-center gap-2">
+            <span>Proximo Modulo</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold text-white mb-4">FEI - Engenharia de Intencao</h3>
+          <p class="text-sm">Formacao completa para dominar a nova era da IA</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Niveis</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../niveis/nivel-1.html" class="hover:text-white">Nivel 1: Fundamentos</a></li>
+            <li><a href="../niveis/nivel-2.html" class="hover:text-white">Nivel 2: Programa Completo</a></li>
+            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Nivel 3A: Agentes</a></li>
+            <li><a href="../niveis/nivel-3s.html" class="hover:text-white">Nivel 3S: Sistemas 2026</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../index.html" class="hover:text-white">Inicio</a></li>
+            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Voltar ao Nivel 3A</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-neutral-800 mt-8 pt-8 text-center text-sm">
+        <p>&copy; 2025 FEI - Formacao em Engenharia de Intencao.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>

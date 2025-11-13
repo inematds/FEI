@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 7: Boas Práticas e Segurança | FEI Nível 3A</title>
+  <meta name="description" content="Aprenda a criar sistemas de agentes seguros, confiáveis e éticos">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'nivel-1': '#3B82F6',
+            'nivel-2': '#9b59b6',
+            'nivel-3a': '#10B981',
+            'nivel-3s': '#F59E0B',
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+  </style>
+</head>
+<body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-3a bg-clip-text text-transparent">
+            FEI - Engenharia de Intencao
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-3a">Inicio</a>
+          <a href="../niveis/nivel-3a.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-3a">Nivel 3A</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <nav class="flex text-sm" aria-label="Breadcrumb">
+        <a href="../index.html" class="text-nivel-3a hover:text-green-700">Inicio</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <a href="../niveis/nivel-3a.html" class="text-nivel-3a hover:text-green-700">Nivel 3A</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <span class="text-neutral-600 dark:text-neutral-400">Modulo 7</span>
+      </nav>
+    </div>
+  </div>
+
+  <section class="bg-gradient-to-r from-nivel-3a to-green-600 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">Modulo 7</span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">Nivel 3A</span>
+      </div>
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">Boas Praticas e Seguranca</h1>
+      <p class="text-xl text-white/90">Criando sistemas de agentes seguros, confiaveis e eticos</p>
+    </div>
+  </section>
+
+  <section class="py-12 bg-neutral-50 dark:bg-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-end mb-6">
+        <a href="../downloads/nivel-3a-modulo-7.md" download class="px-6 py-3 bg-nivel-3a text-white rounded-lg font-semibold hover:bg-green-600">Download MD</a>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold mb-4">Introducao</h2>
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          Agentes autonomos sao poderosos, mas <strong>com grande poder vem grande responsabilidade</strong>. Este modulo ensina como criar sistemas seguros, confiaveis e eticos.
+        </p>
+        <div class="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 p-6 rounded-lg">
+          <h3 class="font-bold text-red-600 mb-2">Alerta Importante</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">Sistemas mal projetados podem tomar decisoes prejudiciais, gastar recursos desnecessariamente ou violar principios eticos. Seguranca e qualidade nao sao opcionais.</p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-5 gap-4 mb-8">
+        <div class="bg-nivel-3a text-white p-6 rounded-xl text-center">
+          <div class="text-3xl font-bold mb-2">1</div>
+          <div class="font-semibold">Controle de Intencao</div>
+        </div>
+        <div class="bg-blue-500 text-white p-6 rounded-xl text-center">
+          <div class="text-3xl font-bold mb-2">2</div>
+          <div class="font-semibold">Verificacao de Coerencia</div>
+        </div>
+        <div class="bg-purple-500 text-white p-6 rounded-xl text-center">
+          <div class="text-3xl font-bold mb-2">3</div>
+          <div class="font-semibold">Supervisao Humana</div>
+        </div>
+        <div class="bg-orange-500 text-white p-6 rounded-xl text-center">
+          <div class="text-3xl font-bold mb-2">4</div>
+          <div class="font-semibold">Limitacao de Escopo</div>
+        </div>
+        <div class="bg-red-500 text-white p-6 rounded-xl text-center">
+          <div class="text-3xl font-bold mb-2">5</div>
+          <div class="font-semibold">Criterios de Parada</div>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold mb-6">1. Controle de Intencao</h2>
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+          Agentes podem interpretar instrucoes de forma nao intencional. Intencao explicita e fundamental.
+        </p>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-red-50 dark:bg-red-900/20 p-6 rounded-lg border-l-4 border-red-500">
+            <h3 class="font-bold text-red-600 mb-3">Ruim (Vago)</h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300">"Aumente as vendas"</p>
+            <p class="text-xs mt-2 text-neutral-600 dark:text-neutral-400">Problema: Nao define como, quando ou limites eticos</p>
+          </div>
+          <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border-l-4 border-nivel-3a">
+            <h3 class="font-bold text-nivel-3a mb-3">Bom (Especifico)</h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300">"Aumente vendas em 20% nos proximos 3 meses atraves de marketing de conteudo etico, sem taticas agressivas"</p>
+            <p class="text-xs mt-2 text-nivel-600 dark:text-neutral-400">Define: objetivo, prazo, metodo e limites</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold mb-6">2. Niveis de Supervisao Humana</h2>
+        <div class="space-y-4">
+          <div class="border-l-4 border-nivel-3a pl-6 bg-nivel-3a/10 p-4 rounded-r-lg">
+            <h3 class="font-bold mb-2">Nivel 1: Automacao Total</h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">Agente decide e executa sem intervencao</p>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400"><strong>Use quando:</strong> Tarefas repetitivas, baixo risco, bem testadas</p>
+          </div>
+          <div class="border-l-4 border-blue-500 pl-6 bg-blue-50 dark:bg-blue-900/20 p-4 rounded-r-lg">
+            <h3 class="font-bold mb-2">Nivel 2: Aprovacao Antes de Executar</h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">Agente propoe, humano aprova, agente executa</p>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400"><strong>Use quando:</strong> Decisoes importantes, medio risco</p>
+          </div>
+          <div class="border-l-4 border-purple-500 pl-6 bg-purple-50 dark:bg-purple-900/20 p-4 rounded-r-lg">
+            <h3 class="font-bold mb-2">Nivel 3: Humano no Loop</h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">Agente consulta humano em pontos criticos</p>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400"><strong>Use quando:</strong> Decisoes complexas, alto risco</p>
+          </div>
+          <div class="border-l-4 border-orange-500 pl-6 bg-orange-50 dark:bg-orange-900/20 p-4 rounded-r-lg">
+            <h3 class="font-bold mb-2">Nivel 4: Humano Supervisionando</h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">Agente age, humano monitora e pode intervir</p>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400"><strong>Use quando:</strong> Processos continuos que precisam vigilancia</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold mb-6">3. Criterios de Parada</h2>
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+          Agentes em loops precisam saber <strong>quando parar</strong> para evitar desperdicio de recursos.
+        </p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="bg-nivel-3a/10 p-4 rounded-lg">
+            <h3 class="font-bold text-nivel-3a mb-2">Baseado em Qualidade</h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300">Para quando atinge nivel satisfatorio</p>
+            <code class="text-xs">Score >= 8/10</code>
+          </div>
+          <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+            <h3 class="font-bold text-blue-600 mb-2">Baseado em Tempo</h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300">Para apos tempo limite</p>
+            <code class="text-xs">Timeout: 30min</code>
+          </div>
+          <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
+            <h3 class="font-bold text-purple-600 mb-2">Baseado em Iteracoes</h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300">Para apos N tentativas</p>
+            <code class="text-xs">Max: 5 iteracoes</code>
+          </div>
+          <div class="bg-orange-50 dark:bg-orange-900/20 p-4 rounded-lg">
+            <h3 class="font-bold text-orange-600 mb-2">Baseado em Custo</h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300">Para ao atingir limite financeiro</p>
+            <code class="text-xs">Max: $10 API</code>
+          </div>
+          <div class="bg-pink-50 dark:bg-pink-900/20 p-4 rounded-lg">
+            <h3 class="font-bold text-pink-600 mb-2">Baseado em Convergencia</h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300">Para quando melhoria e insignificante</p>
+            <code class="text-xs">Melhoria < 2%</code>
+          </div>
+          <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
+            <h3 class="font-bold text-green-600 mb-2">Multiplos Criterios</h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300">Combina varios criterios</p>
+            <code class="text-xs">Primeiro que ocorrer</code>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold mb-6">Checklist de Seguranca</h2>
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+          Use este checklist antes de colocar qualquer agente em producao:
+        </p>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-nivel-3a/10 p-6 rounded-lg">
+            <h3 class="font-bold text-nivel-3a mb-4">Controles Basicos</h3>
+            <div class="space-y-2 text-sm">
+              <label class="flex items-center gap-2"><input type="checkbox" class="w-4 h-4"> Intencao claramente definida</label>
+              <label class="flex items-center gap-2"><input type="checkbox" class="w-4 h-4"> Limites explicitos documentados</label>
+              <label class="flex items-center gap-2"><input type="checkbox" class="w-4 h-4"> Criterios de parada configurados</label>
+              <label class="flex items-center gap-2"><input type="checkbox" class="w-4 h-4"> Nivel de supervisao definido</label>
+            </div>
+          </div>
+          <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+            <h3 class="font-bold text-blue-600 mb-4">Seguranca</h3>
+            <div class="space-y-2 text-sm">
+              <label class="flex items-center gap-2"><input type="checkbox" class="w-4 h-4"> Acessos minimos necessarios</label>
+              <label class="flex items-center gap-2"><input type="checkbox" class="w-4 h-4"> Dados sensiveis protegidos</label>
+              <label class="flex items-center gap-2"><input type="checkbox" class="w-4 h-4"> Acoes registradas (audit trail)</label>
+              <label class="flex items-center gap-2"><input type="checkbox" class="w-4 h-4"> Backup e rollback disponiveis</label>
+            </div>
+          </div>
+          <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg">
+            <h3 class="font-bold text-purple-600 mb-4">Qualidade</h3>
+            <div class="space-y-2 text-sm">
+              <label class="flex items-center gap-2"><input type="checkbox" class="w-4 h-4"> Protocolos de validacao implementados</label>
+              <label class="flex items-center gap-2"><input type="checkbox" class="w-4 h-4"> Testes em ambiente seguro</label>
+              <label class="flex items-center gap-2"><input type="checkbox" class="w-4 h-4"> Casos extremos considerados</label>
+              <label class="flex items-center gap-2"><input type="checkbox" class="w-4 h-4"> Plano de contencao existe</label>
+            </div>
+          </div>
+          <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg">
+            <h3 class="font-bold text-green-600 mb-4">Etica</h3>
+            <div class="space-y-2 text-sm">
+              <label class="flex items-center gap-2"><input type="checkbox" class="w-4 h-4"> Nao viola normas eticas</label>
+              <label class="flex items-center gap-2"><input type="checkbox" class="w-4 h-4"> Decisoes sao explicaveis</label>
+              <label class="flex items-center gap-2"><input type="checkbox" class="w-4 h-4"> Feedback de usuarios existe</label>
+              <label class="flex items-center gap-2"><input type="checkbox" class="w-4 h-4"> Revisao periodica estabelecida</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-r from-nivel-3a to-green-600 text-white rounded-xl p-8">
+        <h2 class="text-3xl font-bold mb-4">Parabens! Nivel 3A Completo</h2>
+        <p class="text-lg mb-6">Voce dominou os fundamentos de Agentes e Sistemas Autonomos com Engenharia de Intencao.</p>
+        <div class="bg-white/10 backdrop-blur p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-xl mb-2">Voce agora sabe:</h3>
+          <ul class="space-y-2">
+            <li>Criar agentes especializados profissionais</li>
+            <li>Organizar sistemas multiagentes complexos</li>
+            <li>Implementar projetos reais e aplicaveis</li>
+            <li>Garantir seguranca e qualidade</li>
+            <li>Aplicar boas praticas e etica</li>
+          </ul>
+        </div>
+        <div class="flex gap-4">
+          <a href="../niveis/nivel-3a.html" class="px-6 py-3 bg-white text-nivel-3a rounded-lg font-semibold hover:bg-neutral-100">Voltar ao Nivel 3A</a>
+          <a href="../index.html" class="px-6 py-3 bg-white/20 text-white rounded-lg font-semibold hover:bg-white/30">Voltar ao Inicio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold text-white mb-4">FEI - Engenharia de Intencao</h3>
+          <p class="text-sm">Formacao completa para dominar a nova era da IA</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Niveis</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../niveis/nivel-1.html" class="hover:text-white">Nivel 1: Fundamentos</a></li>
+            <li><a href="../niveis/nivel-2.html" class="hover:text-white">Nivel 2: Programa Completo</a></li>
+            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Nivel 3A: Agentes</a></li>
+            <li><a href="../niveis/nivel-3s.html" class="hover:text-white">Nivel 3S: Sistemas 2026</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../index.html" class="hover:text-white">Inicio</a></li>
+            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Voltar ao Nivel 3A</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-neutral-800 mt-8 pt-8 text-center text-sm">
+        <p>&copy; 2025 FEI - Formacao em Engenharia de Intencao.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1: O que são Agentes Modernos | FEI Nível 3A</title>
+  <meta name="description" content="Da IA respondente para IA autônoma - Entenda a evolução dos agentes inteligentes">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'nivel-1': '#3B82F6',
+            'nivel-2': '#9b59b6',
+            'nivel-3a': '#10B981',
+            'nivel-3s': '#F59E0B',
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+  </style>
+</head>
+<body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-3a bg-clip-text text-transparent">
+            FEI - Engenharia de Intencao
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-3a">Inicio</a>
+          <a href="../niveis/nivel-3a.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-3a">Nivel 3A</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <nav class="flex text-sm" aria-label="Breadcrumb">
+        <a href="../index.html" class="text-nivel-3a hover:text-green-700">Inicio</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <a href="../niveis/nivel-3a.html" class="text-nivel-3a hover:text-green-700">Nivel 3A</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <span class="text-neutral-600 dark:text-neutral-400">Modulo 1</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-nivel-3a to-green-600 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Modulo 1
+        </span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Nivel 3A - Agentes e Sistemas Autonomos
+        </span>
+      </div>
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">
+        O que sao Agentes Modernos
+      </h1>
+      <p class="text-xl text-white/90">
+        Da IA respondente para IA autonoma - A revolucao dos agentes inteligentes
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-12 bg-neutral-50 dark:bg-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Download Button -->
+      <div class="flex justify-end mb-6">
+        <a href="../downloads/nivel-3a-modulo-1.md" download class="px-6 py-3 bg-nivel-3a text-white rounded-lg font-semibold hover:bg-green-600 inline-flex items-center gap-2">
+          <span>Download MD</span>
+        </a>
+      </div>
+
+      <!-- Introducao -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
+          Introducao
+        </h2>
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          Durante decadas, a IA foi vista como uma ferramenta <strong>reativa</strong>: voce faz uma pergunta, ela responde. Voce pede uma tarefa, ela executa. Mas essa epoca acabou.
+        </p>
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          Os <strong>agentes modernos</strong> representam uma mudanca fundamental: IA que <strong>age</strong>, <strong>pensa</strong>, <strong>planeja</strong> e <strong>executa autonomamente</strong>. Eles nao apenas respondem - eles <strong>resolvem problemas completos</strong> do inicio ao fim.
+        </p>
+        <div class="bg-nivel-3a/10 border-l-4 border-nivel-3a p-6 rounded-lg">
+          <h3 class="font-bold text-nivel-3a mb-2">O que voce vai dominar neste modulo:</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Entender a diferenca entre chatbots, assistentes, agentes e sistemas multiagentes. Descobrir como agentes usam memoria, raciocinio e ferramentas para atuar de forma autonoma. Aprender quando usar cada tipo de sistema.
+          </p>
+        </div>
+      </div>
+
+      <!-- Evolucao: De Respondente para Autonomo -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          A Evolucao: De IA Respondente para IA Autonoma
+        </h2>
+
+        <div class="relative border-l-4 border-nivel-3a pl-8 space-y-8">
+
+          <!-- Fase 1: IA Respondente -->
+          <div class="relative">
+            <div class="absolute -left-10 w-6 h-6 bg-red-500 rounded-full border-4 border-white dark:border-neutral-800"></div>
+            <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
+              <div class="text-red-500 font-bold text-sm mb-1">Fase 1: IA Respondente (2020-2022)</div>
+              <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+                Simples Pergunta e Resposta
+              </h3>
+              <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                <strong>Como funcionava:</strong> Voce faz uma pergunta, a IA responde. Sem memoria, sem contexto persistente, sem capacidade de agir.
+              </p>
+              <div class="bg-white dark:bg-neutral-600 p-4 rounded border-l-4 border-red-500 mb-3">
+                <strong>Exemplo:</strong><br>
+                Usuario: "Qual a capital da Franca?"<br>
+                IA: "Paris."<br>
+                Usuario: "E do Brasil?"<br>
+                IA: "Brasilia."
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                <strong>Limitacao:</strong> Cada interacao e isolada. A IA nao lembra do que foi dito antes e nao pode executar acoes complexas.
+              </p>
+            </div>
+          </div>
+
+          <!-- Fase 2: Assistentes com Contexto -->
+          <div class="relative">
+            <div class="absolute -left-10 w-6 h-6 bg-yellow-500 rounded-full border-4 border-white dark:border-neutral-800"></div>
+            <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
+              <div class="text-yellow-600 font-bold text-sm mb-1">Fase 2: Assistentes com Contexto (2022-2023)</div>
+              <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+                Memoria de Curto Prazo
+              </h3>
+              <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                <strong>Como funcionava:</strong> ChatGPT trouxe memoria de conversacao. A IA lembra do que voce disse durante o dialogo.
+              </p>
+              <div class="bg-white dark:bg-neutral-600 p-4 rounded border-l-4 border-yellow-500 mb-3">
+                <strong>Exemplo:</strong><br>
+                Usuario: "Me explique fisica quantica."<br>
+                IA: [Explicacao detalhada]<br>
+                Usuario: "Simplifique isso para uma crianca."<br>
+                IA: [Versao simplificada da mesma explicacao]
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                <strong>Avanço:</strong> A IA lembra do contexto da conversa, mas ainda nao age de forma autonoma.
+              </p>
+            </div>
+          </div>
+
+          <!-- Fase 3: Agentes com Ferramentas -->
+          <div class="relative">
+            <div class="absolute -left-10 w-6 h-6 bg-blue-500 rounded-full border-4 border-white dark:border-neutral-800"></div>
+            <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
+              <div class="text-blue-500 font-bold text-sm mb-1">Fase 3: Agentes com Ferramentas (2023-2024)</div>
+              <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+                IA que Age no Mundo Real
+              </h3>
+              <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                <strong>Como funciona:</strong> IA pode usar ferramentas externas - buscar na web, executar codigo, acessar APIs, ler documentos.
+              </p>
+              <div class="bg-white dark:bg-neutral-600 p-4 rounded border-l-4 border-blue-500 mb-3">
+                <strong>Exemplo:</strong><br>
+                Usuario: "Pesquise as melhores praticas de SEO em 2025 e crie um guia."<br>
+                Agente: [Busca informacoes na web] → [Analisa resultados] → [Escreve guia estruturado]
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                <strong>Avanço:</strong> A IA nao apenas pensa, mas <strong>age</strong>. Pode buscar dados, executar comandos, interagir com sistemas.
+              </p>
+            </div>
+          </div>
+
+          <!-- Fase 4: Agentes Autonomos -->
+          <div class="relative">
+            <div class="absolute -left-10 w-6 h-6 bg-nivel-3a rounded-full border-4 border-white dark:border-neutral-800"></div>
+            <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border-2 border-nivel-3a">
+              <div class="text-nivel-3a font-bold text-sm mb-1">Fase 4: Agentes Autonomos (2024-2025)</div>
+              <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+                IA que Planeja, Executa e Adapta
+              </h3>
+              <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                <strong>Como funciona:</strong> Agentes modernos recebem um objetivo e decidem <strong>autonomamente</strong> como alcancar, dividindo em sub-tarefas, validando resultados e ajustando estrategias.
+              </p>
+              <div class="bg-white dark:bg-neutral-600 p-4 rounded border-l-4 border-nivel-3a mb-3">
+                <strong>Exemplo:</strong><br>
+                Usuario: "Crie um sistema completo de onboarding para novos clientes."<br>
+                Agente:<br>
+                1. [Analisa melhores praticas] <br>
+                2. [Cria estrutura do processo] <br>
+                3. [Escreve emails automaticos] <br>
+                4. [Desenha fluxo visual] <br>
+                5. [Valida com criterios de qualidade] <br>
+                6. [Entrega sistema completo]
+              </div>
+              <p class="text-sm text-green-700 dark:text-green-400">
+                <strong>Revolucao:</strong> Voce define o <strong>objetivo</strong>, o agente descobre o <strong>caminho</strong>.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Diferencas Fundamentais -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Diferencas Fundamentais: Chatbot vs Assistente vs Agente vs Multiagente vs Worker
+        </h2>
+
+        <div class="space-y-6">
+
+          <!-- Chatbot -->
+          <div class="border-l-4 border-red-500 pl-6 bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+              1. Chatbot (IA Basica)
+            </h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              <strong>Definicao:</strong> Sistema de perguntas e respostas simples, geralmente baseado em regras ou modelos basicos.
+            </p>
+            <div class="grid md:grid-cols-2 gap-4 mb-3">
+              <div>
+                <h4 class="font-bold text-sm mb-2">Caracteristicas:</h4>
+                <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+                  <li>Responde perguntas especificas</li>
+                  <li>Sem memoria entre conversas</li>
+                  <li>Nao realiza acoes complexas</li>
+                  <li>Limitado a script ou FAQ</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-sm mb-2">Exemplos de Uso:</h4>
+                <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+                  <li>Atendimento basico ao cliente</li>
+                  <li>FAQ automatizado</li>
+                  <li>Respostas padronizadas</li>
+                </ul>
+              </div>
+            </div>
+            <div class="bg-red-50 dark:bg-red-900/30 p-3 rounded text-sm">
+              <strong>Quando usar:</strong> Tarefas simples e repetitivas com respostas previsíveis.
+            </div>
+          </div>
+
+          <!-- Assistente -->
+          <div class="border-l-4 border-yellow-500 pl-6 bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+              2. Assistente (IA com Contexto)
+            </h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              <strong>Definicao:</strong> Sistema conversacional que lembra o contexto e adapta respostas durante o dialogo.
+            </p>
+            <div class="grid md:grid-cols-2 gap-4 mb-3">
+              <div>
+                <h4 class="font-bold text-sm mb-2">Caracteristicas:</h4>
+                <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+                  <li>Memoria de curto prazo</li>
+                  <li>Entende contexto da conversa</li>
+                  <li>Adapta tom e estilo</li>
+                  <li>Responde perguntas complexas</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-sm mb-2">Exemplos de Uso:</h4>
+                <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+                  <li>ChatGPT, Claude, Gemini</li>
+                  <li>Assistentes virtuais</li>
+                  <li>Suporte tecnico avancado</li>
+                </ul>
+              </div>
+            </div>
+            <div class="bg-yellow-50 dark:bg-yellow-900/30 p-3 rounded text-sm">
+              <strong>Quando usar:</strong> Conversas complexas que exigem contexto e adaptacao.
+            </div>
+          </div>
+
+          <!-- Agente -->
+          <div class="border-l-4 border-blue-500 pl-6 bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+              3. Agente (IA que Age)
+            </h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              <strong>Definicao:</strong> Sistema autonomo que usa ferramentas, toma decisoes e executa acoes para alcancar um objetivo.
+            </p>
+            <div class="grid md:grid-cols-2 gap-4 mb-3">
+              <div>
+                <h4 class="font-bold text-sm mb-2">Caracteristicas:</h4>
+                <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+                  <li>Usa ferramentas externas</li>
+                  <li>Planeja e executa tarefas</li>
+                  <li>Toma decisoes autonomas</li>
+                  <li>Memoria de longo prazo</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-sm mb-2">Exemplos de Uso:</h4>
+                <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+                  <li>Agente pesquisador</li>
+                  <li>Agente de analise de dados</li>
+                  <li>Agente de automacao</li>
+                </ul>
+              </div>
+            </div>
+            <div class="bg-blue-50 dark:bg-blue-900/30 p-3 rounded text-sm">
+              <strong>Quando usar:</strong> Tarefas que exigem pesquisa, analise ou acoes no mundo real.
+            </div>
+          </div>
+
+          <!-- Multiagente -->
+          <div class="border-l-4 border-nivel-3a pl-6 bg-green-50 dark:bg-green-900/20 p-6 rounded-lg">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+              4. Sistema Multiagente (IA Colaborativa)
+            </h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              <strong>Definicao:</strong> Multiplos agentes especializados trabalhando juntos para resolver problemas complexos.
+            </p>
+            <div class="grid md:grid-cols-2 gap-4 mb-3">
+              <div>
+                <h4 class="font-bold text-sm mb-2">Caracteristicas:</h4>
+                <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+                  <li>Agentes especializados</li>
+                  <li>Coordenacao e delegacao</li>
+                  <li>Pipeline de trabalho</li>
+                  <li>Validacao cruzada</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-sm mb-2">Exemplos de Uso:</h4>
+                <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+                  <li>Sistema de criacao de conteudo</li>
+                  <li>Analise empresarial completa</li>
+                  <li>Desenvolvimento de software</li>
+                </ul>
+              </div>
+            </div>
+            <div class="bg-green-100 dark:bg-green-900/30 p-3 rounded text-sm border border-nivel-3a">
+              <strong>Quando usar:</strong> Projetos complexos que exigem multiplas especialidades.
+            </div>
+          </div>
+
+          <!-- Worker -->
+          <div class="border-l-4 border-purple-500 pl-6 bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+              5. Worker (IA de Execucao)
+            </h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              <strong>Definicao:</strong> Sistema especializado em executar tarefas repetitivas de forma automatizada e confiavel.
+            </p>
+            <div class="grid md:grid-cols-2 gap-4 mb-3">
+              <div>
+                <h4 class="font-bold text-sm mb-2">Caracteristicas:</h4>
+                <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+                  <li>Foco em execucao</li>
+                  <li>Tarefas repetitivas</li>
+                  <li>Alta confiabilidade</li>
+                  <li>Processos padronizados</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-sm mb-2">Exemplos de Uso:</h4>
+                <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+                  <li>Processamento de dados</li>
+                  <li>Envio de emails automaticos</li>
+                  <li>Atualizacao de sistemas</li>
+                </ul>
+              </div>
+            </div>
+            <div class="bg-purple-50 dark:bg-purple-900/30 p-3 rounded text-sm">
+              <strong>Quando usar:</strong> Tarefas operacionais que precisam rodar continuamente.
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Como Agentes Usam Memoria, Raciocinio e Ferramentas -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Como Agentes Usam Memoria, Raciocinio e Ferramentas
+        </h2>
+
+        <div class="space-y-6">
+
+          <!-- Memoria -->
+          <div class="bg-nivel-3a/10 p-6 rounded-lg">
+            <h3 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
+              1. Memoria: O que o Agente Lembra
+            </h3>
+
+            <div class="grid md:grid-cols-3 gap-4 mb-4">
+              <div class="bg-white dark:bg-neutral-700 p-4 rounded-lg">
+                <h4 class="font-bold text-nivel-3a mb-2">Memoria de Curto Prazo</h4>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  Contexto da conversa atual. Lembra o que foi dito nos ultimos minutos/horas.
+                </p>
+                <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-2">
+                  <strong>Exemplo:</strong> Lembrar que voce esta criando um curso sobre marketing.
+                </p>
+              </div>
+
+              <div class="bg-white dark:bg-neutral-700 p-4 rounded-lg">
+                <h4 class="font-bold text-nivel-3a mb-2">Memoria de Trabalho</h4>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  Informacoes ativas durante a execucao de uma tarefa especifica.
+                </p>
+                <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-2">
+                  <strong>Exemplo:</strong> Guardar resultados de pesquisa enquanto escreve um relatorio.
+                </p>
+              </div>
+
+              <div class="bg-white dark:bg-neutral-700 p-4 rounded-lg">
+                <h4 class="font-bold text-nivel-3a mb-2">Memoria de Longo Prazo</h4>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  Conhecimento persistente sobre o usuario, projetos e preferencias.
+                </p>
+                <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-2">
+                  <strong>Exemplo:</strong> Lembrar que voce trabalha com educacao e prefere tom formal.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <h4 class="font-bold mb-2">Por que a memoria importa?</h4>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                Sem memoria, cada interacao seria isolada. Com memoria, o agente se torna um <strong>colaborador persistente</strong> que aprende suas preferencias e mantem contexto entre sessoes.
+              </p>
+            </div>
+          </div>
+
+          <!-- Raciocinio -->
+          <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+            <h3 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
+              2. Raciocinio: Como o Agente Pensa
+            </h3>
+
+            <div class="space-y-4">
+              <div class="bg-white dark:bg-neutral-700 p-4 rounded-lg border-l-4 border-blue-500">
+                <h4 class="font-bold mb-2">Raciocinio Estruturado (Chain of Thought)</h4>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+                  O agente pensa passo a passo antes de responder:
+                </p>
+                <ol class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300 ml-4">
+                  <li>1. Entender o problema</li>
+                  <li>2. Identificar o que falta</li>
+                  <li>3. Dividir em sub-problemas</li>
+                  <li>4. Resolver cada parte</li>
+                  <li>5. Integrar a solucao final</li>
+                </ol>
+              </div>
+
+              <div class="bg-white dark:bg-neutral-700 p-4 rounded-lg border-l-4 border-blue-500">
+                <h4 class="font-bold mb-2">Planejamento Autonomo</h4>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  O agente cria um plano de acao para alcançar o objetivo:
+                </p>
+                <div class="mt-2 bg-blue-50 dark:bg-blue-900/30 p-3 rounded text-xs">
+                  <strong>Exemplo:</strong><br>
+                  Objetivo: "Criar um relatorio de mercado"<br><br>
+                  Plano do agente:<br>
+                  1. Pesquisar dados de mercado<br>
+                  2. Analisar tendencias<br>
+                  3. Identificar insights principais<br>
+                  4. Estruturar relatorio<br>
+                  5. Validar informacoes<br>
+                  6. Formatar e entregar
+                </div>
+              </div>
+
+              <div class="bg-white dark:bg-neutral-700 p-4 rounded-lg border-l-4 border-blue-500">
+                <h4 class="font-bold mb-2">Adaptacao Dinamica</h4>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  O agente ajusta sua estrategia conforme os resultados:
+                </p>
+                <ul class="text-xs space-y-1 text-neutral-700 dark:text-neutral-300 mt-2 ml-4">
+                  <li>Se a pesquisa nao traz resultados: muda termos de busca</li>
+                  <li>Se a analise e superficial: busca fontes mais profundas</li>
+                  <li>Se o formato nao esta claro: pergunta ao usuario</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ferramentas -->
+          <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg">
+            <h3 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
+              3. Ferramentas: Como o Agente Age
+            </h3>
+
+            <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+              Ferramentas sao as "maos" do agente - interfaces que permitem interagir com sistemas externos:
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-4">
+
+              <div class="bg-white dark:bg-neutral-700 p-4 rounded-lg">
+                <h4 class="font-bold text-purple-600 mb-2">Ferramentas de Busca</h4>
+                <ul class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+                  <li>Buscar na web</li>
+                  <li>Consultar APIs</li>
+                  <li>Acessar bases de dados</li>
+                  <li>Ler documentos</li>
+                </ul>
+              </div>
+
+              <div class="bg-white dark:bg-neutral-700 p-4 rounded-lg">
+                <h4 class="font-bold text-purple-600 mb-2">Ferramentas de Execucao</h4>
+                <ul class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+                  <li>Executar codigo</li>
+                  <li>Processar dados</li>
+                  <li>Gerar graficos</li>
+                  <li>Automatizar tarefas</li>
+                </ul>
+              </div>
+
+              <div class="bg-white dark:bg-neutral-700 p-4 rounded-lg">
+                <h4 class="font-bold text-purple-600 mb-2">Ferramentas de Comunicacao</h4>
+                <ul class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+                  <li>Enviar emails</li>
+                  <li>Postar em redes sociais</li>
+                  <li>Agendar reunioes</li>
+                  <li>Notificar usuarios</li>
+                </ul>
+              </div>
+
+              <div class="bg-white dark:bg-neutral-700 p-4 rounded-lg">
+                <h4 class="font-bold text-purple-600 mb-2">Ferramentas de Analise</h4>
+                <ul class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+                  <li>Analisar imagens</li>
+                  <li>Processar audio</li>
+                  <li>Extrair insights de dados</li>
+                  <li>Gerar visualizacoes</li>
+                </ul>
+              </div>
+
+            </div>
+
+            <div class="mt-4 bg-white dark:bg-neutral-700 p-4 rounded border-2 border-purple-500">
+              <h4 class="font-bold mb-2">Como o Agente Escolhe Ferramentas</h4>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                O agente decide <strong>autonomamente</strong> quais ferramentas usar baseado no objetivo. Se precisa de dados atualizados, busca na web. Se precisa processar numeros, executa codigo. Se precisa comunicar, envia mensagens.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Exemplo Pratico Completo -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Exemplo Pratico: Agente em Acao
+        </h2>
+
+        <div class="bg-nivel-3a/10 p-6 rounded-lg mb-6">
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+            Cenario: "Analise a performance do meu site e sugira melhorias"
+          </h3>
+          <p class="text-sm text-neutral-700 dark:text-neutral-300">
+            Veja como um agente moderno resolveria isso de forma autonoma:
+          </p>
+        </div>
+
+        <div class="space-y-4">
+
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-10 h-10 bg-nivel-3a text-white rounded-full flex items-center justify-center font-bold">
+              1
+            </div>
+            <div class="flex-1 bg-neutral-50 dark:bg-neutral-700 p-4 rounded-lg">
+              <h4 class="font-bold mb-2">Planejamento</h4>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                Agente pensa: "Preciso analisar performance. Vou precisar de: velocidade de carregamento, SEO, UX, metricas de usuario."
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-10 h-10 bg-nivel-3a text-white rounded-full flex items-center justify-center font-bold">
+              2
+            </div>
+            <div class="flex-1 bg-neutral-50 dark:bg-neutral-700 p-4 rounded-lg">
+              <h4 class="font-bold mb-2">Uso de Ferramentas</h4>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">
+                Agente executa:
+              </p>
+              <ul class="text-xs space-y-1 text-neutral-700 dark:text-neutral-300">
+                <li>Acessa Google PageSpeed Insights</li>
+                <li>Analisa HTML/CSS do site</li>
+                <li>Verifica SEO com ferramentas de auditoria</li>
+                <li>Busca benchmarks de industria</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-10 h-10 bg-nivel-3a text-white rounded-full flex items-center justify-center font-bold">
+              3
+            </div>
+            <div class="flex-1 bg-neutral-50 dark:bg-neutral-700 p-4 rounded-lg">
+              <h4 class="font-bold mb-2">Analise e Raciocinio</h4>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                Agente identifica: "Site esta lento (4.2s), faltam meta tags, imagens nao estao otimizadas, CTA pouco visivel."
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-10 h-10 bg-nivel-3a text-white rounded-full flex items-center justify-center font-bold">
+              4
+            </div>
+            <div class="flex-1 bg-neutral-50 dark:bg-neutral-700 p-4 rounded-lg">
+              <h4 class="font-bold mb-2">Geracao de Solucoes</h4>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">
+                Agente cria relatorio estruturado com:
+              </p>
+              <ul class="text-xs space-y-1 text-neutral-700 dark:text-neutral-300">
+                <li>Problemas identificados</li>
+                <li>Impacto estimado de cada problema</li>
+                <li>Solucoes priorizadas</li>
+                <li>Codigo pronto para implementar</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-10 h-10 bg-nivel-3a text-white rounded-full flex items-center justify-center font-bold">
+              5
+            </div>
+            <div class="flex-1 bg-green-50 dark:bg-green-900/20 p-4 rounded-lg border-2 border-nivel-3a">
+              <h4 class="font-bold mb-2">Entrega e Validacao</h4>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                Agente entrega relatorio completo, pergunta se voce quer implementar as mudancas, e pode ate executar as alteracoes automaticamente se autorizado.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mt-6 bg-nivel-3a/10 p-4 rounded-lg border-l-4 border-nivel-3a">
+          <p class="text-sm text-neutral-700 dark:text-neutral-300">
+            <strong>Diferenca fundamental:</strong> Voce nao disse "como" fazer a analise. Voce disse apenas "o que" queria. O agente decidiu <strong>autonomamente</strong> o caminho, usou as ferramentas necessarias e entregou uma solucao completa.
+          </p>
+        </div>
+      </div>
+
+      <!-- Conclusao -->
+      <div class="bg-gradient-to-r from-nivel-3a to-green-600 text-white rounded-xl p-8">
+        <h2 class="text-3xl font-bold mb-4">Conclusao do Modulo</h2>
+        <p class="text-lg mb-6">
+          Voce entendeu a revolucao dos agentes modernos: da IA que apenas responde para IA que pensa, planeja e age autonomamente.
+        </p>
+        <div class="bg-white/10 backdrop-blur p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-xl mb-2">O que voce dominou:</h3>
+          <ul class="space-y-2">
+            <li>A evolucao de IA respondente para IA autonoma</li>
+            <li>Diferencas entre chatbot, assistente, agente, multiagente e worker</li>
+            <li>Como agentes usam memoria, raciocinio e ferramentas</li>
+            <li>Quando usar cada tipo de sistema</li>
+            <li>Exemplos praticos de agentes em acao</li>
+          </ul>
+        </div>
+        <div class="flex gap-4">
+          <a href="../niveis/nivel-3a.html" class="px-6 py-3 bg-white text-nivel-3a rounded-lg font-semibold hover:bg-neutral-100 inline-flex items-center gap-2">
+            <span>Voltar ao Nivel 3A</span>
+          </a>
+          <a href="nivel-3a-modulo-2.html" class="px-6 py-3 bg-white/20 text-white rounded-lg font-semibold hover:bg-white/30 inline-flex items-center gap-2">
+            <span>Proximo Modulo</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold text-white mb-4">FEI - Engenharia de Intencao</h3>
+          <p class="text-sm">Formacao completa para dominar a nova era da IA</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Niveis</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../niveis/nivel-1.html" class="hover:text-white">Nivel 1: Fundamentos</a></li>
+            <li><a href="../niveis/nivel-2.html" class="hover:text-white">Nivel 2: Programa Completo</a></li>
+            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Nivel 3A: Agentes</a></li>
+            <li><a href="../niveis/nivel-3s.html" class="hover:text-white">Nivel 3S: Sistemas 2026</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../index.html" class="hover:text-white">Inicio</a></li>
+            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Voltar ao Nivel 3A</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-neutral-800 mt-8 pt-8 text-center text-sm">
+        <p>&copy; 2025 FEI - Formacao em Engenharia de Intencao.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>
