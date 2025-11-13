@@ -1,352 +1,987 @@
 # Módulo 2: Engenharia de Intenção Aplicada a Agentes
+## Nível 3A - Agentes e Sistemas Autônomos na Engenharia de Intenção
 
-**Nível 3A - Agentes e Sistemas Autônomos**
+**FEI - Formação em Engenharia de Intenção**
 
 ---
 
 ## Introdução
 
-Criar um agente não é simplesmente dizer "você é um pesquisador" ou "atue como analista". Agentes modernos precisam de uma **estrutura clara de intenção** que define:
+No módulo anterior, você entendeu o que são agentes e como eles funcionam. Agora vamos para a parte crítica: **como criar agentes que realmente funcionam usando Engenharia de Intenção**.
 
-- **O que** ele deve alcançar
-- **Como** ele deve pensar
-- **Quando** deve agir ou perguntar
-- **Onde** estão seus limites
+A diferença entre um agente que funciona 50% das vezes e um que funciona 95% das vezes está na clareza de intenção. Este módulo vai te ensinar os 8 elementos fundamentais que todo agente precisa ter.
 
-**O que você vai dominar neste módulo:**
-- Os 8 elementos fundamentais para criar agentes orientados por intenção
-- Como definir o papel, missão, critérios de qualidade e limites de cada agente
-- Como garantir que agentes ajam de forma previsível e confiável
+### Por Que Agentes Falham
+
+A maioria dos agentes falha por problemas de design, não de tecnologia:
+
+```
+Agente mal projetado:
+"Você é um assistente de marketing. Ajude o usuário."
+
+Problema: O que significa "ajudar"? Quais limites? Que formato de saída?
+Resultado: Agente confuso, saídas inconsistentes, não sabe quando parar.
+
+Agente bem projetado com Engenharia de Intenção:
+"Você é o Agente Analista de Campanhas. Sua missão é avaliar
+performance de campanhas de marketing digital. Você SEMPRE analisa
+estes 5 KPIs: CTR, CPC, conversões, ROI, engajamento. Você NUNCA
+dá recomendações criativas (isso é responsabilidade do Agente
+Criativo). Sua saída é SEMPRE uma tabela comparativa + lista
+ranqueada de campanhas + 3 insights principais."
+
+Resultado: Agente focado, consistente, colabora bem com outros.
+```
 
 ---
 
-## Os 8 Elementos que Cada Agente Precisa
+## Os 8 Elementos Que Cada Agente Precisa
 
 ### 1. Objetivo Primário
 
-**O que é:** A razão de existir do agente. O resultado final que ele deve entregar.
+**O que é:**
+A razão de existir do agente. O que ele está tentando alcançar?
 
-**Exemplos:**
-- **Agente Pesquisador:** "Encontrar informações relevantes, confiáveis e atualizadas sobre um tópico específico."
-- **Agente Escritor:** "Transformar informações em conteúdo claro, engajante e estruturado."
-- **Agente Analista:** "Processar dados e identificar insights acionáveis."
+**Por que importa:**
+Sem objetivo claro, agente não consegue avaliar se está tendo sucesso.
 
-**Por que importa:** Sem objetivo claro, o agente não sabe o que priorizar e pode produzir resultados irrelevantes.
+**Como definir:**
+
+```markdown
+Template:
+O objetivo deste agente é: [VERBO DE AÇÃO] + [O QUÊ] + [PARA QUEM/ONDE]
+
+Exemplos ruins:
+❌ "Ajudar com vendas"
+❌ "Ser útil ao time de marketing"
+❌ "Processar informações"
+
+Por quê são ruins?
+- Muito vago
+- Não mensurável
+- Não tem escopo claro
+
+Exemplos bons:
+✅ "Analisar performance de campanhas de email marketing e identificar
+    as 3 mais efetivas baseado em taxa de conversão"
+
+✅ "Gerar 5 variações de copy para anúncios de Facebook otimizadas
+    para público 25-35 anos interessado em fitness"
+
+✅ "Revisar documentos técnicos e garantir que todos os requisitos
+    de segurança da empresa estejam presentes"
+
+Por quê são bons?
+- Ação específica (analisar, gerar, revisar)
+- Escopo claro (email marketing, anúncios Facebook, docs técnicos)
+- Critério de sucesso embutido (top 3, 5 variações, todos requisitos)
+```
+
+**Exemplo completo:**
+
+```
+Agente: Pesquisador de Mercado
+
+Objetivo Primário:
+"Coletar e sintetizar informações sobre concorrentes no mercado de
+SaaS B2B, focando em: precificação, features principais, público-alvo,
+e estratégia de posicionamento. Entregar análise comparativa que permita
+tomada de decisão estratégica sobre entrada no mercado."
+
+Medida de sucesso:
+- Mínimo 5 concorrentes analisados
+- Todas as 4 dimensões cobertas para cada um
+- Análise comparativa em formato de tabela
+- Pelo menos 3 insights estratégicos identificados
+```
 
 ---
 
-### 2. Intenção (Papel Funcional no Sistema)
+### 2. Intenção (Qual o Papel no Sistema)
 
-**O que é:** O papel que o agente desempenha dentro de um sistema maior. Como ele contribui para o objetivo geral.
+**O que é:**
+Como este agente se encaixa no ecossistema maior. Qual sua função no fluxo de trabalho.
 
-**Exemplos:**
-- **Agente Pesquisador:** "Você é o responsável por alimentar o sistema com dados de qualidade. Outros agentes dependem da precisão da sua pesquisa."
-- **Agente Revisor:** "Você é o filtro de qualidade. Valide se o conteúdo está alinhado aos critérios antes de prosseguir."
-- **Agente Coordenador:** "Você organiza o trabalho dos outros agentes e garante que tudo flua de forma eficiente."
+**Por que importa:**
+Agentes não trabalham sozinhos. Precisam saber onde começam e onde terminam suas responsabilidades.
 
-**Por que importa:** A intenção define como o agente colabora com outros agentes e toma decisões contextuais.
+**Como definir:**
+
+```markdown
+Template:
+Este agente atua como [PAPEL] no processo de [PROCESSO].
+Ele recebe [INPUT] de [FONTE] e entrega [OUTPUT] para [DESTINO].
+
+Exemplo - Sistema de Criação de Conteúdo:
+
+Agente 1: Pesquisador
+Intenção: "Atua como INICIADOR do pipeline de conteúdo.
+Recebe tópico do usuário e entrega dados brutos + fontes para
+o Agente Estruturador."
+
+Agente 2: Estruturador
+Intenção: "Atua como ORGANIZADOR intermediário.
+Recebe dados brutos do Pesquisador e entrega outline estruturado
+para o Agente Escritor."
+
+Agente 3: Escritor
+Intenção: "Atua como EXECUTOR criativo.
+Recebe outline do Estruturador e entrega rascunho completo para
+o Agente Revisor."
+
+Agente 4: Revisor
+Intenção: "Atua como FINALIZADOR de qualidade.
+Recebe rascunho do Escritor e entrega versão final polida para
+o usuário."
+```
+
+**Exemplo com fluxo visual:**
+
+```
+Sistema: Análise e Resposta de Tickets de Suporte
+
+┌─────────────────────────────────────────────────────────┐
+│  AGENTE CLASSIFICADOR                                   │
+│  Intenção: Porta de entrada. Triagem de todos tickets. │
+│  Input: Ticket bruto do cliente                         │
+│  Output: Ticket + tags (urgência, categoria, sentimento)│
+└────────────┬────────────────────────────────────────────┘
+             │
+    ┌────────┴────────┐
+    │                 │
+┌───▼──────────┐  ┌──▼─────────────┐
+│ AGENTE       │  │ AGENTE         │
+│ RESOLVEDOR   │  │ ESCALADOR      │
+│ Intenção:    │  │ Intenção:      │
+│ Solucionar   │  │ Encaminhar     │
+│ tickets      │  │ tickets        │
+│ simples      │  │ complexos      │
+│ (FAQ)        │  │ para humano    │
+└──────────────┘  └────────────────┘
+```
 
 ---
 
 ### 3. Critérios de Qualidade
 
-**O que é:** Padrões mensuráveis que definem quando o trabalho do agente está completo e correto.
+**O que é:**
+Como o agente sabe se o trabalho dele está bom. Quais são os padrões.
 
-**Exemplos:**
+**Por que importa:**
+Sem critérios claros, agente não consegue se auto-avaliar e melhorar.
 
-**Para Agente Pesquisador:**
-- Fontes devem ser de 2023-2025
-- Mínimo 5 fontes confiáveis
-- Incluir dados quantitativos quando possível
+**Como definir:**
 
-**Para Agente Escritor:**
-- Parágrafos com 3-5 frases
-- Tom profissional e acessível
-- Exemplos práticos em cada seção
+```markdown
+Template:
+Uma saída de qualidade deste agente DEVE:
+1. [Critério objetivo 1]
+2. [Critério objetivo 2]
+3. [Critério objetivo 3]
 
-**Para Agente Analista:**
-- Insights devem ser acionáveis
-- Apresentar dados em gráficos quando relevante
-- Conclusões baseadas em evidências
+Uma saída NUNCA deve:
+1. [Anti-padrão 1]
+2. [Anti-padrão 2]
 
-**Por que importa:** Critérios objetivos impedem que o agente entregue trabalho incompleto ou fora do padrão.
+Exemplo - Agente Escritor de Blog Posts:
+
+Critérios de qualidade OBRIGATÓRIOS:
+✅ Entre 800-1200 palavras
+✅ Mínimo 3 subtítulos (H2)
+✅ Pelo menos 1 exemplo prático por seção
+✅ Tom conversacional mas profissional
+✅ Chamada para ação clara no final
+✅ Todas as afirmações técnicas com fonte
+
+Critérios PROIBIDOS (nunca fazer):
+❌ Jargões não explicados
+❌ Parágrafos com mais de 5 linhas
+❌ Começar com "Você já parou para pensar..."
+❌ Usar chavões de marketing vazio ("revolucionário", "único")
+❌ Deixar promessas sem suporte de dados
+```
+
+**Exemplo avançado com checklist:**
+
+```
+Agente: Analista de Dados Financeiros
+
+Checklist de qualidade:
+┌──────────────────────────────────────────┬─────┐
+│ CRITÉRIO                                 │ OK? │
+├──────────────────────────────────────────┼─────┤
+│ Dados dos últimos 12 meses incluídos     │ [ ] │
+│ Mínimo 3 métricas analisadas             │ [ ] │
+│ Comparação com período anterior          │ [ ] │
+│ Tendências identificadas                 │ [ ] │
+│ Outliers explicados                      │ [ ] │
+│ Visualização (gráfico) incluída          │ [ ] │
+│ Conclusão com próximos passos            │ [ ] │
+│ Fontes de dados citadas                  │ [ ] │
+│ Margens de erro especificadas            │ [ ] │
+│ Nenhuma informação sensível exposta      │ [ ] │
+└──────────────────────────────────────────┴─────┘
+
+Se QUALQUER item não for marcado → output é REJEITADO
+```
 
 ---
 
 ### 4. Contexto Funcional
 
-**O que é:** Informações que o agente precisa saber sobre o ambiente, usuário ou projeto para tomar decisões corretas.
+**O que é:**
+As informações de fundo que o agente precisa para funcionar bem.
 
-**Exemplos:**
-- **Contexto de Usuário:** "O usuário é um empreendedor que prefere comunicação direta e objetiva."
-- **Contexto de Projeto:** "Este projeto é urgente - priorize velocidade sobre detalhes secundários."
-- **Contexto de Indústria:** "O público-alvo é da área de tecnologia - use termos técnicos sem medo."
+**Por que importa:**
+Agente sem contexto toma decisões genéricas. Com contexto, decisões são relevantes.
 
-**Por que importa:** Sem contexto, o agente pode fazer suposições erradas e entregar resultados que não se encaixam na necessidade real.
+**Como definir:**
+
+```markdown
+Template:
+Contexto de operação:
+- Indústria: [setor]
+- Público-alvo: [demografia/perfil]
+- Restrições: [limitações conhecidas]
+- Preferências: [estilo/abordagem]
+- Conhecimento prévio: [o que agente já deve saber]
+
+Exemplo - Agente de Recomendação de Produtos:
+
+Contexto funcional:
+Indústria: E-commerce de moda feminina
+Público-alvo: Mulheres 25-40 anos, classe média-alta, urbanas
+Restrições:
+  - Não recomendar produtos fora de estoque
+  - Não sugerir itens com avaliação < 3.5 estrelas
+  - Respeitar preferências de estilo salvas no perfil
+Preferências:
+  - Tom amigável e inclusivo
+  - Explicar POR QUÊ está recomendando
+  - Máximo 5 recomendações por vez
+Conhecimento prévio:
+  - Histórico de compras do cliente
+  - Itens no carrinho atual
+  - Navegação recente
+  - Preferências de tamanho/cor
+```
+
+**Exemplo com contexto rico:**
+
+```
+Agente: Consultor de Vendas B2B
+
+Contexto funcional completo:
+
+1. INDÚSTRIA E PRODUTO
+   Vendemos: Software de gestão de projetos para empresas médias
+   Ticket médio: R$15k-50k/ano
+   Ciclo de venda: 30-90 dias
+   Principais concorrentes: Asana, Monday.com, ClickUp
+
+2. PÚBLICO-ALVO
+   Persona principal: Gerente de Projetos / PMO
+   Dores típicas:
+     - Equipes desorganizadas
+     - Falta de visibilidade de progresso
+     - Comunicação fragmentada
+     - Relatórios manuais demorados
+
+3. CONTEXTO DE CONVERSA
+   Você está atuando em: Fase de descoberta (primeiro contato)
+   Objetivo desta fase: Qualificar lead e agendar demo
+   NÃO tente: Fechar venda ainda (muito cedo)
+
+4. RESTRIÇÕES IMPORTANTES
+   - Nunca dar desconto sem aprovação (mencionar "posso consultar")
+   - Não fazer promessas de features que não existem
+   - Se pergunta técnica complexa → "Deixa eu trazer nosso especialista"
+
+5. TOM E ESTILO
+   Ser: Consultivo, não "vendedor agressivo"
+   Fazer: Perguntas sobre processo atual deles
+   Evitar: Falar só de features, ignorar contexto do prospect
+```
 
 ---
 
 ### 5. Responsabilidades Claras
 
-**O que é:** Lista explícita do que o agente DEVE fazer e o que está FORA do seu escopo.
+**O que é:**
+Lista específica do que o agente DEVE fazer e o que está sob sua alçada.
 
-**Exemplo - Agente Pesquisador:**
+**Por que importa:**
+Evita sobreposição com outros agentes e garante cobertura completa do processo.
 
-**RESPONSÁVEL POR:**
-- Buscar fontes confiáveis
-- Validar atualidade dos dados
-- Organizar informações por relevância
-- Citar fontes corretamente
+**Como definir:**
 
-**NÃO É RESPONSÁVEL POR:**
-- Escrever o conteúdo final
-- Formatar documentos
-- Decidir estrutura do projeto
-- Validar com o cliente final
+```markdown
+Template:
+Este agente É responsável por:
+1. [Responsabilidade específica 1]
+2. [Responsabilidade específica 2]
+3. [Responsabilidade específica 3]
 
-**Por que importa:** Evita que agentes tentem fazer mais do que devem, ou que deixem lacunas por achar que "não é comigo".
+Este agente NÃO é responsável por:
+1. [O que não deve fazer 1]
+2. [O que não deve fazer 2]
+
+Exemplo - Sistema de Criação de Curso Online:
+
+Agente Estruturador de Currículo:
+
+É RESPONSÁVEL POR:
+✅ Dividir tópico em módulos lógicos
+✅ Sequenciar módulos em ordem pedagógica
+✅ Definir objetivos de aprendizagem por módulo
+✅ Estimar tempo necessário por módulo
+✅ Criar estrutura de pré-requisitos
+✅ Identificar pontos de avaliação
+
+NÃO É RESPONSÁVEL POR:
+❌ Escrever conteúdo das aulas (isso é do Agente Escritor)
+❌ Criar exercícios práticos (isso é do Agente de Atividades)
+❌ Gravar vídeos (isso é produção)
+❌ Validar qualidade técnica do conteúdo (isso é do Agente Revisor)
+```
+
+**Exemplo com matriz de responsabilidades:**
+
+```
+Sistema: Pipeline de Conteúdo para Redes Sociais
+
+┌──────────────────┬────────────┬──────────┬──────────┬──────────┐
+│ RESPONSABILIDADE │ PESQUISADOR│ CRIATIVO │ COPYWRITER│ OTIMIZADOR│
+├──────────────────┼────────────┼──────────┼──────────┼──────────┤
+│ Encontrar trends │     ✓      │    -     │    -     │    -     │
+│ Gerar ideias     │     -      │    ✓     │    -     │    -     │
+│ Escrever copy    │     -      │    -     │    ✓     │    -     │
+│ Escolher hashtags│     -      │    -     │    -     │    ✓     │
+│ Definir horário  │     -      │    -     │    -     │    ✓     │
+│ Revisar tom      │     -      │    ✓     │    ✓     │    -     │
+│ Validar dados    │     ✓      │    -     │    -     │    -     │
+└──────────────────┴────────────┴──────────┴──────────┴──────────┘
+
+Legenda:
+✓ = Responsável primário
+✓✓ = Responsável secundário (apoia)
+- = Não tem responsabilidade
+```
 
 ---
 
 ### 6. Limites de Atuação
 
-**O que é:** Restrições explícitas que impedem o agente de sair do controle ou tomar decisões arriscadas.
+**O que é:**
+As fronteiras que o agente não pode cruzar. O que está fora do escopo.
 
-**Exemplos:**
-- **Limite de Autonomia:** "Se encontrar informações conflitantes, SEMPRE pergunte ao usuário qual fonte priorizar."
-- **Limite de Tempo:** "Pesquise por no máximo 15 minutos. Se não encontrar dados suficientes, informe ao usuário."
-- **Limite de Custo:** "Use apenas ferramentas gratuitas. Nunca sugira serviços pagos sem autorização."
-- **Limite de Privacidade:** "Nunca busque ou armazene informações pessoais de terceiros sem consentimento."
+**Por que importa:**
+Evita que agente tente fazer coisas que não deveria ou tome decisões perigosas.
 
-**Por que importa:** Limites garantem que o agente opere de forma segura e previsível, sem causar problemas inesperados.
+**Como definir:**
+
+```markdown
+Template:
+Limites deste agente:
+
+ESCOPO:
+- Pode atuar em: [domínios permitidos]
+- NÃO pode atuar em: [domínios proibidos]
+
+DECISÕES:
+- Pode decidir autonomamente: [tipos de decisão]
+- DEVE consultar humano para: [decisões críticas]
+
+DADOS:
+- Pode acessar: [fontes permitidas]
+- NÃO pode acessar: [fontes restritas]
+
+AÇÕES:
+- Pode executar: [ações permitidas]
+- NUNCA deve executar: [ações perigosas]
+
+Exemplo - Agente de Moderação de Conteúdo:
+
+LIMITES DE ATUAÇÃO:
+
+Escopo:
+✅ PODE moderar: Comentários públicos, posts em comunidade
+❌ NÃO PODE moderar: Mensagens privadas, conteúdo de admin
+
+Decisões autônomas permitidas:
+✅ Remover spam óbvio (links maliciosos, bots)
+✅ Ocultar linguagem ofensiva detectada por filtro
+✅ Sinalizar conteúdo para revisão humana
+
+Decisões que REQUEREM humano:
+❌ Banir usuário permanentemente
+❌ Remover conteúdo controverso (precisa contexto)
+❌ Decisões sobre casos de assédio (muito sério)
+
+Dados que pode acessar:
+✅ Conteúdo público
+✅ Histórico de moderações anteriores
+✅ Regras da comunidade
+
+Dados que NÃO pode acessar:
+❌ IPs ou dados pessoais sensíveis
+❌ Informações financeiras
+❌ Conversas privadas entre usuários
+
+Ações proibidas:
+❌ NUNCA editar conteúdo do usuário
+❌ NUNCA responder EM NOME do usuário
+❌ NUNCA compartilhar dados entre usuários
+```
+
+**Exemplo com sistema de níveis:**
+
+```
+Agente: Assistente Financeiro Pessoal
+
+Sistema de limites em níveis:
+
+NÍVEL 1 - AUTOMÁTICO (sem aprovação)
+✅ Categorizar transações
+✅ Gerar relatórios de gastos
+✅ Alertar sobre gastos incomuns
+✅ Sugerir economia com base em padrões
+
+NÍVEL 2 - SUGESTÃO (pede aprovação)
+⚠️ Mover dinheiro entre suas contas
+⚠️ Agendar pagamento de conta
+⚠️ Aplicar em investimento pré-aprovado
+⚠️ Cancelar assinatura não utilizada
+
+NÍVEL 3 - PROIBIDO (nunca fazer)
+❌ Fazer investimentos não pré-aprovados
+❌ Emprestar/transferir para terceiros
+❌ Alterar limites de cartão
+❌ Tomar qualquer ação com valor > R$1000
+❌ Compartilhar dados financeiros com outros sistemas
+```
 
 ---
 
 ### 7. Formatos de Saída Padrão
 
-**O que é:** Estrutura padronizada para as entregas do agente, facilitando integração com outros agentes ou sistemas.
+**O que é:**
+Como o agente deve estruturar suas respostas. Templates e padrões.
 
-**Exemplo - Agente Pesquisador:**
+**Por que importa:**
+Saídas consistentes facilitam processamento (por humanos ou outros agentes) e aumentam usabilidade.
+
+**Como definir:**
 
 ```markdown
-## Resultado da Pesquisa
+Template:
+Formato de saída padrão:
 
-**Tópico:** [nome do tópico]
-**Data da Pesquisa:** [data]
+ESTRUTURA:
+[Definir seções obrigatórias]
 
-### Principais Descobertas
-1. [Descoberta 1]
-2. [Descoberta 2]
-3. [Descoberta 3]
+FORMATO:
+[Especificar: texto, JSON, tabela, etc.]
 
-### Fontes Consultadas
-- [Fonte 1 - Link - Data]
-- [Fonte 2 - Link - Data]
-- [Fonte 3 - Link - Data]
+ELEMENTOS VISUAIS:
+[Como destacar informações importantes]
 
-### Insights Chave
-- [Insight 1]
-- [Insight 2]
+Exemplo - Agente Analista de Campanha:
 
-### Próximos Passos Sugeridos
-[O que fazer com essas informações]
+FORMATO DE SAÍDA OBRIGATÓRIO:
+
+1. CABEÇALHO
+   - Nome da campanha analisada
+   - Período dos dados
+   - Data da análise
+
+2. MÉTRICAS PRINCIPAIS (tabela)
+   ┌──────────┬───────────┬────────────┬──────────┐
+   │ Métrica  │ Atual     │ Meta       │ Status   │
+   ├──────────┼───────────┼────────────┼──────────┤
+   │ CTR      │ 2.3%      │ 2.5%       │ ⚠️ Baixo │
+   │ CPC      │ R$ 0.45   │ R$ 0.50    │ ✅ OK    │
+   │ Conv.    │ 4.2%      │ 4.0%       │ ✅ Acima │
+   │ ROI      │ 3.2x      │ 3.0x       │ ✅ Acima │
+   └──────────┴───────────┴────────────┴──────────┘
+
+3. INSIGHTS (lista ordenada por importância)
+   🎯 INSIGHT 1: [Mais importante]
+   Evidência: [dados que suportam]
+   Implicação: [o que isso significa]
+
+   💡 INSIGHT 2: [Importante]
+   Evidência: [dados]
+   Implicação: [significado]
+
+   📊 INSIGHT 3: [Relevante]
+   Evidência: [dados]
+   Implicação: [significado]
+
+4. RECOMENDAÇÕES (máximo 3, acionáveis)
+   ➡️ Ação 1: [O que fazer]
+      Impacto esperado: [resultado previsto]
+      Esforço: [baixo/médio/alto]
+
+   ➡️ Ação 2: [O que fazer]
+      Impacto esperado: [resultado]
+      Esforço: [nível]
+
+5. PRÓXIMOS PASSOS
+   [ ] Item acionável 1 (responsável: [quem])
+   [ ] Item acionável 2 (responsável: [quem])
+
+6. RODAPÉ
+   Dados de: [fonte]
+   Metodologia: [como foi calculado]
+   Gerado por: Agente Analista v2.0
 ```
 
-**Por que importa:** Formatos padronizados tornam as saídas previsíveis, facilitando automação e integração entre agentes.
+**Exemplo - Formato JSON estruturado:**
+
+```json
+// Agente de Processamento de Currículos
+{
+  "candidate_id": "string",
+  "timestamp": "ISO-8601",
+  "analysis": {
+    "match_score": 0-100,
+    "match_level": "low|medium|high|excellent",
+    "strengths": [
+      {
+        "category": "technical|experience|education|soft_skills",
+        "description": "string",
+        "relevance": 0-10
+      }
+    ],
+    "gaps": [
+      {
+        "category": "string",
+        "description": "string",
+        "severity": "minor|moderate|major"
+      }
+    ],
+    "key_qualifications": ["string", "string", "string"],
+    "recommended_next_step": "reject|phone_screen|technical_interview|final_interview",
+    "reasoning": "string explicando a recomendação",
+    "red_flags": ["string"]
+  },
+  "metadata": {
+    "processing_time_ms": 0,
+    "confidence_level": 0-1,
+    "manual_review_required": boolean
+  }
+}
+```
 
 ---
 
 ### 8. Protocolos de Colaboração com Outros Agentes
 
-**O que é:** Regras de como o agente interage com outros agentes em um sistema multiagente.
+**O que é:**
+Como este agente se comunica e coordena com outros agentes do sistema.
 
-**Exemplos:**
-- **Delegação:** "Ao finalizar a pesquisa, passe o resultado para o Agente Escritor usando o formato padrão."
-- **Validação:** "Antes de entregar ao usuário, envie o conteúdo para o Agente Revisor validar."
-- **Escalação:** "Se encontrar um problema que não pode resolver, notifique o Agente Coordenador imediatamente."
-- **Feedback:** "Após receber feedback do Agente Revisor, ajuste o trabalho e reenvie."
+**Por que importa:**
+Sistemas multiagentes dependem de handoffs limpos entre agentes.
 
-**Por que importa:** Em sistemas multiagentes, a colaboração eficiente é crucial. Protocolos claros evitam gargalos e retrabalho.
-
----
-
-## Template Completo: Criando um Agente com Engenharia de Intenção
-
-Use este template como base para criar qualquer agente. Preencha cada seção com informações específicas do seu projeto:
+**Como definir:**
 
 ```markdown
-# AGENTE: [Nome do Agente]
+Template:
+Protocolos de colaboração:
 
-## 1. OBJETIVO PRIMÁRIO
-[Defina claramente o resultado final que este agente deve entregar]
+RECEBE DE: [Agente X]
+Formato esperado: [estrutura]
+Validação: [checklist do que verificar]
+Ação se inválido: [o que fazer]
 
-## 2. INTENÇÃO (Papel Funcional)
-[Explique qual o papel deste agente no sistema maior e como ele contribui]
+ENVIA PARA: [Agente Y]
+Formato de saída: [estrutura]
+Metadados incluídos: [informações extras]
+Gatilho: [quando enviar]
 
-## 3. CRITÉRIOS DE QUALIDADE
-[Liste padrões mensuráveis que definem um trabalho bem feito]
-- Critério 1: [descrição]
-- Critério 2: [descrição]
-- Critério 3: [descrição]
+Exemplo - Sistema de Criação de Relatórios:
 
-## 4. CONTEXTO FUNCIONAL
-[Forneça informações importantes sobre o usuário, projeto ou ambiente]
-- Usuário: [perfil do usuário]
-- Projeto: [características do projeto]
-- Restrições: [limitações a considerar]
+Agente Analista de Dados:
 
-## 5. RESPONSABILIDADES
-### Você é RESPONSÁVEL por:
-- [Responsabilidade 1]
-- [Responsabilidade 2]
-- [Responsabilidade 3]
+RECEBE DE: Agente Coletor de Dados
+Formato esperado:
+{
+  "data_source": "string",
+  "date_range": {"start": "date", "end": "date"},
+  "records": [{...}],
+  "total_records": int
+}
 
-### Você NÃO é responsável por:
-- [Não-responsabilidade 1]
-- [Não-responsabilidade 2]
+Validação ao receber:
+✓ Campo "records" não está vazio
+✓ Total de records bate com tamanho do array
+✓ Datas estão no range solicitado
+✓ Todos os campos obrigatórios presentes
 
-## 6. LIMITES DE ATUAÇÃO
-- Autonomia: [até onde pode decidir sozinho]
-- Tempo: [limites de tempo]
-- Recursos: [limites de ferramentas/custos]
-- Privacidade: [restrições de dados]
-
-## 7. FORMATO DE SAÍDA PADRÃO
-[Estrutura que você SEMPRE deve usar nas entregas]
-
-## 8. PROTOCOLOS DE COLABORAÇÃO
-- Próxima etapa: [para qual agente passar o trabalho]
-- Validação: [quem valida seu trabalho]
-- Escalação: [quando e como pedir ajuda]
-- Feedback: [como receber e aplicar feedback]
+Se inválido:
+→ Retorna para Agente Coletor com erro específico
+→ NÃO prossegue com análise
+→ Loga problema para monitoramento
 
 ---
 
-## INSTRUÇÕES DE OPERAÇÃO
-[Passos que o agente deve seguir ao executar uma tarefa]
+ENVIA PARA: Agente Gerador de Visualizações
+Formato de saída:
+{
+  "analysis_id": "string",
+  "summary_stats": {
+    "mean": float,
+    "median": float,
+    "std_dev": float
+  },
+  "trends": [{
+    "metric": "string",
+    "direction": "up|down|stable",
+    "change_pct": float
+  }],
+  "anomalies": [{...}],
+  "visualization_recommendations": ["chart_type_1", "chart_type_2"]
+}
 
-1. [Passo 1]
-2. [Passo 2]
-3. [Passo 3]
-4. [Validar critérios de qualidade]
-5. [Entregar no formato padrão]
+Metadados incluídos:
+- Timestamp da análise
+- Versão do agente analista
+- Tempo de processamento
+- Nível de confiança nas conclusões
+
+Gatilho para envio:
+→ Análise completa E passou validação interna
+→ Se confiança < 70% → incluir flag "needs_review": true
 ```
 
 ---
 
-## Exemplo Prático: Agente Pesquisador Completo
+## Template Completo de Agente
+
+Agora que você conhece os 8 elementos, aqui está o template completo para criar qualquer agente:
 
 ```markdown
-# AGENTE: Pesquisador de Conteúdo
+# AGENTE: [NOME DO AGENTE]
 
 ## 1. OBJETIVO PRIMÁRIO
-Encontrar informações relevantes, atualizadas e confiáveis sobre tópicos específicos,
-organizando-as de forma que possam ser facilmente utilizadas por outros agentes ou usuários.
+[O que este agente existe para fazer]
 
-## 2. INTENÇÃO (Papel Funcional)
-Você é o primeiro agente no pipeline de criação de conteúdo. Sua pesquisa alimenta
-o trabalho de todos os outros agentes. A qualidade do produto final depende diretamente
-da precisão e profundidade da sua pesquisa.
+Medida de sucesso:
+- Critério 1
+- Critério 2
+- Critério 3
+
+## 2. INTENÇÃO (PAPEL NO SISTEMA)
+Atua como [PAPEL] no processo de [PROCESSO].
+
+Input: [O que recebe]
+Output: [O que entrega]
+Upstream: [Agente anterior]
+Downstream: [Próximo agente]
 
 ## 3. CRITÉRIOS DE QUALIDADE
-- Todas as fontes devem ser de 2023-2025 (máximo 2 anos)
-- Mínimo de 5 fontes confiáveis e diversas
-- Incluir dados quantitativos quando disponíveis
-- Citar fontes com link e data de acesso
-- Informações devem ser verificáveis
+
+Output de qualidade DEVE ter:
+✅ Critério 1
+✅ Critério 2
+✅ Critério 3
+
+Output NUNCA deve ter:
+❌ Anti-padrão 1
+❌ Anti-padrão 2
 
 ## 4. CONTEXTO FUNCIONAL
-- Usuário: Criador de conteúdo educacional
-- Projeto: Criar materiais didáticos para profissionais de tecnologia
-- Restrições: Apenas fontes gratuitas e públicas
+
+Indústria/Domínio: [...]
+Público-alvo: [...]
+Restrições: [...]
+Preferências: [...]
+Conhecimento prévio necessário: [...]
 
 ## 5. RESPONSABILIDADES
-### Você é RESPONSÁVEL por:
-- Buscar fontes confiáveis e atualizadas
-- Validar veracidade das informações
-- Organizar dados por relevância
-- Identificar gaps de informação
-- Citar todas as fontes corretamente
 
-### Você NÃO é responsável por:
-- Escrever o conteúdo final
-- Formatar documentos
-- Validar com o cliente final
-- Decidir a estrutura do curso
+É responsável por:
+✅ Responsabilidade 1
+✅ Responsabilidade 2
+✅ Responsabilidade 3
+
+NÃO é responsável por:
+❌ Fora do escopo 1
+❌ Fora do escopo 2
 
 ## 6. LIMITES DE ATUAÇÃO
-- Autonomia: Pode decidir quais fontes usar, mas deve informar quando encontrar
-  informações conflitantes
-- Tempo: Máximo 20 minutos por tópico. Se não encontrar dados suficientes,
-  informe ao usuário
-- Recursos: Apenas ferramentas gratuitas (Google, Wikipedia acadêmica,
-  papers públicos)
-- Privacidade: Nunca busque informações pessoais de terceiros
 
-## 7. FORMATO DE SAÍDA PADRÃO
+Pode decidir autonomamente:
+- Decisão tipo A
+- Decisão tipo B
 
-## RESULTADO DA PESQUISA
+Deve consultar humano/outro agente:
+- Decisão crítica 1
+- Decisão crítica 2
 
-**Tópico:** [nome do tópico]
-**Data da Pesquisa:** [data]
-**Tempo Investido:** [minutos]
+Ações proibidas:
+- Nunca fazer X
+- Nunca fazer Y
 
-### PRINCIPAIS DESCOBERTAS
-1. [Descoberta 1 - com fonte]
-2. [Descoberta 2 - com fonte]
-3. [Descoberta 3 - com fonte]
+## 7. FORMATO DE SAÍDA
 
-### FONTES CONSULTADAS
-- [Título] - [URL] - Acessado em [data]
-
-### INSIGHTS CHAVE
-- [Insight acionável 1]
-- [Insight acionável 2]
-
-### GAPS IDENTIFICADOS
-- [Informação que não foi encontrada]
-
-### PRÓXIMOS PASSOS SUGERIDOS
-[O que fazer com essas informações]
+[Template específico de como estruturar resposta]
 
 ## 8. PROTOCOLOS DE COLABORAÇÃO
-- Próxima etapa: Após finalizar, passe o resultado para o Agente Estruturador
-- Validação: Não precisa de validação, mas informe se encontrou informações conflitantes
-- Escalação: Se o tópico for muito técnico e não encontrar fontes confiáveis,
-  notifique o Agente Coordenador
-- Feedback: Se o Agente Escritor pedir mais informações, priorize essa pesquisa adicional
+
+### Recebe de: [Agente X]
+Formato: [...]
+Validação: [...]
+
+### Envia para: [Agente Y]
+Formato: [...]
+Gatilho: [...]
 
 ---
 
-## INSTRUÇÕES DE OPERAÇÃO
+## PROMPT DO AGENTE
 
-1. Receba o tópico a ser pesquisado
-2. Identifique 3-5 termos-chave relacionados
-3. Busque em fontes confiáveis
-4. Valide a data das informações (máximo 2 anos)
-5. Organize as descobertas por relevância
-6. Identifique gaps de informação
-7. Formate a saída usando o template padrão
-8. Envie para o próximo agente no pipeline
+[Aqui você escreve o prompt real que implementa tudo acima]
 ```
 
 ---
 
-## Conclusão
+## Exemplo Completo: Agente Analista de SEO
 
-Você dominou os 8 elementos fundamentais para criar agentes orientados por intenção. Agora você pode projetar agentes que são previsíveis, confiáveis e trabalham bem em equipe.
+```markdown
+# AGENTE: ANALISTA DE SEO
 
-**O que você dominou:**
-- Os 8 elementos essenciais de cada agente
-- Como definir objetivo, intenção e critérios de qualidade
-- Como estabelecer limites e responsabilidades claras
-- Como criar formatos de saída padronizados
-- Como configurar protocolos de colaboração entre agentes
-- Template completo para criar qualquer agente
+## 1. OBJETIVO PRIMÁRIO
+Analisar páginas web e identificar oportunidades de otimização para
+melhorar ranking em motores de busca, focando em aspectos técnicos,
+conteúdo e experiência do usuário.
 
-**Próximo passo:** No Módulo 3, você conhecerá 10 tipos de agentes especializados e quando usar cada um.
+Medida de sucesso:
+- Auditoria completa em 15+ dimensões
+- Mínimo 10 recomendações priorizadas por impacto
+- Score de SEO antes vs depois projetado
+- Todas as recomendações acionáveis (não genéricas)
+
+## 2. INTENÇÃO (PAPEL NO SISTEMA)
+Atua como AUDITOR ESPECIALIZADO no pipeline de otimização digital.
+
+Input: URL da página + palavras-chave alvo
+Output: Relatório de auditoria + lista priorizada de ações
+Upstream: Agente Estrategista (define metas)
+Downstream: Agente Implementador (aplica mudanças)
+
+## 3. CRITÉRIOS DE QUALIDADE
+
+Output de qualidade DEVE ter:
+✅ Análise técnica (velocidade, mobile, Core Web Vitals)
+✅ Análise de conteúdo (palavras-chave, estrutura, relevância)
+✅ Análise de experiência (UX, navegação, acessibilidade)
+✅ Análise de autoridade (backlinks, menções)
+✅ Comparação com 3 concorrentes principais
+✅ Recomendações priorizadas (alto/médio/baixo impacto)
+✅ Estimativa de esforço por recomendação
+✅ Quick wins identificados (impacto rápido)
+
+Output NUNCA deve ter:
+❌ Recomendações genéricas ("melhore o SEO")
+❌ Análise sem dados quantitativos
+❌ Sugestões sem priorização
+❌ Jargões técnicos sem explicação
+
+## 4. CONTEXTO FUNCIONAL
+
+Indústria/Domínio: Marketing digital / SEO
+Público-alvo: Donos de negócio, gestores de marketing
+Ferramentas disponíveis:
+  - Google PageSpeed Insights API
+  - Análise de HTML/CSS/JS
+  - Verificação de sitemap e robots.txt
+  - Análise de palavras-chave
+Restrições:
+  - Apenas análise (não implementa mudanças)
+  - Não pode acessar Google Search Console diretamente
+  - Foco em SEO orgânico (não pago)
+Preferências:
+  - Priorizar quick wins
+  - Explicar "por quê" de cada recomendação
+  - Mostrar impacto esperado em métricas
+
+## 5. RESPONSABILIDADES
+
+É responsável por:
+✅ Analisar aspectos técnicos de SEO
+✅ Avaliar qualidade e relevância do conteúdo
+✅ Identificar problemas de indexação
+✅ Comparar com concorrentes principais
+✅ Priorizar recomendações por impacto vs esforço
+✅ Estimar melhoria potencial em ranking
+✅ Identificar quick wins
+
+NÃO é responsável por:
+❌ Implementar as mudanças recomendadas
+❌ Escrever conteúdo otimizado (outro agente)
+❌ Configurar Google Search Console
+❌ Criar estratégia de conteúdo completa
+❌ Gerenciar campanhas pagas
+
+## 6. LIMITES DE ATUAÇÃO
+
+Pode decidir autonomamente:
+- Quais aspectos técnicos analisar
+- Como priorizar recomendações
+- Que métricas usar para comparação
+
+Deve consultar humano para:
+- Definir palavras-chave alvo primárias
+- Aprovar mudanças grandes na estrutura do site
+- Decisões sobre remoção de conteúdo
+
+Ações proibidas:
+- NUNCA implementar mudanças direto no site
+- NUNCA recomendar black-hat SEO (spam, cloaking)
+- NUNCA prometer rankings específicos
+- NUNCA ignorar experiência do usuário por SEO
+
+## 7. FORMATO DE SAÍDA
+
+# AUDITORIA DE SEO
+**URL Analisada:** [url]
+**Data:** [data]
+**Palavras-chave alvo:** [lista]
+
+## SCORE GERAL
+┌────────────────┬────────┬──────────┐
+│ Dimensão       │ Score  │ Status   │
+├────────────────┼────────┼──────────┤
+│ Técnico        │ 75/100 │ ⚠️ Bom   │
+│ Conteúdo       │ 60/100 │ ⚠️ Médio │
+│ UX             │ 85/100 │ ✅ Ótimo │
+│ Autoridade     │ 45/100 │ ❌ Baixo │
+├────────────────┼────────┼──────────┤
+│ GERAL          │ 66/100 │ ⚠️ Médio │
+└────────────────┴────────┴──────────┘
+
+## COMPARAÇÃO COM CONCORRENTES
+[Tabela comparativa]
+
+## PROBLEMAS CRÍTICOS (resolver primeiro)
+1. [Problema 1]
+   Impacto: Alto | Esforço: Médio
+   Como resolver: [passos]
+
+## QUICK WINS (impacto rápido)
+1. [Quick win 1]
+   Impacto: Médio | Esforço: Baixo
+   Tempo estimado: 2 horas
+
+## MELHORIAS DE MÉDIO PRAZO
+[Lista priorizada]
+
+## RECOMENDAÇÕES DE LONGO PRAZO
+[Estratégias maiores]
+
+## PROJEÇÃO DE MELHORIA
+Se implementadas todas recomendações de alto impacto:
+- Score projetado: 66 → 82
+- Melhoria estimada em tráfego orgânico: +40-60%
+- Tempo de implementação: 4-6 semanas
+
+## PRÓXIMOS PASSOS
+[ ] Implementar quick wins (esta semana)
+[ ] Resolver problemas críticos (2 semanas)
+[ ] Planeje melhorias de médio prazo
+
+## 8. PROTOCOLOS DE COLABORAÇÃO
+
+### Recebe de: Agente Estrategista
+Formato esperado:
+{
+  "url": "string",
+  "target_keywords": ["keyword1", "keyword2"],
+  "competitors": ["url1", "url2", "url3"],
+  "business_goals": "increase traffic|improve conversions|brand awareness"
+}
+
+Validação:
+✓ URL é válida e acessível
+✓ Pelo menos 1 palavra-chave alvo
+✓ Máximo 5 concorrentes
+
+### Envia para: Agente Implementador
+Formato:
+{
+  "audit_id": "string",
+  "critical_issues": [{
+    "issue": "string",
+    "priority": 1-10,
+    "effort": "low|medium|high",
+    "steps": ["step1", "step2"],
+    "expected_impact": "string"
+  }],
+  "quick_wins": [...],
+  "medium_term": [...],
+  "long_term": [...]
+}
+
+Gatilho: Auditoria completa com mínimo 10 recomendações
+```
 
 ---
 
-**FEI - Formação em Engenharia de Intenção**
-*Nível 3A - Agentes e Sistemas Autônomos*
+## Exercícios Práticos
+
+### Exercício 1: Complete o Agente
+
+Complete este agente parcial adicionando os 8 elementos:
+
+```markdown
+# AGENTE: REVISOR DE CÓDIGO
+
+Missão: Analisar código Python e identificar problemas de qualidade,
+segurança e performance.
+
+[COMPLETE OS 8 ELEMENTOS]
+```
+
+### Exercício 2: Crie Seu Próprio Agente
+
+Use o template completo para criar um agente para seu contexto:
+
+Ideias:
+- Agente Gerenciador de Projetos
+- Agente Criador de Apresentações
+- Agente Analisador de Feedback de Clientes
+- Agente Otimizador de Processos
+
+---
+
+## Conclusão do Módulo 2
+
+Você agora domina os 8 elementos fundamentais de todo agente bem projetado.
+
+### Checklist: Seu agente está completo?
+
+Antes de implementar qualquer agente, passe por esta checklist:
+
+```
+[ ] 1. Objetivo primário está ESPECÍFICO e MENSURÁVEL?
+[ ] 2. Intenção/papel no sistema está CLARO?
+[ ] 3. Critérios de qualidade são OBJETIVOS e VERIFICÁVEIS?
+[ ] 4. Contexto funcional fornece informação SUFICIENTE?
+[ ] 5. Responsabilidades não TÊM SOBREPOSIÇÃO com outros agentes?
+[ ] 6. Limites de atuação incluem CASOS PERIGOSOS?
+[ ] 7. Formato de saída é CONSISTENTE e ESTRUTURADO?
+[ ] 8. Protocolos de colaboração têm VALIDAÇÃO de inputs?
+```
+
+Se todos os 8 itens estão marcados - Seu agente está pronto!
+
+**Próximo módulo:** Os 10 tipos de agentes especializados com exemplos completos.
+
+---
+
+**Tamanho deste arquivo:** ~23KB
+**Status:** Módulo 2 completo e expandido
+
+2025 FEI - Formação em Engenharia de Intenção
