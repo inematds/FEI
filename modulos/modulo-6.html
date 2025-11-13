@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 6: Casos de Uso Reais | FEI</title>
+  <meta name="description" content="6 Casos de Uso Práticos de Engenharia de Intenção - Módulo Completo">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'nivel-1': '#3B82F6',
+            'nivel-2': '#9b59b6',
+            'nivel-3a': '#10B981',
+            'nivel-3s': '#F59E0B',
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+  </style>
+</head>
+<body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-2 bg-clip-text text-transparent">
+            🎓 FEI - Engenharia de Intenção
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-1">Início</a>
+          <a href="../niveis/nivel-1.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-1">Nível 1</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <nav class="flex text-sm" aria-label="Breadcrumb">
+        <a href="../index.html" class="text-nivel-1 hover:text-blue-700">Início</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <a href="../niveis/nivel-1.html" class="text-nivel-1 hover:text-blue-700">Nível 1</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <span class="text-neutral-600 dark:text-neutral-400">Módulo 6</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-nivel-1 to-blue-600 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Módulo 6
+        </span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Aplicações
+        </span>
+      </div>
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">
+        🎯 Casos de Uso Reais
+      </h1>
+      <p class="text-xl text-white/90">
+        6 aplicações práticas de Engenharia de Intenção no mundo real
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-12 bg-neutral-50 dark:bg-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Download Button -->
+      <div class="flex justify-end mb-6">
+        <a href="../downloads/nivel-1-modulo-6.md" download class="px-6 py-3 bg-nivel-1 text-white rounded-lg font-semibold hover:bg-blue-600 inline-flex items-center gap-2">
+          <span>📥</span>
+          <span>Download MD</span>
+        </a>
+      </div>
+
+      <!-- Introdução -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
+          🎯 Introdução
+        </h2>
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          Teoria é essencial, mas <strong>aplicação real</strong> é onde a Engenharia de Intenção mostra seu verdadeiro poder. Neste módulo, você verá <strong>6 casos de uso práticos</strong> do mundo real, com exemplos completos e adaptáveis.
+        </p>
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          Cada caso de uso inclui: <strong>contexto</strong>, <strong>objetivo</strong>, <strong>solicitação completa</strong> e <strong>dicas de adaptação</strong> para seu contexto.
+        </p>
+        <div class="bg-nivel-1/10 border-l-4 border-nivel-1 p-6 rounded-lg">
+          <h3 class="font-bold text-nivel-1 mb-2">💡 Como usar este módulo?</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Não apenas leia — <strong>adapte</strong> e <strong>teste</strong> cada caso de uso no seu trabalho real. A verdadeira maestria vem da prática aplicada.
+          </p>
+        </div>
+      </div>
+
+      <!-- Caso de Uso 1 -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="text-4xl">📚</span>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Caso de Uso 1: Criar Cursos Online
+          </h2>
+        </div>
+
+        <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg mb-6">
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">📋 Contexto</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Você é especialista em um tema e quer criar um curso online estruturado, didático e que venda. Precisa de estrutura completa desde o posicionamento até exercícios práticos.
+          </p>
+        </div>
+
+        <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border border-green-500 mb-6">
+          <h3 class="text-xl font-bold text-green-700 dark:text-green-400 mb-4">✅ Solicitação Completa</h3>
+          <pre class="text-xs font-mono text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap bg-white dark:bg-neutral-700 p-4 rounded">OBJETIVO: Criar estrutura completa de curso online sobre [SEU TEMA]
+
+INTENÇÃO:
+- Público: [Iniciantes/Intermediários/Avançados] em [área]
+- Objetivo do aluno: [O que ele quer conseguir]
+- Diferencial: [Por que escolheriam seu curso]
+
+CONTEXTO:
+- Duração alvo: [X horas de conteúdo]
+- Formato: Vídeo-aulas + materiais de apoio
+- Plataforma: [Hotmart/Udemy/Própria]
+- Investimento do aluno: R$ [valor]
+
+ENTREGA ESPERADA:
+1. Posicionamento do curso (título, subtítulo, promessa)
+2. Estrutura de módulos e aulas (com duração estimada)
+3. Descrição detalhada de cada módulo
+4. Exercícios práticos para cada módulo
+5. Material complementar sugerido
+6. Sequência pedagógica justificada
+
+CRITÉRIOS:
+- Progressão lógica do básico ao avançado
+- Foco em aplicação prática, não só teoria
+- Exercícios que validam aprendizado
+- Diferenciação clara entre módulos</pre>
+        </div>
+
+        <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">🔧 Adaptações Possíveis</h3>
+          <ul class="text-sm text-neutral-700 dark:text-neutral-300 space-y-2">
+            <li><strong>• Para curso corporativo:</strong> Adicione "Aplicação imediata no contexto empresarial"</li>
+            <li><strong>• Para curso técnico:</strong> Inclua "Projetos práticos progressivos"</li>
+            <li><strong>• Para curso de soft skills:</strong> Enfatize "Exemplos de situações reais e role-play"</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Caso de Uso 2 -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="text-4xl">💼</span>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Caso de Uso 2: Estratégias de Negócios
+          </h2>
+        </div>
+
+        <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg mb-6">
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">📋 Contexto</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Você precisa criar uma estratégia de crescimento para empresa em fase de escala. A estratégia precisa ser data-driven, acionável e alinhada com recursos disponíveis.
+          </p>
+        </div>
+
+        <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border border-green-500 mb-6">
+          <h3 class="text-xl font-bold text-green-700 dark:text-green-400 mb-4">✅ Solicitação Completa</h3>
+          <pre class="text-xs font-mono text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap bg-white dark:bg-neutral-700 p-4 rounded">ROLE: Você é consultor estratégico com especialização em escala de startups B2B SaaS
+
+CONTEXTO:
+- Empresa: SaaS B2B para [nicho]
+- Estágio: [ARR atual], [Nº clientes], [time de X pessoas]
+- Mercado: Brasil, concorrência [descrever]
+- Recursos: R$[orçamento] para próximos 6 meses
+- Desafios atuais: [CAC alto/churn/conversão/etc]
+
+OBJETIVO: Estratégia de crescimento 3x em 12 meses
+
+ANÁLISE NECESSÁRIA:
+1. Diagnóstico da situação atual (forças, fraquezas, oportunidades)
+2. Identificação de alavancas de crescimento mais eficazes
+3. Priorização baseada em ROI esperado vs esforço
+
+ENTREGA:
+- Estratégia principal + 2 alternativas
+- Roadmap trimestral detalhado
+- Métricas de acompanhamento (leading e lagging)
+- Budget breakdown
+- Riscos e planos de mitigação
+- Quick wins (primeiros 30 dias)
+
+FORMATO: Documento executivo com resumo 1 página + detalhamento por seção</pre>
+        </div>
+
+        <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">🔧 Adaptações Possíveis</h3>
+          <ul class="text-sm text-neutral-700 dark:text-neutral-300 space-y-2">
+            <li><strong>• Para e-commerce:</strong> Foque em "CAC, LTV, taxa de conversão, ticket médio"</li>
+            <li><strong>• Para serviços:</strong> Enfatize "Retenção, upsell, referrals"</li>
+            <li><strong>• Para produto físico:</strong> Adicione "Logística, margens, canais de distribuição"</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Caso de Uso 3 -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="text-4xl">🔬</span>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Caso de Uso 3: Pesquisa e Análise Avançada
+          </h2>
+        </div>
+
+        <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg mb-6">
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">📋 Contexto</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Você precisa realizar pesquisa profunda sobre um tema complexo, sintetizar múltiplas fontes, e gerar insights acionáveis para tomada de decisão.
+          </p>
+        </div>
+
+        <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border border-green-500 mb-6">
+          <h3 class="text-xl font-bold text-green-700 dark:text-green-400 mb-4">✅ Solicitação Completa</h3>
+          <pre class="text-xs font-mono text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap bg-white dark:bg-neutral-700 p-4 rounded">OBJETIVO: Análise profunda sobre [TEMA/MERCADO/TECNOLOGIA]
+
+CONTEXTO DE USO:
+- Decisão que isso vai informar: [Investir/Pivotar/Contratar/etc]
+- Stakeholders: [Quem vai ler e usar]
+- Prazo de decisão: [urgência]
+
+ESCOPO DA ANÁLISE:
+1. Estado atual do [mercado/tecnologia/tema]
+2. Tendências e projeções (próximos 2-5 anos)
+3. Players principais e posicionamento
+4. Análise SWOT do contexto
+5. Oportunidades identificadas
+6. Riscos e desafios
+7. Recomendações acionáveis
+
+FONTES A CONSIDERAR:
+[Liste estudos, relatórios, dados que você já tem]
+
+CRITÉRIOS DE QUALIDADE:
+- Baseado em dados concretos, não opiniões
+- Múltiplas perspectivas apresentadas
+- Insights não-óbvios destacados
+- Recomendações com trade-offs explícitos
+
+FORMATO:
+- Executive summary (1 página)
+- Análise detalhada por seção
+- Visualizações sugeridas (gráficos, tabelas, frameworks)
+- Bibliografia e fontes
+
+RACIOCÍNIO: Use pensamento crítico para questionar premissas e identificar vieses</pre>
+        </div>
+
+        <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">🔧 Adaptações Possíveis</h3>
+          <ul class="text-sm text-neutral-700 dark:text-neutral-300 space-y-2">
+            <li><strong>• Para análise de concorrência:</strong> Foque em "Posicionamento, pricing, features, reviews"</li>
+            <li><strong>• Para análise tecnológica:</strong> Inclua "Maturidade, adoção, casos de uso, limitações"</li>
+            <li><strong>• Para análise de mercado:</strong> Enfatize "Tamanho (TAM/SAM/SOM), crescimento, barreiras"</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Caso de Uso 4 -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="text-4xl">💻</span>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Caso de Uso 4: Programação Assistida
+          </h2>
+        </div>
+
+        <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg mb-6">
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">📋 Contexto</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Você precisa desenvolver funcionalidade complexa, com código limpo, testado, documentado e seguindo boas práticas da sua stack tecnológica.
+          </p>
+        </div>
+
+        <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border border-green-500 mb-6">
+          <h3 class="text-xl font-bold text-green-700 dark:text-green-400 mb-4">✅ Solicitação Completa</h3>
+          <pre class="text-xs font-mono text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap bg-white dark:bg-neutral-700 p-4 rounded">CONTEXTO TÉCNICO:
+- Stack: [linguagem, framework, database]
+- Padrões do projeto: [arquitetura, convenções]
+- Integrações existentes: [APIs, serviços]
+
+FUNCIONALIDADE:
+[Descreva o que precisa ser construído]
+
+REQUISITOS:
+Funcionais:
+- [Lista de funcionalidades específicas]
+
+Não-funcionais:
+- Performance: [requisitos]
+- Segurança: [requisitos]
+- Escalabilidade: [requisitos]
+
+EXPECTATIVAS DE CÓDIGO:
+- Seguir [padrão de arquitetura: MVC/Clean/etc]
+- Testes unitários para lógica crítica
+- Tratamento de erros robusto
+- Type-safe (se aplicável)
+- Documentação inline (JSDoc/docstrings)
+- Logging apropriado
+
+ENTREGA:
+1. Código da funcionalidade
+2. Testes
+3. Documentação de uso
+4. Considerações de deploy/migration (se aplicável)
+
+DELEGAÇÃO: Se precisar de detalhes sobre estrutura existente ou decisões arquiteturais, pergunte antes de implementar</pre>
+        </div>
+
+        <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">🔧 Adaptações Possíveis</h3>
+          <ul class="text-sm text-neutral-700 dark:text-neutral-300 space-y-2">
+            <li><strong>• Para refatoração:</strong> "Mantenha interface pública, melhore implementação interna"</li>
+            <li><strong>• Para debugging:</strong> "Analise código, identifique bug, sugira fix com testes"</li>
+            <li><strong>• Para revisão de código:</strong> "Revise seguindo [checklist de boas práticas]"</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Caso de Uso 5 -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="text-4xl">✍️</span>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Caso de Uso 5: Criação de Conteúdo
+          </h2>
+        </div>
+
+        <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg mb-6">
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">📋 Contexto</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Você precisa criar conteúdo estratégico (artigos, posts, emails) que engaje sua audiência, construa autoridade e gere conversão.
+          </p>
+        </div>
+
+        <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border border-green-500 mb-6">
+          <h3 class="text-xl font-bold text-green-700 dark:text-green-400 mb-4">✅ Solicitação Completa</h3>
+          <pre class="text-xs font-mono text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap bg-white dark:bg-neutral-700 p-4 rounded">CAPACITY: Atue como copywriter especializado em [nicho/vertical]
+
+AUDIÊNCIA:
+- Perfil: [demographics, psychographics]
+- Nível de conhecimento: [iniciante/intermediário/expert]
+- Dores principais: [lista]
+- Objeções comuns: [lista]
+
+CONTEXTO:
+- Marca: [tom, valores, posicionamento]
+- Objetivo do conteúdo: [educar/converter/engajar/autoridade]
+- Canal: [blog/LinkedIn/email/Instagram]
+- Fase do fufunil: [topo/meio/fundo]
+
+TÓPICO: [Tema específico do conteúdo]
+
+ESTRUTURA DESEJADA:
+- Hook inicial (primeiros 3 segundos de atenção)
+- Desenvolvimento com storytelling ou dados
+- Insights práticos e acionáveis
+- CTA apropriado para fase do funel
+
+RESTRIÇÕES:
+- Tamanho: [palavras/caracteres]
+- Tom: [profissional-acessível/casual/técnico]
+- Evitar: [jargões/clichês/exageros]
+
+EXPERIMENT: Forneça 2 versões:
+1. Mais emocional/storytelling
+2. Mais racional/data-driven</pre>
+        </div>
+
+        <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">🔧 Adaptações Possíveis</h3>
+          <ul class="text-sm text-neutral-700 dark:text-neutral-300 space-y-2">
+            <li><strong>• Para email marketing:</strong> Adicione "Subject lines (3 opções) + preview text"</li>
+            <li><strong>• Para vídeo:</strong> Inclua "Script com marcações de tempo e cues visuais"</li>
+            <li><strong>• Para social media:</strong> Especifique "Formato nativo (carrossel/thread/vídeo)"</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Caso de Uso 6 -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="text-4xl">🧩</span>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
+            Caso de Uso 6: Resolução de Problemas Complexos
+          </h2>
+        </div>
+
+        <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg mb-6">
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">📋 Contexto</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Você enfrenta problema multifacetado sem solução óbvia. Precisa de análise sistemática, geração de alternativas e framework de decisão.
+          </p>
+        </div>
+
+        <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border border-green-500 mb-6">
+          <h3 class="text-xl font-bold text-green-700 dark:text-green-400 mb-4">✅ Solicitação Completa</h3>
+          <pre class="text-xs font-mono text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap bg-white dark:bg-neutral-700 p-4 rounded">PROBLEMA: [Descrição detalhada do problema]
+
+CONTEXTO:
+- O que já foi tentado: [soluções anteriores e por que falharam]
+- Restrições: [tempo, budget, recursos, políticas]
+- Stakeholders afetados: [quem é impactado]
+- Consequências de não resolver: [urgência, impacto]
+
+OBJETIVO: Desenvolver solução viável e implementável
+
+ABORDAGEM DE RACIOCÍNIO:
+1. Decomponha o problema em componentes menores
+2. Identifique causas raiz (não apenas sintomas)
+3. Gere 5 abordagens diferentes (criatividade)
+4. Avalie cada uma com framework de decisão
+5. Recomende melhor caminho com justificativa
+
+CRITÉRIOS DE AVALIAÇÃO:
+- Viabilidade de implementação
+- Impacto esperado
+- Riscos e mitigações
+- Custo-benefício
+- Timeline realista
+
+ENTREGA:
+1. Análise do problema (causas raiz)
+2. Matriz de soluções (comparativa)
+3. Recomendação principal + backup
+4. Roadmap de implementação
+5. Métricas de sucesso
+6. Plano B se a solução falhar
+
+REFLECTIVE: Antes de propor soluções, confirme que você entendeu:
+o problema, as restrições, e o contexto de decisão</pre>
+        </div>
+
+        <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">🔧 Adaptações Possíveis</h3>
+          <ul class="text-sm text-neutral-700 dark:text-neutral-300 space-y-2">
+            <li><strong>• Para conflitos de equipe:</strong> Use "Análise de stakeholders + abordagem de mediação"</li>
+            <li><strong>• Para problemas técnicos:</strong> Inclua "Root cause analysis + debug sistemático"</li>
+            <li><strong>• Para decisões estratégicas:</strong> Adicione "Análise de cenários + árvore de decisão"</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Conclusão -->
+      <div class="bg-gradient-to-r from-nivel-1 to-blue-600 text-white rounded-xl p-8">
+        <h2 class="text-3xl font-bold mb-4">🎓 Conclusão do Módulo</h2>
+        <p class="text-lg mb-6">
+          Você viu <strong>6 casos de uso práticos</strong> que cobrem as principais aplicações de Engenharia de Intenção no mundo real. Agora é hora de aplicar no SEU contexto.
+        </p>
+        <div class="bg-white/10 backdrop-blur p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-xl mb-2">✅ O que você dominou:</h3>
+          <ul class="space-y-2">
+            <li>• Criar cursos estruturados e didáticos</li>
+            <li>• Desenvolver estratégias de negócio acionáveis</li>
+            <li>• Realizar pesquisas e análises profundas</li>
+            <li>• Programar com assistência de IA de forma profissional</li>
+            <li>• Criar conteúdo estratégico que converte</li>
+            <li>• Resolver problemas complexos sistematicamente</li>
+          </ul>
+        </div>
+        <div class="flex gap-4">
+          <a href="modulo-5.html" class="px-6 py-3 bg-white text-nivel-1 rounded-lg font-semibold hover:bg-neutral-100 inline-flex items-center gap-2">
+            <span>←</span>
+            <span>Módulo Anterior</span>
+          </a>
+          <a href="modulo-7.html" class="px-6 py-3 bg-white/20 text-white rounded-lg font-semibold hover:bg-white/30 inline-flex items-center gap-2">
+            <span>Próximo: Síntese e Futuro</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold text-white mb-4">FEI - Engenharia de Intenção</h3>
+          <p class="text-sm">Formação completa para dominar a nova era da IA</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Níveis</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../niveis/nivel-1.html" class="hover:text-white">Nível 1: Fundamentos</a></li>
+            <li><a href="../niveis/nivel-2.html" class="hover:text-white">Nível 2: Programa Completo</a></li>
+            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Nível 3A: Agentes</a></li>
+            <li><a href="../niveis/nivel-3s.html" class="hover:text-white">Nível 3S: Sistemas 2026</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../index.html" class="hover:text-white">Início</a></li>
+            <li><a href="../niveis/nivel-1.html" class="hover:text-white">Voltar ao Nível 1</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-neutral-800 mt-8 pt-8 text-center text-sm">
+        <p>&copy; 2025 FEI - Formação em Engenharia de Intenção.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>

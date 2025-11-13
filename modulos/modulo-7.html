@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 7: A Síntese e O Futuro | FEI</title>
+  <meta name="description" content="Transformação Completa e Próximos Passos na Era da IA - Módulo Final">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'nivel-1': '#3B82F6',
+            'nivel-2': '#9b59b6',
+            'nivel-3a': '#10B981',
+            'nivel-3s': '#F59E0B',
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+  </style>
+</head>
+<body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-2 bg-clip-text text-transparent">
+            🎓 FEI - Engenharia de Intenção
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-1">Início</a>
+          <a href="../niveis/nivel-1.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-1">Nível 1</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <nav class="flex text-sm" aria-label="Breadcrumb">
+        <a href="../index.html" class="text-nivel-1 hover:text-blue-700">Início</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <a href="../niveis/nivel-1.html" class="text-nivel-1 hover:text-blue-700">Nível 1</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <span class="text-neutral-600 dark:text-neutral-400">Módulo 7</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-nivel-1 via-purple-600 to-nivel-2 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Módulo 7 - Final
+        </span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Síntese
+        </span>
+      </div>
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">
+        🚀 A Síntese e O Futuro
+      </h1>
+      <p class="text-xl text-white/90">
+        Transformação Completa e Seus Próximos Passos na Nova Era
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-12 bg-neutral-50 dark:bg-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Download Button -->
+      <div class="flex justify-end mb-6">
+        <a href="../downloads/nivel-1-modulo-7.md" download class="px-6 py-3 bg-nivel-1 text-white rounded-lg font-semibold hover:bg-blue-600 inline-flex items-center gap-2">
+          <span>📥</span>
+          <span>Download MD</span>
+        </a>
+      </div>
+
+      <!-- A Grande Transformação -->
+      <div class="bg-gradient-to-br from-nivel-1/10 to-purple-100/50 dark:from-nivel-1/20 dark:to-purple-900/20 rounded-xl shadow-sm p-8 mb-8 border-2 border-nivel-1">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          🔥 A Grande Transformação
+        </h2>
+        <p class="text-xl text-neutral-700 dark:text-neutral-300 mb-6 font-semibold">
+          A Engenharia de Prompts não morreu — ela evoluiu para Engenharia de Intenção.
+        </p>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">🔴 Era Antiga (2022-2023)</h3>
+            <ul class="text-sm text-neutral-700 dark:text-neutral-300 space-y-2">
+              <li>• Truques e hacks para "enganar" a IA</li>
+              <li>• Templates rígidos e fórmulas mágicas</li>
+              <li>• Foco em "como fazer" a IA executar</li>
+              <li>• Comunicação artificial e robótica</li>
+              <li>• Resultados inconsistentes</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-50 dark:bg-green-900/30 p-6 rounded-lg border-2 border-green-500">
+            <h3 class="text-xl font-bold text-green-700 dark:text-green-400 mb-3">🟢 Nova Era (2025+)</h3>
+            <ul class="text-sm text-neutral-700 dark:text-neutral-300 space-y-2">
+              <li>• Comunicação clara de intenção e objetivo</li>
+              <li>• Frameworks flexíveis e adaptáveis</li>
+              <li>• Foco em "por que" e "para quê"</li>
+              <li>• Linguagem natural e estratégica</li>
+              <li>• Resultados de alta qualidade consistente</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recapitulação -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          📚 Recapitulação: Sua Jornada Completa
+        </h2>
+
+        <div class="space-y-6">
+          <div class="border-l-4 border-nivel-1 pl-6 py-2">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">Módulo 1: Entendendo a Evolução</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-2">
+              Você entendeu a transição histórica de Prompts para Intenção e por que ela aconteceu.
+            </p>
+            <p class="text-sm text-nivel-1 font-semibold">✅ Você domina: Timeline da evolução, diferenças fundamentais, técnicas de transição</p>
+          </div>
+
+          <div class="border-l-4 border-nivel-1 pl-6 py-2">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">Módulo 2: Pilares da Engenharia de Intenção</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-2">
+              Você aprendeu os 7 pilares fundamentais que estruturam toda comunicação eficaz com IA.
+            </p>
+            <p class="text-sm text-nivel-1 font-semibold">✅ Você domina: Objetivo, Intenção, Critérios, Contexto, Raciocínio, Delegação, Formato</p>
+          </div>
+
+          <div class="border-l-4 border-nivel-1 pl-6 py-2">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">Módulo 3: Contexto é Tudo</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-2">
+              Você dominou técnicas de contextualização e sabe quando usar zero-shot vs few-shot.
+            </p>
+            <p class="text-sm text-nivel-1 font-semibold">✅ Você domina: Hierarquia de contexto, zero-shot, few-shot, context bracketing</p>
+          </div>
+
+          <div class="border-l-4 border-nivel-1 pl-6 py-2">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">Módulo 4: Frameworks Práticos</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-2">
+              Você adquiriu 3 frameworks prontos (RACE, CRISPE, CLEAR) para aplicar imediatamente.
+            </p>
+            <p class="text-sm text-nivel-1 font-semibold">✅ Você domina: Framework para estratégia, criação detalhada, e clareza máxima</p>
+          </div>
+
+          <div class="border-l-4 border-nivel-1 pl-6 py-2">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">Módulo 5: Iteração e Refinamento</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-2">
+              Você aprendeu a melhorar resultados progressivamente através de refinamento, chaining e co-criação.
+            </p>
+            <p class="text-sm text-nivel-1 font-semibold">✅ Você domina: Refinamento em camadas, prompt chaining, co-criação estratégica</p>
+          </div>
+
+          <div class="border-l-4 border-nivel-1 pl-6 py-2">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">Módulo 6: Casos de Uso Reais</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-2">
+              Você viu 6 aplicações práticas do mundo real que pode adaptar imediatamente.
+            </p>
+            <p class="text-sm text-nivel-1 font-semibold">✅ Você domina: Cursos, estratégias, pesquisa, programação, conteúdo, resolução de problemas</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ferramentas Essenciais -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          🛠️ Ferramentas Essenciais para 2025
+        </h2>
+
+        <p class="text-neutral-700 dark:text-neutral-300 mb-6">
+          Agora que você domina Engenharia de Intenção, estas são as melhores ferramentas para aplicar o que aprendeu:
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">💬 Conversação</h3>
+            <ul class="space-y-3 text-sm">
+              <li class="flex items-start gap-3">
+                <span class="text-xl">•</span>
+                <div>
+                  <strong>Claude (Anthropic)</strong>
+                  <p class="text-neutral-600 dark:text-neutral-400">Melhor para conversas longas, análises profundas, contexto extenso</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-xl">•</span>
+                <div>
+                  <strong>ChatGPT (OpenAI)</strong>
+                  <p class="text-neutral-600 dark:text-neutral-400">Versátil, plugins, integração com ferramentas, código</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-xl">•</span>
+                <div>
+                  <strong>Gemini (Google)</strong>
+                  <p class="text-neutral-600 dark:text-neutral-400">Integrado com Google Workspace, buscas em tempo real</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">💻 Desenvolvimento</h3>
+            <ul class="space-y-3 text-sm">
+              <li class="flex items-start gap-3">
+                <span class="text-xl">•</span>
+                <div>
+                  <strong>Cursor</strong>
+                  <p class="text-neutral-600 dark:text-neutral-400">IDE com IA nativa, "Vibe Coding", edição de código</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-xl">•</span>
+                <div>
+                  <strong>GitHub Copilot</strong>
+                  <p class="text-neutral-600 dark:text-neutral-400">Autocompletar inteligente, sugestões contextuais</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-xl">•</span>
+                <div>
+                  <strong>Replit Agent</strong>
+                  <p class="text-neutral-600 dark:text-neutral-400">Desenvolvimento completo via linguagem natural</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">🎨 Criação</h3>
+            <ul class="space-y-3 text-sm">
+              <li class="flex items-start gap-3">
+                <span class="text-xl">•</span>
+                <div>
+                  <strong>Notion AI</strong>
+                  <p class="text-neutral-600 dark:text-neutral-400">Escrita, resumos, organização de conhecimento</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-xl">•</span>
+                <div>
+                  <strong>Gamma</strong>
+                  <p class="text-neutral-600 dark:text-neutral-400">Apresentações e documentos via intenção</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-xl">•</span>
+                <div>
+                  <strong>Perplexity</strong>
+                  <p class="text-neutral-600 dark:text-neutral-400">Pesquisa com citações, análise de fontes</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">🔗 Automação</h3>
+            <ul class="space-y-3 text-sm">
+              <li class="flex items-start gap-3">
+                <span class="text-xl">•</span>
+                <div>
+                  <strong>Make (Integromat)</strong>
+                  <p class="text-neutral-600 dark:text-neutral-400">Automações visuais com IA integrada</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-xl">•</span>
+                <div>
+                  <strong>Zapier AI</strong>
+                  <p class="text-neutral-600 dark:text-neutral-400">Automações via linguagem natural</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-xl">•</span>
+                <div>
+                  <strong>n8n</strong>
+                  <p class="text-neutral-600 dark:text-neutral-400">Open-source, self-hosted, workflows com IA</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Próximos Passos -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          🎯 Seus Próximos Passos
+        </h2>
+
+        <div class="space-y-6">
+          <div class="bg-nivel-1/10 p-6 rounded-lg border-l-4 border-nivel-1">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+              📅 Nos Próximos 7 Dias
+            </h3>
+            <ul class="text-neutral-700 dark:text-neutral-300 space-y-2">
+              <li><strong>Dia 1-2:</strong> Escolha 3 casos de uso do Módulo 6 e adapte para seu contexto</li>
+              <li><strong>Dia 3-4:</strong> Pratique refinamento iterativo em projetos reais</li>
+              <li><strong>Dia 5-6:</strong> Crie seu próprio framework híbrido personalizado</li>
+              <li><strong>Dia 7:</strong> Documente seus aprendizados e resultados</li>
+            </ul>
+          </div>
+
+          <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg border-l-4 border-purple-500">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+              📅 Nos Próximos 30 Dias
+            </h3>
+            <ul class="text-neutral-700 dark:text-neutral-300 space-y-2">
+              <li><strong>Semana 1:</strong> Implemente Engenharia de Intenção em 1 projeto principal</li>
+              <li><strong>Semana 2:</strong> Experimente prompt chaining em tarefas complexas</li>
+              <li><strong>Semana 3:</strong> Compartilhe conhecimento com seu time/comunidade</li>
+              <li><strong>Semana 4:</strong> Avance para Nível 2 do FEI (Programa Completo)</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border-l-4 border-green-500">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+              📅 Nos Próximos 90 Dias
+            </h3>
+            <ul class="text-neutral-700 dark:text-neutral-300 space-y-2">
+              <li><strong>Mês 1:</strong> Domine todos os fundamentos aplicando diariamente</li>
+              <li><strong>Mês 2:</strong> Explore Agentes e Sistemas (Nível 3A e 3S)</li>
+              <li><strong>Mês 3:</strong> Construa seu primeiro sistema completo com IA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- O Futuro -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          🔮 O Futuro: 2025-2030
+        </h2>
+
+        <div class="space-y-6">
+          <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">🌟 Tendências Emergentes</h3>
+            <ul class="text-neutral-700 dark:text-neutral-300 space-y-3">
+              <li class="flex items-start gap-3">
+                <span class="text-2xl">1.</span>
+                <div>
+                  <strong>Agentes Autônomos</strong>
+                  <p class="text-sm">IAs que executam tarefas complexas com supervisão mínima</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-2xl">2.</span>
+                <div>
+                  <strong>Multimodalidade Nativa</strong>
+                  <p class="text-sm">IA entende e gera texto, imagem, áudio, vídeo simultaneamente</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-2xl">3.</span>
+                <div>
+                  <strong>IA Personalizada</strong>
+                  <p class="text-sm">Modelos adaptados ao seu estilo, contexto e necessidades</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-2xl">4.</span>
+                <div>
+                  <strong>Colaboração IA-Humano</strong>
+                  <p class="text-sm">Trabalho conjunto onde IA e humanos co-criam em tempo real</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-yellow-50 dark:bg-yellow-900/20 p-6 rounded-lg border border-yellow-500">
+            <h3 class="font-bold text-yellow-800 dark:text-yellow-400 mb-2">⚡ Habilidade do Futuro:</h3>
+            <p class="text-neutral-700 dark:text-neutral-300">
+              A capacidade de <strong>comunicar intenção</strong> e <strong>orquestrar sistemas de IA</strong> será tão fundamental quanto saber ler e escrever foi no século 20. Você está na vanguarda dessa transformação.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mensagem Final -->
+      <div class="bg-gradient-to-r from-nivel-1 via-purple-600 to-nivel-2 text-white rounded-xl p-8">
+        <h2 class="text-3xl font-bold mb-4">🎓 Parabéns!</h2>
+        <p class="text-xl mb-6">
+          Você completou o <strong>Nível 1: Fundamentos de Engenharia de Intenção</strong>. Você não é mais um usuário de IA — você é um <strong>Engenheiro de Intenção</strong>.
+        </p>
+        <div class="bg-white/10 backdrop-blur p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-xl mb-2">✅ Conquistas Desbloqueadas:</h3>
+          <ul class="space-y-2">
+            <li>• Domínio dos 7 pilares fundamentais</li>
+            <li>• 3 frameworks prontos para aplicar (RACE, CRISPE, CLEAR)</li>
+            <li>• Técnicas avançadas de iteração e refinamento</li>
+            <li>• 6 casos de uso práticos do mundo real</li>
+            <li>• Visão completa da evolução e do futuro</li>
+          </ul>
+        </div>
+
+        <div class="bg-white/20 backdrop-blur p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-xl mb-3">🚀 Continue Sua Jornada:</h3>
+          <div class="grid md:grid-cols-3 gap-4">
+            <a href="../niveis/nivel-2.html" class="bg-white/20 hover:bg-white/30 p-4 rounded-lg text-center transition">
+              <div class="text-2xl mb-2">📚</div>
+              <strong>Nível 2</strong>
+              <p class="text-sm mt-1">Programa Completo</p>
+            </a>
+            <a href="../niveis/nivel-3a.html" class="bg-white/20 hover:bg-white/30 p-4 rounded-lg text-center transition">
+              <div class="text-2xl mb-2">🤖</div>
+              <strong>Nível 3A</strong>
+              <p class="text-sm mt-1">Agentes</p>
+            </a>
+            <a href="../niveis/nivel-3s.html" class="bg-white/20 hover:bg-white/30 p-4 rounded-lg text-center transition">
+              <div class="text-2xl mb-2">⚡</div>
+              <strong>Nível 3S</strong>
+              <p class="text-sm mt-1">Sistemas 2026</p>
+            </a>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <p class="text-lg mb-4 italic">
+            "O futuro pertence àqueles que sabem comunicar intenção."
+          </p>
+          <a href="../niveis/nivel-1.html" class="px-8 py-4 bg-white text-nivel-1 rounded-lg font-bold hover:bg-neutral-100 inline-flex items-center gap-2 text-lg">
+            <span>←</span>
+            <span>Voltar ao Nível 1</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold text-white mb-4">FEI - Engenharia de Intenção</h3>
+          <p class="text-sm">Formação completa para dominar a nova era da IA</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Níveis</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../niveis/nivel-1.html" class="hover:text-white">Nível 1: Fundamentos</a></li>
+            <li><a href="../niveis/nivel-2.html" class="hover:text-white">Nível 2: Programa Completo</a></li>
+            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Nível 3A: Agentes</a></li>
+            <li><a href="../niveis/nivel-3s.html" class="hover:text-white">Nível 3S: Sistemas 2026</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../index.html" class="hover:text-white">Início</a></li>
+            <li><a href="../niveis/nivel-1.html" class="hover:text-white">Voltar ao Nível 1</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-neutral-800 mt-8 pt-8 text-center text-sm">
+        <p>&copy; 2025 FEI - Formação em Engenharia de Intenção.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 5: Iteração e Refinamento | FEI</title>
+  <meta name="description" content="Prompt Chaining, Refinamento Iterativo e Co-criação com IA - Módulo Completo">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'nivel-1': '#3B82F6',
+            'nivel-2': '#9b59b6',
+            'nivel-3a': '#10B981',
+            'nivel-3s': '#F59E0B',
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+  </style>
+</head>
+<body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-2 bg-clip-text text-transparent">
+            🎓 FEI - Engenharia de Intenção
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-1">Início</a>
+          <a href="../niveis/nivel-1.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-1">Nível 1</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <nav class="flex text-sm" aria-label="Breadcrumb">
+        <a href="../index.html" class="text-nivel-1 hover:text-blue-700">Início</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <a href="../niveis/nivel-1.html" class="text-nivel-1 hover:text-blue-700">Nível 1</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <span class="text-neutral-600 dark:text-neutral-400">Módulo 5</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-nivel-1 to-blue-600 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Módulo 5
+        </span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Processo
+        </span>
+      </div>
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">
+        🔄 Iteração e Refinamento
+      </h1>
+      <p class="text-xl text-white/90">
+        Prompt Chaining, Refinamento Iterativo e Co-criação Estratégica
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-12 bg-neutral-50 dark:bg-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Download Button -->
+      <div class="flex justify-end mb-6">
+        <a href="../downloads/nivel-1-modulo-5.md" download class="px-6 py-3 bg-nivel-1 text-white rounded-lg font-semibold hover:bg-blue-600 inline-flex items-center gap-2">
+          <span>📥</span>
+          <span>Download MD</span>
+        </a>
+      </div>
+
+      <!-- Introdução -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
+          🎯 Introdução
+        </h2>
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          A Engenharia de Intenção não é um processo de <strong>"perguntar uma vez e pronto"</strong>. É uma <strong>conversa estratégica</strong> onde você e a IA co-criam soluções progressivamente melhores através de ciclos de refinamento.
+        </p>
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+          Neste módulo, você aprenderá as técnicas avançadas de <strong>prompt chaining</strong> (encadear comandos), <strong>refinamento iterativo</strong> (melhorar progressivamente) e <strong>co-criação</strong> (trabalhar colaborativamente com IA).
+        </p>
+        <div class="bg-nivel-1/10 border-l-4 border-nivel-1 p-6 rounded-lg">
+          <h3 class="font-bold text-nivel-1 mb-2">💡 Por que iteração é o futuro?</h3>
+          <p class="text-neutral-700 dark:text-neutral-300">
+            Profissionais de elite em 2025 não tentam criar o prompt perfeito na primeira vez. Eles criam <strong>fluxos de trabalho iterativos</strong> onde cada resposta da IA informa a próxima pergunta. Isso multiplica a qualidade do resultado final.
+          </p>
+        </div>
+      </div>
+
+      <!-- Mentalidade Iterativa -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          🧠 A Mentalidade Iterativa
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-red-50 dark:bg-red-900/20 p-6 rounded-lg border-2 border-red-300">
+            <h3 class="text-xl font-bold text-red-700 dark:text-red-400 mb-3">❌ Mentalidade "One-Shot"</h3>
+            <ul class="text-sm text-neutral-700 dark:text-neutral-300 space-y-2">
+              <li>• Tentar criar o prompt perfeito de primeira</li>
+              <li>• Frustração quando resultado não é ideal</li>
+              <li>• Desistir ou aceitar qualidade medíocre</li>
+              <li>• Culpar a IA por não "entender"</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border-2 border-green-500">
+            <h3 class="text-xl font-bold text-green-700 dark:text-green-400 mb-3">✅ Mentalidade Iterativa</h3>
+            <ul class="text-sm text-neutral-700 dark:text-neutral-300 space-y-2">
+              <li>• Começar com versão "boa o suficiente"</li>
+              <li>• Ver primeira resposta como rascunho</li>
+              <li>• Refinar progressivamente com feedback específico</li>
+              <li>• Colaborar com IA como parceiro criativo</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-nivel-1/10 p-6 rounded-lg border-l-4 border-nivel-1">
+          <h3 class="font-bold text-nivel-1 mb-2">🎓 Princípio Fundamental:</h3>
+          <p class="text-neutral-700 dark:text-neutral-300 text-lg italic">
+            "A primeira resposta da IA é o ponto de partida, não o destino final."
+          </p>
+        </div>
+      </div>
+
+      <!-- Técnica 1: Refinamento Progressivo -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          🎯 Técnica 1: Refinamento Progressivo
+        </h2>
+
+        <p class="text-neutral-700 dark:text-neutral-300 mb-6">
+          Refinamento progressivo significa <strong>melhorar a resposta em camadas</strong>, cada vez focando em um aspecto diferente.
+        </p>
+
+        <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg mb-6">
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">📋 Fluxo de Refinamento em 4 Camadas</h3>
+
+          <div class="space-y-4">
+            <div class="flex items-start gap-4 bg-white dark:bg-neutral-800 p-4 rounded-lg">
+              <span class="text-2xl font-bold text-nivel-1">1</span>
+              <div>
+                <h4 class="font-bold text-neutral-900 dark:text-neutral-100 mb-1">Camada: Estrutura</h4>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  "A estrutura está correta, mas preciso de mais profundidade na seção X"
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 bg-white dark:bg-neutral-800 p-4 rounded-lg">
+              <span class="text-2xl font-bold text-nivel-1">2</span>
+              <div>
+                <h4 class="font-bold text-neutral-900 dark:text-neutral-100 mb-1">Camada: Conteúdo</h4>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  "Ótimo! Agora adicione exemplos práticos em cada tópico"
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 bg-white dark:bg-neutral-800 p-4 rounded-lg">
+              <span class="text-2xl font-bold text-nivel-1">3</span>
+              <div>
+                <h4 class="font-bold text-neutral-900 dark:text-neutral-100 mb-1">Camada: Tom</h4>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  "Perfeito! Agora ajuste o tom para ser mais acessível para iniciantes"
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 bg-white dark:bg-neutral-800 p-4 rounded-lg">
+              <span class="text-2xl font-bold text-nivel-1">4</span>
+              <div>
+                <h4 class="font-bold text-neutral-900 dark:text-neutral-100 mb-1">Camada: Polimento</h4>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  "Excelente! Última revisão: reduza redundâncias e adicione transições"
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border border-green-500">
+          <h3 class="text-xl font-bold text-green-700 dark:text-green-400 mb-4">✅ Exemplo Real: Criando Artigo</h3>
+          <div class="space-y-4 text-sm">
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Iteração 1 (Estrutura):</strong><br>
+              "Crie outline de artigo sobre produtividade com IA para profissionais"
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Iteração 2 (Conteúdo):</strong><br>
+              "Ótimo! Agora desenvolva as seções 2 e 4 com exemplos práticos de ferramentas"
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Iteração 3 (Aprofundamento):</strong><br>
+              "Perfeito! Na seção 4, adicione estudo de caso real com ROI mensurável"
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <strong>Iteração 4 (Tom):</strong><br>
+              "Excelente! Ajuste introdução para ser mais provocativa e gerar curiosidade"
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Técnica 2: Prompt Chaining -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          🔗 Técnica 2: Prompt Chaining (Encadeamento)
+        </h2>
+
+        <p class="text-neutral-700 dark:text-neutral-300 mb-6">
+          Prompt Chaining é dividir uma tarefa complexa em <strong>várias subtarefas sequenciais</strong>, onde a saída de uma alimenta a entrada da próxima.
+        </p>
+
+        <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg border-2 border-purple-500 mb-6">
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
+            Por que Prompt Chaining funciona melhor?
+          </h3>
+          <ul class="text-sm text-neutral-700 dark:text-neutral-300 space-y-2">
+            <li>• <strong>Foco:</strong> IA concentra recursos em uma coisa por vez</li>
+            <li>• <strong>Qualidade:</strong> Cada etapa é otimizada individualmente</li>
+            <li>• <strong>Controle:</strong> Você valida cada passo antes do próximo</li>
+            <li>• <strong>Flexibilidade:</strong> Pode ajustar direção no meio do caminho</li>
+          </ul>
+        </div>
+
+        <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg mb-6">
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">📋 Estrutura de Prompt Chain</h3>
+
+          <div class="space-y-3">
+            <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+              <strong class="text-nivel-1">Prompt 1 (Exploração):</strong>
+              <p class="text-sm mt-1">"Liste 10 ideias de [X]"</p>
+            </div>
+            <div class="text-center text-2xl text-neutral-400">↓</div>
+            <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+              <strong class="text-nivel-1">Prompt 2 (Seleção):</strong>
+              <p class="text-sm mt-1">"Das ideias acima, escolha as 3 mais viáveis e explique por quê"</p>
+            </div>
+            <div class="text-center text-2xl text-neutral-400">↓</div>
+            <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+              <strong class="text-nivel-1">Prompt 3 (Desenvolvimento):</strong>
+              <p class="text-sm mt-1">"Desenvolva a ideia #2 em um plano de ação detalhado"</p>
+            </div>
+            <div class="text-center text-2xl text-neutral-400">↓</div>
+            <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+              <strong class="text-nivel-1">Prompt 4 (Validação):</strong>
+              <p class="text-sm mt-1">"Identifique riscos deste plano e sugira mitigações"</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border border-green-500">
+          <h3 class="text-xl font-bold text-green-700 dark:text-green-400 mb-4">✅ Exemplo Real: Criando Produto</h3>
+          <div class="space-y-3 text-sm">
+            <div><strong>Chain 1:</strong> "Analise mercado de [nicho] e identifique gaps"</div>
+            <div><strong>Chain 2:</strong> "Do gap #3, sugira 5 produtos que poderiam preencher"</div>
+            <div><strong>Chain 3:</strong> "Para produto #2, defina funcionalidades core"</div>
+            <div><strong>Chain 4:</strong> "Crie roadmap de MVP dessas funcionalidades"</div>
+            <div><strong>Chain 5:</strong> "Estime custos e tempo para cada fase do roadmap"</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Técnica 3: Co-criação -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          🤝 Técnica 3: Co-criação Estratégica
+        </h2>
+
+        <p class="text-neutral-700 dark:text-neutral-300 mb-6">
+          Co-criação é tratar a IA como <strong>parceiro colaborativo</strong>, não como ferramenta passiva. Você fornece visão, a IA fornece execução, e vocês refinam juntos.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">🚫 Modo Ferramenta</h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">"Faça X do jeito Y"</p>
+            <ul class="text-sm text-neutral-700 dark:text-neutral-300 space-y-2">
+              <li>• Você controla tudo</li>
+              <li>• IA apenas executa</li>
+              <li>• Limita criatividade da IA</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border border-green-500">
+            <h3 class="text-xl font-bold text-green-700 dark:text-green-400 mb-4">✅ Modo Parceiro</h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">"Quero alcançar X. Que opções você sugere?"</p>
+            <ul class="text-sm text-neutral-700 dark:text-neutral-300 space-y-2">
+              <li>• Você define objetivo</li>
+              <li>• IA propõe caminhos</li>
+              <li>• Vocês decidem juntos</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg mb-6">
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">🔄 Ciclo de Co-criação</h3>
+          <div class="space-y-4">
+            <div class="flex items-center gap-4">
+              <span class="flex-shrink-0 w-12 h-12 bg-nivel-1 text-white rounded-full flex items-center justify-center font-bold">1</span>
+              <div class="flex-grow">
+                <strong>Você:</strong> Define visão e objetivo
+                <p class="text-sm text-neutral-600 dark:text-neutral-400">"Quero criar curso sobre X para público Y"</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <span class="flex-shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold">2</span>
+              <div class="flex-grow">
+                <strong>IA:</strong> Propõe estrutura e alternativas
+                <p class="text-sm text-neutral-600 dark:text-neutral-400">"Sugiro 3 abordagens: Teórica, Prática ou Híbrida"</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <span class="flex-shrink-0 w-12 h-12 bg-nivel-1 text-white rounded-full flex items-center justify-center font-bold">3</span>
+              <div class="flex-grow">
+                <strong>Você:</strong> Escolhe direção e adiciona nuances
+                <p class="text-sm text-neutral-600 dark:text-neutral-400">"Híbrida, mas com foco 70% prático. Adicione estudos de caso"</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <span class="flex-shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold">4</span>
+              <div class="flex-grow">
+                <strong>IA:</strong> Desenvolve e questiona
+                <p class="text-sm text-neutral-600 dark:text-neutral-400">"Criei outline. Prefere estudos reais ou simulados?"</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <span class="flex-shrink-0 w-12 h-12 bg-nivel-1 text-white rounded-full flex items-center justify-center font-bold">5</span>
+              <div class="flex-grow">
+                <strong>Você:</strong> Refina e expande
+                <p class="text-sm text-neutral-600 dark:text-neutral-400">"Reais. E adicione seção de erros comuns"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-yellow-50 dark:bg-yellow-900/20 p-6 rounded-lg border border-yellow-500">
+          <h3 class="font-bold text-yellow-800 dark:text-yellow-400 mb-2">⚡ Dica Avançada:</h3>
+          <p class="text-sm text-neutral-700 dark:text-neutral-300">
+            Use frases como: <strong>"Antes de continuar, que aspectos você acha que deveríamos considerar?"</strong> ou <strong>"Você vê algum problema potencial nessa abordagem?"</strong>. Isso ativa o modo colaborativo da IA.
+          </p>
+        </div>
+      </div>
+
+      <!-- Padrões de Feedback -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          💬 Padrões de Feedback Eficaz
+        </h2>
+
+        <p class="text-neutral-700 dark:text-neutral-300 mb-6">
+          Como você dá feedback determina a qualidade do refinamento. Use estes padrões:
+        </p>
+
+        <div class="space-y-4">
+          <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg border-l-4 border-green-500">
+            <strong class="text-green-700 dark:text-green-400">✅ Feedback Específico:</strong>
+            <p class="text-sm mt-2">"A seção 2 está ótima. Expanda a seção 3 com dados quantitativos."</p>
+          </div>
+
+          <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg border-l-4 border-green-500">
+            <strong class="text-green-700 dark:text-green-400">✅ Feedback Comparativo:</strong>
+            <p class="text-sm mt-2">"Gostei mais do tom da versão A, mas prefiro a estrutura da versão B. Combine."</p>
+          </div>
+
+          <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg border-l-4 border-green-500">
+            <strong class="text-green-700 dark:text-green-400">✅ Feedback Incremental:</strong>
+            <p class="text-sm mt-2">"Muito bom! Agora, mantendo tudo isso, adicione exemplos visuais."</p>
+          </div>
+
+          <div class="bg-red-50 dark:bg-red-900/20 p-4 rounded-lg border-l-4 border-red-500">
+            <strong class="text-red-700 dark:text-red-400">❌ Feedback Vago:</strong>
+            <p class="text-sm mt-2">"Não ficou bom. Faça melhor."</p>
+          </div>
+
+          <div class="bg-red-50 dark:bg-red-900/20 p-4 rounded-lg border-l-4 border-red-500">
+            <strong class="text-red-700 dark:text-red-400">❌ Feedback Contraditório:</strong>
+            <p class="text-sm mt-2">"Quero mais detalhes mas mais curto também."</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exercícios -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          ✍️ Exercícios Práticos
+        </h2>
+
+        <!-- Exercício 1 -->
+        <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg mb-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="px-3 py-1 bg-nivel-1 text-white rounded-full text-sm font-bold">Exercício 1</span>
+            <span class="text-sm text-neutral-600 dark:text-neutral-400">Nível: Iniciante</span>
+          </div>
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+            Pratique Refinamento em Camadas
+          </h3>
+          <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+            Peça para IA criar um email profissional. Depois, refine em 3 iterações:
+          </p>
+          <ol class="text-sm text-neutral-700 dark:text-neutral-300 space-y-2 list-decimal list-inside">
+            <li>Ajuste o tom para ser mais formal</li>
+            <li>Adicione dados específicos</li>
+            <li>Reduza para no máximo 100 palavras</li>
+          </ol>
+        </div>
+
+        <!-- Exercício 2 -->
+        <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg mb-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="px-3 py-1 bg-nivel-1 text-white rounded-full text-sm font-bold">Exercício 2</span>
+            <span class="text-sm text-neutral-600 dark:text-neutral-400">Nível: Intermediário</span>
+          </div>
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+            Crie uma Prompt Chain
+          </h3>
+          <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+            Projete uma cadeia de 5 prompts para criar uma estratégia de conteúdo completa:
+          </p>
+          <div class="bg-nivel-1/10 p-4 rounded border border-nivel-1">
+            <strong>🎯 Entrega:</strong> Da análise de mercado até calendário editorial mensal
+          </div>
+        </div>
+
+        <!-- Exercício 3 -->
+        <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="px-3 py-1 bg-nivel-1 text-white rounded-full text-sm font-bold">Exercício 3</span>
+            <span class="text-sm text-neutral-600 dark:text-neutral-400">Nível: Avançado</span>
+          </div>
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+            Co-criação Completa
+          </h3>
+          <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+            <strong>Cenário:</strong> Você precisa criar um modelo de pricing para seu SaaS. Use co-criação para explorar modelos, validar com IA, e refinar baseado em feedback.
+          </p>
+          <div class="bg-nivel-1/10 p-4 rounded border border-nivel-1">
+            <strong>🎯 Desafio:</strong> Documente todo o diálogo co-criativo (pelo menos 8 trocas) mostrando como vocês construíram a solução juntos.
+          </div>
+        </div>
+      </div>
+
+      <!-- Conclusão -->
+      <div class="bg-gradient-to-r from-nivel-1 to-blue-600 text-white rounded-xl p-8">
+        <h2 class="text-3xl font-bold mb-4">🎓 Conclusão do Módulo</h2>
+        <p class="text-lg mb-6">
+          Você dominou a arte da <strong>iteração estratégica</strong>. Agora sabe como transformar respostas básicas em trabalhos excepcionais através de refinamento, encadeamento e co-criação.
+        </p>
+        <div class="bg-white/10 backdrop-blur p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-xl mb-2">✅ O que você dominou:</h3>
+          <ul class="space-y-2">
+            <li>• Refinamento progressivo em camadas</li>
+            <li>• Prompt chaining para tarefas complexas</li>
+            <li>• Co-criação estratégica com IA</li>
+            <li>• Padrões de feedback eficaz</li>
+          </ul>
+        </div>
+        <div class="flex gap-4">
+          <a href="modulo-4.html" class="px-6 py-3 bg-white text-nivel-1 rounded-lg font-semibold hover:bg-neutral-100 inline-flex items-center gap-2">
+            <span>←</span>
+            <span>Módulo Anterior</span>
+          </a>
+          <a href="modulo-6.html" class="px-6 py-3 bg-white/20 text-white rounded-lg font-semibold hover:bg-white/30 inline-flex items-center gap-2">
+            <span>Próximo: Casos de Uso Reais</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold text-white mb-4">FEI - Engenharia de Intenção</h3>
+          <p class="text-sm">Formação completa para dominar a nova era da IA</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Níveis</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../niveis/nivel-1.html" class="hover:text-white">Nível 1: Fundamentos</a></li>
+            <li><a href="../niveis/nivel-2.html" class="hover:text-white">Nível 2: Programa Completo</a></li>
+            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Nível 3A: Agentes</a></li>
+            <li><a href="../niveis/nivel-3s.html" class="hover:text-white">Nível 3S: Sistemas 2026</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../index.html" class="hover:text-white">Início</a></li>
+            <li><a href="../niveis/nivel-1.html" class="hover:text-white">Voltar ao Nível 1</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-neutral-800 mt-8 pt-8 text-center text-sm">
+        <p>&copy; 2025 FEI - Formação em Engenharia de Intenção.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>
