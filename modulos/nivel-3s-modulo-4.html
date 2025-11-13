@@ -4,8 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Módulo 4: Loops Evolutivos de Agentes | FEI Nível 3S</title>
-  <meta name="description" content="Agentes que evoluem com o tempo, analisam falhas e otimizam autonomamente">
+  <meta name="description" content="Loops Evolutivos** são o que separa sistemas estáticos de sistemas verdadeiramente inteligentes. Agentes modernos não apenas executam - eles **aprendem, analisam e melhoram continuamente**.">
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -21,16 +25,40 @@
       }
     }
   </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Highlight.js for syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+
   <style>
-    body { font-family: 'Inter', sans-serif; }
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
   </style>
 </head>
-<body class="bg-neutral-50 dark:bg-neutral-900">
+<body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navigation -->
   <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
-        <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-3s bg-clip-text text-transparent">FEI</a>
+        <div class="flex items-center">
+          <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-3s bg-clip-text text-transparent">
+            FEI - Engenharia de Intencao
+          </a>
+        </div>
         <div class="hidden md:flex items-center space-x-8">
           <a href="../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-3s">Inicio</a>
           <a href="../niveis/nivel-3s.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-3s">Nivel 3S</a>
@@ -47,9 +75,10 @@
     </div>
   </nav>
 
+  <!-- Breadcrumb -->
   <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-      <nav class="flex text-sm">
+      <nav class="flex text-sm" aria-label="Breadcrumb">
         <a href="../index.html" class="text-nivel-3s hover:text-orange-700">Inicio</a>
         <span class="mx-2 text-neutral-400">/</span>
         <a href="../niveis/nivel-3s.html" class="text-nivel-3s hover:text-orange-700">Nivel 3S</a>
@@ -59,186 +88,875 @@
     </div>
   </div>
 
-  <section class="bg-gradient-to-r from-nivel-3s to-orange-600 py-16 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-nivel-3s to-orange-600 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
       <div class="flex items-center gap-4 mb-4">
-        <span class="px-4 py-2 bg-red-500 rounded-full text-sm font-semibold">Estado da Arte 2026</span>
-        <span class="px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">Modulo 4</span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Modulo 4
+        </span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Nivel 3S - Sistemas Intencionais 2026
+        </span>
+        <span class="inline-block px-4 py-2 bg-white/30 rounded-full text-sm font-semibold">
+          Estado da Arte 2026
+        </span>
       </div>
-      <h1 class="text-4xl lg:text-5xl font-bold mb-4">Loops Evolutivos de Agentes</h1>
-      <p class="text-xl">A nova fronteira: agentes que evoluem autonomamente ao longo do tempo</p>
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">
+        Loops Evolutivos de Agentes
+      </h1>
+      <p class="text-xl text-white/90">
+        Loops Evolutivos** são o que separa sistemas estáticos de sistemas verdadeiramente inteligentes. Agentes modernos não apenas executam - eles **aprendem, analisam e melhoram continuamente**.
+      </p>
     </div>
   </section>
 
-  <section class="py-12">
+  <!-- Content -->
+  <section class="py-12 bg-neutral-50 dark:bg-neutral-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Download Button -->
       <div class="flex justify-end mb-6">
-        <a href="../downloads/nivel-3s-modulo-4.md" download class="px-6 py-3 bg-nivel-3s text-white rounded-lg font-semibold hover:bg-orange-600">Download MD</a>
+        <a href="../downloads/nivel-3s-modulo-4.md" download class="px-6 py-3 bg-nivel-3s text-white rounded-lg font-semibold hover:bg-orange-600 inline-flex items-center gap-2">
+          <span>Download MD</span>
+        </a>
+      </div>
+
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          O Coração da ESIA
+        </h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Loops Evolutivos</strong> são o que separa sistemas estáticos de sistemas verdadeiramente inteligentes. Agentes modernos não apenas executam - eles <strong>aprendem, analisam e melhoram continuamente</strong>.</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Este é o coração da <strong>ESIA - Engenharia de Sistemas Intencionais Autônomos</strong>: sistemas que evoluem autonomamente baseado em resultados.</p>
       </div>
 
       <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
-        <h2 class="text-3xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">O Coracao da ESIA</h2>
-        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
-          <strong>Loops Evolutivos</strong> sao o que separa sistemas estaticos de sistemas verdadeiramente inteligentes. Agentes modernos nao apenas executam - eles <strong>aprendem, analisam e melhoram continuamente</strong>.
-        </p>
-        <div class="bg-nivel-3s/10 border-l-4 border-nivel-3s p-6 rounded-lg">
-          <h3 class="font-bold text-nivel-3s mb-2">Este e o coracao da ESIA:</h3>
-          <p class="text-neutral-700 dark:text-neutral-300">
-            Engenharia de Sistemas Intencionais Autonomos - onde sistemas nao apenas executam comandos, mas <strong>evoluem autonomamente baseado em resultados</strong>.
-          </p>
-        </div>
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          O Que Agentes Evoluem
+        </h2>
+        <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">1. Analisam Suas Próprias Falhas</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">O agente registra quando comete erros, analisa causas e ajusta estratégias futuras.</p>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">Implementação:</p>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+from dataclasses import dataclass
+from typing import List, Dict
+from datetime import datetime
+from enum import Enum
+
+class TipoFalha(Enum):
+    TIMEOUT = &quot;timeout&quot;
+    QUALIDADE_BAIXA = &quot;qualidade_baixa&quot;
+    ERRO_VALIDACAO = &quot;erro_validacao&quot;
+    RECURSO_INSUFICIENTE = &quot;recurso_insuficiente&quot;
+
+@dataclass
+class Falha:
+    tipo: TipoFalha
+    contexto: Dict
+    impacto: float  # 0-1
+    timestamp: str
+
+class SistemaAnaliseFalhas:
+    &quot;&quot;&quot;Sistema que aprende com os próprios erros&quot;&quot;&quot;
+
+    def __init__(self):
+        self.falhas_historicas: List[Falha] = []
+        self.padroes_identificados: List[Dict] = []
+        self.correcoes_aplicadas: List[Dict] = []
+
+    def registrar_falha(self, tipo: TipoFalha, contexto: Dict, impacto: float):
+        &quot;&quot;&quot;Registra falha para análise&quot;&quot;&quot;
+        falha = Falha(
+            tipo=tipo,
+            contexto=contexto,
+            impacto=impacto,
+            timestamp=datetime.now().isoformat()
+        )
+
+        self.falhas_historicas.append(falha)
+
+        # Analisa imediatamente se há padrão
+        if len(self.falhas_historicas) &gt;= 3:
+            self._analisar_padroes()
+
+    def _analisar_padroes(self):
+        &quot;&quot;&quot;Identifica padrões nas falhas&quot;&quot;&quot;
+        # Agrupa falhas por tipo
+        falhas_por_tipo: Dict[TipoFalha, List[Falha]] = {}
+
+        for falha in self.falhas_historicas[-10:]:  # Últimas 10
+            if falha.tipo not in falhas_por_tipo:
+                falhas_por_tipo[falha.tipo] = []
+            falhas_por_tipo[falha.tipo].append(falha)
+
+        # Identifica padrões recorrentes
+        for tipo, falhas in falhas_por_tipo.items():
+            if len(falhas) &gt;= 3:  # 3+ ocorrências = padrão
+                # Analisa contexto comum
+                contextos = [f.contexto for f in falhas]
+                chaves_comuns = set.intersection(*[set(c.keys()) for c in contextos])
+
+                if chaves_comuns:
+                    padrao = {
+                        &quot;tipo_falha&quot;: tipo,
+                        &quot;frequencia&quot;: len(falhas),
+                        &quot;contexto_comum&quot;: {
+                            k: [c.get(k) for c in contextos]
+                            for k in chaves_comuns
+                        },
+                        &quot;impacto_medio&quot;: sum(f.impacto for f in falhas) / len(falhas),
+                        &quot;identificado_em&quot;: datetime.now().isoformat()
+                    }
+
+                    # Adiciona apenas se não existe
+                    if not any(p[&quot;tipo_falha&quot;] == tipo for p in self.padroes_identificados):
+                        self.padroes_identificados.append(padrao)
+
+    def propor_correcoes(self) -&gt; List[Dict]:
+        &quot;&quot;&quot;Propõe correções baseado nos padrões&quot;&quot;&quot;
+        correcoes = []
+
+        for padrao in self.padroes_identificados:
+            tipo_falha = padrao[&quot;tipo_falha&quot;]
+
+            if tipo_falha == TipoFalha.TIMEOUT:
+                correcoes.append({
+                    &quot;padrao&quot;: tipo_falha.value,
+                    &quot;acao&quot;: &quot;Aumentar timeout em 50%&quot;,
+                    &quot;justificativa&quot;: f&quot;Falha recorrente {padrao['frequencia']}x&quot;,
+                    &quot;impacto_esperado&quot;: 0.7
+                })
+
+            elif tipo_falha == TipoFalha.QUALIDADE_BAIXA:
+                correcoes.append({
+                    &quot;padrao&quot;: tipo_falha.value,
+                    &quot;acao&quot;: &quot;Adicionar validação extra antes da saída&quot;,
+                    &quot;justificativa&quot;: f&quot;Qualidade consistentemente baixa&quot;,
+                    &quot;impacto_esperado&quot;: 0.8
+                })
+
+            elif tipo_falha == TipoFalha.ERRO_VALIDACAO:
+                correcoes.append({
+                    &quot;padrao&quot;: tipo_falha.value,
+                    &quot;acao&quot;: &quot;Reforçar validação de entrada&quot;,
+                    &quot;justificativa&quot;: f&quot;Erros de validação recorrentes&quot;,
+                    &quot;impacto_esperado&quot;: 0.9
+                })
+
+        return correcoes
+
+    def aplicar_correcao(self, correcao: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Aplica correção e monitora resultado&quot;&quot;&quot;
+        resultado = {
+            &quot;correcao&quot;: correcao,
+            &quot;aplicada_em&quot;: datetime.now().isoformat(),
+            &quot;status&quot;: &quot;ativa&quot;,
+            &quot;falhas_antes&quot;: len([
+                f for f in self.falhas_historicas
+                if f.tipo.value == correcao[&quot;padrao&quot;]
+            ])
+        }
+
+        self.correcoes_aplicadas.append(resultado)
+        return resultado
+
+    def relatorio_aprendizado(self) -&gt; Dict:
+        &quot;&quot;&quot;Gera relatório de aprendizado com falhas&quot;&quot;&quot;
+        if not self.falhas_historicas:
+            return {&quot;mensagem&quot;: &quot;Sem falhas registradas&quot;}
+
+        total_falhas = len(self.falhas_historicas)
+        padroes_identificados = len(self.padroes_identificados)
+        correcoes_aplicadas = len(self.correcoes_aplicadas)
+
+        # Calcula taxa de melhoria
+        falhas_recentes = self.falhas_historicas[-5:]
+        falhas_antigas = self.falhas_historicas[:5] if len(self.falhas_historicas) &gt; 10 else []
+
+        if falhas_antigas:
+            impacto_antigo = sum(f.impacto for f in falhas_antigas) / len(falhas_antigas)
+            impacto_recente = sum(f.impacto for f in falhas_recentes) / len(falhas_recentes)
+            melhoria = ((impacto_antigo - impacto_recente) / impacto_antigo) * 100
+        else:
+            melhoria = 0
+
+        return {
+            &quot;total_falhas&quot;: total_falhas,
+            &quot;padroes_identificados&quot;: padroes_identificados,
+            &quot;correcoes_aplicadas&quot;: correcoes_aplicadas,
+            &quot;taxa_melhoria&quot;: f&quot;{melhoria:.1f}%&quot;,
+            &quot;status&quot;: &quot;melhorando&quot; if melhoria &gt; 0 else &quot;estável&quot;
+        }
+
+
+# Exemplo de uso
+sistema = SistemaAnaliseFalhas()
+
+# Simula falhas ao longo do tempo
+print(&quot;=== SIMULAÇÃO DE APRENDIZADO COM FALHAS ===\n&quot;)
+
+# Fase 1: Múltiplos timeouts
+for i in range(4):
+    sistema.registrar_falha(
+        TipoFalha.TIMEOUT,
+        {&quot;operacao&quot;: &quot;busca_dados&quot;, &quot;tempo_limite&quot;: 5},
+        impacto=0.6
+    )
+
+print(f&quot;✅ Registradas 4 falhas de timeout&quot;)
+print(f&quot;   Padrões identificados: {len(sistema.padroes_identificados)}\n&quot;)
+
+# Sistema propõe correções
+correcoes = sistema.propor_correcoes()
+print(&quot;Correções propostas:&quot;)
+for corr in correcoes:
+    print(f&quot;  • {corr['acao']}&quot;)
+    print(f&quot;    Justificativa: {corr['justificativa']}&quot;)
+    print(f&quot;    Impacto esperado: {corr['impacto_esperado']:.1%}\n&quot;)
+
+# Aplica correção
+if correcoes:
+    resultado = sistema.aplicar_correcao(correcoes[0])
+    print(f&quot;✅ Correção aplicada: {resultado['correcao']['acao']}\n&quot;)
+
+# Relatório
+print(&quot;=&quot;*60)
+relatorio = sistema.relatorio_aprendizado()
+print(&quot;RELATÓRIO DE APRENDIZADO:&quot;)
+for chave, valor in relatorio.items():
+    print(f&quot;  {chave}: {valor}&quot;)
+print(&quot;=&quot;*60)
+</code></pre>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">2. Ajustam Estratégias</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Baseado em resultados, o agente modifica sua abordagem sem precisar de instrução humana.</p>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+import statistics
+
+class SistemaAjusteEstrategico:
+    &quot;&quot;&quot;Sistema que ajusta estratégias automaticamente&quot;&quot;&quot;
+
+    def __init__(self):
+        self.estrategias: Dict[str, Dict] = {}
+        self.experimentos: List[Dict] = []
+
+    def registrar_estrategia(self, nome: str, parametros: Dict):
+        &quot;&quot;&quot;Registra estratégia com parâmetros&quot;&quot;&quot;
+        self.estrategias[nome] = {
+            &quot;parametros&quot;: parametros,
+            &quot;resultados&quot;: [],
+            &quot;ajustes_historicos&quot;: [],
+            &quot;performance_atual&quot;: 0
+        }
+
+    def executar_com_monitoramento(self, estrategia: str, contexto: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Executa e monitora resultado&quot;&quot;&quot;
+        if estrategia not in self.estrategias:
+            raise ValueError(f&quot;Estratégia {estrategia} não existe&quot;)
+
+        params = self.estrategias[estrategia][&quot;parametros&quot;]
+
+        # Simula execução com parâmetros atuais
+        resultado = {
+            &quot;performance&quot;: 0.5 + (params.get(&quot;qualidade_minima&quot;, 0.5) * 0.4),
+            &quot;tempo&quot;: 10 / params.get(&quot;agressividade&quot;, 0.5),
+            &quot;custo&quot;: params.get(&quot;agressividade&quot;, 0.5) * 100,
+            &quot;qualidade&quot;: params.get(&quot;qualidade_minima&quot;, 0.5)
+        }
+
+        # Calcula score geral
+        resultado[&quot;score&quot;] = (
+            resultado[&quot;performance&quot;] * 0.4 +
+            (1 / (resultado[&quot;tempo&quot;] / 10)) * 0.3 +
+            resultado[&quot;qualidade&quot;] * 0.3
+        )
+
+        self.estrategias[estrategia][&quot;resultados&quot;].append(resultado)
+
+        # Atualiza performance atual
+        ultimos = self.estrategias[estrategia][&quot;resultados&quot;][-5:]
+        self.estrategias[estrategia][&quot;performance_atual&quot;] = statistics.mean(
+            r[&quot;score&quot;] for r in ultimos
+        )
+
+        return resultado
+
+    def ajustar_automaticamente(self, estrategia: str) -&gt; Dict:
+        &quot;&quot;&quot;Ajusta estratégia baseado nos resultados&quot;&quot;&quot;
+        if estrategia not in self.estrategias:
+            return {&quot;erro&quot;: &quot;Estratégia não existe&quot;}
+
+        est = self.estrategias[estrategia]
+
+        if len(est[&quot;resultados&quot;]) &lt; 3:
+            return {&quot;mensagem&quot;: &quot;Dados insuficientes para ajuste&quot;}
+
+        # Analisa tendências
+        ultimos_5 = est[&quot;resultados&quot;][-5:]
+        performance_media = statistics.mean(r[&quot;score&quot;] for r in ultimos_5)
+
+        ajustes = {}
+
+        # Ajuste 1: Se performance &lt; 0.6, aumenta qualidade mínima
+        if performance_media &lt; 0.6:
+            novo_valor = min(0.95, est[&quot;parametros&quot;][&quot;qualidade_minima&quot;] * 1.15)
+            ajustes[&quot;qualidade_minima&quot;] = {
+                &quot;anterior&quot;: est[&quot;parametros&quot;][&quot;qualidade_minima&quot;],
+                &quot;novo&quot;: novo_valor,
+                &quot;motivo&quot;: &quot;Performance abaixo do esperado&quot;
+            }
+            est[&quot;parametros&quot;][&quot;qualidade_minima&quot;] = novo_valor
+
+        # Ajuste 2: Se tempo muito alto, aumenta agressividade
+        tempo_medio = statistics.mean(r[&quot;tempo&quot;] for r in ultimos_5)
+        if tempo_medio &gt; 15:
+            novo_valor = min(1.0, est[&quot;parametros&quot;][&quot;agressividade&quot;] * 1.2)
+            ajustes[&quot;agressividade&quot;] = {
+                &quot;anterior&quot;: est[&quot;parametros&quot;][&quot;agressividade&quot;],
+                &quot;novo&quot;: novo_valor,
+                &quot;motivo&quot;: &quot;Tempo de execução acima do aceitável&quot;
+            }
+            est[&quot;parametros&quot;][&quot;agressividade&quot;] = novo_valor
+
+        # Ajuste 3: Se custo muito alto, reduz agressividade
+        custo_medio = statistics.mean(r[&quot;custo&quot;] for r in ultimos_5)
+        if custo_medio &gt; 70 and &quot;agressividade&quot; not in ajustes:
+            novo_valor = max(0.3, est[&quot;parametros&quot;][&quot;agressividade&quot;] * 0.85)
+            ajustes[&quot;agressividade&quot;] = {
+                &quot;anterior&quot;: est[&quot;parametros&quot;][&quot;agressividade&quot;],
+                &quot;novo&quot;: novo_valor,
+                &quot;motivo&quot;: &quot;Custo operacional elevado&quot;
+            }
+            est[&quot;parametros&quot;][&quot;agressividade&quot;] = novo_valor
+
+        if ajustes:
+            est[&quot;ajustes_historicos&quot;].append({
+                &quot;ajustes&quot;: ajustes,
+                &quot;performance_antes&quot;: performance_media,
+                &quot;timestamp&quot;: datetime.now().isoformat()
+            })
+
+        return {
+            &quot;estrategia&quot;: estrategia,
+            &quot;ajustes_realizados&quot;: len(ajustes),
+            &quot;detalhes&quot;: ajustes,
+            &quot;performance_antes&quot;: performance_media
+        }
+
+
+# Exemplo de uso
+sistema_ajuste = SistemaAjusteEstrategico()
+
+sistema_ajuste.registrar_estrategia(&quot;producao_conteudo&quot;, {
+    &quot;agressividade&quot;: 0.5,
+    &quot;qualidade_minima&quot;: 0.7
+})
+
+print(&quot;\n=== AJUSTE AUTOMÁTICO DE ESTRATÉGIAS ===\n&quot;)
+
+# Simula múltiplas execuções
+print(&quot;Executando estratégia 10x...&quot;)
+for i in range(10):
+    resultado = sistema_ajuste.executar_com_monitoramento(&quot;producao_conteudo&quot;, {})
+
+print(f&quot;Performance atual: {sistema_ajuste.estrategias['producao_conteudo']['performance_atual']:.2f}\n&quot;)
+
+# Sistema ajusta automaticamente
+ajuste = sistema_ajuste.ajustar_automaticamente(&quot;producao_conteudo&quot;)
+
+if &quot;detalhes&quot; in ajuste and ajuste[&quot;detalhes&quot;]:
+    print(f&quot;✅ {ajuste['ajustes_realizados']} ajustes realizados:\n&quot;)
+    for param, info in ajuste[&quot;detalhes&quot;].items():
+        print(f&quot;  • {param}:&quot;)
+        print(f&quot;    De: {info['anterior']:.2f} → Para: {info['novo']:.2f}&quot;)
+        print(f&quot;    Motivo: {info['motivo']}\n&quot;)
+
+# Testa com novos parâmetros
+print(&quot;Testando com parâmetros ajustados...&quot;)
+for i in range(5):
+    resultado = sistema_ajuste.executar_com_monitoramento(&quot;producao_conteudo&quot;, {})
+
+print(f&quot;Nova performance: {sistema_ajuste.estrategias['producao_conteudo']['performance_atual']:.2f}&quot;)
+</code></pre>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">3. Aprendem Preferências</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">O sistema identifica padrões nas escolhas do usuário e adapta seu comportamento.</p>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+class SistemaAprendizadoPreferencias:
+    &quot;&quot;&quot;Aprende preferências do usuário ao longo do tempo&quot;&quot;&quot;
+
+    def __init__(self):
+        self.interacoes: List[Dict] = []
+        self.preferencias_inferidas: Dict[str, Any] = {}
+
+    def registrar_escolha(self, opcoes: List[Dict], escolhida: int, contexto: Dict):
+        &quot;&quot;&quot;Registra escolha do usuário&quot;&quot;&quot;
+        interacao = {
+            &quot;opcoes&quot;: opcoes,
+            &quot;escolhida&quot;: escolhida,
+            &quot;opcao_detalhes&quot;: opcoes[escolhida],
+            &quot;contexto&quot;: contexto,
+            &quot;timestamp&quot;: datetime.now().isoformat()
+        }
+
+        self.interacoes.append(interacao)
+
+        # Aprende após cada interação
+        self._inferir_preferencias()
+
+    def _inferir_preferencias(self):
+        &quot;&quot;&quot;Infere preferências baseado nas escolhas&quot;&quot;&quot;
+        if len(self.interacoes) &lt; 3:
+            return
+
+        # Analisa características das escolhas
+        escolhas = [i[&quot;opcao_detalhes&quot;] for i in self.interacoes]
+
+        # Preferência por complexidade
+        if &quot;complexidade&quot; in escolhas[0]:
+            complexidades = [e.get(&quot;complexidade&quot;) for e in escolhas]
+            mais_comum = max(set(complexidades), key=complexidades.count)
+            self.preferencias_inferidas[&quot;complexidade_preferida&quot;] = mais_comum
+
+        # Preferência por velocidade vs qualidade
+        if all(&quot;velocidade&quot; in e and &quot;qualidade&quot; in e for e in escolhas):
+            ratio_velocidade = sum(
+                1 for e in escolhas if e[&quot;velocidade&quot;] &gt; e[&quot;qualidade&quot;]
+            ) / len(escolhas)
+
+            if ratio_velocidade &gt; 0.7:
+                self.preferencias_inferidas[&quot;prioridade&quot;] = &quot;velocidade&quot;
+            elif ratio_velocidade &lt; 0.3:
+                self.preferencias_inferidas[&quot;prioridade&quot;] = &quot;qualidade&quot;
+            else:
+                self.preferencias_inferidas[&quot;prioridade&quot;] = &quot;balanceado&quot;
+
+        # Preferência por estilo
+        if &quot;estilo&quot; in escolhas[0]:
+            estilos = [e.get(&quot;estilo&quot;) for e in escolhas]
+            mais_comum = max(set(estilos), key=estilos.count)
+            self.preferencias_inferidas[&quot;estilo_preferido&quot;] = mais_comum
+
+    def recomendar_opcao(self, opcoes: List[Dict]) -&gt; Dict:
+        &quot;&quot;&quot;Recomenda opção baseado em preferências aprendidas&quot;&quot;&quot;
+        if not self.preferencias_inferidas:
+            return {
+                &quot;recomendacao&quot;: 0,
+                &quot;confianca&quot;: 0,
+                &quot;motivo&quot;: &quot;Sem preferências aprendidas&quot;
+            }
+
+        # Pontua cada opção
+        scores = []
+
+        for opcao in opcoes:
+            score = 0
+
+            # Aplica preferências
+            if &quot;complexidade_preferida&quot; in self.preferencias_inferidas:
+                if opcao.get(&quot;complexidade&quot;) == self.preferencias_inferidas[&quot;complexidade_preferida&quot;]:
+                    score += 3
+
+            if &quot;prioridade&quot; in self.preferencias_inferidas:
+                pref = self.preferencias_inferidas[&quot;prioridade&quot;]
+                if pref == &quot;velocidade&quot; and opcao.get(&quot;velocidade&quot;, 0) &gt; 0.7:
+                    score += 2
+                elif pref == &quot;qualidade&quot; and opcao.get(&quot;qualidade&quot;, 0) &gt; 0.7:
+                    score += 2
+
+            if &quot;estilo_preferido&quot; in self.preferencias_inferidas:
+                if opcao.get(&quot;estilo&quot;) == self.preferencias_inferidas[&quot;estilo_preferido&quot;]:
+                    score += 2
+
+            scores.append(score)
+
+        melhor_idx = scores.index(max(scores))
+        confianca = max(scores) / (len(self.preferencias_inferidas) * 3)
+
+        return {
+            &quot;recomendacao&quot;: melhor_idx,
+            &quot;opcao&quot;: opcoes[melhor_idx],
+            &quot;confianca&quot;: min(1.0, confianca),
+            &quot;motivo&quot;: f&quot;Baseado em {len(self.interacoes)} interações anteriores&quot;,
+            &quot;preferencias_aplicadas&quot;: list(self.preferencias_inferidas.keys())
+        }
+
+
+# Exemplo de uso
+sistema_pref = SistemaAprendizadoPreferencias()
+
+print(&quot;\n=== APRENDIZADO DE PREFERÊNCIAS ===\n&quot;)
+
+# Simula escolhas do usuário
+escolhas_usuario = [
+    {
+        &quot;opcoes&quot;: [
+            {&quot;nome&quot;: &quot;Rápido&quot;, &quot;velocidade&quot;: 0.9, &quot;qualidade&quot;: 0.6, &quot;estilo&quot;: &quot;direto&quot;},
+            {&quot;nome&quot;: &quot;Equilibrado&quot;, &quot;velocidade&quot;: 0.7, &quot;qualidade&quot;: 0.7, &quot;estilo&quot;: &quot;balanceado&quot;},
+            {&quot;nome&quot;: &quot;Perfeito&quot;, &quot;velocidade&quot;: 0.5, &quot;qualidade&quot;: 0.95, &quot;estilo&quot;: &quot;detalhado&quot;}
+        ],
+        &quot;escolhida&quot;: 2  # Usuário prefere qualidade
+    },
+    {
+        &quot;opcoes&quot;: [
+            {&quot;nome&quot;: &quot;Simples&quot;, &quot;complexidade&quot;: &quot;baixa&quot;, &quot;qualidade&quot;: 0.9, &quot;estilo&quot;: &quot;detalhado&quot;},
+            {&quot;nome&quot;: &quot;Completo&quot;, &quot;complexidade&quot;: &quot;alta&quot;, &quot;qualidade&quot;: 0.95, &quot;estilo&quot;: &quot;detalhado&quot;}
+        ],
+        &quot;escolhida&quot;: 1  # Prefere completo
+    },
+    {
+        &quot;opcoes&quot;: [
+            {&quot;nome&quot;: &quot;Casual&quot;, &quot;velocidade&quot;: 0.8, &quot;qualidade&quot;: 0.6, &quot;estilo&quot;: &quot;casual&quot;},
+            {&quot;nome&quot;: &quot;Técnico&quot;, &quot;velocidade&quot;: 0.6, &quot;qualidade&quot;: 0.9, &quot;estilo&quot;: &quot;detalhado&quot;}
+        ],
+        &quot;escolhida&quot;: 1  # Prefere técnico
+    }
+]
+
+for i, escolha in enumerate(escolhas_usuario, 1):
+    sistema_pref.registrar_escolha(
+        escolha[&quot;opcoes&quot;],
+        escolha[&quot;escolhida&quot;],
+        {&quot;sessao&quot;: i}
+    )
+    print(f&quot;Escolha {i} registrada: {escolha['opcoes'][escolha['escolhida']]['nome']}&quot;)
+
+print(f&quot;\n✅ Preferências inferidas:&quot;)
+for pref, valor in sistema_pref.preferencias_inferidas.items():
+    print(f&quot;   • {pref}: {valor}&quot;)
+
+# Sistema recomenda automaticamente
+print(&quot;\n--- Nova solicitação ---&quot;)
+novas_opcoes = [
+    {&quot;nome&quot;: &quot;Opção A&quot;, &quot;velocidade&quot;: 0.8, &quot;qualidade&quot;: 0.6, &quot;estilo&quot;: &quot;casual&quot;},
+    {&quot;nome&quot;: &quot;Opção B&quot;, &quot;velocidade&quot;: 0.6, &quot;qualidade&quot;: 0.95, &quot;estilo&quot;: &quot;detalhado&quot;},
+    {&quot;nome&quot;: &quot;Opção C&quot;, &quot;velocidade&quot;: 0.7, &quot;qualidade&quot;: 0.7, &quot;estilo&quot;: &quot;balanceado&quot;}
+]
+
+recomendacao = sistema_pref.recomendar_opcao(novas_opcoes)
+
+print(f&quot;Recomendação: {recomendacao['opcao']['nome']}&quot;)
+print(f&quot;Confiança: {recomendacao['confianca']:.1%}&quot;)
+print(f&quot;Motivo: {recomendacao['motivo']}&quot;)
+print(f&quot;Preferências aplicadas: {', '.join(recomendacao['preferencias_aplicadas'])}&quot;)
+</code></pre>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">4-7. Capacidades Evolutivas Adicionais</h3>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+class SistemaEvolutivoCompleto:
+    &quot;&quot;&quot;Sistema com todas as capacidades evolutivas&quot;&quot;&quot;
+
+    def __init__(self):
+        self.metodos_criados: List[Dict] = []
+        self.otimizacoes_aplicadas: List[Dict] = []
+        self.automacoes_criadas: List[Dict] = []
+        self.processos_substituidos: List[Dict] = []
+
+    def criar_novo_metodo(self, problema: str, tentativas: List[Dict]) -&gt; Dict:
+        &quot;&quot;&quot;Cria novo método baseado em experimentos&quot;&quot;&quot;
+        # Analisa tentativas anteriores
+        melhores = sorted(tentativas, key=lambda x: x[&quot;resultado&quot;], reverse=True)[:3]
+
+        # Combina melhores práticas
+        novo_metodo = {
+            &quot;nome&quot;: f&quot;Metodo_{len(self.metodos_criados) + 1}&quot;,
+            &quot;problema&quot;: problema,
+            &quot;baseado_em&quot;: [t[&quot;abordagem&quot;] for t in melhores],
+            &quot;performance_esperada&quot;: sum(t[&quot;resultado&quot;] for t in melhores) / len(melhores),
+            &quot;criado_em&quot;: datetime.now().isoformat()
+        }
+
+        self.metodos_criados.append(novo_metodo)
+        return novo_metodo
+
+    def otimizar_sem_permissao(self, processo: str, metricas: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Otimiza processo automaticamente dentro dos limites&quot;&quot;&quot;
+        otimizacao = {
+            &quot;processo&quot;: processo,
+            &quot;tipo&quot;: &quot;paralelizacao&quot; if metricas.get(&quot;tempo&quot;, 0) &gt; 10 else &quot;cache&quot;,
+            &quot;ganho_estimado&quot;: &quot;60% mais rápido&quot;,
+            &quot;aplicada_automaticamente&quot;: True,
+            &quot;timestamp&quot;: datetime.now().isoformat()
+        }
+
+        self.otimizacoes_aplicadas.append(otimizacao)
+        return otimizacao
+
+    def automatizar_repeticao(self, tarefas_recentes: List[Dict]) -&gt; Dict:
+        &quot;&quot;&quot;Identifica e automatiza padrões repetitivos&quot;&quot;&quot;
+        # Identifica sequências repetidas
+        if len(tarefas_recentes) &lt; 5:
+            return {&quot;mensagem&quot;: &quot;Dados insuficientes&quot;}
+
+        # Simula detecção de padrão
+        padrao_detectado = {
+            &quot;tipo&quot;: &quot;revisao_pos_geracao&quot;,
+            &quot;frequencia&quot;: &quot;sempre após geração de relatório&quot;,
+            &quot;acao_automatizada&quot;: &quot;Adicionar revisão automática&quot;,
+            &quot;criado_em&quot;: datetime.now().isoformat()
+        }
+
+        self.automacoes_criadas.append(padrao_detectado)
+        return padrao_detectado
+
+    def substituir_processo_fraco(self, processo_atual: Dict, alternativas: List[Dict]) -&gt; Dict:
+        &quot;&quot;&quot;Substitui processo ineficiente por melhor alternativa&quot;&quot;&quot;
+        # Seleciona melhor alternativa
+        melhor = max(alternativas, key=lambda x: x[&quot;eficiencia&quot;])
+
+        substituicao = {
+            &quot;processo_anterior&quot;: processo_atual[&quot;nome&quot;],
+            &quot;performance_anterior&quot;: processo_atual[&quot;performance&quot;],
+            &quot;processo_novo&quot;: melhor[&quot;nome&quot;],
+            &quot;performance_nova&quot;: melhor[&quot;eficiencia&quot;],
+            &quot;ganho&quot;: (melhor[&quot;eficiencia&quot;] - processo_atual[&quot;performance&quot;]) / processo_atual[&quot;performance&quot;],
+            &quot;substituido_em&quot;: datetime.now().isoformat()
+        }
+
+        self.processos_substituidos.append(substituicao)
+        return substituicao
+
+
+# Exemplo completo
+sistema_evo = SistemaEvolutivoCompleto()
+
+print(&quot;\n=== SISTEMA EVOLUTIVO COMPLETO ===\n&quot;)
+
+# 1. Cria novo método
+tentativas = [
+    {&quot;abordagem&quot;: &quot;A&quot;, &quot;resultado&quot;: 0.7},
+    {&quot;abordagem&quot;: &quot;B&quot;, &quot;resultado&quot;: 0.9},
+    {&quot;abordagem&quot;: &quot;C&quot;, &quot;resultado&quot;: 0.85}
+]
+
+novo_metodo = sistema_evo.criar_novo_metodo(&quot;Otimização de busca&quot;, tentativas)
+print(f&quot;✅ Novo método criado: {novo_metodo['nome']}&quot;)
+print(f&quot;   Performance esperada: {novo_metodo['performance_esperada']:.2f}\n&quot;)
+
+# 2. Otimiza automaticamente
+otim = sistema_evo.otimizar_sem_permissao(&quot;processamento_dados&quot;, {&quot;tempo&quot;: 15})
+print(f&quot;✅ Otimização aplicada: {otim['tipo']}&quot;)
+print(f&quot;   Ganho: {otim['ganho_estimado']}\n&quot;)
+
+# 3. Automatiza repetição
+auto = sistema_evo.automatizar_repeticao([{} for _ in range(10)])
+print(f&quot;✅ Automação criada: {auto['acao_automatizada']}&quot;)
+print(f&quot;   Trigger: {auto['frequencia']}\n&quot;)
+
+# 4. Substitui processo
+subst = sistema_evo.substituir_processo_fraco(
+    {&quot;nome&quot;: &quot;Busca linear&quot;, &quot;performance&quot;: 0.5},
+    [
+        {&quot;nome&quot;: &quot;Busca binária&quot;, &quot;eficiencia&quot;: 0.85},
+        {&quot;nome&quot;: &quot;Hash table&quot;, &quot;eficiencia&quot;: 0.95}
+    ]
+)
+
+print(f&quot;✅ Processo substituído:&quot;)
+print(f&quot;   {subst['processo_anterior']} → {subst['processo_novo']}&quot;)
+print(f&quot;   Ganho: {subst['ganho']:.1%}&quot;)
+</code></pre>
       </div>
 
       <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
-        <h2 class="text-3xl font-bold mb-6 text-neutral-900 dark:text-neutral-100">O Que Agentes Evoluem?</h2>
-        
-        <div class="space-y-6">
-          <div class="bg-nivel-3s/10 p-6 rounded-lg border-l-4 border-nivel-3s">
-            <h3 class="text-xl font-bold mb-3 text-neutral-900 dark:text-neutral-100">1. Analisam Suas Proprias Falhas</h3>
-            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
-              O agente registra quando comete erros, analisa causas e ajusta estrategias futuras.
-            </p>
-            <div class="bg-white dark:bg-neutral-700 p-4 rounded text-sm">
-              <strong>Exemplo:</strong> Agente de email marketing percebe que emails enviados as 10h tem 40% mais abertura que os enviados as 18h. Automaticamente ajusta horarios futuros.
-            </div>
-          </div>
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          O Ciclo de Evolução
+        </h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-4">O ciclo completo de evolução de um sistema intencional:</p>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+class CicloEvolutivo:
+    &quot;&quot;&quot;Implementação completa do ciclo evolutivo&quot;&quot;&quot;
 
-          <div class="bg-nivel-3s/10 p-6 rounded-lg border-l-4 border-nivel-3s">
-            <h3 class="text-xl font-bold mb-3 text-neutral-900 dark:text-neutral-100">2. Ajustam Estrategias</h3>
-            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
-              Baseado em resultados, o agente modifica sua abordagem sem precisar de instrucao humana.
-            </p>
-            <div class="bg-white dark:bg-neutral-700 p-4 rounded text-sm">
-              <strong>Exemplo:</strong> Sistema de conteudo percebe que videos curtos tem 5x mais engajamento. Passa a priorizar formato de video sobre texto.
-            </div>
-          </div>
+    def __init__(self):
+        self.ciclos_completos = 0
+        self.metricas_historicas: List[Dict] = []
 
-          <div class="bg-nivel-3s/10 p-6 rounded-lg border-l-4 border-nivel-3s">
-            <h3 class="text-xl font-bold mb-3 text-neutral-900 dark:text-neutral-100">3. Aprendem Preferencias</h3>
-            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
-              O sistema identifica padroes nas escolhas do usuario e adapta seu comportamento.
-            </p>
-            <div class="bg-white dark:bg-neutral-700 p-4 rounded text-sm">
-              <strong>Exemplo:</strong> Sistema percebe que voce sempre pede revisao em textos tecnicos mas aprova textos criativos direto. Para de pedir aprovacao em conteudo criativo.
-            </div>
-          </div>
+    def executar_ciclo_completo(self, tarefa: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Executa um ciclo completo de evolução&quot;&quot;&quot;
+        print(f&quot;\n{'='*60}&quot;)
+        print(f&quot;CICLO EVOLUTIVO #{self.ciclos_completos + 1}&quot;)
+        print(f&quot;{'='*60}\n&quot;)
 
-          <div class="bg-nivel-3s/10 p-6 rounded-lg border-l-4 border-nivel-3s">
-            <h3 class="text-xl font-bold mb-3 text-neutral-900 dark:text-neutral-100">4. Criam Novos Metodos</h3>
-            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
-              Agentes avancados podem <strong>inventar novas estrategias</strong> baseado em experimentos.
-            </p>
-            <div class="bg-white dark:bg-neutral-700 p-4 rounded text-sm">
-              <strong>Exemplo:</strong> Sistema testa diferentes estruturas de post e descobre que "historia pessoal + insight tecnico + call-to-action" tem melhor performance. Adota como padrao.
-            </div>
-          </div>
+        # 1. EXECUTAR
+        print(&quot;1️⃣ EXECUTAR&quot;)
+        resultado_execucao = self._executar(tarefa)
+        print(f&quot;   Status: {resultado_execucao['status']}&quot;)
+        print(f&quot;   Performance: {resultado_execucao['performance']:.2f}\n&quot;)
 
-          <div class="bg-nivel-3s/10 p-6 rounded-lg border-l-4 border-nivel-3s">
-            <h3 class="text-xl font-bold mb-3 text-neutral-900 dark:text-neutral-100">5. Otimizam o Sistema Sem Pedir Permissao</h3>
-            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
-              Dentro de limites pre-definidos, o agente pode <strong>fazer melhorias automaticas</strong>.
-            </p>
-            <div class="bg-white dark:bg-neutral-700 p-4 rounded text-sm">
-              <strong>Exemplo:</strong> Sistema identifica que pode paralelizar 3 tarefas que antes rodavam sequencialmente, reduzindo tempo de execucao em 60%.
-            </div>
-          </div>
+        # 2. MEDIR RESULTADOS
+        print(&quot;2️⃣ MEDIR RESULTADOS&quot;)
+        metricas = self._medir_resultados(resultado_execucao)
+        print(f&quot;   Qualidade: {metricas['qualidade']:.2f}&quot;)
+        print(f&quot;   Velocidade: {metricas['velocidade']:.2f}&quot;)
+        print(f&quot;   Eficiência: {metricas['eficiencia']:.2f}\n&quot;)
 
-          <div class="bg-nivel-3s/10 p-6 rounded-lg border-l-4 border-nivel-3s">
-            <h3 class="text-xl font-bold mb-3 text-neutral-900 dark:text-neutral-100">6. Automatizam o Que Encontram Repetido</h3>
-            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
-              Quando detecta padroes repetitivos, o agente cria <strong>automacoes internas</strong>.
-            </p>
-            <div class="bg-white dark:bg-neutral-700 p-4 rounded text-sm">
-              <strong>Exemplo:</strong> Sistema percebe que voce sempre pede "adicionar referencias academicas" apos relatorios tecnicos. Passa a fazer isso automaticamente.
-            </div>
-          </div>
+        # 3. ANALISAR DESVIOS
+        print(&quot;3️⃣ ANALISAR DESVIOS&quot;)
+        analise = self._analisar_desvios(metricas, tarefa.get(&quot;metas&quot;, {}))
+        print(f&quot;   Desvios encontrados: {analise['total_desvios']}&quot;)
+        if analise['desvios']:
+            for desvio in analise['desvios']:
+                print(f&quot;   • {desvio}&quot;)
+        print()
 
-          <div class="bg-nivel-3s/10 p-6 rounded-lg border-l-4 border-nivel-3s">
-            <h3 class="text-xl font-bold mb-3 text-neutral-900 dark:text-neutral-100">7. Substituem Processos Fracos por Melhores</h3>
-            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
-              O sistema identifica gargalos e <strong>propoe ou implementa solucoes melhores</strong>.
-            </p>
-            <div class="bg-white dark:bg-neutral-700 p-4 rounded text-sm">
-              <strong>Exemplo:</strong> Sistema detecta que buscar dados manualmente esta causando atrasos. Integra API externa e automatiza coleta de dados.
-            </div>
-          </div>
+        # 4. AJUSTAR ESTRATÉGIA
+        print(&quot;4️⃣ AJUSTAR ESTRATÉGIA&quot;)
+        ajustes = self._ajustar_estrategia(analise)
+        print(f&quot;   Ajustes aplicados: {len(ajustes)}&quot;)
+        for ajuste in ajustes:
+            print(f&quot;   • {ajuste}&quot;)
+        print()
 
-        </div>
+        # 5. REPETIR COM MELHORIAS
+        print(&quot;5️⃣ PREPARAR PRÓXIMO CICLO&quot;)
+        print(f&quot;   Melhorias prontas para aplicação no próximo ciclo\n&quot;)
+
+        # Registra ciclo
+        self.ciclos_completos += 1
+        self.metricas_historicas.append(metricas)
+
+        return {
+            &quot;ciclo&quot;: self.ciclos_completos,
+            &quot;resultado&quot;: resultado_execucao,
+            &quot;metricas&quot;: metricas,
+            &quot;analise&quot;: analise,
+            &quot;ajustes&quot;: ajustes
+        }
+
+    def _executar(self, tarefa: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Executa a tarefa&quot;&quot;&quot;
+        return {
+            &quot;status&quot;: &quot;completo&quot;,
+            &quot;performance&quot;: 0.75,
+            &quot;saida&quot;: &quot;Resultado da execução&quot;
+        }
+
+    def _medir_resultados(self, resultado: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Mede resultados da execução&quot;&quot;&quot;
+        return {
+            &quot;qualidade&quot;: resultado[&quot;performance&quot;] * 0.9,
+            &quot;velocidade&quot;: 0.8,
+            &quot;eficiencia&quot;: resultado[&quot;performance&quot;] * 0.85
+        }
+
+    def _analisar_desvios(self, metricas: Dict, metas: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Analisa desvios em relação às metas&quot;&quot;&quot;
+        metas_padrao = {&quot;qualidade&quot;: 0.8, &quot;velocidade&quot;: 0.75, &quot;eficiencia&quot;: 0.8}
+        metas_finais = {**metas_padrao, **metas}
+
+        desvios = []
+        for metrica, valor in metricas.items():
+            meta = metas_finais.get(metrica)
+            if meta and valor &lt; meta:
+                desvios.append(f&quot;{metrica}: {valor:.2f} &lt; meta {meta:.2f}&quot;)
+
+        return {
+            &quot;total_desvios&quot;: len(desvios),
+            &quot;desvios&quot;: desvios,
+            &quot;metas_atingidas&quot;: len(metricas) - len(desvios)
+        }
+
+    def _ajustar_estrategia(self, analise: Dict) -&gt; List[str]:
+        &quot;&quot;&quot;Ajusta estratégia baseado na análise&quot;&quot;&quot;
+        ajustes = []
+
+        for desvio in analise[&quot;desvios&quot;]:
+            if &quot;qualidade&quot; in desvio.lower():
+                ajustes.append(&quot;Aumentar validações de qualidade&quot;)
+            elif &quot;velocidade&quot; in desvio.lower():
+                ajustes.append(&quot;Otimizar pipeline de execução&quot;)
+            elif &quot;eficiencia&quot; in desvio.lower():
+                ajustes.append(&quot;Reduzir desperdício de recursos&quot;)
+
+        return ajustes
+
+    def relatorio_evolucao(self) -&gt; Dict:
+        &quot;&quot;&quot;Gera relatório de evolução ao longo dos ciclos&quot;&quot;&quot;
+        if not self.metricas_historicas:
+            return {&quot;mensagem&quot;: &quot;Sem dados de evolução&quot;}
+
+        # Analisa tendência
+        primeira = self.metricas_historicas[0]
+        ultima = self.metricas_historicas[-1]
+
+        evolucao = {}
+        for metrica in primeira.keys():
+            evolucao[metrica] = {
+                &quot;inicial&quot;: primeira[metrica],
+                &quot;atual&quot;: ultima[metrica],
+                &quot;melhoria&quot;: ((ultima[metrica] - primeira[metrica]) / primeira[metrica]) * 100
+            }
+
+        return {
+            &quot;total_ciclos&quot;: self.ciclos_completos,
+            &quot;evolucao_metricas&quot;: evolucao,
+            &quot;tendencia_geral&quot;: &quot;positiva&quot; if all(e[&quot;melhoria&quot;] &gt; 0 for e in evolucao.values()) else &quot;mista&quot;
+        }
+
+
+# Demonstração do ciclo evolutivo
+ciclo = CicloEvolutivo()
+
+# Executa 3 ciclos
+for i in range(3):
+    resultado = ciclo.executar_ciclo_completo({
+        &quot;tarefa&quot;: f&quot;Processamento batch #{i+1}&quot;,
+        &quot;metas&quot;: {&quot;qualidade&quot;: 0.85, &quot;velocidade&quot;: 0.8}
+    })
+
+# Relatório final
+print(&quot;\n&quot; + &quot;=&quot;*60)
+print(&quot;RELATÓRIO DE EVOLUÇÃO&quot;)
+print(&quot;=&quot;*60 + &quot;\n&quot;)
+
+relatorio = ciclo.relatorio_evolucao()
+print(f&quot;Total de ciclos: {relatorio['total_ciclos']}&quot;)
+print(f&quot;Tendência geral: {relatorio['tendencia_geral'].upper()}\n&quot;)
+
+print(&quot;Evolução por métrica:&quot;)
+for metrica, dados in relatorio['evolucao_metricas'].items():
+    print(f&quot;  • {metrica}:&quot;)
+    print(f&quot;    {dados['inicial']:.2f} → {dados['atual']:.2f} ({dados['melhoria']:+.1f}%)&quot;)
+</code></pre>
       </div>
 
       <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
-        <h2 class="text-3xl font-bold mb-6 text-neutral-900 dark:text-neutral-100">O Ciclo de Evolucao</h2>
-        
-        <div class="relative border-l-4 border-nivel-3s pl-8 space-y-6">
-          <div class="relative">
-            <div class="absolute -left-10 w-6 h-6 bg-nivel-3s rounded-full border-4 border-white dark:border-neutral-800"></div>
-            <div class="bg-nivel-3s/10 p-6 rounded-lg">
-              <h3 class="text-xl font-bold mb-2 text-neutral-900 dark:text-neutral-100">1. Executar</h3>
-              <p class="text-neutral-700 dark:text-neutral-300">O agente realiza uma tarefa ou processo.</p>
-            </div>
-          </div>
-
-          <div class="relative">
-            <div class="absolute -left-10 w-6 h-6 bg-nivel-3s rounded-full border-4 border-white dark:border-neutral-800"></div>
-            <div class="bg-nivel-3s/10 p-6 rounded-lg">
-              <h3 class="text-xl font-bold mb-2 text-neutral-900 dark:text-neutral-100">2. Medir Resultados</h3>
-              <p class="text-neutral-700 dark:text-neutral-300">Sistema coleta metricas de performance, qualidade e impacto.</p>
-            </div>
-          </div>
-
-          <div class="relative">
-            <div class="absolute -left-10 w-6 h-6 bg-nivel-3s rounded-full border-4 border-white dark:border-neutral-800"></div>
-            <div class="bg-nivel-3s/10 p-6 rounded-lg">
-              <h3 class="text-xl font-bold mb-2 text-neutral-900 dark:text-neutral-100">3. Analisar Desvios</h3>
-              <p class="text-neutral-700 dark:text-neutral-300">Compara resultados esperados vs reais, identifica causas de falhas.</p>
-            </div>
-          </div>
-
-          <div class="relative">
-            <div class="absolute -left-10 w-6 h-6 bg-nivel-3s rounded-full border-4 border-white dark:border-neutral-800"></div>
-            <div class="bg-nivel-3s/10 p-6 rounded-lg">
-              <h3 class="text-xl font-bold mb-2 text-neutral-900 dark:text-neutral-100">4. Ajustar Estrategia</h3>
-              <p class="text-neutral-700 dark:text-neutral-300">Modifica abordagem, parametros ou processos baseado na analise.</p>
-            </div>
-          </div>
-
-          <div class="relative">
-            <div class="absolute -left-10 w-6 h-6 bg-green-500 rounded-full border-4 border-white dark:border-neutral-800"></div>
-            <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border-2 border-green-500">
-              <h3 class="text-xl font-bold mb-2 text-neutral-900 dark:text-neutral-100">5. Repetir com Melhorias</h3>
-              <p class="text-neutral-700 dark:text-neutral-300">Executa novamente com as otimizacoes aplicadas, iniciando novo ciclo.</p>
-            </div>
-          </div>
-        </div>
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Conclusão
+        </h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-4">Você entendeu Loops Evolutivos - a capacidade que transforma agentes simples em sistemas verdadeiramente inteligentes.</p>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">O que você dominou:</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ 7 formas que agentes evoluem autonomamente (falhas, estratégias, preferências, métodos, otimizações, automações, substituições)</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Sistema completo de análise de falhas com identificação de padrões</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Ajuste automático de estratégias baseado em performance</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Aprendizado de preferências do usuário</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Criação de novos métodos por experimentação</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Otimizações automáticas dentro de limites</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Automação de tarefas repetitivas</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Substituição de processos fracos</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ O ciclo completo de evolução (Executar → Medir → Analisar → Ajustar → Repetir)</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Implementação prática de cada capacidade evolutiva</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Como sistemas aprendem sem intervenção humana</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Por que loops evolutivos são o coração da ESIA</p>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Próximo módulo:</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">No Módulo 5, você vai aprender sobre <strong>Intenção Composta e Intenção Persistente</strong>: conceitos avançados que permitem sistemas manterem objetivos complexos ao longo de semanas ou meses.</p>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">© 2025 FEI - Formação em Engenharia de Intenção</p>
       </div>
 
+      <!-- Conclusao -->
       <div class="bg-gradient-to-r from-nivel-3s to-orange-600 text-white rounded-xl p-8">
         <h2 class="text-3xl font-bold mb-4">Conclusao do Modulo</h2>
         <p class="text-lg mb-6">
-          Voce entendeu Loops Evolutivos - a capacidade que transforma agentes simples em sistemas verdadeiramente inteligentes.
+          Voce dominou os conceitos essenciais de Loops Evolutivos de Agentes no contexto de sistemas autonomos 2026.
         </p>
-        <div class="bg-white/10 backdrop-blur p-6 rounded-lg mb-6">
-          <h3 class="font-bold text-xl mb-2">O que voce dominou:</h3>
-          <ul class="space-y-2">
-            <li>7 formas que agentes evoluem autonomamente</li>
-            <li>O ciclo completo de evolucao (Executar → Medir → Analisar → Ajustar → Repetir)</li>
-            <li>Como sistemas aprendem sem intervencao humana</li>
-            <li>Por que loops evolutivos sao o coracao da ESIA</li>
-          </ul>
-        </div>
         <div class="flex gap-4">
-          <a href="nivel-3s-modulo-3.html" class="px-6 py-3 bg-neutral-200 dark:bg-neutral-700 rounded-lg font-semibold">
-            ← Módulo 3
-          </a>
-          <a href="nivel-3s-modulo-5.html" class="px-6 py-3 bg-nivel-3s text-white rounded-lg font-semibold">
-            Módulo 5 →
-          </a>
+          <a href="nivel-3s-modulo-3.html" class="px-6 py-3 bg-white text-nivel-3s rounded-lg font-semibold hover:bg-neutral-100">← Módulo 3</a>
+          <a href="nivel-3s-modulo-5.html" class="px-6 py-3 bg-nivel-3s text-white rounded-lg font-semibold hover:opacity-90">Módulo 5 →</a>
         </div>
       </div>
 
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-3 gap-8">
@@ -249,10 +967,10 @@
         <div>
           <h4 class="font-semibold text-white mb-4">Niveis</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="../niveis/nivel-1.html" class="hover:text-white">Nivel 1</a></li>
-            <li><a href="../niveis/nivel-2.html" class="hover:text-white">Nivel 2</a></li>
-            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Nivel 3A</a></li>
-            <li><a href="../niveis/nivel-3s.html" class="hover:text-white">Nivel 3S</a></li>
+            <li><a href="../niveis/nivel-1.html" class="hover:text-white">Nivel 1: Fundamentos</a></li>
+            <li><a href="../niveis/nivel-2.html" class="hover:text-white">Nivel 2: Programa Completo</a></li>
+            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Nivel 3A: Agentes</a></li>
+            <li><a href="../niveis/nivel-3s.html" class="hover:text-white">Nivel 3S: Sistemas 2026</a></li>
           </ul>
         </div>
         <div>
@@ -270,5 +988,13 @@
   </footer>
 
   <script src="../js/app.js"></script>
+  <script>
+    // Initialize syntax highlighting
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+      });
+    });
+  </script>
 </body>
 </html>

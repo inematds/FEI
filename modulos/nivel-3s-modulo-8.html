@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 8: Sistemas Autonomos para Negocios | FEI Nível 3S</title>
-  <meta name="description" content="Agencia de Marketing, Consultoria, Curso e Operacoes autonomas">
+  <title>Módulo 8: Sistemas Autônomos para Negócios (2026) | FEI Nível 3S</title>
+  <meta name="description" content="Sistemas intencionais aplicados a casos de uso reais.">
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -21,16 +25,40 @@
       }
     }
   </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Highlight.js for syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+
   <style>
-    body { font-family: 'Inter', sans-serif; }
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
   </style>
 </head>
-<body class="bg-neutral-50 dark:bg-neutral-900">
+<body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navigation -->
   <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
-        <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-3s bg-clip-text text-transparent">FEI</a>
+        <div class="flex items-center">
+          <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-3s bg-clip-text text-transparent">
+            FEI - Engenharia de Intencao
+          </a>
+        </div>
         <div class="hidden md:flex items-center space-x-8">
           <a href="../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-3s">Inicio</a>
           <a href="../niveis/nivel-3s.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-3s">Nivel 3S</a>
@@ -47,9 +75,10 @@
     </div>
   </nav>
 
+  <!-- Breadcrumb -->
   <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-      <nav class="flex text-sm">
+      <nav class="flex text-sm" aria-label="Breadcrumb">
         <a href="../index.html" class="text-nivel-3s hover:text-orange-700">Inicio</a>
         <span class="mx-2 text-neutral-400">/</span>
         <a href="../niveis/nivel-3s.html" class="text-nivel-3s hover:text-orange-700">Nivel 3S</a>
@@ -59,52 +88,1097 @@
     </div>
   </div>
 
-  <section class="bg-gradient-to-r from-nivel-3s to-orange-600 py-16 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-nivel-3s to-orange-600 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
       <div class="flex items-center gap-4 mb-4">
-        <span class="px-4 py-2 bg-red-500 rounded-full text-sm font-semibold">Estado da Arte 2026</span>
-        <span class="px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">Modulo 8</span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Modulo 8
+        </span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Nivel 3S - Sistemas Intencionais 2026
+        </span>
+        <span class="inline-block px-4 py-2 bg-white/30 rounded-full text-sm font-semibold">
+          Estado da Arte 2026
+        </span>
       </div>
-      <h1 class="text-4xl lg:text-5xl font-bold mb-4">Sistemas Autonomos para Negocios</h1>
-      <p class="text-xl">Agencia de Marketing, Consultoria, Curso e Operacoes autonomas</p>
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">
+        Sistemas Autônomos para Negócios (2026)
+      </h1>
+      <p class="text-xl text-white/90">
+        Sistemas intencionais aplicados a casos de uso reais.
+      </p>
     </div>
   </section>
 
-  <section class="py-12">
+  <!-- Content -->
+  <section class="py-12 bg-neutral-50 dark:bg-neutral-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Download Button -->
       <div class="flex justify-end mb-6">
-        <a href="../downloads/nivel-3s-modulo-8.md" download class="px-6 py-3 bg-nivel-3s text-white rounded-lg font-semibold hover:bg-orange-600">Download MD</a>
+        <a href="../downloads/nivel-3s-modulo-8.md" download class="px-6 py-3 bg-nivel-3s text-white rounded-lg font-semibold hover:bg-orange-600 inline-flex items-center gap-2">
+          <span>Download MD</span>
+        </a>
+      </div>
+
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Exemplos Reais de Sistemas Autônomos
+        </h2>
+        <p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">Sistemas intencionais aplicados a casos de uso reais.</p>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Sistema 1: Agência de Marketing Autônoma</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Missão:</strong> Criar e executar campanhas de marketing de alta conversão de forma autônoma.</p>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+from dataclasses import dataclass, field
+from typing import List, Dict, Optional
+from enum import Enum
+
+class StatusCampanha(Enum):
+    PESQUISA = &quot;pesquisando mercado&quot;
+    PLANEJAMENTO = &quot;planejando estratégia&quot;
+    CRIACAO = &quot;criando conteúdo&quot;
+    REVISAO = &quot;em revisão&quot;
+    APROVADO = &quot;aprovado&quot;
+    PUBLICADO = &quot;publicado&quot;
+
+@dataclass
+class AgentePesquisadorMercado:
+    &quot;&quot;&quot;Pesquisa público-alvo e concorrentes&quot;&quot;&quot;
+
+    def pesquisar_publico(self, nicho: str) -&gt; Dict:
+        &quot;&quot;&quot;Analisa público-alvo do nicho&quot;&quot;&quot;
+        return {
+            &quot;demografico&quot;: {
+                &quot;idade_media&quot;: &quot;25-45 anos&quot;,
+                &quot;genero&quot;: &quot;misto (55% M, 45% F)&quot;,
+                &quot;renda&quot;: &quot;média-alta&quot;,
+                &quot;educacao&quot;: &quot;superior completo&quot;
+            },
+            &quot;psicografico&quot;: {
+                &quot;dores&quot;: [&quot;falta de tempo&quot;, &quot;dificuldade técnica&quot;, &quot;medo de errar&quot;],
+                &quot;desejos&quot;: [&quot;autonomia&quot;, &quot;reconhecimento&quot;, &quot;liberdade&quot;],
+                &quot;objecoes&quot;: [&quot;preço&quot;, &quot;tempo necessário&quot;, &quot;complexidade&quot;]
+            },
+            &quot;comportamento&quot;: {
+                &quot;plataformas&quot;: [&quot;Instagram&quot;, &quot;LinkedIn&quot;, &quot;YouTube&quot;],
+                &quot;horario_pico&quot;: &quot;20h-22h&quot;,
+                &quot;formato_preferido&quot;: &quot;vídeos curtos + carrosséis&quot;
+            }
+        }
+
+    def analisar_concorrentes(self, nicho: str) -&gt; Dict:
+        &quot;&quot;&quot;Analisa principais concorrentes&quot;&quot;&quot;
+        return {
+            &quot;top_3_concorrentes&quot;: [
+                {
+                    &quot;nome&quot;: &quot;Concorrente A&quot;,
+                    &quot;pontos_fortes&quot;: [&quot;autoridade&quot;, &quot;comunidade&quot;],
+                    &quot;pontos_fracos&quot;: [&quot;preço alto&quot;, &quot;suporte lento&quot;],
+                    &quot;posicionamento&quot;: &quot;premium&quot;
+                },
+                {
+                    &quot;nome&quot;: &quot;Concorrente B&quot;,
+                    &quot;pontos_fortes&quot;: [&quot;preço acessível&quot;, &quot;conteúdo&quot;],
+                    &quot;pontos_fracos&quot;: [&quot;qualidade inferior&quot;, &quot;sem garantia&quot;],
+                    &quot;posicionamento&quot;: &quot;massivo&quot;
+                },
+                {
+                    &quot;nome&quot;: &quot;Concorrente C&quot;,
+                    &quot;pontos_fortes&quot;: [&quot;resultados comprovados&quot;, &quot;método único&quot;],
+                    &quot;pontos_fracos&quot;: [&quot;nicho muito específico&quot;, &quot;pouca presença&quot;],
+                    &quot;posicionamento&quot;: &quot;especialista&quot;
+                }
+            ],
+            &quot;gap_mercado&quot;: &quot;produtos premium com suporte ágil&quot;,
+            &quot;oportunidade&quot;: &quot;posicionar como premium acessível&quot;
+        }
+
+@dataclass
+class AgenteEstrategia:
+    &quot;&quot;&quot;Define estratégia da campanha&quot;&quot;&quot;
+
+    def criar_estrategia(self, pesquisa: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Cria estratégia baseada na pesquisa&quot;&quot;&quot;
+        return {
+            &quot;objetivo&quot;: &quot;geração de leads qualificados&quot;,
+            &quot;meta&quot;: &quot;500 leads/mês com conversão 3%&quot;,
+            &quot;posicionamento&quot;: &quot;premium acessível com suporte ágil&quot;,
+            &quot;angulo_principal&quot;: &quot;resultados rápidos com suporte dedicado&quot;,
+            &quot;canais&quot;: [
+                {&quot;canal&quot;: &quot;Instagram&quot;, &quot;budget&quot;: 0.4, &quot;foco&quot;: &quot;awareness&quot;},
+                {&quot;canal&quot;: &quot;LinkedIn&quot;, &quot;budget&quot;: 0.3, &quot;foco&quot;: &quot;conversão&quot;},
+                {&quot;canal&quot;: &quot;YouTube&quot;, &quot;budget&quot;: 0.3, &quot;foco&quot;: &quot;autoridade&quot;}
+            ],
+            &quot;funil&quot;: {
+                &quot;topo&quot;: &quot;conteúdo educativo gratuito&quot;,
+                &quot;meio&quot;: &quot;webinar + lead magnet&quot;,
+                &quot;fundo&quot;: &quot;consulta gratuita + oferta&quot;
+            }
+        }
+
+@dataclass
+class AgenteRoteirista:
+    &quot;&quot;&quot;Cria roteiros de conteúdo&quot;&quot;&quot;
+
+    def criar_roteiro_video(self, estrategia: Dict, duracao: int = 60) -&gt; Dict:
+        &quot;&quot;&quot;Cria roteiro para vídeo curto&quot;&quot;&quot;
+        return {
+            &quot;formato&quot;: &quot;problema-agitação-solução&quot;,
+            &quot;duracao_segundos&quot;: duracao,
+            &quot;estrutura&quot;: [
+                {
+                    &quot;secao&quot;: &quot;hook&quot;,
+                    &quot;tempo&quot;: &quot;0-3s&quot;,
+                    &quot;texto&quot;: &quot;Você está perdendo 80% dos seus leads por este erro...&quot;
+                },
+                {
+                    &quot;secao&quot;: &quot;problema&quot;,
+                    &quot;tempo&quot;: &quot;3-15s&quot;,
+                    &quot;texto&quot;: &quot;A maioria dos empreendedores gasta horas criando conteúdo, mas ninguém converte&quot;
+                },
+                {
+                    &quot;secao&quot;: &quot;agitacao&quot;,
+                    &quot;tempo&quot;: &quot;15-30s&quot;,
+                    &quot;texto&quot;: &quot;E quanto mais você tenta, pior fica. Você sabe o porquê?&quot;
+                },
+                {
+                    &quot;secao&quot;: &quot;solucao&quot;,
+                    &quot;tempo&quot;: &quot;30-50s&quot;,
+                    &quot;texto&quot;: &quot;Falta um sistema de intenção clara. Em vez de criar aleatório, use ESIA...&quot;
+                },
+                {
+                    &quot;secao&quot;: &quot;cta&quot;,
+                    &quot;tempo&quot;: &quot;50-60s&quot;,
+                    &quot;texto&quot;: &quot;Link na bio para aprender o método completo gratuitamente&quot;
+                }
+            ],
+            &quot;visual&quot;: &quot;talking head + b-roll de exemplos&quot;,
+            &quot;legenda&quot;: &quot;sim (85% assiste sem som)&quot;
+        }
+
+@dataclass
+class AgenteCopywriter:
+    &quot;&quot;&quot;Escreve copy persuasivo&quot;&quot;&quot;
+
+    def criar_copy_anuncio(self, estrategia: Dict, plataforma: str) -&gt; Dict:
+        &quot;&quot;&quot;Cria copy para anúncio&quot;&quot;&quot;
+        if plataforma == &quot;Instagram&quot;:
+            return {
+                &quot;headline&quot;: &quot;De 50 para 500 leads/mês em 90 dias&quot;,
+                &quot;body&quot;: &quot;&quot;&quot;Você não precisa de mais tráfego.
+
+Você precisa de um SISTEMA que converte o tráfego que você já tem.
+
+ESIA é a metodologia de 2026 que grandes players já usam:
+
+✓ Intenção clara em cada peça
+✓ Agentes trabalhando 24/7
+✓ Loops de melhoria contínua
+
+Resultado: 10x mais conversão com mesmo orçamento.
+
+Clique e pegue o guia gratuito 👇&quot;&quot;&quot;,
+                &quot;cta&quot;: &quot;Quero o Guia ESIA Gratuito&quot;,
+                &quot;imagem&quot;: &quot;antes/depois em números&quot;,
+                &quot;formato&quot;: &quot;carrossel de 5 slides&quot;
+            }
+        return {}
+
+@dataclass
+class AgenteEditor:
+    &quot;&quot;&quot;Revisa e ajusta conteúdo&quot;&quot;&quot;
+
+    def revisar_copy(self, copy: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Revisa copy e sugere melhorias&quot;&quot;&quot;
+        analise = {
+            &quot;clareza&quot;: 0.9,
+            &quot;urgencia&quot;: 0.8,
+            &quot;especificidade&quot;: 0.85,
+            &quot;prova_social&quot;: 0.7
+        }
+
+        sugestoes = []
+        if analise[&quot;prova_social&quot;] &lt; 0.8:
+            sugestoes.append(&quot;Adicionar número de alunos ou caso de sucesso&quot;)
+
+        return {
+            &quot;aprovado&quot;: all(v &gt;= 0.75 for v in analise.values()),
+            &quot;scores&quot;: analise,
+            &quot;sugestoes&quot;: sugestoes,
+            &quot;versao_editada&quot;: copy if not sugestoes else None
+        }
+
+@dataclass
+class AgenteAuditor:
+    &quot;&quot;&quot;Valida qualidade final&quot;&quot;&quot;
+
+    def auditar_campanha(self, campanha: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Auditoria completa pré-publicação&quot;&quot;&quot;
+        checklist = {
+            &quot;pesquisa_feita&quot;: True,
+            &quot;estrategia_clara&quot;: True,
+            &quot;conteudo_criado&quot;: True,
+            &quot;copy_revisado&quot;: True,
+            &quot;assets_prontos&quot;: True,
+            &quot;tracking_configurado&quot;: True,
+            &quot;budget_aprovado&quot;: False  # Requer aprovação humana
+        }
+
+        bloqueios = [k for k, v in checklist.items() if not v]
+
+        return {
+            &quot;pronto_publicar&quot;: len(bloqueios) == 0,
+            &quot;bloqueios&quot;: bloqueios,
+            &quot;requer_acao&quot;: &quot;aprovar budget&quot; if &quot;budget_aprovado&quot; in bloqueios else None
+        }
+
+@dataclass
+class AgenciaMarketingAutonoma:
+    &quot;&quot;&quot;Sistema completo de agência de marketing&quot;&quot;&quot;
+    pesquisador: AgentePesquisadorMercado
+    estrategista: AgenteEstrategia
+    roteirista: AgenteRoteirista
+    copywriter: AgenteCopywriter
+    editor: AgenteEditor
+    auditor: AgenteAuditor
+
+    def criar_campanha_completa(self, nicho: str, produto: str) -&gt; Dict:
+        &quot;&quot;&quot;Pipeline completo de criação de campanha&quot;&quot;&quot;
+
+        # 1. Pesquisa
+        pesquisa_publico = self.pesquisador.pesquisar_publico(nicho)
+        analise_concorrentes = self.pesquisador.analisar_concorrentes(nicho)
+
+        # 2. Estratégia
+        estrategia = self.estrategista.criar_estrategia({
+            &quot;publico&quot;: pesquisa_publico,
+            &quot;concorrentes&quot;: analise_concorrentes,
+            &quot;produto&quot;: produto
+        })
+
+        # 3. Conteúdo
+        roteiro_video = self.roteirista.criar_roteiro_video(estrategia)
+        copy_anuncio = self.copywriter.criar_copy_anuncio(estrategia, &quot;Instagram&quot;)
+
+        # 4. Revisão
+        revisao = self.editor.revisar_copy(copy_anuncio)
+
+        # 5. Auditoria
+        campanha = {
+            &quot;nicho&quot;: nicho,
+            &quot;estrategia&quot;: estrategia,
+            &quot;conteudo&quot;: {
+                &quot;video&quot;: roteiro_video,
+                &quot;anuncio&quot;: copy_anuncio
+            },
+            &quot;revisao&quot;: revisao
+        }
+
+        auditoria = self.auditor.auditar_campanha(campanha)
+
+        return {
+            &quot;campanha&quot;: campanha,
+            &quot;status&quot;: StatusCampanha.APROVADO if auditoria[&quot;pronto_publicar&quot;] else StatusCampanha.REVISAO,
+            &quot;auditoria&quot;: auditoria
+        }
+
+# Uso prático
+agencia = AgenciaMarketingAutonoma(
+    pesquisador=AgentePesquisadorMercado(),
+    estrategista=AgenteEstrategia(),
+    roteirista=AgenteRoteirista(),
+    copywriter=AgenteCopywriter(),
+    editor=AgenteEditor(),
+    auditor=AgenteAuditor()
+)
+
+campanha = agencia.criar_campanha_completa(
+    nicho=&quot;empreendedores digitais&quot;,
+    produto=&quot;Curso ESIA 2026&quot;
+)
+
+print(f&quot;Status: {campanha['status'].value}&quot;)
+print(f&quot;Auditoria: {campanha['auditoria']}&quot;)
+</code></pre>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Sistema 2: Consultoria Estratégica Autônoma</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Missão:</strong> Fornecer análises e recomendações estratégicas de alto nível.</p>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+from dataclasses import dataclass
+from typing import List, Dict
+from datetime import datetime, timedelta
+
+@dataclass
+class AgenteLeituraCenario:
+    &quot;&quot;&quot;Analisa cenário atual da empresa&quot;&quot;&quot;
+
+    def analisar_situacao_atual(self, dados_empresa: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Análise 360° da situação&quot;&quot;&quot;
+        return {
+            &quot;financeiro&quot;: {
+                &quot;receita_atual&quot;: dados_empresa.get(&quot;receita_mensal&quot;, 0),
+                &quot;crescimento_mes&quot;: &quot;+15%&quot;,
+                &quot;margem&quot;: &quot;35%&quot;,
+                &quot;burn_rate&quot;: &quot;sustentável&quot;,
+                &quot;runway&quot;: &quot;18 meses&quot;
+            },
+            &quot;operacional&quot;: {
+                &quot;eficiencia&quot;: 0.72,
+                &quot;gargalos&quot;: [&quot;contratação&quot;, &quot;processos manuais&quot;],
+                &quot;capacidade_atual&quot;: &quot;75%&quot;,
+                &quot;tempo_medio_entrega&quot;: &quot;5 dias&quot;
+            },
+            &quot;mercado&quot;: {
+                &quot;posicao&quot;: &quot;top 3 no nicho&quot;,
+                &quot;share_estimado&quot;: &quot;12%&quot;,
+                &quot;satisfacao_cliente&quot;: 4.3,
+                &quot;churn_mensal&quot;: &quot;3.5%&quot;
+            },
+            &quot;time&quot;: {
+                &quot;headcount&quot;: 12,
+                &quot;produtividade&quot;: &quot;alta&quot;,
+                &quot;gaps&quot;: [&quot;head de produto&quot;, &quot;CTO&quot;],
+                &quot;satisfacao&quot;: 8.1
+            }
+        }
+
+@dataclass
+class AgentePrevisaoTendencias:
+    &quot;&quot;&quot;Prevê tendências e cenários futuros&quot;&quot;&quot;
+
+    def prever_cenarios(self, situacao: Dict, horizonte_meses: int = 12) -&gt; Dict:
+        &quot;&quot;&quot;Gera 3 cenários: pessimista, base, otimista&quot;&quot;&quot;
+        return {
+            &quot;pessimista&quot;: {
+                &quot;probabilidade&quot;: 0.15,
+                &quot;receita_12m&quot;: situacao[&quot;financeiro&quot;][&quot;receita_atual&quot;] * 0.8,
+                &quot;eventos&quot;: [&quot;recessão&quot;, &quot;perda cliente chave&quot;],
+                &quot;acao_preventiva&quot;: &quot;reduzir custos 20%, diversificar clientes&quot;
+            },
+            &quot;base&quot;: {
+                &quot;probabilidade&quot;: 0.65,
+                &quot;receita_12m&quot;: situacao[&quot;financeiro&quot;][&quot;receita_atual&quot;] * 1.5,
+                &quot;eventos&quot;: [&quot;crescimento orgânico&quot;, &quot;mercado estável&quot;],
+                &quot;acao_recomendada&quot;: &quot;manter curso, contratar 2-3 pessoas&quot;
+            },
+            &quot;otimista&quot;: {
+                &quot;probabilidade&quot;: 0.20,
+                &quot;receita_12m&quot;: situacao[&quot;financeiro&quot;][&quot;receita_atual&quot;] * 3.0,
+                &quot;eventos&quot;: [&quot;viralização&quot;, &quot;parceria estratégica&quot;],
+                &quot;acao_necessaria&quot;: &quot;escalar rápido, captar investimento&quot;
+            },
+            &quot;tendencias_mercado&quot;: [
+                &quot;AI agêntica vai dominar (já começou)&quot;,
+                &quot;Automação de processos conhecidos (commodity em 2026)&quot;,
+                &quot;Sistemas intencionais = diferencial competitivo&quot;
+            ]
+        }
+
+@dataclass
+class AgenteModelagemRisco:
+    &quot;&quot;&quot;Modela riscos e probabilidades&quot;&quot;&quot;
+
+    def mapear_riscos(self, cenarios: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Identifica e quantifica riscos&quot;&quot;&quot;
+        return {
+            &quot;riscos_criticos&quot;: [
+                {
+                    &quot;risco&quot;: &quot;Dependência de cliente único&quot;,
+                    &quot;impacto&quot;: &quot;alto&quot;,
+                    &quot;probabilidade&quot;: 0.25,
+                    &quot;mitigacao&quot;: &quot;Diversificar base em 6 meses&quot;
+                },
+                {
+                    &quot;risco&quot;: &quot;Tecnologia se tornar obsoleta&quot;,
+                    &quot;impacto&quot;: &quot;médio&quot;,
+                    &quot;probabilidade&quot;: 0.40,
+                    &quot;mitigacao&quot;: &quot;Adotar ESIA e sistemas intencionais agora&quot;
+                },
+                {
+                    &quot;risco&quot;: &quot;Perda de talentos-chave&quot;,
+                    &quot;impacto&quot;: &quot;alto&quot;,
+                    &quot;probabilidade&quot;: 0.15,
+                    &quot;mitigacao&quot;: &quot;Documentar conhecimento, criar sucessão&quot;
+                }
+            ],
+            &quot;score_risco_geral&quot;: 6.2,  # de 0-10
+            &quot;nivel&quot;: &quot;médio-alto&quot;
+        }
+
+@dataclass
+class AgenteCriacaoPlano:
+    &quot;&quot;&quot;Cria plano estratégico&quot;&quot;&quot;
+
+    def elaborar_plano_estrategico(
+        self,
+        situacao: Dict,
+        cenarios: Dict,
+        riscos: Dict
+    ) -&gt; Dict:
+        &quot;&quot;&quot;Plano estratégico 12-24 meses&quot;&quot;&quot;
+        return {
+            &quot;visao_24m&quot;: &quot;Ser referência em sistemas intencionais para B2B&quot;,
+            &quot;objetivos_12m&quot;: [
+                &quot;Receita: 2x atual&quot;,
+                &quot;Clientes: de 15 para 50&quot;,
+                &quot;Time: de 12 para 20&quot;,
+                &quot;Churn: de 3.5% para 2%&quot;,
+                &quot;NPS: de 45 para 70&quot;
+            ],
+            &quot;iniciativas_estrategicas&quot;: [
+                {
+                    &quot;nome&quot;: &quot;Adoção ESIA Completa&quot;,
+                    &quot;prazo&quot;: &quot;Q1-Q2 2026&quot;,
+                    &quot;budget&quot;: &quot;15% da receita&quot;,
+                    &quot;impacto_esperado&quot;: &quot;+40% eficiência operacional&quot;
+                },
+                {
+                    &quot;nome&quot;: &quot;Expansão Base Clientes&quot;,
+                    &quot;prazo&quot;: &quot;Q1-Q4 2026&quot;,
+                    &quot;budget&quot;: &quot;20% da receita&quot;,
+                    &quot;impacto_esperado&quot;: &quot;35 novos clientes&quot;
+                },
+                {
+                    &quot;nome&quot;: &quot;Automação Interna&quot;,
+                    &quot;prazo&quot;: &quot;Q2-Q3 2026&quot;,
+                    &quot;budget&quot;: &quot;10% da receita&quot;,
+                    &quot;impacto_esperado&quot;: &quot;liberar 30% do tempo do time&quot;
+                }
+            ],
+            &quot;marcos_trimestrais&quot;: {
+                &quot;Q1&quot;: &quot;ESIA implementado + 10 novos clientes&quot;,
+                &quot;Q2&quot;: &quot;Automação 50% completa + receita 1.5x&quot;,
+                &quot;Q3&quot;: &quot;25 clientes ativos + team 18 pessoas&quot;,
+                &quot;Q4&quot;: &quot;50 clientes + receita 2x + NPS 70&quot;
+            }
+        }
+
+@dataclass
+class AgenteAnaliseAlternativas:
+    &quot;&quot;&quot;Compara alternativas estratégicas&quot;&quot;&quot;
+
+    def comparar_alternativas(self, plano: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Analisa diferentes caminhos&quot;&quot;&quot;
+        alternativas = [
+            {
+                &quot;nome&quot;: &quot;Crescimento Orgânico&quot;,
+                &quot;viabilidade&quot;: 0.9,
+                &quot;velocidade&quot;: &quot;média&quot;,
+                &quot;risco&quot;: &quot;baixo&quot;,
+                &quot;investimento&quot;: &quot;baixo&quot;,
+                &quot;retorno_24m&quot;: &quot;2x&quot;
+            },
+            {
+                &quot;nome&quot;: &quot;Crescimento com Investimento&quot;,
+                &quot;viabilidade&quot;: 0.6,
+                &quot;velocidade&quot;: &quot;alta&quot;,
+                &quot;risco&quot;: &quot;médio-alto&quot;,
+                &quot;investimento&quot;: &quot;alto&quot;,
+                &quot;retorno_24m&quot;: &quot;5x&quot;
+            },
+            {
+                &quot;nome&quot;: &quot;Parceria Estratégica&quot;,
+                &quot;viabilidade&quot;: 0.7,
+                &quot;velocidade&quot;: &quot;alta&quot;,
+                &quot;risco&quot;: &quot;médio&quot;,
+                &quot;investimento&quot;: &quot;médio&quot;,
+                &quot;retorno_24m&quot;: &quot;3x&quot;
+            }
+        ]
+
+        # Scoring ponderado
+        pesos = {&quot;viabilidade&quot;: 0.3, &quot;velocidade&quot;: 0.2, &quot;risco&quot;: 0.25, &quot;retorno&quot;: 0.25}
+
+        return {
+            &quot;alternativas&quot;: alternativas,
+            &quot;recomendada&quot;: &quot;Crescimento Orgânico&quot;,
+            &quot;justificativa&quot;: &quot;Maior viabilidade, risco controlado, retorno sólido&quot;
+        }
+
+@dataclass
+class AgenteRecomendacaoFinal:
+    &quot;&quot;&quot;Sintetiza e recomenda ações&quot;&quot;&quot;
+
+    def gerar_recomendacao_executiva(
+        self,
+        plano: Dict,
+        alternativas: Dict,
+        riscos: Dict
+    ) -&gt; Dict:
+        &quot;&quot;&quot;Recomendação final estruturada&quot;&quot;&quot;
+        return {
+            &quot;resumo_executivo&quot;: &quot;&quot;&quot;
+Empresa em posição sólida (crescimento 15%/mês, margem 35%, runway 18m).
+
+RECOMENDAÇÃO: Crescimento orgânico acelerado via ESIA.
+
+RACIONAL: Momento de mercado favorável, tecnologia madura, riscos mitigáveis.
+
+AÇÕES IMEDIATAS (30 dias):
+1. Implementar ESIA core (agentes de vendas + suporte)
+2. Contratar head de produto
+3. Iniciar automação processos manuais
+4. Lançar campanha captação 20 novos clientes
+
+RESULTADO ESPERADO 12M: Receita 2x, eficiência +40%, churn -1.5pp
+&quot;&quot;&quot;,
+            &quot;proximos_passos&quot;: [
+                {&quot;acao&quot;: &quot;Aprovar budget Q1&quot;, &quot;responsavel&quot;: &quot;CEO&quot;, &quot;prazo&quot;: &quot;7 dias&quot;},
+                {&quot;acao&quot;: &quot;Contratar consultoria ESIA&quot;, &quot;responsavel&quot;: &quot;CTO&quot;, &quot;prazo&quot;: &quot;15 dias&quot;},
+                {&quot;acao&quot;: &quot;Kickoff projeto automação&quot;, &quot;responsavel&quot;: &quot;COO&quot;, &quot;prazo&quot;: &quot;30 dias&quot;}
+            ],
+            &quot;kpis_acompanhamento&quot;: [
+                &quot;Receita mensal&quot;,
+                &quot;Número clientes ativos&quot;,
+                &quot;Churn mensal&quot;,
+                &quot;Eficiência operacional (%)&quot;,
+                &quot;NPS&quot;
+            ],
+            &quot;revisao_estrategia&quot;: &quot;trimestral com ajustes táticos mensais&quot;
+        }
+
+@dataclass
+class ConsultoriaEstrategicaAutonoma:
+    &quot;&quot;&quot;Sistema completo de consultoria&quot;&quot;&quot;
+    leitor: AgenteLeituraCenario
+    previsor: AgentePrevisaoTendencias
+    modelador: AgenteModelagemRisco
+    planejador: AgenteCriacaoPlano
+    analisador: AgenteAnaliseAlternativas
+    consultor: AgenteRecomendacaoFinal
+
+    def gerar_diagnostico_completo(self, dados_empresa: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Pipeline completo de consultoria estratégica&quot;&quot;&quot;
+
+        # 1. Leitura de cenário
+        situacao = self.leitor.analisar_situacao_atual(dados_empresa)
+
+        # 2. Previsão
+        cenarios = self.previsor.prever_cenarios(situacao)
+
+        # 3. Riscos
+        riscos = self.modelador.mapear_riscos(cenarios)
+
+        # 4. Plano
+        plano = self.planejador.elaborar_plano_estrategico(situacao, cenarios, riscos)
+
+        # 5. Alternativas
+        alternativas = self.analisador.comparar_alternativas(plano)
+
+        # 6. Recomendação
+        recomendacao = self.consultor.gerar_recomendacao_executiva(plano, alternativas, riscos)
+
+        return {
+            &quot;data_diagnostico&quot;: datetime.now().isoformat(),
+            &quot;situacao_atual&quot;: situacao,
+            &quot;cenarios_futuros&quot;: cenarios,
+            &quot;analise_riscos&quot;: riscos,
+            &quot;plano_estrategico&quot;: plano,
+            &quot;alternativas&quot;: alternativas,
+            &quot;recomendacao_final&quot;: recomendacao
+        }
+
+# Uso prático
+consultoria = ConsultoriaEstrategicaAutonoma(
+    leitor=AgenteLeituraCenario(),
+    previsor=AgentePrevisaoTendencias(),
+    modelador=AgenteModelagemRisco(),
+    planejador=AgenteCriacaoPlano(),
+    analisador=AgenteAnaliseAlternativas(),
+    consultor=AgenteRecomendacaoFinal()
+)
+
+diagnostico = consultoria.gerar_diagnostico_completo({
+    &quot;receita_mensal&quot;: 150000,
+    &quot;clientes&quot;: 15,
+    &quot;team_size&quot;: 12
+})
+
+print(f&quot;Recomendação:\n{diagnostico['recomendacao_final']['resumo_executivo']}&quot;)
+</code></pre>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Sistema 3: Criador de Curso Autônomo</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Missão:</strong> Criar cursos completos de alta qualidade de forma autônoma.</p>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+from dataclasses import dataclass
+from typing import List, Dict
+
+@dataclass
+class AgentePesquisadorConteudo:
+    &quot;&quot;&quot;Pesquisa e valida conteúdo&quot;&quot;&quot;
+
+    def pesquisar_tema(self, tema: str) -&gt; Dict:
+        &quot;&quot;&quot;Pesquisa profunda sobre tema&quot;&quot;&quot;
+        return {
+            &quot;tema&quot;: tema,
+            &quot;subtemas_essenciais&quot;: [
+                &quot;Fundamentos e conceitos&quot;,
+                &quot;Aplicações práticas&quot;,
+                &quot;Ferramentas e tecnologias&quot;,
+                &quot;Casos de uso reais&quot;,
+                &quot;Exercícios e projetos&quot;
+            ],
+            &quot;nivel_dificuldade&quot;: &quot;intermediário&quot;,
+            &quot;prerequisitos&quot;: [&quot;programação básica&quot;, &quot;lógica&quot;],
+            &quot;duracao_estimada&quot;: &quot;40 horas&quot;,
+            &quot;tendencias_mercado&quot;: &quot;alta demanda, mercado aquecido&quot;
+        }
+
+@dataclass
+class AgenteEstruturadorPedagogico:
+    &quot;&quot;&quot;Estrutura curso pedagogicamente&quot;&quot;&quot;
+
+    def criar_estrutura_curso(self, pesquisa: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Cria estrutura modular progressiva&quot;&quot;&quot;
+        return {
+            &quot;titulo_curso&quot;: f&quot;Dominando {pesquisa['tema']} - Do Zero ao Avançado&quot;,
+            &quot;modulos&quot;: [
+                {
+                    &quot;numero&quot;: 1,
+                    &quot;titulo&quot;: &quot;Fundamentos&quot;,
+                    &quot;objetivos&quot;: [&quot;Entender conceitos base&quot;, &quot;Configurar ambiente&quot;],
+                    &quot;aulas&quot;: 5,
+                    &quot;duracao_horas&quot;: 3,
+                    &quot;projeto&quot;: &quot;Primeiro programa funcional&quot;
+                },
+                {
+                    &quot;numero&quot;: 2,
+                    &quot;titulo&quot;: &quot;Conceitos Intermediários&quot;,
+                    &quot;objetivos&quot;: [&quot;Dominar estruturas&quot;, &quot;Aplicar padrões&quot;],
+                    &quot;aulas&quot;: 7,
+                    &quot;duracao_horas&quot;: 5,
+                    &quot;projeto&quot;: &quot;Sistema completo funcional&quot;
+                },
+                {
+                    &quot;numero&quot;: 3,
+                    &quot;titulo&quot;: &quot;Aplicações Avançadas&quot;,
+                    &quot;objetivos&quot;: [&quot;Arquiteturas complexas&quot;, &quot;Otimização&quot;],
+                    &quot;aulas&quot;: 8,
+                    &quot;duracao_horas&quot;: 6,
+                    &quot;projeto&quot;: &quot;Projeto real de portfólio&quot;
+                },
+                {
+                    &quot;numero&quot;: 4,
+                    &quot;titulo&quot;: &quot;Projeto Final&quot;,
+                    &quot;objetivos&quot;: [&quot;Integrar conhecimentos&quot;, &quot;Publicar projeto&quot;],
+                    &quot;aulas&quot;: 3,
+                    &quot;duracao_horas&quot;: 4,
+                    &quot;projeto&quot;: &quot;Aplicação completa deploy&quot;
+                }
+            ],
+            &quot;metodologia&quot;: &quot;aprenda fazendo + projetos reais&quot;,
+            &quot;avaliacao&quot;: &quot;projetos práticos + quizzes&quot;
+        }
+
+@dataclass
+class AgenteEscritorModulos:
+    &quot;&quot;&quot;Escreve conteúdo dos módulos&quot;&quot;&quot;
+
+    def escrever_modulo(self, estrutura_modulo: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Cria conteúdo completo do módulo&quot;&quot;&quot;
+        return {
+            &quot;modulo&quot;: estrutura_modulo[&quot;numero&quot;],
+            &quot;titulo&quot;: estrutura_modulo[&quot;titulo&quot;],
+            &quot;introducao&quot;: f&quot;&quot;&quot;
+# Módulo {estrutura_modulo['numero']}: {estrutura_modulo['titulo']}
+
+Neste módulo você vai dominar:
+{chr(10).join('- ' + obj for obj in estrutura_modulo['objetivos'])}
+
+Ao final, você terá construído: {estrutura_modulo['projeto']}
+&quot;&quot;&quot;,
+            &quot;aulas&quot;: [
+                {
+                    &quot;numero&quot;: i+1,
+                    &quot;titulo&quot;: f&quot;Aula {i+1}: Conceito {i+1}&quot;,
+                    &quot;conteudo&quot;: &quot;Explicação teórica + exemplos práticos + exercícios&quot;,
+                    &quot;codigo_exemplo&quot;: &quot;print('exemplo funcional')&quot;,
+                    &quot;exercicios&quot;: 3,
+                    &quot;duracao_min&quot;: 45
+                }
+                for i in range(estrutura_modulo[&quot;aulas&quot;])
+            ],
+            &quot;projeto_modulo&quot;: {
+                &quot;titulo&quot;: estrutura_modulo[&quot;projeto&quot;],
+                &quot;descricao&quot;: &quot;Projeto hands-on aplicando todos conceitos&quot;,
+                &quot;dificuldade&quot;: &quot;progressiva&quot;,
+                &quot;tempo_estimado&quot;: &quot;2-4 horas&quot;
+            },
+            &quot;quiz_final&quot;: {
+                &quot;questoes&quot;: 10,
+                &quot;nota_minima&quot;: 0.7,
+                &quot;tentativas&quot;: 3
+            }
+        }
+
+@dataclass
+class AgenteRevisorTecnico:
+    &quot;&quot;&quot;Revisa precisão técnica&quot;&quot;&quot;
+
+    def revisar_conteudo(self, modulo: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Valida correção técnica&quot;&quot;&quot;
+        issues = []
+
+        # Valida código de exemplo
+        for aula in modulo[&quot;aulas&quot;]:
+            if len(aula[&quot;codigo_exemplo&quot;]) &lt; 10:
+                issues.append(f&quot;Aula {aula['numero']}: código exemplo muito curto&quot;)
+
+        score_tecnico = 0.95 if len(issues) == 0 else 0.7
+
+        return {
+            &quot;aprovado&quot;: score_tecnico &gt;= 0.8,
+            &quot;score_tecnico&quot;: score_tecnico,
+            &quot;issues_encontrados&quot;: issues,
+            &quot;sugestoes&quot;: [
+                &quot;Adicionar mais exemplos práticos&quot;,
+                &quot;Incluir casos de erro comuns&quot;,
+                &quot;Expandir explicações de conceitos complexos&quot;
+            ] if issues else []
+        }
+
+@dataclass
+class AgentePadronizadorEstilo:
+    &quot;&quot;&quot;Padroniza linguagem e formatação&quot;&quot;&quot;
+
+    def padronizar_curso(self, modulos: List[Dict]) -&gt; Dict:
+        &quot;&quot;&quot;Garante consistência em todo curso&quot;&quot;&quot;
+        return {
+            &quot;padronizacoes_aplicadas&quot;: [
+                &quot;Tom: profissional e acessível&quot;,
+                &quot;Formato: markdown com code blocks&quot;,
+                &quot;Estrutura: teoria → exemplo → exercício&quot;,
+                &quot;Código: comentado e explicado&quot;,
+                &quot;Progressão: simples → complexo&quot;
+            ],
+            &quot;guia_estilo&quot;: {
+                &quot;voz&quot;: &quot;segunda pessoa (você)&quot;,
+                &quot;tempo_verbal&quot;: &quot;presente&quot;,
+                &quot;explicacoes&quot;: &quot;claras e diretas&quot;,
+                &quot;jargao&quot;: &quot;explicado na primeira vez&quot;,
+                &quot;exemplos&quot;: &quot;sempre do mundo real&quot;
+            },
+            &quot;score_consistencia&quot;: 0.92,
+            &quot;curso_padronizado&quot;: True
+        }
+
+@dataclass
+class CriadorCursoAutonomo:
+    &quot;&quot;&quot;Sistema completo de criação de curso&quot;&quot;&quot;
+    pesquisador: AgentePesquisadorConteudo
+    estruturador: AgenteEstruturadorPedagogico
+    escritor: AgenteEscritorModulos
+    revisor: AgenteRevisorTecnico
+    padronizador: AgentePadronizadorEstilo
+
+    def criar_curso_completo(self, tema: str) -&gt; Dict:
+        &quot;&quot;&quot;Pipeline completo de criação&quot;&quot;&quot;
+
+        # 1. Pesquisa
+        pesquisa = self.pesquisador.pesquisar_tema(tema)
+
+        # 2. Estruturação
+        estrutura = self.estruturador.criar_estrutura_curso(pesquisa)
+
+        # 3. Escrita
+        modulos = []
+        for mod_estrutura in estrutura[&quot;modulos&quot;]:
+            modulo = self.escritor.escrever_modulo(mod_estrutura)
+            revisao = self.revisor.revisar_conteudo(modulo)
+
+            modulos.append({
+                &quot;modulo&quot;: modulo,
+                &quot;revisao&quot;: revisao,
+                &quot;aprovado&quot;: revisao[&quot;aprovado&quot;]
+            })
+
+        # 4. Padronização
+        padronizacao = self.padronizador.padronizar_curso([m[&quot;modulo&quot;] for m in modulos])
+
+        return {
+            &quot;curso&quot;: {
+                &quot;titulo&quot;: estrutura[&quot;titulo_curso&quot;],
+                &quot;tema&quot;: tema,
+                &quot;estrutura&quot;: estrutura,
+                &quot;modulos&quot;: modulos,
+                &quot;padronizacao&quot;: padronizacao
+            },
+            &quot;metricas&quot;: {
+                &quot;total_modulos&quot;: len(modulos),
+                &quot;total_aulas&quot;: sum(m[&quot;modulo&quot;][&quot;aulas&quot;].__len__() for m in modulos),
+                &quot;duracao_total_horas&quot;: sum(m[&quot;numero&quot;] for m in estrutura[&quot;modulos&quot;]),
+                &quot;aprovacao_tecnica&quot;: all(m[&quot;aprovado&quot;] for m in modulos),
+                &quot;consistencia&quot;: padronizacao[&quot;score_consistencia&quot;]
+            },
+            &quot;pronto_publicar&quot;: all(m[&quot;aprovado&quot;] for m in modulos) and padronizacao[&quot;curso_padronizado&quot;]
+        }
+
+# Uso prático
+criador = CriadorCursoAutonomo(
+    pesquisador=AgentePesquisadorConteudo(),
+    estruturador=AgenteEstruturadorPedagogico(),
+    escritor=AgenteEscritorModulos(),
+    revisor=AgenteRevisorTecnico(),
+    padronizador=AgentePadronizadorEstilo()
+)
+
+curso = criador.criar_curso_completo(&quot;Sistemas Intencionais com ESIA&quot;)
+
+print(f&quot;Curso: {curso['curso']['titulo']}&quot;)
+print(f&quot;Módulos: {curso['metricas']['total_modulos']}&quot;)
+print(f&quot;Aulas: {curso['metricas']['total_aulas']}&quot;)
+print(f&quot;Pronto: {curso['pronto_publicar']}&quot;)
+</code></pre>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Sistema 4: Operações Empresariais Inteligentes</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Missão:</strong> Gerenciar e otimizar operações do dia a dia autonomamente.</p>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+from dataclasses import dataclass
+from typing import List, Dict
+from datetime import datetime
+
+@dataclass
+class AgentePlanejamentoEstrategico:
+    &quot;&quot;&quot;Planeja operações do trimestre&quot;&quot;&quot;
+
+    def planejar_trimestre(self, objetivos: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Cria plano operacional trimestral&quot;&quot;&quot;
+        return {
+            &quot;trimestre&quot;: &quot;Q1 2026&quot;,
+            &quot;objetivos_operacionais&quot;: [
+                {&quot;meta&quot;: &quot;Processar 1000 pedidos&quot;, &quot;atual&quot;: 650, &quot;gap&quot;: 350},
+                {&quot;meta&quot;: &quot;Reduzir SLA para 24h&quot;, &quot;atual&quot;: &quot;48h&quot;, &quot;gap&quot;: &quot;50%&quot;},
+                {&quot;meta&quot;: &quot;Satisfação 4.5/5&quot;, &quot;atual&quot;: 4.1, &quot;gap&quot;: 0.4}
+            ],
+            &quot;iniciativas&quot;: [
+                {
+                    &quot;nome&quot;: &quot;Automatizar processamento pedidos&quot;,
+                    &quot;impacto&quot;: &quot;+40% capacidade&quot;,
+                    &quot;prazo&quot;: &quot;6 semanas&quot;,
+                    &quot;recursos&quot;: &quot;2 devs + 1 product manager&quot;
+                },
+                {
+                    &quot;nome&quot;: &quot;Contratar 3 atendentes&quot;,
+                    &quot;impacto&quot;: &quot;reduzir SLA 50%&quot;,
+                    &quot;prazo&quot;: &quot;4 semanas&quot;,
+                    &quot;recursos&quot;: &quot;budget $15k/mês&quot;
+                }
+            ],
+            &quot;riscos&quot;: [&quot;atraso contratação&quot;, &quot;bugs automação&quot;],
+            &quot;plano_contingencia&quot;: &quot;overtime temporário se necessário&quot;
+        }
+
+@dataclass
+class AgenteMonitoramento:
+    &quot;&quot;&quot;Monitora operações em tempo real&quot;&quot;&quot;
+
+    def monitorar_metricas(self) -&gt; Dict:
+        &quot;&quot;&quot;Dashboard operacional em tempo real&quot;&quot;&quot;
+        return {
+            &quot;timestamp&quot;: datetime.now().isoformat(),
+            &quot;metricas_chave&quot;: {
+                &quot;pedidos_hoje&quot;: 45,
+                &quot;pedidos_processados&quot;: 42,
+                &quot;pedidos_pendentes&quot;: 3,
+                &quot;sla_medio_horas&quot;: 26,
+                &quot;satisfacao_hoje&quot;: 4.3,
+                &quot;incidentes_abertos&quot;: 2
+            },
+            &quot;alertas&quot;: [
+                {
+                    &quot;severidade&quot;: &quot;media&quot;,
+                    &quot;tipo&quot;: &quot;SLA em risco&quot;,
+                    &quot;detalhes&quot;: &quot;3 pedidos próximos de estourar 24h&quot;,
+                    &quot;acao_sugerida&quot;: &quot;priorizar processamento&quot;
+                }
+            ],
+            &quot;saude_geral&quot;: &quot;boa&quot;,
+            &quot;requer_atencao&quot;: [&quot;SLA em risco&quot;]
+        }
+
+@dataclass
+class AgenteCorrecaoDesvios:
+    &quot;&quot;&quot;Detecta e corrige desvios automaticamente&quot;&quot;&quot;
+
+    def analisar_desvios(self, monitoramento: Dict, plano: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Identifica desvios e propõe correções&quot;&quot;&quot;
+        desvios = []
+
+        # Compara real vs planejado
+        if monitoramento[&quot;metricas_chave&quot;][&quot;sla_medio_horas&quot;] &gt; 24:
+            desvios.append({
+                &quot;metrica&quot;: &quot;SLA&quot;,
+                &quot;esperado&quot;: 24,
+                &quot;real&quot;: monitoramento[&quot;metricas_chave&quot;][&quot;sla_medio_horas&quot;],
+                &quot;desvio_percentual&quot;: &quot;+8%&quot;,
+                &quot;acao_corretiva&quot;: &quot;Alocar 1 atendente extra temporariamente&quot;
+            })
+
+        return {
+            &quot;desvios_encontrados&quot;: len(desvios),
+            &quot;desvios&quot;: desvios,
+            &quot;acoes_automaticas&quot;: [
+                &quot;Realocação temporária de recursos&quot;,
+                &quot;Notificação para supervisor&quot;
+            ],
+            &quot;acoes_requerem_aprovacao&quot;: [
+                &quot;Overtime para equipe&quot;
+            ]
+        }
+
+    def aplicar_correcoes_auto(self, correcoes: List[Dict]) -&gt; Dict:
+        &quot;&quot;&quot;Aplica correções que não requerem aprovação&quot;&quot;&quot;
+        aplicadas = 0
+        for correcao in correcoes:
+            if correcao.get(&quot;automatica&quot;, False):
+                # Aplica correção
+                aplicadas += 1
+
+        return {
+            &quot;correcoes_aplicadas&quot;: aplicadas,
+            &quot;status&quot;: &quot;corrigido&quot; if aplicadas &gt; 0 else &quot;sem_acao&quot;,
+            &quot;timestamp&quot;: datetime.now().isoformat()
+        }
+
+@dataclass
+class AgenteAutomacaoProcessos:
+    &quot;&quot;&quot;Identifica e automatiza processos repetitivos&quot;&quot;&quot;
+
+    def identificar_oportunidades(self, dados_operacao: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Encontra processos automatizáveis&quot;&quot;&quot;
+        return {
+            &quot;processos_candidatos&quot;: [
+                {
+                    &quot;processo&quot;: &quot;Validação de pedidos&quot;,
+                    &quot;frequencia_dia&quot;: 45,
+                    &quot;tempo_manual_min&quot;: 15,
+                    &quot;economia_potencial_horas_mes&quot;: 337.5,
+                    &quot;complexidade_automacao&quot;: &quot;baixa&quot;,
+                    &quot;roi_meses&quot;: 2
+                },
+                {
+                    &quot;processo&quot;: &quot;Envio de notificações&quot;,
+                    &quot;frequencia_dia&quot;: 120,
+                    &quot;tempo_manual_min&quot;: 3,
+                    &quot;economia_potencial_horas_mes&quot;: 180,
+                    &quot;complexidade_automacao&quot;: &quot;muito baixa&quot;,
+                    &quot;roi_meses&quot;: 1
+                },
+                {
+                    &quot;processo&quot;: &quot;Relatórios semanais&quot;,
+                    &quot;frequencia_semana&quot;: 5,
+                    &quot;tempo_manual_min&quot;: 45,
+                    &quot;economia_potencial_horas_mes&quot;: 15,
+                    &quot;complexidade_automacao&quot;: &quot;média&quot;,
+                    &quot;roi_meses&quot;: 3
+                }
+            ],
+            &quot;recomendacao&quot;: &quot;Começar por 'Envio de notificações' (ROI mais rápido)&quot;,
+            &quot;economia_total_potencial_horas_ano&quot;: 6390
+        }
+
+@dataclass
+class OperacoesEmpresariaisInteligentes:
+    &quot;&quot;&quot;Sistema completo de operações&quot;&quot;&quot;
+    planejador: AgentePlanejamentoEstrategico
+    monitor: AgenteMonitoramento
+    corretor: AgenteCorrecaoDesvios
+    automatizador: AgenteAutomacaoProcessos
+
+    def executar_ciclo_operacional(self, objetivos_trimestre: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Ciclo completo: Planejar → Monitorar → Corrigir → Automatizar&quot;&quot;&quot;
+
+        # 1. Planejamento
+        plano = self.planejador.planejar_trimestre(objetivos_trimestre)
+
+        # 2. Monitoramento
+        situacao_atual = self.monitor.monitorar_metricas()
+
+        # 3. Correção de desvios
+        analise_desvios = self.corretor.analisar_desvios(situacao_atual, plano)
+
+        if analise_desvios[&quot;desvios_encontrados&quot;] &gt; 0:
+            correcoes = self.corretor.aplicar_correcoes_auto(analise_desvios[&quot;desvios&quot;])
+        else:
+            correcoes = {&quot;correcoes_aplicadas&quot;: 0}
+
+        # 4. Oportunidades de automação
+        oportunidades = self.automatizador.identificar_oportunidades(situacao_atual)
+
+        return {
+            &quot;data_ciclo&quot;: datetime.now().isoformat(),
+            &quot;plano_trimestral&quot;: plano,
+            &quot;situacao_atual&quot;: situacao_atual,
+            &quot;desvios_e_correcoes&quot;: {
+                &quot;analise&quot;: analise_desvios,
+                &quot;correcoes_aplicadas&quot;: correcoes
+            },
+            &quot;automacao&quot;: oportunidades,
+            &quot;saude_operacional&quot;: self._calcular_saude(situacao_atual, analise_desvios)
+        }
+
+    def _calcular_saude(self, situacao: Dict, desvios: Dict) -&gt; str:
+        &quot;&quot;&quot;Calcula saúde operacional geral&quot;&quot;&quot;
+        if desvios[&quot;desvios_encontrados&quot;] == 0:
+            return &quot;excelente&quot;
+        elif desvios[&quot;desvios_encontrados&quot;] &lt;= 2:
+            return &quot;boa&quot;
+        elif desvios[&quot;desvios_encontrados&quot;] &lt;= 4:
+            return &quot;atencao&quot;
+        else:
+            return &quot;critica&quot;
+
+# Uso prático
+operacoes = OperacoesEmpresariaisInteligentes(
+    planejador=AgentePlanejamentoEstrategico(),
+    monitor=AgenteMonitoramento(),
+    corretor=AgenteCorrecaoDesvios(),
+    automatizador=AgenteAutomacaoProcessos()
+)
+
+ciclo = operacoes.executar_ciclo_operacional({
+    &quot;receita_meta&quot;: 500000,
+    &quot;pedidos_meta&quot;: 1000,
+    &quot;sla_meta&quot;: 24
+})
+
+print(f&quot;Saúde Operacional: {ciclo['saude_operacional']}&quot;)
+print(f&quot;Desvios: {ciclo['desvios_e_correcoes']['analise']['desvios_encontrados']}&quot;)
+print(f&quot;Automações possíveis: {len(ciclo['automacao']['processos_candidatos'])}&quot;)
+</code></pre>
       </div>
 
       <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
-        <h2 class="text-3xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">Conteudo do Modulo 8</h2>
-        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
-          Este modulo cobre <strong>Sistemas Autonomos para Negocios</strong> - um dos pilares fundamentais da Engenharia de Sistemas Intencionais Autonomos (ESIA) em 2026.
-        </p>
-        <div class="bg-nivel-3s/10 border-l-4 border-nivel-3s p-6 rounded-lg">
-          <h3 class="font-bold text-nivel-3s mb-2">O que voce vai dominar:</h3>
-          <p class="text-neutral-700 dark:text-neutral-300">Agencia de Marketing, Consultoria, Curso e Operacoes autonomas</p>
-        </div>
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Conclusão: De Teoria à Prática
+        </h2>
+        <p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">Você acabou de ver 4 sistemas autônomos completos funcionando.</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Cada um demonstra:</p>
+<li class="mb-2">Múltiplos agentes especializados trabalhando juntos</li>
+<li class="mb-2">Pipelines de decisão automatizados</li>
+<li class="mb-2">Validação e auditoria em cada etapa</li>
+<li class="mb-2">Correção automática de problemas</li>
+<li class="mb-2">Escalação para humanos quando necessário</li>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">Isso não é ficção. É padrão 2026.</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Empresas que implementarem esses sistemas terão vantagem competitiva impossível de alcançar com métodos tradicionais.</p>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">© 2025 FEI - Formação em Engenharia de Intenção</p>
       </div>
 
+      <!-- Conclusao -->
       <div class="bg-gradient-to-r from-nivel-3s to-orange-600 text-white rounded-xl p-8">
         <h2 class="text-3xl font-bold mb-4">Conclusao do Modulo</h2>
         <p class="text-lg mb-6">
-          Voce dominou os conceitos essenciais de Sistemas Autonomos para Negocios no contexto de sistemas autonomos 2026.
+          Voce dominou os conceitos essenciais de Sistemas Autônomos para Negócios (2026) no contexto de sistemas autonomos 2026.
         </p>
         <div class="flex gap-4">
-          <a href="nivel-3s-modulo-7.html" class="px-6 py-3 bg-neutral-200 dark:bg-neutral-700 rounded-lg font-semibold">
-            ← Módulo 7
-          </a>
-          <a href="nivel-3s-modulo-9.html" class="px-6 py-3 bg-nivel-3s text-white rounded-lg font-semibold">
-            Módulo 9 →
-          </a>
+          <a href="nivel-3s-modulo-7.html" class="px-6 py-3 bg-white text-nivel-3s rounded-lg font-semibold hover:bg-neutral-100">← Módulo 7</a>
+          <a href="nivel-3s-modulo-9.html" class="px-6 py-3 bg-nivel-3s text-white rounded-lg font-semibold hover:opacity-90">Módulo 9 →</a>
         </div>
       </div>
 
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-3 gap-8">
@@ -115,10 +1189,10 @@
         <div>
           <h4 class="font-semibold text-white mb-4">Niveis</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="../niveis/nivel-1.html" class="hover:text-white">Nivel 1</a></li>
-            <li><a href="../niveis/nivel-2.html" class="hover:text-white">Nivel 2</a></li>
-            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Nivel 3A</a></li>
-            <li><a href="../niveis/nivel-3s.html" class="hover:text-white">Nivel 3S</a></li>
+            <li><a href="../niveis/nivel-1.html" class="hover:text-white">Nivel 1: Fundamentos</a></li>
+            <li><a href="../niveis/nivel-2.html" class="hover:text-white">Nivel 2: Programa Completo</a></li>
+            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Nivel 3A: Agentes</a></li>
+            <li><a href="../niveis/nivel-3s.html" class="hover:text-white">Nivel 3S: Sistemas 2026</a></li>
           </ul>
         </div>
         <div>
@@ -136,5 +1210,13 @@
   </footer>
 
   <script src="../js/app.js"></script>
+  <script>
+    // Initialize syntax highlighting
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+      });
+    });
+  </script>
 </body>
 </html>

@@ -4,8 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Módulo 6: Sistemas Multiagentes (2026) | FEI Nível 3S</title>
-  <meta name="description" content="Pipeline, Forca-Tarefa, Hierarquia e Consciencia Distribuida">
+  <meta name="description" content="Em 2026, existem **4 arquiteturas fundamentais** para coordenar múltiplos agentes. Cada uma tem vantagens específicas e casos de uso ideais.">
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -21,16 +25,40 @@
       }
     }
   </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Highlight.js for syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+
   <style>
-    body { font-family: 'Inter', sans-serif; }
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
   </style>
 </head>
-<body class="bg-neutral-50 dark:bg-neutral-900">
+<body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navigation -->
   <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
-        <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-3s bg-clip-text text-transparent">FEI</a>
+        <div class="flex items-center">
+          <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-3s bg-clip-text text-transparent">
+            FEI - Engenharia de Intencao
+          </a>
+        </div>
         <div class="hidden md:flex items-center space-x-8">
           <a href="../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-3s">Inicio</a>
           <a href="../niveis/nivel-3s.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-3s">Nivel 3S</a>
@@ -47,9 +75,10 @@
     </div>
   </nav>
 
+  <!-- Breadcrumb -->
   <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-      <nav class="flex text-sm">
+      <nav class="flex text-sm" aria-label="Breadcrumb">
         <a href="../index.html" class="text-nivel-3s hover:text-orange-700">Inicio</a>
         <span class="mx-2 text-neutral-400">/</span>
         <a href="../niveis/nivel-3s.html" class="text-nivel-3s hover:text-orange-700">Nivel 3S</a>
@@ -59,52 +88,589 @@
     </div>
   </div>
 
-  <section class="bg-gradient-to-r from-nivel-3s to-orange-600 py-16 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-nivel-3s to-orange-600 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
       <div class="flex items-center gap-4 mb-4">
-        <span class="px-4 py-2 bg-red-500 rounded-full text-sm font-semibold">Estado da Arte 2026</span>
-        <span class="px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">Modulo 6</span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Modulo 6
+        </span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Nivel 3S - Sistemas Intencionais 2026
+        </span>
+        <span class="inline-block px-4 py-2 bg-white/30 rounded-full text-sm font-semibold">
+          Estado da Arte 2026
+        </span>
       </div>
-      <h1 class="text-4xl lg:text-5xl font-bold mb-4">Sistemas Multiagentes (2026)</h1>
-      <p class="text-xl">Pipeline, Forca-Tarefa, Hierarquia e Consciencia Distribuida</p>
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">
+        Sistemas Multiagentes (2026)
+      </h1>
+      <p class="text-xl text-white/90">
+        Em 2026, existem **4 arquiteturas fundamentais** para coordenar múltiplos agentes. Cada uma tem vantagens específicas e casos de uso ideais.
+      </p>
     </div>
   </section>
 
-  <section class="py-12">
+  <!-- Content -->
+  <section class="py-12 bg-neutral-50 dark:bg-neutral-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Download Button -->
       <div class="flex justify-end mb-6">
-        <a href="../downloads/nivel-3s-modulo-6.md" download class="px-6 py-3 bg-nivel-3s text-white rounded-lg font-semibold hover:bg-orange-600">Download MD</a>
+        <a href="../downloads/nivel-3s-modulo-6.md" download class="px-6 py-3 bg-nivel-3s text-white rounded-lg font-semibold hover:bg-orange-600 inline-flex items-center gap-2">
+          <span>Download MD</span>
+        </a>
+      </div>
+
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Os Quatro Modelos que Dominam 2026
+        </h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-4">Em 2026, existem <strong>4 arquiteturas fundamentais</strong> para coordenar múltiplos agentes. Cada uma tem vantagens específicas e casos de uso ideais.</p>
       </div>
 
       <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
-        <h2 class="text-3xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">Conteudo do Modulo 6</h2>
-        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
-          Este modulo cobre <strong>Sistemas Multiagentes (2026)</strong> - um dos pilares fundamentais da Engenharia de Sistemas Intencionais Autonomos (ESIA) em 2026.
-        </p>
-        <div class="bg-nivel-3s/10 border-l-4 border-nivel-3s p-6 rounded-lg">
-          <h3 class="font-bold text-nivel-3s mb-2">O que voce vai dominar:</h3>
-          <p class="text-neutral-700 dark:text-neutral-300">Pipeline, Forca-Tarefa, Hierarquia e Consciencia Distribuida</p>
-        </div>
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Modelo 1: Pipeline Inteligente
+        </h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Conceito:</strong> Cada agente passa para o próximo com validação interna. Processo sequencial otimizado.</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Quando usar:</strong> Tarefas que têm dependências claras e sequenciais</p>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">Implementação:</p>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+from dataclasses import dataclass
+from typing import List, Dict, Callable
+from datetime import datetime
+
+@dataclass
+class ResultadoPipeline:
+    sucesso: bool
+    dados: Dict
+    validado: bool
+    etapa: str
+    timestamp: str
+
+class AgentePipeline:
+    &quot;&quot;&quot;Agente base para pipelines&quot;&quot;&quot;
+
+    def __init__(self, nome: str):
+        self.nome = nome
+
+    def executar(self, entrada: Dict) -&gt; Result adoPipeline:
+        # Processa entrada
+        resultado = self._processar(entrada)
+
+        # Valida saída
+        validado = self._validar(resultado)
+
+        return ResultadoPipeline(
+            sucesso=validado,
+            dados=resultado,
+            validado=validado,
+            etapa=self.nome,
+            timestamp=datetime.now().isoformat()
+        )
+
+    def _processar(self, entrada: Dict) -&gt; Dict:
+        raise NotImplementedError
+
+    def _validar(self, resultado: Dict) -&gt; bool:
+        raise NotImplementedError
+
+class PipelineInteligente:
+    &quot;&quot;&quot;Orquestra agentes em sequência&quot;&quot;&quot;
+
+    def __init__(self, nome: str):
+        self.nome = nome
+        self.agentes: List[AgentePipeline] = []
+        self.historico_execucoes: List[Dict] = []
+
+    def adicionar_agente(self, agente: AgentePipeline):
+        &quot;&quot;&quot;Adiciona agente ao pipeline&quot;&quot;&quot;
+        self.agentes.append(agente)
+
+    def executar(self, entrada_inicial: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Executa pipeline completo&quot;&quot;&quot;
+        resultado_atual = entrada_inicial
+        resultados_etapas = []
+
+        for i, agente in enumerate(self.agentes):
+            resultado = agente.executar(resultado_atual)
+            resultados_etapas.append(resultado)
+
+            if not resultado.sucesso:
+                return {
+                    &quot;status&quot;: &quot;falhou&quot;,
+                    &quot;etapa_falha&quot;: agente.nome,
+                    &quot;etapa_numero&quot;: i + 1,
+                    &quot;resultados_parciais&quot;: resultados_etapas
+                }
+
+            # Próximo agente recebe saída do anterior
+            resultado_atual = resultado.dados
+
+        self.historico_execucoes.append({
+            &quot;entrada&quot;: entrada_inicial,
+            &quot;saida&quot;: resultado_atual,
+            &quot;etapas&quot;: len(self.agentes),
+            &quot;timestamp&quot;: datetime.now().isoformat()
+        })
+
+        return {
+            &quot;status&quot;: &quot;sucesso&quot;,
+            &quot;resultado_final&quot;: resultado_atual,
+            &quot;total_etapas&quot;: len(self.agentes),
+            &quot;resultados_detalhados&quot;: resultados_etapas
+        }
+
+# Agentes concretos
+class AgentePesquisador(AgentePipeline):
+    def _processar(self, entrada: Dict) -&gt; Dict:
+        return {
+            **entrada,
+            &quot;fontes&quot;: [&quot;fonte1&quot;, &quot;fonte2&quot;, &quot;fonte3&quot;],
+            &quot;dados_pesquisados&quot;: &quot;Dados sobre &quot; + entrada.get(&quot;topico&quot;, &quot;&quot;)
+        }
+
+    def _validar(self, resultado: Dict) -&gt; bool:
+        return &quot;fontes&quot; in resultado and len(resultado[&quot;fontes&quot;]) &gt; 0
+
+class AgenteAnalisador(AgentePipeline):
+    def _processar(self, entrada: Dict) -&gt; Dict:
+        return {
+            **entrada,
+            &quot;insights&quot;: [&quot;insight1&quot;, &quot;insight2&quot;],
+            &quot;analise_completa&quot;: True
+        }
+
+    def _validar(self, resultado: Dict) -&gt; bool:
+        return resultado.get(&quot;analise_completa&quot;, False)
+
+class AgenteRedator(AgentePipeline):
+    def _processar(self, entrada: Dict) -&gt; Dict:
+        return {
+            **entrada,
+            &quot;conteudo&quot;: f&quot;Artigo sobre {entrada.get('topico', '')} baseado em {len(entrada.get('insights', []))} insights&quot;
+        }
+
+    def _validar(self, resultado: Dict) -&gt; bool:
+        return &quot;conteudo&quot; in resultado and len(resultado[&quot;conteudo&quot;]) &gt; 50
+
+# Exemplo de uso
+pipeline = PipelineInteligente(&quot;Criação de Conteúdo&quot;)
+pipeline.adicionar_agente(AgentePesquisador(&quot;Pesquisa&quot;))
+pipeline.adicionar_agente(AgenteAnalisador(&quot;Análise&quot;))
+pipeline.adicionar_agente(AgenteRedator(&quot;Redação&quot;))
+
+resultado = pipeline.executar({&quot;topico&quot;: &quot;IA em 2026&quot;})
+print(f&quot;Pipeline: {resultado['status']}&quot;)
+print(f&quot;Etapas: {resultado['total_etapas']}&quot;)
+</code></pre>
       </div>
 
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Modelo 2: Força-Tarefa Paralela
+        </h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Conceito:</strong> Agentes trabalham simultaneamente e depois integram resultados. Maximiza velocidade.</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Quando usar:</strong> Tarefas independentes que podem ser paralelizadas</p>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from typing import Callable
+
+class AgenteParalelo:
+    &quot;&quot;&quot;Agente que pode executar em paralelo&quot;&quot;&quot;
+
+    def __init__(self, nome: str, funcao: Callable):
+        self.nome = nome
+        self.funcao = funcao
+
+    def executar(self, entrada: Dict) -&gt; Dict:
+        resultado = self.funcao(entrada)
+        return {
+            &quot;agente&quot;: self.nome,
+            &quot;resultado&quot;: resultado,
+            &quot;timestamp&quot;: datetime.now().isoformat()
+        }
+
+class ForcaTarefaParalela:
+    &quot;&quot;&quot;Executa múltiplos agentes em paralelo&quot;&quot;&quot;
+
+    def __init__(self, max_workers: int = 5):
+        self.agentes: List[AgenteParalelo] = []
+        self.max_workers = max_workers
+
+    def adicionar_agente(self, agente: AgenteParalelo):
+        self.agentes.append(agente)
+
+    def executar_paralelo(self, entrada: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Executa todos os agentes em paralelo&quot;&quot;&quot;
+        resultados = []
+
+        with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
+            # Submete todas as tarefas
+            futures = {
+                executor.submit(agente.executar, entrada): agente
+                for agente in self.agentes
+            }
+
+            # Coleta resultados conforme completam
+            for future in as_completed(futures):
+                agente = futures[future]
+                try:
+                    resultado = future.result()
+                    resultados.append(resultado)
+                except Exception as e:
+                    resultados.append({
+                        &quot;agente&quot;: agente.nome,
+                        &quot;erro&quot;: str(e),
+                        &quot;sucesso&quot;: False
+                    })
+
+        return {
+            &quot;status&quot;: &quot;completo&quot;,
+            &quot;total_agentes&quot;: len(self.agentes),
+            &quot;resultados_individuais&quot;: resultados,
+            &quot;resultado_integrado&quot;: self._integrar_resultados(resultados)
+        }
+
+    def _integrar_resultados(self, resultados: List[Dict]) -&gt; Dict:
+        &quot;&quot;&quot;Integra resultados de múltiplos agentes&quot;&quot;&quot;
+        integrado = {
+            &quot;total_contribuicoes&quot;: len(resultados),
+            &quot;dados_consolidados&quot;: {}
+        }
+
+        for r in resultados:
+            if &quot;resultado&quot; in r:
+                integrado[&quot;dados_consolidados&quot;][r[&quot;agente&quot;]] = r[&quot;resultado&quot;]
+
+        return integrado
+
+# Exemplo
+forcaTarefa = ForcaTarefaParalela()
+
+# Adiciona agentes que pesquisam tópicos diferentes
+forcaTarefa.adicionar_agente(AgenteParalelo(
+    &quot;Pesquisador Tech&quot;,
+    lambda x: {&quot;topico&quot;: &quot;Tecnologia&quot;, &quot;fontes&quot;: 15}
+))
+
+forcaTarefa.adicionar_agente(AgenteParalelo(
+    &quot;Pesquisador Mercado&quot;,
+    lambda x: {&quot;topico&quot;: &quot;Mercado&quot;, &quot;tendencias&quot;: 8}
+))
+
+forcaTarefa.adicionar_agente(AgenteParalelo(
+    &quot;Pesquisador Educação&quot;,
+    lambda x: {&quot;topico&quot;: &quot;Educação&quot;, &quot;casos&quot;: 12}
+))
+
+resultado = forcaTarefa.executar_paralelo({&quot;contexto&quot;: &quot;IA 2026&quot;})
+print(f&quot;Força-Tarefa: {resultado['total_agentes']} agentes executados em paralelo&quot;)
+</code></pre>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Modelo 3: Hierarquia
+        </h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Conceito:</strong> Agente "chefão" gerencia sub-agentes. Coordenação centralizada.</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Quando usar:</strong> Projetos complexos que precisam de coordenação central</p>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+class AgenteSubordinado:
+    &quot;&quot;&quot;Agente que responde a um supervisor&quot;&quot;&quot;
+
+    def __init__(self, nome: str, especialidade: str):
+        self.nome = nome
+        self.especialidade = especialidade
+        self.tarefas_completas = 0
+
+    def executar_tarefa(self, tarefa: Dict) -&gt; Dict:
+        self.tarefas_completas += 1
+        return {
+            &quot;agente&quot;: self.nome,
+            &quot;tarefa&quot;: tarefa,
+            &quot;status&quot;: &quot;completo&quot;,
+            &quot;especialidade_utilizada&quot;: self.especialidade
+        }
+
+class AgenteSupervisor:
+    &quot;&quot;&quot;Agente supervisor que coordena subordinados&quot;&quot;&quot;
+
+    def __init__(self, nome: str):
+        self.nome = nome
+        self.subordinados: Dict[str, AgenteSubordinado] = {}
+        self.tarefas_delegadas = []
+
+    def adicionar_subordinado(self, agente: AgenteSubordinado):
+        self.subordinados[agente.nome] = agente
+
+    def delegar_tarefa(self, tarefa: Dict, agente_nome: str) -&gt; Dict:
+        &quot;&quot;&quot;Delega tarefa para subordinado específico&quot;&quot;&quot;
+        if agente_nome not in self.subordinados:
+            return {&quot;erro&quot;: f&quot;Agente {agente_nome} não encontrado&quot;}
+
+        agente = self.subordinados[agente_nome]
+        resultado = agente.executar_tarefa(tarefa)
+
+        self.tarefas_delegadas.append({
+            &quot;tarefa&quot;: tarefa,
+            &quot;agente&quot;: agente_nome,
+            &quot;resultado&quot;: resultado,
+            &quot;timestamp&quot;: datetime.now().isoformat()
+        })
+
+        return resultado
+
+    def orquestrar_projeto(self, projeto: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Orquestra projeto completo distribuindo tarefas&quot;&quot;&quot;
+        tarefas = projeto.get(&quot;tarefas&quot;, [])
+        resultados = []
+
+        for tarefa in tarefas:
+            # Seleciona agente baseado em especialidade
+            agente_selecionado = self._selecionar_agente(tarefa)
+
+            if agente_selecionado:
+                resultado = self.delegar_tarefa(tarefa, agente_selecionado.nome)
+                resultados.append(resultado)
+
+        return {
+            &quot;projeto&quot;: projeto.get(&quot;nome&quot;),
+            &quot;total_tarefas&quot;: len(tarefas),
+            &quot;resultados&quot;: resultados,
+            &quot;supervisor&quot;: self.nome
+        }
+
+    def _selecionar_agente(self, tarefa: Dict) -&gt; AgenteSubordinado:
+        &quot;&quot;&quot;Seleciona melhor agente para tarefa&quot;&quot;&quot;
+        # Lógica simples: seleciona por especialidade
+        especialidade_necessaria = tarefa.get(&quot;especialidade&quot;)
+
+        for agente in self.subordinados.values():
+            if agente.especialidade == especialidade_necessaria:
+                return agente
+
+        # Se não encontrar especialista, retorna primeiro disponível
+        return list(self.subordinados.values())[0] if self.subordinados else None
+
+# Exemplo
+supervisor = AgenteSupervisor(&quot;Gerente de Projeto&quot;)
+
+# Adiciona subordinados
+supervisor.adicionar_subordinado(AgenteSubordinado(&quot;Dev Backend&quot;, &quot;backend&quot;))
+supervisor.adicionar_subordinado(AgenteSubordinado(&quot;Dev Frontend&quot;, &quot;frontend&quot;))
+supervisor.adicionar_subordinado(AgenteSubordinado(&quot;QA Engineer&quot;, &quot;testes&quot;))
+
+# Executa projeto
+projeto = {
+    &quot;nome&quot;: &quot;Lançamento de App&quot;,
+    &quot;tarefas&quot;: [
+        {&quot;descricao&quot;: &quot;API REST&quot;, &quot;especialidade&quot;: &quot;backend&quot;},
+        {&quot;descricao&quot;: &quot;Interface usuário&quot;, &quot;especialidade&quot;: &quot;frontend&quot;},
+        {&quot;descricao&quot;: &quot;Testes automatizados&quot;, &quot;especialidade&quot;: &quot;testes&quot;}
+    ]
+}
+
+resultado = supervisor.orquestrar_projeto(projeto)
+print(f&quot;Hierarquia: {resultado['total_tarefas']} tarefas delegadas&quot;)
+</code></pre>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Modelo 4: Consciência Distribuída
+        </h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Conceito:</strong> Todos os agentes acessam memória central e colaboram. Inteligência coletiva.</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Quando usar:</strong> Problemas complexos que requerem colaboração dinâmica</p>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+class MemoriaCentral:
+    &quot;&quot;&quot;Memória compartilhada entre agentes&quot;&quot;&quot;
+
+    def __init__(self):
+        self.conhecimento: Dict[str, Any] = {}
+        self.historico_acessos: List[Dict] = []
+
+    def armazenar(self, chave: str, valor: Any, agente: str):
+        &quot;&quot;&quot;Armazena conhecimento na memória central&quot;&quot;&quot;
+        self.conhecimento[chave] = {
+            &quot;valor&quot;: valor,
+            &quot;atualizado_por&quot;: agente,
+            &quot;timestamp&quot;: datetime.now().isoformat()
+        }
+
+        self.historico_acessos.append({
+            &quot;acao&quot;: &quot;armazenar&quot;,
+            &quot;chave&quot;: chave,
+            &quot;agente&quot;: agente,
+            &quot;timestamp&quot;: datetime.now().isoformat()
+        })
+
+    def recuperar(self, chave: str, agente: str) -&gt; Any:
+        &quot;&quot;&quot;Recupera conhecimento da memória&quot;&quot;&quot;
+        self.historico_acessos.append({
+            &quot;acao&quot;: &quot;recuperar&quot;,
+            &quot;chave&quot;: chave,
+            &quot;agente&quot;: agente,
+            &quot;timestamp&quot;: datetime.now().isoformat()
+        })
+
+        if chave in self.conhecimento:
+            return self.conhecimento[chave][&quot;valor&quot;]
+        return None
+
+    def listar_conhecimento_relevante(self, contexto: str) -&gt; List[str]:
+        &quot;&quot;&quot;Lista conhecimento relevante para contexto&quot;&quot;&quot;
+        relevante = []
+
+        for chave, dados in self.conhecimento.items():
+            if contexto.lower() in str(dados[&quot;valor&quot;]).lower():
+                relevante.append(chave)
+
+        return relevante
+
+class AgenteColaborativo:
+    &quot;&quot;&quot;Agente que colabora via memória compartilhada&quot;&quot;&quot;
+
+    def __init__(self, nome: str, memoria_central: MemoriaCentral):
+        self.nome = nome
+        self.memoria = memoria_central
+        self.contribuicoes = 0
+
+    def contribuir(self, topico: str, contribuicao: Any):
+        &quot;&quot;&quot;Contribui conhecimento para memória central&quot;&quot;&quot;
+        chave = f&quot;{topico}_{self.nome}&quot;
+        self.memoria.armazenar(chave, contribuicao, self.nome)
+        self.contribuicoes += 1
+
+    def consultar(self, topico: str) -&gt; List[Any]:
+        &quot;&quot;&quot;Consulta conhecimento de outros agentes&quot;&quot;&quot;
+        chaves_relevantes = self.memoria.listar_conhecimento_relevante(topico)
+
+        conhecimentos = []
+        for chave in chaves_relevantes:
+            valor = self.memoria.recuperar(chave, self.nome)
+            if valor:
+                conhecimentos.append(valor)
+
+        return conhecimentos
+
+    def trabalhar_colaborativamente(self, tarefa: str) -&gt; Dict:
+        &quot;&quot;&quot;Trabalha em tarefa consultando conhecimento coletivo&quot;&quot;&quot;
+        # Consulta o que outros agentes sabem
+        conhecimento_existente = self.consultar(tarefa)
+
+        # Processa com base no conhecimento coletivo
+        resultado = f&quot;Trabalho em {tarefa} baseado em {len(conhecimento_existente)} contribuições&quot;
+
+        # Contribui de volta
+        self.contribuir(tarefa, {
+            &quot;agente&quot;: self.nome,
+            &quot;insight&quot;: resultado
+        })
+
+        return {
+            &quot;agente&quot;: self.nome,
+            &quot;tarefa&quot;: tarefa,
+            &quot;conhecimento_utilizado&quot;: len(conhecimento_existente),
+            &quot;contribuicao_feita&quot;: True
+        }
+
+class SistemaConscienciaDistribuida:
+    &quot;&quot;&quot;Sistema com consciência distribuída entre agentes&quot;&quot;&quot;
+
+    def __init__(self):
+        self.memoria = MemoriaCentral()
+        self.agentes: List[AgenteColaborativo] = []
+
+    def adicionar_agente(self, nome: str):
+        agente = AgenteColaborativo(nome, self.memoria)
+        self.agentes.append(agente)
+        return agente
+
+    def resolver_colaborativamente(self, problema: str) -&gt; Dict:
+        &quot;&quot;&quot;Todos os agentes trabalham no problema&quot;&quot;&quot;
+        resultados = []
+
+        for agente in self.agentes:
+            resultado = agente.trabalhar_colaborativamente(problema)
+            resultados.append(resultado)
+
+        return {
+            &quot;problema&quot;: problema,
+            &quot;agentes_colaboradores&quot;: len(self.agentes),
+            &quot;total_conhecimento&quot;: len(self.memoria.conhecimento),
+            &quot;resultados&quot;: resultados
+        }
+
+# Exemplo
+sistema = SistemaConscienciaDistribuida()
+
+# Adiciona agentes
+a1 = sistema.adicionar_agente(&quot;Especialista IA&quot;)
+a2 = sistema.adicionar_agente(&quot;Especialista Educação&quot;)
+a3 = sistema.adicionar_agente(&quot;Especialista UX&quot;)
+
+# Agentes contribuem conhecimento inicial
+a1.contribuir(&quot;ia_educacao&quot;, {&quot;topico&quot;: &quot;Transformers&quot;, &quot;impacto&quot;: &quot;alto&quot;})
+a2.contribuir(&quot;ia_educacao&quot;, {&quot;topico&quot;: &quot;Aprendizado Adaptativo&quot;, &quot;efetividade&quot;: 0.9})
+a3.contribuir(&quot;ia_educacao&quot;, {&quot;topico&quot;: &quot;Interface Intuitiva&quot;, &quot;importancia&quot;: &quot;critica&quot;})
+
+# Sistema resolve problema colaborativamente
+resultado = sistema.resolver_colaborativamente(&quot;ia_educacao&quot;)
+print(f&quot;Consciência Distribuída: {resultado['agentes_colaboradores']} agentes&quot;)
+print(f&quot;Conhecimento coletivo: {resultado['total_conhecimento']} itens&quot;)
+</code></pre>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Comparação dos 4 Modelos
+        </h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-4">| Modelo | Velocidade | Complexidade | Autonomia | Uso Ideal |</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">|--------|-----------|--------------|-----------|-----------|</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">| Pipeline | Média | Baixa | Baixa | Processos sequenciais |</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">| Paralelo | Alta | Média | Média | Tarefas independentes |</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">| Hierarquia | Média | Alta | Média | Projetos complexos |</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">| Distribuído | Alta | Alta | Alta | Problemas adaptativos |</p>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Conclusão
+        </h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-4">Você dominou os 4 modelos fundamentais de sistemas multiagentes de 2026.</p>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">O que você dominou:</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Pipeline Inteligente: coordenação sequencial com validação</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Força-Tarefa Paralela: execução simultânea e integração</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Hierarquia: coordenação centralizada com delegação</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Consciência Distribuída: colaboração via memória compartilhada</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Implementação completa de cada arquitetura em Python</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Quando usar cada modelo</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Vantagens e desvantagens de cada abordagem</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Como combinar modelos para sistemas híbridos</p>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Próximo módulo:</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">No Módulo 7, você vai aprender <strong>Criação de Agentes com ESIA</strong>: os 8 componentes essenciais que todo agente avançado de 2026 deve possuir.</p>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">© 2025 FEI - Formação em Engenharia de Intenção</p>
+      </div>
+
+      <!-- Conclusao -->
       <div class="bg-gradient-to-r from-nivel-3s to-orange-600 text-white rounded-xl p-8">
         <h2 class="text-3xl font-bold mb-4">Conclusao do Modulo</h2>
         <p class="text-lg mb-6">
           Voce dominou os conceitos essenciais de Sistemas Multiagentes (2026) no contexto de sistemas autonomos 2026.
         </p>
         <div class="flex gap-4">
-          <a href="nivel-3s-modulo-5.html" class="px-6 py-3 bg-neutral-200 dark:bg-neutral-700 rounded-lg font-semibold">
-            ← Módulo 5
-          </a>
-          <a href="nivel-3s-modulo-7.html" class="px-6 py-3 bg-nivel-3s text-white rounded-lg font-semibold">
-            Módulo 7 →
-          </a>
+          <a href="nivel-3s-modulo-5.html" class="px-6 py-3 bg-white text-nivel-3s rounded-lg font-semibold hover:bg-neutral-100">← Módulo 5</a>
+          <a href="nivel-3s-modulo-7.html" class="px-6 py-3 bg-nivel-3s text-white rounded-lg font-semibold hover:opacity-90">Módulo 7 →</a>
         </div>
       </div>
 
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-3 gap-8">
@@ -115,10 +681,10 @@
         <div>
           <h4 class="font-semibold text-white mb-4">Niveis</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="../niveis/nivel-1.html" class="hover:text-white">Nivel 1</a></li>
-            <li><a href="../niveis/nivel-2.html" class="hover:text-white">Nivel 2</a></li>
-            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Nivel 3A</a></li>
-            <li><a href="../niveis/nivel-3s.html" class="hover:text-white">Nivel 3S</a></li>
+            <li><a href="../niveis/nivel-1.html" class="hover:text-white">Nivel 1: Fundamentos</a></li>
+            <li><a href="../niveis/nivel-2.html" class="hover:text-white">Nivel 2: Programa Completo</a></li>
+            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Nivel 3A: Agentes</a></li>
+            <li><a href="../niveis/nivel-3s.html" class="hover:text-white">Nivel 3S: Sistemas 2026</a></li>
           </ul>
         </div>
         <div>
@@ -136,5 +702,13 @@
   </footer>
 
   <script src="../js/app.js"></script>
+  <script>
+    // Initialize syntax highlighting
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+      });
+    });
+  </script>
 </body>
 </html>

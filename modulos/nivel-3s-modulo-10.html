@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 10: O Cerebro Central do Sistema | FEI Nível 3S</title>
-  <meta name="description" content="Agente Orquestrador de Alto Nivel">
+  <title>Módulo 10: O "Cérebro Central" do Sistema | FEI Nível 3S</title>
+  <meta name="description" content="O componente mais importante de qualquer sistema intencional é o **Agente Orquestrador**.">
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -21,16 +25,40 @@
       }
     }
   </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Highlight.js for syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+
   <style>
-    body { font-family: 'Inter', sans-serif; }
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
   </style>
 </head>
-<body class="bg-neutral-50 dark:bg-neutral-900">
+<body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navigation -->
   <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
-        <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-3s bg-clip-text text-transparent">FEI</a>
+        <div class="flex items-center">
+          <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-3s bg-clip-text text-transparent">
+            FEI - Engenharia de Intencao
+          </a>
+        </div>
         <div class="hidden md:flex items-center space-x-8">
           <a href="../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-3s">Inicio</a>
           <a href="../niveis/nivel-3s.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-3s">Nivel 3S</a>
@@ -47,9 +75,10 @@
     </div>
   </nav>
 
+  <!-- Breadcrumb -->
   <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-      <nav class="flex text-sm">
+      <nav class="flex text-sm" aria-label="Breadcrumb">
         <a href="../index.html" class="text-nivel-3s hover:text-orange-700">Inicio</a>
         <span class="mx-2 text-neutral-400">/</span>
         <a href="../niveis/nivel-3s.html" class="text-nivel-3s hover:text-orange-700">Nivel 3S</a>
@@ -59,52 +88,643 @@
     </div>
   </div>
 
-  <section class="bg-gradient-to-r from-nivel-3s to-orange-600 py-16 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-nivel-3s to-orange-600 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
       <div class="flex items-center gap-4 mb-4">
-        <span class="px-4 py-2 bg-red-500 rounded-full text-sm font-semibold">Estado da Arte 2026</span>
-        <span class="px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">Modulo 10</span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Modulo 10
+        </span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Nivel 3S - Sistemas Intencionais 2026
+        </span>
+        <span class="inline-block px-4 py-2 bg-white/30 rounded-full text-sm font-semibold">
+          Estado da Arte 2026
+        </span>
       </div>
-      <h1 class="text-4xl lg:text-5xl font-bold mb-4">O Cerebro Central do Sistema</h1>
-      <p class="text-xl">Agente Orquestrador de Alto Nivel</p>
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">
+        O "Cérebro Central" do Sistema
+      </h1>
+      <p class="text-xl text-white/90">
+        O componente mais importante de qualquer sistema intencional é o **Agente Orquestrador**.
+      </p>
     </div>
   </section>
 
-  <section class="py-12">
+  <!-- Content -->
+  <section class="py-12 bg-neutral-50 dark:bg-neutral-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Download Button -->
       <div class="flex justify-end mb-6">
-        <a href="../downloads/nivel-3s-modulo-10.md" download class="px-6 py-3 bg-nivel-3s text-white rounded-lg font-semibold hover:bg-orange-600">Download MD</a>
+        <a href="../downloads/nivel-3s-modulo-10.md" download class="px-6 py-3 bg-nivel-3s text-white rounded-lg font-semibold hover:bg-orange-600 inline-flex items-center gap-2">
+          <span>Download MD</span>
+        </a>
+      </div>
+
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Agente Orquestrador de Alto Nível
+        </h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-4">O componente mais importante de qualquer sistema intencional é o <strong>Agente Orquestrador</strong>.</p>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">Enquanto outros agentes são especialistas, o Orquestrador é o gerente geral que coordena tudo.</p>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">As 8 Responsabilidades do Orquestrador</h3>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">1. Entender Intenção Macro</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Traduz objetivos de alto nível em estratégias executáveis.</p>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">2. Quebrar em Objetivos</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Decompõe missão complexa em metas intermediárias e microtarefas.</p>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">3. Distribuir Entre Agentes</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Delega tarefas para agentes especializados baseado em competências.</p>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">4. Validar Resultados</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Verifica qualidade e alinhamento com objetivos antes de prosseguir.</p>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">5. Corrigir Falhas</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Detecta problemas e implementa soluções ou escalona para humano.</p>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">6. Buscar Dados Externos</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Identifica quando precisa de informações adicionais e busca autonomamente.</p>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">7. Evoluir o Sistema</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Aprende padrões, otimiza processos e sugere melhorias.</p>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">8. Manter Alinhamento com o Humano</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Garante que o sistema sempre opera de acordo com intenção do usuário.</p>
       </div>
 
       <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
-        <h2 class="text-3xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">Conteudo do Modulo 10</h2>
-        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
-          Este modulo cobre <strong>O Cerebro Central do Sistema</strong> - um dos pilares fundamentais da Engenharia de Sistemas Intencionais Autonomos (ESIA) em 2026.
-        </p>
-        <div class="bg-nivel-3s/10 border-l-4 border-nivel-3s p-6 rounded-lg">
-          <h3 class="font-bold text-nivel-3s mb-2">O que voce vai dominar:</h3>
-          <p class="text-neutral-700 dark:text-neutral-300">Agente Orquestrador de Alto Nivel</p>
-        </div>
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Implementação Completa do Orquestrador
+        </h2>
+        <pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+from dataclasses import dataclass, field
+from typing import List, Dict, Optional, Callable, Any
+from enum import Enum
+from datetime import datetime
+import json
+
+class StatusTarefa(Enum):
+    PENDENTE = &quot;aguardando execução&quot;
+    EM_PROGRESSO = &quot;em execução&quot;
+    BLOQUEADA = &quot;bloqueada por dependência&quot;
+    CONCLUIDA = &quot;concluída com sucesso&quot;
+    FALHA = &quot;falhou na execução&quot;
+    CANCELADA = &quot;cancelada&quot;
+
+class PrioridadeTarefa(Enum):
+    CRITICA = 1
+    ALTA = 2
+    MEDIA = 3
+    BAIXA = 4
+
+@dataclass
+class Tarefa:
+    &quot;&quot;&quot;Unidade de trabalho distribuível&quot;&quot;&quot;
+    id: str
+    descricao: str
+    agente_responsavel: str
+    prioridade: PrioridadeTarefa
+    dependencias: List[str] = field(default_factory=list)
+    status: StatusTarefa = StatusTarefa.PENDENTE
+    resultado: Optional[Dict] = None
+    tentativas: int = 0
+    max_tentativas: int = 3
+    inicio: Optional[datetime] = None
+    fim: Optional[datetime] = None
+
+@dataclass
+class AgenteEspecializado:
+    &quot;&quot;&quot;Agente especialista disponível para o orquestrador&quot;&quot;&quot;
+    nome: str
+    especialidades: List[str]
+    capacidade_atual: float  # 0.0 a 1.0
+    taxa_sucesso_historica: float  # 0.0 a 1.0
+    tarefas_executadas: int = 0
+
+@dataclass
+class AgenteOrquestrador:
+    &quot;&quot;&quot;Cérebro central que coordena todos os agentes&quot;&quot;&quot;
+    missao_macro: str
+    agentes_disponiveis: List[AgenteEspecializado]
+    tarefas: List[Tarefa] = field(default_factory=list)
+    historico_decisoes: List[Dict] = field(default_factory=list)
+    alinhamento_humano: float = 1.0  # Grau de alinhamento com intenção humana
+
+    def receber_intencao(self, intencao: str, contexto: Dict) -&gt; Dict:
+        &quot;&quot;&quot;1. Recebe e entende intenção de alto nível&quot;&quot;&quot;
+        self.missao_macro = intencao
+
+        print(f&quot;📥 Intenção recebida: {intencao}&quot;)
+
+        # Analisa intenção
+        analise = self._analisar_intencao(intencao, contexto)
+
+        # Quebra em objetivos
+        objetivos = self._decompo_em_objetivos(analise)
+
+        # Cria plano de execução
+        plano = self._criar_plano_execucao(objetivos)
+
+        self._registrar_decisao(&quot;receber_intencao&quot;, {
+            &quot;intencao&quot;: intencao,
+            &quot;objetivos_identificados&quot;: len(objetivos),
+            &quot;tarefas_criadas&quot;: len(plano[&quot;tarefas&quot;])
+        })
+
+        return {
+            &quot;analise&quot;: analise,
+            &quot;objetivos&quot;: objetivos,
+            &quot;plano&quot;: plano,
+            &quot;status&quot;: &quot;pronto_para_executar&quot;
+        }
+
+    def _analisar_intencao(self, intencao: str, contexto: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Analisa e estrutura a intenção&quot;&quot;&quot;
+        return {
+            &quot;intencao_original&quot;: intencao,
+            &quot;objetivo_principal&quot;: self._extrair_objetivo_principal(intencao),
+            &quot;metricas_sucesso&quot;: self._identificar_metricas(intencao),
+            &quot;restricoes&quot;: contexto.get(&quot;restricoes&quot;, []),
+            &quot;prazo&quot;: contexto.get(&quot;prazo&quot;, None),
+            &quot;complexidade&quot;: self._estimar_complexidade(intencao)
+        }
+
+    def _extrair_objetivo_principal(self, intencao: str) -&gt; str:
+        &quot;&quot;&quot;Extrai objetivo principal da intenção&quot;&quot;&quot;
+        # Em implementação real, usaria LLM para análise semântica
+        return intencao.split(&quot;.&quot;)[0] if &quot;.&quot; in intencao else intencao
+
+    def _identificar_metricas(self, intencao: str) -&gt; List[str]:
+        &quot;&quot;&quot;Identifica métricas mencionadas na intenção&quot;&quot;&quot;
+        metricas_conhecidas = [&quot;conversão&quot;, &quot;engajamento&quot;, &quot;receita&quot;, &quot;satisfação&quot;, &quot;eficiência&quot;]
+        return [m for m in metricas_conhecidas if m in intencao.lower()]
+
+    def _estimar_complexidade(self, intencao: str) -&gt; str:
+        &quot;&quot;&quot;Estima complexidade da tarefa&quot;&quot;&quot;
+        palavras = len(intencao.split())
+        if palavras &lt; 10:
+            return &quot;simples&quot;
+        elif palavras &lt; 30:
+            return &quot;média&quot;
+        else:
+            return &quot;complexa&quot;
+
+    def _decompo_em_objetivos(self, analise: Dict) -&gt; List[Dict]:
+        &quot;&quot;&quot;2. Quebra missão complexa em objetivos menores&quot;&quot;&quot;
+        objetivo_principal = analise[&quot;objetivo_principal&quot;]
+        complexidade = analise[&quot;complexidade&quot;]
+
+        if complexidade == &quot;simples&quot;:
+            return [{&quot;objetivo&quot;: objetivo_principal, &quot;prioridade&quot;: PrioridadeTarefa.ALTA}]
+
+        # Para tarefas complexas, decomp em etapas
+        return [
+            {&quot;objetivo&quot;: &quot;Pesquisar e reunir informações&quot;, &quot;prioridade&quot;: PrioridadeTarefa.ALTA},
+            {&quot;objetivo&quot;: &quot;Elaborar estratégia&quot;, &quot;prioridade&quot;: PrioridadeTarefa.ALTA},
+            {&quot;objetivo&quot;: &quot;Executar implementação&quot;, &quot;prioridade&quot;: PrioridadeTarefa.MEDIA},
+            {&quot;objetivo&quot;: &quot;Validar e ajustar&quot;, &quot;prioridade&quot;: PrioridadeTarefa.MEDIA},
+            {&quot;objetivo&quot;: &quot;Documentar e reportar&quot;, &quot;prioridade&quot;: PrioridadeTarefa.BAIXA}
+        ]
+
+    def _criar_plano_execucao(self, objetivos: List[Dict]) -&gt; Dict:
+        &quot;&quot;&quot;Cria plano com tarefas e dependências&quot;&quot;&quot;
+        tarefas_criadas = []
+
+        for i, obj in enumerate(objetivos):
+            tarefa = Tarefa(
+                id=f&quot;tarefa_{i+1}&quot;,
+                descricao=obj[&quot;objetivo&quot;],
+                agente_responsavel=self._selecionar_agente_adequado(obj[&quot;objetivo&quot;]),
+                prioridade=obj[&quot;prioridade&quot;],
+                dependencias=[f&quot;tarefa_{i}&quot;] if i &gt; 0 else []
+            )
+            tarefas_criadas.append(tarefa)
+            self.tarefas.append(tarefa)
+
+        return {
+            &quot;tarefas&quot;: [
+                {
+                    &quot;id&quot;: t.id,
+                    &quot;descricao&quot;: t.descricao,
+                    &quot;agente&quot;: t.agente_responsavel,
+                    &quot;dependencias&quot;: t.dependencias
+                }
+                for t in tarefas_criadas
+            ],
+            &quot;ordem_execucao&quot;: [t.id for t in tarefas_criadas]
+        }
+
+    def _selecionar_agente_adequado(self, tarefa_descricao: str) -&gt; str:
+        &quot;&quot;&quot;3. Seleciona melhor agente para cada tarefa&quot;&quot;&quot;
+        # Mapeia palavras-chave para especialidades
+        if &quot;pesquisar&quot; in tarefa_descricao.lower() or &quot;informações&quot; in tarefa_descricao.lower():
+            especialidade_necessaria = &quot;pesquisa&quot;
+        elif &quot;estratégia&quot; in tarefa_descricao.lower() or &quot;plano&quot; in tarefa_descricao.lower():
+            especialidade_necessaria = &quot;estrategia&quot;
+        elif &quot;implementar&quot; in tarefa_descricao.lower() or &quot;executar&quot; in tarefa_descricao.lower():
+            especialidade_necessaria = &quot;execucao&quot;
+        elif &quot;validar&quot; in tarefa_descricao.lower() or &quot;revisar&quot; in tarefa_descricao.lower():
+            especialidade_necessaria = &quot;validacao&quot;
+        else:
+            especialidade_necessaria = &quot;geral&quot;
+
+        # Encontra melhor agente disponível
+        candidatos = [
+            a for a in self.agentes_disponiveis
+            if especialidade_necessaria in a.especialidades
+        ]
+
+        if not candidatos:
+            # Se nenhum especialista, pega qualquer um disponível
+            candidatos = self.agentes_disponiveis
+
+        # Seleciona por taxa de sucesso e capacidade
+        melhor = max(
+            candidatos,
+            key=lambda a: (a.taxa_sucesso_historica, 1 - a.capacidade_atual)
+        )
+
+        return melhor.nome
+
+    def executar_plano(self) -&gt; Dict:
+        &quot;&quot;&quot;Executa plano orquestrando todos os agentes&quot;&quot;&quot;
+        print(f&quot;\n🎯 Iniciando execução do plano ({len(self.tarefas)} tarefas)&quot;)
+
+        resultados = []
+
+        while self._tem_tarefas_pendentes():
+            # Identifica tarefas prontas para executar
+            tarefas_prontas = self._identificar_tarefas_prontas()
+
+            if not tarefas_prontas:
+                print(&quot;⚠️ Nenhuma tarefa pronta - verificando bloqueios&quot;)
+                break
+
+            # Executa tarefas prontas
+            for tarefa in tarefas_prontas:
+                resultado = self._executar_tarefa(tarefa)
+                resultados.append(resultado)
+
+                # 4. Valida resultado
+                validacao = self._validar_resultado(tarefa, resultado)
+
+                if not validacao[&quot;aprovado&quot;]:
+                    # 5. Corrige falhas
+                    self._corrigir_falha(tarefa, validacao)
+
+        return {
+            &quot;status&quot;: &quot;concluido&quot; if not self._tem_tarefas_pendentes() else &quot;parcial&quot;,
+            &quot;tarefas_concluidas&quot;: len([t for t in self.tarefas if t.status == StatusTarefa.CONCLUIDA]),
+            &quot;tarefas_falhadas&quot;: len([t for t in self.tarefas if t.status == StatusTarefa.FALHA]),
+            &quot;resultados&quot;: resultados
+        }
+
+    def _tem_tarefas_pendentes(self) -&gt; bool:
+        &quot;&quot;&quot;Verifica se ainda há tarefas para executar&quot;&quot;&quot;
+        return any(
+            t.status in [StatusTarefa.PENDENTE, StatusTarefa.EM_PROGRESSO, StatusTarefa.BLOQUEADA]
+            for t in self.tarefas
+        )
+
+    def _identificar_tarefas_prontas(self) -&gt; List[Tarefa]:
+        &quot;&quot;&quot;Identifica tarefas sem dependências bloqueantes&quot;&quot;&quot;
+        prontas = []
+
+        for tarefa in self.tarefas:
+            if tarefa.status != StatusTarefa.PENDENTE:
+                continue
+
+            # Verifica se todas dependências foram concluídas
+            dependencias_ok = all(
+                self._buscar_tarefa(dep_id).status == StatusTarefa.CONCLUIDA
+                for dep_id in tarefa.dependencias
+            )
+
+            if dependencias_ok:
+                prontas.append(tarefa)
+            else:
+                tarefa.status = StatusTarefa.BLOQUEADA
+
+        # Ordena por prioridade
+        return sorted(prontas, key=lambda t: t.prioridade.value)
+
+    def _buscar_tarefa(self, tarefa_id: str) -&gt; Optional[Tarefa]:
+        &quot;&quot;&quot;Busca tarefa por ID&quot;&quot;&quot;
+        for tarefa in self.tarefas:
+            if tarefa.id == tarefa_id:
+                return tarefa
+        return None
+
+    def _executar_tarefa(self, tarefa: Tarefa) -&gt; Dict:
+        &quot;&quot;&quot;Executa tarefa delegando para agente especializado&quot;&quot;&quot;
+        print(f&quot;▶️ Executando: {tarefa.descricao} (Agente: {tarefa.agente_responsavel})&quot;)
+
+        tarefa.status = StatusTarefa.EM_PROGRESSO
+        tarefa.inicio = datetime.now()
+        tarefa.tentativas += 1
+
+        # Simula execução do agente (em produção, delegaria de verdade)
+        import random
+        sucesso = random.random() &gt; 0.2  # 80% de chance de sucesso
+
+        if sucesso:
+            resultado = {
+                &quot;sucesso&quot;: True,
+                &quot;output&quot;: f&quot;Tarefa '{tarefa.descricao}' concluída com sucesso&quot;,
+                &quot;qualidade&quot;: random.uniform(0.7, 1.0)
+            }
+            tarefa.status = StatusTarefa.CONCLUIDA
+        else:
+            resultado = {
+                &quot;sucesso&quot;: False,
+                &quot;erro&quot;: &quot;Falha na execução&quot;,
+                &quot;qualidade&quot;: 0.0
+            }
+            tarefa.status = StatusTarefa.FALHA
+
+        tarefa.fim = datetime.now()
+        tarefa.resultado = resultado
+
+        # Atualiza capacidade do agente
+        agente = next(a for a in self.agentes_disponiveis if a.nome == tarefa.agente_responsavel)
+        agente.tarefas_executadas += 1
+        agente.capacidade_atual = min(1.0, agente.capacidade_atual + 0.1)
+
+        return resultado
+
+    def _validar_resultado(self, tarefa: Tarefa, resultado: Dict) -&gt; Dict:
+        &quot;&quot;&quot;4. Valida qualidade do resultado&quot;&quot;&quot;
+        if not resultado.get(&quot;sucesso&quot;):
+            return {
+                &quot;aprovado&quot;: False,
+                &quot;razao&quot;: &quot;Tarefa falhou na execução&quot;
+            }
+
+        qualidade = resultado.get(&quot;qualidade&quot;, 0)
+        qualidade_minima = 0.7
+
+        if qualidade &lt; qualidade_minima:
+            return {
+                &quot;aprovado&quot;: False,
+                &quot;razao&quot;: f&quot;Qualidade {qualidade:.2f} abaixo do mínimo {qualidade_minima}&quot;
+            }
+
+        return {
+            &quot;aprovado&quot;: True,
+            &quot;qualidade&quot;: qualidade
+        }
+
+    def _corrigir_falha(self, tarefa: Tarefa, validacao: Dict):
+        &quot;&quot;&quot;5. Tenta corrigir falha ou escala para humano&quot;&quot;&quot;
+        print(f&quot;⚠️ Falha detectada: {validacao['razao']}&quot;)
+
+        if tarefa.tentativas &lt; tarefa.max_tentativas:
+            print(f&quot;🔄 Tentando novamente ({tarefa.tentativas}/{tarefa.max_tentativas})&quot;)
+            tarefa.status = StatusTarefa.PENDENTE
+            tarefa.resultado = None
+        else:
+            print(f&quot;🚨 Máximo de tentativas atingido - ESCALANDO PARA HUMANO&quot;)
+            self._escalar_para_humano(tarefa, validacao)
+
+    def _escalar_para_humano(self, tarefa: Tarefa, motivo: Dict):
+        &quot;&quot;&quot;Escala problema para supervisão humana&quot;&quot;&quot;
+        self._registrar_decisao(&quot;escalacao_humano&quot;, {
+            &quot;tarefa_id&quot;: tarefa.id,
+            &quot;descricao&quot;: tarefa.descricao,
+            &quot;tentativas&quot;: tarefa.tentativas,
+            &quot;motivo&quot;: motivo
+        })
+
+    def _registrar_decisao(self, tipo: str, detalhes: Dict):
+        &quot;&quot;&quot;Registra decisão para auditoria e aprendizado&quot;&quot;&quot;
+        self.historico_decisoes.append({
+            &quot;timestamp&quot;: datetime.now().isoformat(),
+            &quot;tipo&quot;: tipo,
+            &quot;detalhes&quot;: detalhes
+        })
+
+    def buscar_dados_externos(self, necessidade: str) -&gt; Dict:
+        &quot;&quot;&quot;6. Busca informações externas quando necessário&quot;&quot;&quot;
+        print(f&quot;🔍 Buscando dados externos: {necessidade}&quot;)
+
+        # Em produção, integraria com APIs, bancos de dados, web scraping, etc
+        return {
+            &quot;fonte&quot;: &quot;api_externa&quot;,
+            &quot;dados&quot;: {&quot;exemplo&quot;: &quot;dados relevantes&quot;},
+            &quot;timestamp&quot;: datetime.now().isoformat()
+        }
+
+    def evoluir_sistema(self) -&gt; Dict:
+        &quot;&quot;&quot;7. Aprende e otimiza baseado em histórico&quot;&quot;&quot;
+        if len(self.historico_decisoes) &lt; 10:
+            return {&quot;status&quot;: &quot;dados_insuficientes&quot;}
+
+        # Analisa padrões de sucesso e falha
+        analise = self._analisar_padroes_historico()
+
+        # Propõe melhorias
+        melhorias = self._propor_melhorias(analise)
+
+        return {
+            &quot;analise&quot;: analise,
+            &quot;melhorias_propostas&quot;: melhorias,
+            &quot;aplicacao&quot;: &quot;automatica&quot; if len(melhorias) &lt; 3 else &quot;requer_aprovacao&quot;
+        }
+
+    def _analisar_padroes_historico(self) -&gt; Dict:
+        &quot;&quot;&quot;Identifica padrões no histórico&quot;&quot;&quot;
+        tarefas_concluidas = [t for t in self.tarefas if t.status == StatusTarefa.CONCLUIDA]
+        tarefas_falhadas = [t for t in self.tarefas if t.status == StatusTarefa.FALHA]
+
+        return {
+            &quot;taxa_sucesso_geral&quot;: len(tarefas_concluidas) / len(self.tarefas) if self.tarefas else 0,
+            &quot;agente_mais_eficaz&quot;: self._identificar_melhor_agente(),
+            &quot;tipo_tarefa_mais_falha&quot;: self._identificar_tipo_falha_comum()
+        }
+
+    def _identificar_melhor_agente(self) -&gt; str:
+        &quot;&quot;&quot;Identifica agente com melhor performance&quot;&quot;&quot;
+        if not self.agentes_disponiveis:
+            return &quot;nenhum&quot;
+
+        melhor = max(self.agentes_disponiveis, key=lambda a: a.taxa_sucesso_historica)
+        return melhor.nome
+
+    def _identificar_tipo_falha_comum(self) -&gt; str:
+        &quot;&quot;&quot;Identifica tipo de tarefa com mais falhas&quot;&quot;&quot;
+        # Análise simplificada
+        return &quot;tarefas_complexas&quot;
+
+    def _propor_melhorias(self, analise: Dict) -&gt; List[str]:
+        &quot;&quot;&quot;Propõe melhorias baseado na análise&quot;&quot;&quot;
+        melhorias = []
+
+        if analise[&quot;taxa_sucesso_geral&quot;] &lt; 0.8:
+            melhorias.append(&quot;Aumentar número de tentativas permitidas&quot;)
+            melhorias.append(&quot;Adicionar validação intermediária&quot;)
+
+        if analise[&quot;tipo_tarefa_mais_falha&quot;]:
+            melhorias.append(f&quot;Criar agente especializado em {analise['tipo_tarefa_mais_falha']}&quot;)
+
+        return melhorias
+
+    def verificar_alinhamento_humano(self) -&gt; Dict:
+        &quot;&quot;&quot;8. Garante alinhamento com intenção humana&quot;&quot;&quot;
+        return {
+            &quot;alinhamento_atual&quot;: self.alinhamento_humano,
+            &quot;desvios_detectados&quot;: self.alinhamento_humano &lt; 0.9,
+            &quot;acao_necessaria&quot;: &quot;revisar_restricoes&quot; if self.alinhamento_humano &lt; 0.9 else &quot;continuar&quot;
+        }
+
+    def gerar_relatorio_executivo(self) -&gt; str:
+        &quot;&quot;&quot;Gera relatório completo para humano&quot;&quot;&quot;
+        total_tarefas = len(self.tarefas)
+        concluidas = len([t for t in self.tarefas if t.status == StatusTarefa.CONCLUIDA])
+        falhadas = len([t for t in self.tarefas if t.status == StatusTarefa.FALHA])
+
+        relatorio = f&quot;&quot;&quot;
+📊 RELATÓRIO EXECUTIVO DO ORQUESTRADOR
+
+Missão: {self.missao_macro}
+
+📈 Progresso:
+- Total de tarefas: {total_tarefas}
+- Concluídas: {concluidas} ({concluidas/total_tarefas*100:.1f}%)
+- Falhadas: {falhadas} ({falhadas/total_tarefas*100:.1f}%)
+
+👥 Agentes:
+{chr(10).join(f&quot;- {a.nome}: {a.tarefas_executadas} tarefas, {a.taxa_sucesso_historica*100:.1f}% sucesso&quot; for a in self.agentes_disponiveis)}
+
+🎯 Alinhamento: {self.alinhamento_humano*100:.1f}%
+
+📝 Decisões tomadas: {len(self.historico_decisoes)}
+&quot;&quot;&quot;
+        return relatorio
+
+# Exemplo de uso completo
+agentes = [
+    AgenteEspecializado(
+        nome=&quot;Pesquisador&quot;,
+        especialidades=[&quot;pesquisa&quot;, &quot;analise&quot;],
+        capacidade_atual=0.2,
+        taxa_sucesso_historica=0.92
+    ),
+    AgenteEspecializado(
+        nome=&quot;Estrategista&quot;,
+        especialidades=[&quot;estrategia&quot;, &quot;planejamento&quot;],
+        capacidade_atual=0.3,
+        taxa_sucesso_historica=0.88
+    ),
+    AgenteEspecializado(
+        nome=&quot;Executor&quot;,
+        especialidades=[&quot;execucao&quot;, &quot;implementacao&quot;],
+        capacidade_atual=0.5,
+        taxa_sucesso_historica=0.85
+    ),
+    AgenteEspecializado(
+        nome=&quot;Auditor&quot;,
+        especialidades=[&quot;validacao&quot;, &quot;qualidade&quot;],
+        capacidade_atual=0.1,
+        taxa_sucesso_historica=0.95
+    )
+]
+
+orquestrador = AgenteOrquestrador(
+    missao_macro=&quot;&quot;,
+    agentes_disponiveis=agentes
+)
+
+# Recebe intenção de alto nível
+intencao = &quot;&quot;&quot;Criar campanha de marketing digital para lançamento de produto,
+com foco em conversão acima de 3% e geração de 500 leads qualificados em 30 dias&quot;&quot;&quot;
+
+plano = orquestrador.receber_intencao(intencao, {
+    &quot;restricoes&quot;: [&quot;budget máximo R$10k&quot;, &quot;sem promessas falsas&quot;],
+    &quot;prazo&quot;: &quot;30 dias&quot;
+})
+
+print(f&quot;\n{orquestrador.gerar_relatorio_executivo()}&quot;)
+
+# Executa plano
+resultado_execucao = orquestrador.executar_plano()
+
+print(f&quot;\n{orquestrador.gerar_relatorio_executivo()}&quot;)
+</code></pre>
       </div>
 
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Padrões de Orquestração
+        </h2>
+        <pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+from enum import Enum
+
+class PadraoOrquestracao(Enum):
+    SEQUENCIAL = &quot;tarefas executadas uma após a outra&quot;
+    PARALELO = &quot;tarefas independentes executadas simultaneamente&quot;
+    HIERARQUICO = &quot;orquestrador delega para sub-orquestradores&quot;
+    ADAPTATIVO = &quot;ajusta estratégia baseado em resultados intermediários&quot;
+
+@dataclass
+class ConfiguracaoOrquestracao:
+    &quot;&quot;&quot;Configuração do comportamento do orquestrador&quot;&quot;&quot;
+    padrao: PadraoOrquestracao
+    max_tarefas_paralelas: int = 3
+    timeout_tarefa_minutos: int = 30
+    auto_retry: bool = True
+    escalacao_automatica: bool = True
+    aprendizado_continuo: bool = True
+
+# Orquestração Sequencial: Cada tarefa após a anterior
+config_sequencial = ConfiguracaoOrquestracao(
+    padrao=PadraoOrquestracao.SEQUENCIAL,
+    max_tarefas_paralelas=1
+)
+
+# Orquestração Paralela: Máximo de tarefas simultâneas
+config_paralela = ConfiguracaoOrquestracao(
+    padrao=PadraoOrquestracao.PARALELO,
+    max_tarefas_paralelas=5
+)
+
+# Orquestração Adaptativa: Ajusta baseado em performance
+config_adaptativa = ConfiguracaoOrquestracao(
+    padrao=PadraoOrquestracao.ADAPTATIVO,
+    max_tarefas_paralelas=3,
+    aprendizado_continuo=True
+)
+</code></pre>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          O Orquestrador É o Cérebro
+        </h2>
+        <p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">Diferença entre agente especialista e orquestrador:</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">| Aspecto | Agente Especialista | Orquestrador |</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">|---------|---------------------|--------------|</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">| Foco | Tarefa específica | Coordenação global |</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">| Escopo | Domínio restrito | Visão macro |</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">| Decisões | Táticas | Estratégicas |</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">| Autonomia | Executa o que recebe | Decide o que fazer |</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">| Relacionamento | Recebe ordens | Delega tarefas |</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">| Aprendizado | Melhora na especialidade | Otimiza o sistema todo |</p>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">O orquestrador pensa, os agentes executam.</p>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">© 2025 FEI - Formação em Engenharia de Intenção</p>
+      </div>
+
+      <!-- Conclusao -->
       <div class="bg-gradient-to-r from-nivel-3s to-orange-600 text-white rounded-xl p-8">
         <h2 class="text-3xl font-bold mb-4">Conclusao do Modulo</h2>
         <p class="text-lg mb-6">
-          Voce dominou os conceitos essenciais de O Cerebro Central do Sistema no contexto de sistemas autonomos 2026.
+          Voce dominou os conceitos essenciais de O "Cérebro Central" do Sistema no contexto de sistemas autonomos 2026.
         </p>
         <div class="flex gap-4">
-          <a href="nivel-3s-modulo-9.html" class="px-6 py-3 bg-neutral-200 dark:bg-neutral-700 rounded-lg font-semibold">
-            ← Módulo 9
-          </a>
-          <a href="nivel-3s-modulo-11.html" class="px-6 py-3 bg-nivel-3s text-white rounded-lg font-semibold">
-            Módulo 11 →
-          </a>
+          <a href="nivel-3s-modulo-9.html" class="px-6 py-3 bg-white text-nivel-3s rounded-lg font-semibold hover:bg-neutral-100">← Módulo 9</a>
+          <a href="nivel-3s-modulo-11.html" class="px-6 py-3 bg-nivel-3s text-white rounded-lg font-semibold hover:opacity-90">Módulo 11 →</a>
         </div>
       </div>
 
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-3 gap-8">
@@ -115,10 +735,10 @@
         <div>
           <h4 class="font-semibold text-white mb-4">Niveis</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="../niveis/nivel-1.html" class="hover:text-white">Nivel 1</a></li>
-            <li><a href="../niveis/nivel-2.html" class="hover:text-white">Nivel 2</a></li>
-            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Nivel 3A</a></li>
-            <li><a href="../niveis/nivel-3s.html" class="hover:text-white">Nivel 3S</a></li>
+            <li><a href="../niveis/nivel-1.html" class="hover:text-white">Nivel 1: Fundamentos</a></li>
+            <li><a href="../niveis/nivel-2.html" class="hover:text-white">Nivel 2: Programa Completo</a></li>
+            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Nivel 3A: Agentes</a></li>
+            <li><a href="../niveis/nivel-3s.html" class="hover:text-white">Nivel 3S: Sistemas 2026</a></li>
           </ul>
         </div>
         <div>
@@ -136,5 +756,13 @@
   </footer>
 
   <script src="../js/app.js"></script>
+  <script>
+    // Initialize syntax highlighting
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+      });
+    });
+  </script>
 </body>
 </html>

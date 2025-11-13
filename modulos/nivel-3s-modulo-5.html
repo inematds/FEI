@@ -4,8 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Módulo 5: Intenção Composta e Persistente | FEI Nível 3S</title>
-  <meta name="description" content="Intencao com multiplas camadas e visao de longo prazo">
+  <meta name="description" content="Em 2026, sistemas inteligentes não lidam com **tarefas simples** - eles gerenciam **intenções complexas** que possuem **múltiplas camadas de objetivos** e **se estendem por meses**.">
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -21,16 +25,40 @@
       }
     }
   </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Highlight.js for syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+
   <style>
-    body { font-family: 'Inter', sans-serif; }
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
   </style>
 </head>
-<body class="bg-neutral-50 dark:bg-neutral-900">
+<body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navigation -->
   <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
-        <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-3s bg-clip-text text-transparent">FEI</a>
+        <div class="flex items-center">
+          <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-3s bg-clip-text text-transparent">
+            FEI - Engenharia de Intencao
+          </a>
+        </div>
         <div class="hidden md:flex items-center space-x-8">
           <a href="../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-3s">Inicio</a>
           <a href="../niveis/nivel-3s.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-3s">Nivel 3S</a>
@@ -47,9 +75,10 @@
     </div>
   </nav>
 
+  <!-- Breadcrumb -->
   <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-      <nav class="flex text-sm">
+      <nav class="flex text-sm" aria-label="Breadcrumb">
         <a href="../index.html" class="text-nivel-3s hover:text-orange-700">Inicio</a>
         <span class="mx-2 text-neutral-400">/</span>
         <a href="../niveis/nivel-3s.html" class="text-nivel-3s hover:text-orange-700">Nivel 3S</a>
@@ -59,215 +88,650 @@
     </div>
   </div>
 
-  <section class="bg-gradient-to-r from-nivel-3s to-orange-600 py-16 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-nivel-3s to-orange-600 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
       <div class="flex items-center gap-4 mb-4">
-        <span class="px-4 py-2 bg-red-500 rounded-full text-sm font-semibold">Estado da Arte 2026</span>
-        <span class="px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">Modulo 5</span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Modulo 5
+        </span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Nivel 3S - Sistemas Intencionais 2026
+        </span>
+        <span class="inline-block px-4 py-2 bg-white/30 rounded-full text-sm font-semibold">
+          Estado da Arte 2026
+        </span>
       </div>
-      <h1 class="text-4xl lg:text-5xl font-bold mb-4">Intencao Composta e Persistente</h1>
-      <p class="text-xl">Dois conceitos revolucionarios: intencoes com multiplas camadas e visao de meses</p>
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">
+        Intenção Composta e Persistente
+      </h1>
+      <p class="text-xl text-white/90">
+        Em 2026, sistemas inteligentes não lidam com **tarefas simples** - eles gerenciam **intenções complexas** que possuem **múltiplas camadas de objetivos** e **se estendem por meses**.
+      </p>
     </div>
   </section>
 
-  <section class="py-12">
+  <!-- Content -->
+  <section class="py-12 bg-neutral-50 dark:bg-neutral-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Download Button -->
       <div class="flex justify-end mb-6">
-        <a href="../downloads/nivel-3s-modulo-5.md" download class="px-6 py-3 bg-nivel-3s text-white rounded-lg font-semibold hover:bg-orange-600">Download MD</a>
+        <a href="../downloads/nivel-3s-modulo-5.md" download class="px-6 py-3 bg-nivel-3s text-white rounded-lg font-semibold hover:bg-orange-600 inline-flex items-center gap-2">
+          <span>Download MD</span>
+        </a>
+      </div>
+
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Introdução
+        </h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-4">Em 2026, sistemas inteligentes não lidam com <strong>tarefas simples</strong> - eles gerenciam <strong>intenções complexas</strong> que possuem <strong>múltiplas camadas de objetivos</strong> e <strong>se estendem por meses</strong>.</p>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Dois conceitos cruciais para 2026:</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">1. <strong>Intenção Composta:</strong> Objetivos que contêm sub-objetivos, critérios múltiplos, contextos paralelos e dependências.</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">2. <strong>Intenção Persistente:</strong> Visão de longo prazo que o sistema mantém ao longo de semanas ou meses.</p>
       </div>
 
       <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
-        <h2 class="text-3xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">Introducao</h2>
-        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
-          Em 2026, sistemas inteligentes nao lidam com <strong>tarefas simples</strong> - eles gerenciam <strong>intencoes complexas</strong> que possuem <strong>multiplas camadas de objetivos</strong> e <strong>se estendem por meses</strong>.
-        </p>
-        <div class="bg-nivel-3s/10 border-l-4 border-nivel-3s p-6 rounded-lg">
-          <h3 class="font-bold text-nivel-3s mb-2">Dois conceitos cruciais para 2026:</h3>
-          <ul class="text-neutral-700 dark:text-neutral-300 space-y-2">
-            <li><strong>1. Intencao Composta:</strong> Objetivos que contem sub-objetivos, criterios multiplos, contextos paralelos e dependencias.</li>
-            <li><strong>2. Intencao Persistente:</strong> Visao de longo prazo que o sistema mantem ao longo de semanas ou meses.</li>
-          </ul>
-        </div>
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          1. Intenção Composta
+        </h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-4">Uma <strong>Intenção Composta</strong> é uma instrução que contém múltiplos níveis de complexidade simultaneamente.</p>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Implementação Completa:</h3>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+from dataclasses import dataclass, field
+from typing import List, Dict, Optional
+from datetime import datetime, timedelta
+from enum import Enum
+
+class NivelIntencao(Enum):
+    MACRO = &quot;macro&quot;
+    INTERMEDIARIA = &quot;intermediaria&quot;
+    MICRO = &quot;micro&quot;
+
+class TipoCriterio(Enum):
+    QUALIDADE = &quot;qualidade&quot;
+    VELOCIDADE = &quot;velocidade&quot;
+    CUSTO = &quot;custo&quot;
+    IMPACTO = &quot;impacto&quot;
+    RISCO = &quot;risco&quot;
+
+@dataclass
+class ObjetivoComposto:
+    &quot;&quot;&quot;Representa um objetivo com múltiplas camadas&quot;&quot;&quot;
+    nivel: NivelIntencao
+    descricao: str
+    prazo: datetime
+    criterios: Dict[TipoCriterio, float]  # Peso de cada critério (0-1)
+    dependencias: List[str] = field(default_factory=list)
+    contextos: List[str] = field(default_factory=list)
+    sub_objetivos: List['ObjetivoComposto'] = field(default_factory=list)
+    progresso: int = 0  # 0-100
+
+class IntencaoComposta:
+    &quot;&quot;&quot;Sistema que gerencia intenções compostas&quot;&quot;&quot;
+
+    def __init__(self, objetivo_macro: str):
+        self.objetivo_macro = objetivo_macro
+        self.objetivos: Dict[str, ObjetivoComposto] = {}
+        self.arvore_dependencias: Dict[str, List[str]] = {}
+
+    def adicionar_objetivo(
+        self,
+        id_objetivo: str,
+        nivel: NivelIntencao,
+        descricao: str,
+        prazo_dias: int,
+        criterios: Dict[TipoCriterio, float],
+        dependencias: List[str] = None,
+        contextos: List[str] = None
+    ):
+        &quot;&quot;&quot;Adiciona objetivo à intenção composta&quot;&quot;&quot;
+        objetivo = ObjetivoComposto(
+            nivel=nivel,
+            descricao=descricao,
+            prazo=datetime.now() + timedelta(days=prazo_dias),
+            criterios=criterios,
+            dependencias=dependencias or [],
+            contextos=contextos or []
+        )
+
+        self.objetivos[id_objetivo] = objetivo
+
+        # Atualiza árvore de dependências
+        for dep in objetivo.dependencias:
+            if dep not in self.arvore_dependencias:
+                self.arvore_dependencias[dep] = []
+            self.arvore_dependencias[dep].append(id_objetivo)
+
+    def validar_consistencia(self) -&gt; Dict:
+        &quot;&quot;&quot;Valida consistência da intenção composta&quot;&quot;&quot;
+        problemas = []
+
+        # 1. Verifica dependências circulares
+        for obj_id in self.objetivos:
+            if self._tem_dependencia_circular(obj_id, set()):
+                problemas.append(f&quot;Dependência circular detectada em {obj_id}&quot;)
+
+        # 2. Verifica dependências inexistentes
+        for obj_id, obj in self.objetivos.items():
+            for dep in obj.dependencias:
+                if dep not in self.objetivos:
+                    problemas.append(f&quot;{obj_id} depende de {dep} que não existe&quot;)
+
+        # 3. Verifica balanceamento de critérios
+        for obj_id, obj in self.objetivos.items():
+            soma_criterios = sum(obj.criterios.values())
+            if abs(soma_criterios - 1.0) &gt; 0.01:  # Tolerância de 1%
+                problemas.append(f&quot;{obj_id}: critérios somam {soma_criterios:.2f}, devem somar 1.0&quot;)
+
+        return {
+            &quot;valido&quot;: len(problemas) == 0,
+            &quot;total_problemas&quot;: len(problemas),
+            &quot;problemas&quot;: problemas
+        }
+
+    def _tem_dependencia_circular(self, obj_id: str, visitados: set) -&gt; bool:
+        &quot;&quot;&quot;Detecta dependências circulares&quot;&quot;&quot;
+        if obj_id in visitados:
+            return True
+
+        visitados.add(obj_id)
+
+        if obj_id in self.objetivos:
+            for dep in self.objetivos[obj_id].dependencias:
+                if self._tem_dependencia_circular(dep, visitados.copy()):
+                    return True
+
+        return False
+
+    def calcular_ordem_execucao(self) -&gt; List[str]:
+        &quot;&quot;&quot;Calcula ordem de execução respeitando dependências&quot;&quot;&quot;
+        # Topological sort
+        grau_entrada = {obj_id: 0 for obj_id in self.objetivos}
+
+        for obj_id, obj in self.objetivos.items():
+            for dep in obj.dependencias:
+                if dep in grau_entrada:
+                    grau_entrada[obj_id] += 1
+
+        fila = [obj_id for obj_id, grau in grau_entrada.items() if grau == 0]
+        ordem = []
+
+        while fila:
+            atual = fila.pop(0)
+            ordem.append(atual)
+
+            if atual in self.arvore_dependencias:
+                for dependente in self.arvore_dependencias[atual]:
+                    grau_entrada[dependente] -= 1
+                    if grau_entrada[dependente] == 0:
+                        fila.append(dependente)
+
+        return ordem
+
+    def priorizar_objetivos(self) -&gt; List[tuple]:
+        &quot;&quot;&quot;Prioriza objetivos baseado em múltiplos critérios&quot;&quot;&quot;
+        scores = []
+
+        for obj_id, obj in self.objetivos.items():
+            # Calcula score baseado em critérios, prazo e progresso
+            prazo_score = 1 / ((obj.prazo - datetime.now()).days + 1)
+            progresso_score = (100 - obj.progresso) / 100
+
+            # Peso dos critérios
+            criterios_score = sum(
+                peso * (1 if crit in [TipoCriterio.IMPACTO, TipoCriterio.QUALIDADE] else 0.5)
+                for crit, peso in obj.criterios.items()
+            )
+
+            score_final = (
+                prazo_score * 0.3 +
+                progresso_score * 0.4 +
+                criterios_score * 0.3
+            )
+
+            scores.append((obj_id, score_final, obj.descricao))
+
+        return sorted(scores, key=lambda x: x[1], reverse=True)
+
+    def analisar_contextos_paralelos(self) -&gt; Dict:
+        &quot;&quot;&quot;Analisa objetivos que requerem contextos diferentes&quot;&quot;&quot;
+        contextos_unicos = set()
+        objetivos_por_contexto = {}
+
+        for obj_id, obj in self.objetivos.items():
+            for contexto in obj.contextos:
+                contextos_unicos.add(contexto)
+
+                if contexto not in objetivos_por_contexto:
+                    objetivos_por_contexto[contexto] = []
+
+                objetivos_por_contexto[contexto].append(obj_id)
+
+        return {
+            &quot;total_contextos&quot;: len(contextos_unicos),
+            &quot;contextos&quot;: list(contextos_unicos),
+            &quot;objetivos_por_contexto&quot;: objetivos_por_contexto,
+            &quot;complexidade&quot;: &quot;alta&quot; if len(contextos_unicos) &gt; 3 else &quot;media&quot;
+        }
+
+    def gerar_plano_execucao(self) -&gt; Dict:
+        &quot;&quot;&quot;Gera plano completo de execução&quot;&quot;&quot;
+        validacao = self.validar_consistencia()
+
+        if not validacao[&quot;valido&quot;]:
+            return {
+                &quot;status&quot;: &quot;invalido&quot;,
+                &quot;problemas&quot;: validacao[&quot;problemas&quot;]
+            }
+
+        ordem = self.calcular_ordem_execucao()
+        prioridades = self.priorizar_objetivos()
+        contextos = self.analisar_contextos_paralelos()
+
+        return {
+            &quot;status&quot;: &quot;valido&quot;,
+            &quot;objetivo_macro&quot;: self.objetivo_macro,
+            &quot;total_objetivos&quot;: len(self.objetivos),
+            &quot;ordem_execucao&quot;: ordem,
+            &quot;top_prioridades&quot;: prioridades[:5],
+            &quot;analise_contextos&quot;: contextos,
+            &quot;prazo_final&quot;: max(obj.prazo for obj in self.objetivos.values())
+        }
+
+
+# Exemplo completo de uso
+intencao = IntencaoComposta(&quot;Construir autoridade em IA Educacional&quot;)
+
+# Objetivos Macro
+intencao.adicionar_objetivo(
+    &quot;macro_1&quot;,
+    NivelIntencao.MACRO,
+    &quot;Ser referência reconhecida em IA + Educação&quot;,
+    365,
+    {
+        TipoCriterio.IMPACTO: 0.5,
+        TipoCriterio.QUALIDADE: 0.3,
+        TipoCriterio.VELOCIDADE: 0.2
+    },
+    contextos=[&quot;profissionais&quot;, &quot;academicos&quot;, &quot;empresas&quot;]
+)
+
+# Objetivos Intermediários
+intencao.adicionar_objetivo(
+    &quot;int_1&quot;,
+    NivelIntencao.INTERMEDIARIA,
+    &quot;Crescer audiência para 100k&quot;,
+    180,
+    {
+        TipoCriterio.IMPACTO: 0.4,
+        TipoCriterio.VELOCIDADE: 0.4,
+        TipoCriterio.CUSTO: 0.2
+    },
+    dependencias=[&quot;macro_1&quot;],
+    contextos=[&quot;iniciantes&quot;, &quot;profissionais&quot;]
+)
+
+intencao.adicionar_objetivo(
+    &quot;int_2&quot;,
+    NivelIntencao.INTERMEDIARIA,
+    &quot;Publicar em 3 revistas especializadas&quot;,
+    120,
+    {
+        TipoCriterio.QUALIDADE: 0.6,
+        TipoCriterio.IMPACTO: 0.4
+    },
+    dependencias=[&quot;macro_1&quot;],
+    contextos=[&quot;academicos&quot;]
+)
+
+# Microtarefas
+intencao.adicionar_objetivo(
+    &quot;micro_1&quot;,
+    NivelIntencao.MICRO,
+    &quot;Publicar 3 posts/semana sobre IA&quot;,
+    30,
+    {
+        TipoCriterio.QUALIDADE: 0.5,
+        TipoCriterio.VELOCIDADE: 0.5
+    },
+    dependencias=[&quot;int_1&quot;],
+    contextos=[&quot;iniciantes&quot;, &quot;profissionais&quot;]
+)
+
+intencao.adicionar_objetivo(
+    &quot;micro_2&quot;,
+    NivelIntencao.MICRO,
+    &quot;Produzir artigo científico sobre LLMs na educação&quot;,
+    60,
+    {
+        TipoCriterio.QUALIDADE: 0.8,
+        TipoCriterio.IMPACTO: 0.2
+    },
+    dependencias=[&quot;int_2&quot;],
+    contextos=[&quot;academicos&quot;]
+)
+
+print(&quot;=== INTENÇÃO COMPOSTA ===\n&quot;)
+print(f&quot;Objetivo Macro: {intencao.objetivo_macro}&quot;)
+print(f&quot;Total de objetivos: {len(intencao.objetivos)}\n&quot;)
+
+# Valida consistência
+print(&quot;Validação:&quot;)
+validacao = intencao.validar_consistencia()
+print(f&quot;  Status: {'✅ Válido' if validacao['valido'] else '❌ Inválido'}&quot;)
+if not validacao['valido']:
+    for problema in validacao['problemas']:
+        print(f&quot;  • {problema}&quot;)
+print()
+
+# Gera plano de execução
+plano = intencao.gerar_plano_execucao()
+
+if plano[&quot;status&quot;] == &quot;valido&quot;:
+    print(&quot;Ordem de execução:&quot;)
+    for i, obj_id in enumerate(plano[&quot;ordem_execucao&quot;], 1):
+        obj = intencao.objetivos[obj_id]
+        print(f&quot;  {i}. [{obj.nivel.value.upper()}] {obj.descricao}&quot;)
+
+    print(&quot;\nTop 3 Prioridades:&quot;)
+    for obj_id, score, desc in plano[&quot;top_prioridades&quot;][:3]:
+        print(f&quot;  • {desc} (score: {score:.2f})&quot;)
+
+    print(f&quot;\nContextos Paralelos:&quot;)
+    print(f&quot;  Total: {plano['analise_contextos']['total_contextos']}&quot;)
+    print(f&quot;  Complexidade: {plano['analise_contextos']['complexidade']}&quot;)
+    for contexto in plano['analise_contextos']['contextos']:
+        objs = plano['analise_contextos']['objetivos_por_contexto'][contexto]
+        print(f&quot;  • {contexto}: {len(objs)} objetivos&quot;)
+</code></pre>
       </div>
 
       <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
-        <h2 class="text-3xl font-bold mb-6 text-neutral-900 dark:text-neutral-100">1. Intencao Composta</h2>
-        
-        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
-          Uma <strong>Intencao Composta</strong> e uma instrucao que contem multiplos niveis de complexidade simultaneamente.
-        </p>
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          2. Intenção Persistente
+        </h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Intenção Persistente</strong> significa que a IA <strong>mantém objetivos de longo prazo</strong> mesmo após dias, semanas ou meses de interação.</p>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+import json
+from collections import defaultdict
 
-        <div class="space-y-6">
-          <div class="bg-nivel-3s/10 p-6 rounded-lg">
-            <h3 class="text-xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">Componentes de Uma Intencao Composta</h3>
-            
-            <div class="space-y-4">
-              <div class="border-l-4 border-nivel-3s pl-4">
-                <h4 class="font-bold text-neutral-900 dark:text-neutral-100">Objetivos Macro</h4>
-                <p class="text-sm text-neutral-700 dark:text-neutral-300">A visao geral do que se deseja alcançar</p>
-                <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-1">Ex: "Dobrar a receita da empresa em 12 meses"</p>
-              </div>
+class IntencaoPersistente:
+    &quot;&quot;&quot;Sistema que mantém intenção ao longo do tempo&quot;&quot;&quot;
 
-              <div class="border-l-4 border-orange-400 pl-4">
-                <h4 class="font-bold text-neutral-900 dark:text-neutral-100">Metas Intermediarias</h4>
-                <p class="text-sm text-neutral-700 dark:text-neutral-300">Marcos que indicam progresso rumo ao objetivo macro</p>
-                <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-1">Ex: "Aumentar trafego do site em 80%, lancar 3 produtos, construir audiencia de 50k"</p>
-              </div>
+    def __init__(self, usuario_id: str, missao: str):
+        self.usuario_id = usuario_id
+        self.missao = missao
+        self.criado_em = datetime.now()
 
-              <div class="border-l-4 border-orange-300 pl-4">
-                <h4 class="font-bold text-neutral-900 dark:text-neutral-100">Microtarefas</h4>
-                <p class="text-sm text-neutral-700 dark:text-neutral-300">Acoes concretas diarias ou semanais</p>
-                <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-1">Ex: "Publicar 3 posts por semana, otimizar SEO, testar anuncios"</p>
-              </div>
+        # Estado persistente
+        self.preferencias: Dict[str, Any] = {}
+        self.estilo: Dict[str, Any] = {}
+        self.padroes_validados: List[Dict] = []
+        self.visao_longo_prazo: Dict = {}
+        self.contexto_acumulado: List[Dict] = []
+        self.marcos_atingidos: List[Dict] = []
 
-              <div class="border-l-4 border-orange-200 pl-4">
-                <h4 class="font-bold text-neutral-900 dark:text-neutral-100">Criterios Multiplos</h4>
-                <p class="text-sm text-neutral-700 dark:text-neutral-300">Diferentes dimensoes que precisam ser balanceadas</p>
-                <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-1">Ex: "Velocidade vs qualidade, custo vs impacto, risco vs retorno"</p>
-              </div>
+    def atualizar_preferencia(self, categoria: str, valor: Any, confianca: float):
+        &quot;&quot;&quot;Atualiza preferência do usuário&quot;&quot;&quot;
+        if categoria not in self.preferencias:
+            self.preferencias[categoria] = {
+                &quot;valor_atual&quot;: valor,
+                &quot;historico&quot;: [],
+                &quot;confianca&quot;: confianca,
+                &quot;atualizado_em&quot;: datetime.now().isoformat()
+            }
+        else:
+            # Adiciona ao histórico
+            self.preferencias[categoria][&quot;historico&quot;].append({
+                &quot;valor&quot;: self.preferencias[categoria][&quot;valor_atual&quot;],
+                &quot;timestamp&quot;: self.preferencias[categoria][&quot;atualizado_em&quot;]
+            })
 
-              <div class="border-l-4 border-orange-100 pl-4">
-                <h4 class="font-bold text-neutral-900 dark:text-neutral-100">Contextos Paralelos</h4>
-                <p class="text-sm text-neutral-700 dark:text-neutral-300">Multiplos ambientes ou situacoes consideradas simultaneamente</p>
-                <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-1">Ex: "Adaptar mensagem para iniciantes vs experientes, B2B vs B2C"</p>
-              </div>
+            # Atualiza valor atual
+            self.preferencias[categoria][&quot;valor_atual&quot;] = valor
+            self.preferencias[categoria][&quot;confianca&quot;] = confianca
+            self.preferencias[categoria][&quot;atualizado_em&quot;] = datetime.now().isoformat()
 
-              <div class="border-l-4 border-yellow-500 pl-4">
-                <h4 class="font-bold text-neutral-900 dark:text-neutral-100">Dependencias</h4>
-                <p class="text-sm text-neutral-700 dark:text-neutral-300">Tarefas que dependem de outras para comecar</p>
-                <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-1">Ex: "Landing page precisa estar pronta antes de lancar anuncios"</p>
-              </div>
+    def definir_estilo(self, aspecto: str, caracteristicas: Dict):
+        &quot;&quot;&quot;Define aspecto do estilo do usuário&quot;&quot;&quot;
+        self.estilo[aspecto] = {
+            &quot;caracteristicas&quot;: caracteristicas,
+            &quot;exemplos&quot;: [],
+            &quot;definido_em&quot;: datetime.now().isoformat()
+        }
 
-              <div class="border-l-4 border-green-500 pl-4">
-                <h4 class="font-bold text-neutral-900 dark:text-neutral-100">Camadas de Raciocinio</h4>
-                <p class="text-sm text-neutral-700 dark:text-neutral-300">Diferentes niveis de analise necessarios</p>
-                <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-1">Ex: "Nivel tatico (dia a dia), estrategico (mes), visionario (ano)"</p>
-              </div>
-            </div>
-          </div>
+    def validar_padrao(self, nome: str, descricao: str, taxa_sucesso: float):
+        &quot;&quot;&quot;Registra padrão que funciona bem&quot;&quot;&quot;
+        padrao = {
+            &quot;nome&quot;: nome,
+            &quot;descricao&quot;: descricao,
+            &quot;taxa_sucesso&quot;: taxa_sucesso,
+            &quot;validado_em&quot;: datetime.now().isoformat(),
+            &quot;usos&quot;: 1
+        }
 
-          <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border-2 border-green-500">
-            <h3 class="text-xl font-bold mb-3 text-neutral-900 dark:text-neutral-100">Exemplo Completo de Intencao Composta</h3>
-            <div class="bg-white dark:bg-neutral-700 p-4 rounded text-sm">
-              <strong>Intencao:</strong> "Construir autoridade como especialista em IA educacional"<br><br>
-              
-              <strong>Macro:</strong> Ser referencia reconhecida na intersecao de IA e educacao em 12 meses<br><br>
-              
-              <strong>Intermediarias:</strong><br>
-              - Crescer audiencia para 100k seguidores<br>
-              - Publicar artigos em 3 revistas especializadas<br>
-              - Palestrar em 5 eventos relevantes<br>
-              - Lancar curso com 1000 alunos<br><br>
-              
-              <strong>Microtarefas:</strong> Posts diarios, networking semanal, producao de conteudo, parcerias estrategicas<br><br>
-              
-              <strong>Criterios:</strong> Qualidade > quantidade, profundidade tecnica + acessibilidade, consistencia de mensagem<br><br>
-              
-              <strong>Dependencias:</strong> Conteudo base antes de promover, case studies antes de palestrar, validacao social antes de lancar curso
-            </div>
-          </div>
-        </div>
+        # Verifica se já existe
+        existente = next((p for p in self.padroes_validados if p[&quot;nome&quot;] == nome), None)
+
+        if existente:
+            existente[&quot;usos&quot;] += 1
+            existente[&quot;taxa_sucesso&quot;] = (existente[&quot;taxa_sucesso&quot;] + taxa_sucesso) / 2
+        else:
+            self.padroes_validados.append(padrao)
+
+    def adicionar_contexto(self, evento: str, dados: Dict, aprendizado: str):
+        &quot;&quot;&quot;Adiciona ao contexto acumulado&quot;&quot;&quot;
+        contexto = {
+            &quot;evento&quot;: evento,
+            &quot;dados&quot;: dados,
+            &quot;aprendizado&quot;: aprendizado,
+            &quot;timestamp&quot;: datetime.now().isoformat()
+        }
+
+        self.contexto_acumulado.append(contexto)
+
+        # Mantém apenas últimos 100 contextos
+        if len(self.contexto_acumulado) &gt; 100:
+            self.contexto_acumulado = self.contexto_acumulado[-100:]
+
+    def registrar_marco(self, descricao: str, impacto: str):
+        &quot;&quot;&quot;Registra marco importante&quot;&quot;&quot;
+        marco = {
+            &quot;descricao&quot;: descricao,
+            &quot;impacto&quot;: impacto,
+            &quot;atingido_em&quot;: datetime.now().isoformat()
+        }
+
+        self.marcos_atingidos.append(marco)
+
+    def recuperar_contexto_relevante(self, query: str, limite: int = 5) -&gt; List[Dict]:
+        &quot;&quot;&quot;Recupera contexto relevante da história&quot;&quot;&quot;
+        # Busca nos últimos contextos
+        relevantes = []
+
+        query_lower = query.lower()
+
+        for ctx in reversed(self.contexto_acumulado):
+            if any(palavra in ctx[&quot;evento&quot;].lower() or palavra in ctx[&quot;aprendizado&quot;].lower()
+                   for palavra in query_lower.split()):
+                relevantes.append(ctx)
+
+                if len(relevantes) &gt;= limite:
+                    break
+
+        return relevantes
+
+    def gerar_relatorio_trimestral(self) -&gt; Dict:
+        &quot;&quot;&quot;Gera relatório trimestral de progresso&quot;&quot;&quot;
+        dias_ativo = (datetime.now() - self.criado_em).days
+
+        return {
+            &quot;missao&quot;: self.missao,
+            &quot;dias_ativo&quot;: dias_ativo,
+            &quot;preferencias_identificadas&quot;: len(self.preferencias),
+            &quot;aspectos_estilo_definidos&quot;: len(self.estilo),
+            &quot;padroes_validados&quot;: len(self.padroes_validados),
+            &quot;marcos_atingidos&quot;: len(self.marcos_atingidos),
+            &quot;contexto_acumulado&quot;: len(self.contexto_acumulado),
+            &quot;top_padroes&quot;: sorted(
+                self.padroes_validados,
+                key=lambda p: p[&quot;taxa_sucesso&quot;],
+                reverse=True
+            )[:3],
+            &quot;proximos_passos&quot;: self._sugerir_proximos_passos()
+        }
+
+    def _sugerir_proximos_passos(self) -&gt; List[str]:
+        &quot;&quot;&quot;Sugere próximos passos baseado no histórico&quot;&quot;&quot;
+        sugestoes = []
+
+        # Baseado em preferências
+        if len(self.preferencias) &lt; 5:
+            sugestoes.append(&quot;Continuar identificando preferências do usuário&quot;)
+
+        # Baseado em padrões
+        padroes_sucesso = [p for p in self.padroes_validados if p[&quot;taxa_sucesso&quot;] &gt; 0.8]
+        if padroes_sucesso:
+            sugestoes.append(f&quot;Aplicar padrão '{padroes_sucesso[0]['nome']}' com {padroes_sucesso[0]['taxa_sucesso']:.1%} de sucesso&quot;)
+
+        # Baseado em marcos
+        if len(self.marcos_atingidos) &lt; 3:
+            sugestoes.append(&quot;Focar em atingir próximo marco importante&quot;)
+
+        return sugestoes[:3]
+
+    def manter_alinhamento_missao(self, acao_proposta: str) -&gt; Dict:
+        &quot;&quot;&quot;Verifica se ação está alinhada com missão&quot;&quot;&quot;
+        # Análise simples de palavras-chave
+        missao_palavras = set(self.missao.lower().split())
+        acao_palavras = set(acao_proposta.lower().split())
+
+        sobreposicao = len(missao_palavras &amp; acao_palavras)
+        alinhamento = sobreposicao / len(missao_palavras) if missao_palavras else 0
+
+        return {
+            &quot;alinhado&quot;: alinhamento &gt; 0.3,
+            &quot;score_alinhamento&quot;: alinhamento,
+            &quot;justificativa&quot;: (
+                f&quot;Ação tem {alinhamento:.1%} de alinhamento com missão&quot; if alinhamento &gt; 0.3
+                else &quot;Ação não parece alinhada com missão principal&quot;
+            )
+        }
+
+
+# Exemplo de uso completo
+print(&quot;\n=== INTENÇÃO PERSISTENTE ===\n&quot;)
+
+persistencia = IntencaoPersistente(
+    &quot;usuario_123&quot;,
+    &quot;Construir autoridade em IA educacional ao longo de 2026&quot;
+)
+
+# Semana 1: Define preferências iniciais
+persistencia.atualizar_preferencia(&quot;tom_comunicacao&quot;, &quot;tecnico_acessivel&quot;, 0.8)
+persistencia.atualizar_preferencia(&quot;formato_conteudo&quot;, &quot;artigos_longos&quot;, 0.9)
+
+persistencia.definir_estilo(&quot;escrita&quot;, {
+    &quot;usa_exemplos_praticos&quot;: True,
+    &quot;evita_jargao_excessivo&quot;: True,
+    &quot;inclui_codigo_funcional&quot;: True
+})
+
+print(&quot;Semana 1: Preferências e estilo definidos&quot;)
+print(f&quot;  • Tom: {persistencia.preferencias['tom_comunicacao']['valor_atual']}&quot;)
+print(f&quot;  • Formato: {persistencia.preferencias['formato_conteudo']['valor_atual']}\n&quot;)
+
+# Semana 4: Valida padrão que funciona
+persistencia.validar_padrao(
+    &quot;casos_praticos&quot;,
+    &quot;Posts com casos práticos têm 3x mais engajamento&quot;,
+    0.85
+)
+
+persistencia.adicionar_contexto(
+    &quot;analise_performance&quot;,
+    {&quot;posts_publicados&quot;: 12, &quot;engajamento_medio&quot;: 450},
+    &quot;Casos práticos têm melhor performance&quot;
+)
+
+print(&quot;Semana 4: Padrão validado&quot;)
+print(f&quot;  • Casos práticos: {persistencia.padroes_validados[0]['taxa_sucesso']:.1%} sucesso\n&quot;)
+
+# Semana 8: Novo projeto
+nova_acao = &quot;Criar série de vídeos sobre transformers em educação&quot;
+alinhamento = persistencia.manter_alinhamento_missao(nova_acao)
+
+print(&quot;Semana 8: Nova ação proposta&quot;)
+print(f&quot;  • Ação: {nova_acao}&quot;)
+print(f&quot;  • Alinhada: {'✅' if alinhamento['alinhado'] else '❌'}&quot;)
+print(f&quot;  • Score: {alinhamento['score_alinhamento']:.1%}&quot;)
+print(f&quot;  • {alinhamento['justificativa']}\n&quot;)
+
+# Semana 12: Marco atingido
+persistencia.registrar_marco(
+    &quot;Atingiu 50k seguidores&quot;,
+    &quot;Aumento significativo de alcance&quot;
+)
+
+# Relatório trimestral
+print(&quot;=&quot; * 60)
+relatorio = persistencia.gerar_relatorio_trimestral()
+
+print(&quot;RELATÓRIO TRIMESTRAL:&quot;)
+print(f&quot;Missão: {relatorio['missao']}&quot;)
+print(f&quot;Dias ativo: {relatorio['dias_ativo']}&quot;)
+print(f&quot;Preferências identificadas: {relatorio['preferencias_identificadas']}&quot;)
+print(f&quot;Padrões validados: {relatorio['padroes_validados']}&quot;)
+print(f&quot;Marcos atingidos: {relatorio['marcos_atingidos']}&quot;)
+
+print(&quot;\nPróximos passos sugeridos:&quot;)
+for i, passo in enumerate(relatorio['proximos_passos'], 1):
+    print(f&quot;  {i}. {passo}&quot;)
+</code></pre>
       </div>
 
       <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
-        <h2 class="text-3xl font-bold mb-6 text-neutral-900 dark:text-neutral-100">2. Intencao Persistente</h2>
-        
-        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
-          <strong>Intencao Persistente</strong> significa que a IA <strong>mantem objetivos de longo prazo</strong> mesmo apos dias, semanas ou meses de interacao.
-        </p>
-
-        <div class="space-y-6">
-          <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg border-l-4 border-blue-500">
-            <h3 class="text-xl font-bold mb-3 text-neutral-900 dark:text-neutral-100">O Que o Sistema Mantem Persistentemente</h3>
-            
-            <div class="grid md:grid-cols-2 gap-4">
-              <div class="bg-white dark:bg-neutral-700 p-4 rounded">
-                <h4 class="font-bold mb-2">Preferencias</h4>
-                <p class="text-sm text-neutral-700 dark:text-neutral-300">Tom de comunicacao, nivel de detalhe, formatos preferidos, estilos de trabalho</p>
-              </div>
-
-              <div class="bg-white dark:bg-neutral-700 p-4 rounded">
-                <h4 class="font-bold mb-2">Estilo</h4>
-                <p class="text-sm text-neutral-700 dark:text-neutral-300">Forma de escrever, apresentar, estruturar informacoes, usar exemplos</p>
-              </div>
-
-              <div class="bg-white dark:bg-neutral-700 p-4 rounded">
-                <h4 class="font-bold mb-2">Padroes</h4>
-                <p class="text-sm text-neutral-700 dark:text-neutral-300">Processos que funcionam bem, decisoes recorrentes, estrategias validadas</p>
-              </div>
-
-              <div class="bg-white dark:bg-neutral-700 p-4 rounded">
-                <h4 class="font-bold mb-2">Missao</h4>
-                <p class="text-sm text-neutral-700 dark:text-neutral-300">Objetivo central que guia todas as acoes ao longo do tempo</p>
-              </div>
-
-              <div class="bg-white dark:bg-neutral-700 p-4 rounded">
-                <h4 class="font-bold mb-2">Visao de Longo Prazo</h4>
-                <p class="text-sm text-neutral-700 dark:text-neutral-300">Onde se quer chegar em 6, 12 ou 24 meses</p>
-              </div>
-
-              <div class="bg-white dark:bg-neutral-700 p-4 rounded">
-                <h4 class="font-bold mb-2">Contexto Acumulado</h4>
-                <p class="text-sm text-neutral-700 dark:text-neutral-300">Historico de projetos, decisoes tomadas, licoes aprendidas</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-nivel-3s/10 p-6 rounded-lg">
-            <h3 class="text-xl font-bold mb-3 text-neutral-900 dark:text-neutral-100">Exemplo de Intencao Persistente em Acao</h3>
-            
-            <div class="space-y-3 text-sm">
-              <div class="bg-white dark:bg-neutral-700 p-4 rounded border-l-4 border-nivel-3s">
-                <strong>Semana 1:</strong> Usuario define que quer "construir presenca digital profissional".<br>
-                Sistema entende missao e comeca a criar conteudo.
-              </div>
-
-              <div class="bg-white dark:bg-neutral-700 p-4 rounded border-l-4 border-nivel-3s">
-                <strong>Semana 4:</strong> Sistema percebe que posts sobre "casos praticos" tem melhor performance.<br>
-                Ajusta estrategia automaticamente, mantendo missao original.
-              </div>
-
-              <div class="bg-white dark:bg-neutral-700 p-4 rounded border-l-4 border-nivel-3s">
-                <strong>Semana 8:</strong> Usuario menciona novo projeto relacionado.<br>
-                Sistema conecta automaticamente com missao de longo prazo e sugere integracao.
-              </div>
-
-              <div class="bg-white dark:bg-neutral-700 p-4 rounded border-l-4 border-nivel-3s">
-                <strong>Semana 12:</strong> Sistema apresenta relatorio trimestral mostrando progresso na missao,<br>
-                aprendizados acumulados e propoe ajustes estrategicos para proximo trimestre.
-              </div>
-            </div>
-          </div>
-        </div>
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Conclusão
+        </h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-4">Você dominou os conceitos de Intenção Composta e Intenção Persistente - as capacidades que permitem sistemas manterem objetivos complexos ao longo de meses.</p>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">O que você dominou:</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ 7 componentes de uma Intenção Composta (macro, intermediárias, micro, critérios, contextos, dependências, camadas)</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Implementação completa de sistema de intenção composta com validação</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Cálculo automático de ordem de execução respeitando dependências</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Priorização de objetivos com múltiplos critérios</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Análise de contextos paralelos</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Intenção Persistente com preferências, estilo, padrões validados</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Contexto acumulado ao longo do tempo</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Alinhamento automático de novas ações com missão</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Relatórios trimestrais de progresso</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Como sistemas mantêm objetivos por meses</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Diferença entre comando pontual e intenção persistente</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Por que intenção composta e persistente revolucionam IA</p>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Próximo módulo:</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">No Módulo 6, você vai aprender sobre <strong>Sistemas Multiagentes (2026)</strong>: os 4 modelos que dominam a coordenação de agentes em 2026, com implementações completas de cada arquitetura.</p>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">© 2025 FEI - Formação em Engenharia de Intenção</p>
       </div>
 
+      <!-- Conclusao -->
       <div class="bg-gradient-to-r from-nivel-3s to-orange-600 text-white rounded-xl p-8">
         <h2 class="text-3xl font-bold mb-4">Conclusao do Modulo</h2>
         <p class="text-lg mb-6">
-          Voce dominou os conceitos de Intencao Composta (multiplas camadas) e Intencao Persistente (visao de longo prazo).
+          Voce dominou os conceitos essenciais de Intenção Composta e Persistente no contexto de sistemas autonomos 2026.
         </p>
-        <div class="bg-white/10 backdrop-blur p-6 rounded-lg mb-6">
-          <h3 class="font-bold text-xl mb-2">O que voce dominou:</h3>
-          <ul class="space-y-2">
-            <li>7 componentes de uma Intencao Composta</li>
-            <li>Como sistemas mantém objetivos por meses</li>
-            <li>Diferenca entre comando pontual e intencao persistente</li>
-            <li>Por que intencao composta e persistente revolucionam IA</li>
-          </ul>
-        </div>
         <div class="flex gap-4">
-          <a href="nivel-3s-modulo-4.html" class="px-6 py-3 bg-neutral-200 dark:bg-neutral-700 rounded-lg font-semibold">
-            ← Módulo 4
-          </a>
-          <a href="nivel-3s-modulo-6.html" class="px-6 py-3 bg-nivel-3s text-white rounded-lg font-semibold">
-            Módulo 6 →
-          </a>
+          <a href="nivel-3s-modulo-4.html" class="px-6 py-3 bg-white text-nivel-3s rounded-lg font-semibold hover:bg-neutral-100">← Módulo 4</a>
+          <a href="nivel-3s-modulo-6.html" class="px-6 py-3 bg-nivel-3s text-white rounded-lg font-semibold hover:opacity-90">Módulo 6 →</a>
         </div>
       </div>
 
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-3 gap-8">
@@ -278,10 +742,10 @@
         <div>
           <h4 class="font-semibold text-white mb-4">Niveis</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="../niveis/nivel-1.html" class="hover:text-white">Nivel 1</a></li>
-            <li><a href="../niveis/nivel-2.html" class="hover:text-white">Nivel 2</a></li>
-            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Nivel 3A</a></li>
-            <li><a href="../niveis/nivel-3s.html" class="hover:text-white">Nivel 3S</a></li>
+            <li><a href="../niveis/nivel-1.html" class="hover:text-white">Nivel 1: Fundamentos</a></li>
+            <li><a href="../niveis/nivel-2.html" class="hover:text-white">Nivel 2: Programa Completo</a></li>
+            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Nivel 3A: Agentes</a></li>
+            <li><a href="../niveis/nivel-3s.html" class="hover:text-white">Nivel 3S: Sistemas 2026</a></li>
           </ul>
         </div>
         <div>
@@ -299,5 +763,13 @@
   </footer>
 
   <script src="../js/app.js"></script>
+  <script>
+    // Initialize syntax highlighting
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+      });
+    });
+  </script>
 </body>
 </html>

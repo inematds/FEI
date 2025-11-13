@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Módulo 2: O Conceito de Sistemas Intencionais | FEI Nível 3S</title>
-  <meta name="description" content="Sistemas com missão, evolução própria, múltiplos agentes internos e autonomia supervisionada">
+  <meta name="description" content="Estado da Arte 2026">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -30,6 +30,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Highlight.js for syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
 
   <style>
     * {
@@ -101,7 +106,7 @@
         O Conceito de Sistemas Intencionais
       </h1>
       <p class="text-xl text-white/90">
-        Sistemas com missao, evolucao propria, multiplos agentes internos e autonomia supervisionada
+        Estado da Arte 2026
       </p>
     </div>
   </section>
@@ -117,307 +122,726 @@
         </a>
       </div>
 
-      <!-- Introducao -->
-      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
-        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
-          Introducao
-        </h2>
-        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
-          Ate agora, lidam os com <strong>prompts</strong>, <strong>tarefas</strong> e <strong>objetivos curtos</strong>. Mas o futuro da IA nao e sobre comandos isolados - e sobre <strong>Sistemas Intencionais</strong>.
-        </p>
-        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
-          Um <strong>Sistema Intencional</strong> e uma rede organizada de agentes, processos e rotinas que operam com um <strong>proposito de longo prazo</strong>, capazes de evoluir, se adaptar e tomar decisoes complexas de forma autonoma.
-        </p>
-        <div class="bg-nivel-3s/10 border-l-4 border-nivel-3s p-6 rounded-lg">
-          <h3 class="font-bold text-nivel-3s mb-2">O que voce vai dominar neste modulo:</h3>
-          <p class="text-neutral-700 dark:text-neutral-300">
-            Entender o que diferencia um sistema intencional de um agente simples. Descobrir os 9 pilares de um sistema intencional moderno. Aprender como sistemas evoluem e se autocorrigem. Preparar-se para projetar sistemas que operam com autonomia supervisionada.
-          </p>
-        </div>
-      </div>
 
-      <!-- Do Agente ao Sistema -->
       <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
         <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
-          Do Agente Simples ao Sistema Intencional
+          Nível 3S - Sistemas Intencionais 2026
         </h2>
-
-        <div class="space-y-6">
-
-          <!-- Agente Simples -->
-          <div class="bg-red-50 dark:bg-red-900/20 p-6 rounded-lg border-l-4 border-red-500">
-            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
-              Nivel 1: Agente Simples
-            </h3>
-            <div class="grid md:grid-cols-2 gap-4 mb-4">
-              <div>
-                <h4 class="font-bold mb-2">Caracteristicas:</h4>
-                <ul class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
-                  <li>Executa tarefas isoladas</li>
-                  <li>Segue instrucoes diretas</li>
-                  <li>Sem memoria de longo prazo</li>
-                  <li>Nao evolui autonomamente</li>
-                </ul>
-              </div>
-              <div>
-                <h4 class="font-bold mb-2">Exemplo:</h4>
-                <p class="text-sm text-neutral-700 dark:text-neutral-300">
-                  "Escreva um artigo sobre IA" → [Escreve artigo] → Fim
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Sistema Intencional -->
-          <div class="bg-nivel-3s/10 p-6 rounded-lg border-l-4 border-nivel-3s">
-            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
-              Nivel 2: Sistema Intencional
-            </h3>
-            <div class="grid md:grid-cols-2 gap-4 mb-4">
-              <div>
-                <h4 class="font-bold mb-2">Caracteristicas:</h4>
-                <ul class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
-                  <li>Opera com missao de longo prazo</li>
-                  <li>Coordena multiplos agentes internos</li>
-                  <li>Memoria persistente e contextual</li>
-                  <li>Evolui e se adapta autonomamente</li>
-                  <li>Detecta e corrige falhas</li>
-                  <li>Toma decisoes complexas</li>
-                </ul>
-              </div>
-              <div>
-                <h4 class="font-bold mb-2">Exemplo:</h4>
-                <p class="text-sm text-neutral-700 dark:text-neutral-300">
-                  "Mantenha minha estrategia de conteudo ativa e relevante" → [Opera continuamente por meses, pesquisando, criando, publicando, monitorando, ajustando]
-                </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="mt-6 bg-gradient-to-r from-red-100 to-orange-100 dark:from-red-900/20 dark:to-orange-900/20 p-6 rounded-lg">
-          <h3 class="font-bold text-lg mb-3">A Diferenca Fundamental</h3>
-          <div class="grid md:grid-cols-2 gap-6">
-            <div>
-              <h4 class="font-bold text-red-600 mb-2">Agente Simples</h4>
-              <p class="text-sm text-neutral-700 dark:text-neutral-300">
-                Voce da comandos. O agente executa. Voce supervisiona cada passo.
-              </p>
-            </div>
-            <div>
-              <h4 class="font-bold text-nivel-3s mb-2">Sistema Intencional</h4>
-              <p class="text-sm text-neutral-700 dark:text-neutral-300">
-                Voce define intencoes. O sistema orquestra. Voce supervisiona resultados.
-              </p>
-            </div>
-          </div>
-        </div>
+        <p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">Estado da Arte 2026</p>
       </div>
 
-      <!-- Os 9 Pilares -->
       <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
         <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
-          Os 9 Pilares de um Sistema Intencional
+          Da Tarefa ao Sistema
         </h2>
-
-        <div class="grid md:grid-cols-2 gap-6">
-
-          <div class="bg-nivel-3s/10 p-6 rounded-lg">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="w-10 h-10 bg-nivel-3s text-white rounded-full flex items-center justify-center font-bold">1</div>
-              <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Missao</h3>
-            </div>
-            <p class="text-sm text-neutral-700 dark:text-neutral-300">
-              O sistema tem um <strong>proposito claro</strong> que guia todas as acoes. Nao apenas "executar tarefas", mas "alcancar um objetivo de longo prazo".
-            </p>
-          </div>
-
-          <div class="bg-nivel-3s/10 p-6 rounded-lg">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="w-10 h-10 bg-nivel-3s text-white rounded-full flex items-center justify-center font-bold">2</div>
-              <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Evolucao Propria</h3>
-            </div>
-            <p class="text-sm text-neutral-700 dark:text-neutral-300">
-              O sistema <strong>aprende com experiencias</strong>, ajusta estrategias, otimiza processos e melhora continuamente sem intervencao humana constante.
-            </p>
-          </div>
-
-          <div class="bg-nivel-3s/10 p-6 rounded-lg">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="w-10 h-10 bg-nivel-3s text-white rounded-full flex items-center justify-center font-bold">3</div>
-              <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Monitoramento de Qualidade</h3>
-            </div>
-            <p class="text-sm text-neutral-700 dark:text-neutral-300">
-              Agentes auditores internos <strong>validam resultados</strong>, detectam inconsistencias e garantem que tudo esta alinhado com a intencao original.
-            </p>
-          </div>
-
-          <div class="bg-nivel-3s/10 p-6 rounded-lg">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="w-10 h-10 bg-nivel-3s text-white rounded-full flex items-center justify-center font-bold">4</div>
-              <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Multiplos Agentes Internos</h3>
-            </div>
-            <p class="text-sm text-neutral-700 dark:text-neutral-300">
-              Cada agente tem <strong>especializacao unica</strong>: pesquisador, estrategista, executor, auditor, memorialista. Juntos, formam um time completo.
-            </p>
-          </div>
-
-          <div class="bg-nivel-3s/10 p-6 rounded-lg">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="w-10 h-10 bg-nivel-3s text-white rounded-full flex items-center justify-center font-bold">5</div>
-              <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Rotinas de Funcionamento</h3>
-            </div>
-            <p class="text-sm text-neutral-700 dark:text-neutral-300">
-              O sistema opera com <strong>processos padronizados</strong>: verifica dados diariamente, executa tarefas semanais, envia relatorios mensais.
-            </p>
-          </div>
-
-          <div class="bg-nivel-3s/10 p-6 rounded-lg">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="w-10 h-10 bg-nivel-3s text-white rounded-full flex items-center justify-center font-bold">6</div>
-              <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Decisoes Complexas</h3>
-            </div>
-            <p class="text-sm text-neutral-700 dark:text-neutral-300">
-              O sistema <strong>avalia multiplas variaveis</strong>, pondera riscos e beneficios, e toma decisoes autonomas baseadas em criterios pre-definidos.
-            </p>
-          </div>
-
-          <div class="bg-nivel-3s/10 p-6 rounded-lg">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="w-10 h-10 bg-nivel-3s text-white rounded-full flex items-center justify-center font-bold">7</div>
-              <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Falhas Detectadas Automaticamente</h3>
-            </div>
-            <p class="text-sm text-neutral-700 dark:text-neutral-300">
-              Agentes auditores <strong>identificam erros</strong>, inconsistencias ou desvios da intencao, e acionam correcoes automaticas ou pedem validacao humana.
-            </p>
-          </div>
-
-          <div class="bg-nivel-3s/10 p-6 rounded-lg">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="w-10 h-10 bg-nivel-3s text-white rounded-full flex items-center justify-center font-bold">8</div>
-              <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Camadas de Raciocinio</h3>
-            </div>
-            <p class="text-sm text-neutral-700 dark:text-neutral-300">
-              O sistema nao pensa linearmente. Ele opera em <strong>multiplas camadas</strong>: estrategia, tatica, execucao, validacao, aprendizado.
-            </p>
-          </div>
-
-          <div class="bg-nivel-3s/10 p-6 rounded-lg">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="w-10 h-10 bg-nivel-3s text-white rounded-full flex items-center justify-center font-bold">9</div>
-              <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Autonomia Supervisionada</h3>
-            </div>
-            <p class="text-sm text-neutral-700 dark:text-neutral-300">
-              O sistema opera <strong>autonomamente</strong>, mas mantem <strong>controle humano</strong> sobre decisoes criticas, limites eticos e aprovacoes estrategicas.
-            </p>
-          </div>
-
-        </div>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-4">Em 2026, não lidamos mais apenas com <strong>prompts, tarefas ou objetivos curtos</strong>. Lidamos com <strong>sistemas completos</strong> que operam de forma contínua, adaptativa e intencional.</p>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Definição de Sistema Intencional</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Um conjunto coordenado de agentes que possuem <strong>missão de longo prazo</strong>, <strong>capacidade de evolução própria</strong>, <strong>monitoramento de qualidade interno</strong> e <strong>autonomia supervisionada</strong> para tomar decisões complexas.</p>
       </div>
 
-      <!-- Exemplo Pratico -->
       <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
         <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
-          Exemplo Pratico: Sistema Intencional de Marketing
+          Os 8 Pilares de um Sistema Intencional
         </h2>
+        <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">1. Missão</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Todo sistema possui um <strong>propósito claro e duradouro</strong> que guia todas as suas ações.</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Exemplo:</strong> "Manter minha presença digital profissional consistente e relevante, gerando autoridade no setor de tecnologia educacional."</p>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">Implementação:</p>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+from dataclasses import dataclass
+from typing import List, Dict
+from datetime import datetime
 
-        <div class="bg-nivel-3s/10 p-6 rounded-lg mb-6">
-          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
-            Intencao: "Mantenha minha presenca ativa no LinkedIn com conteudo relevante e engajador"
-          </h3>
-          <p class="text-sm text-neutral-700 dark:text-neutral-300">
-            Veja como um Sistema Intencional operaria isso:
-          </p>
-        </div>
+@dataclass
+class Missao:
+    &quot;&quot;&quot;Define a missão de um sistema intencional&quot;&quot;&quot;
+    proposito_principal: str
+    objetivos_longo_prazo: List[str]
+    valores_fundamentais: List[str]
+    limites_operacionais: List[str]
+    metricas_sucesso: Dict[str, float]
 
-        <div class="space-y-4">
+class SistemaComMissao:
+    &quot;&quot;&quot;Sistema que opera baseado em missão&quot;&quot;&quot;
 
-          <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
-            <h4 class="font-bold text-nivel-3s mb-3">Agentes Internos Ativos</h4>
-            <div class="grid md:grid-cols-3 gap-4">
-              <div>
-                <h5 class="font-bold text-sm mb-1">Pesquisador</h5>
-                <p class="text-xs text-neutral-700 dark:text-neutral-300">Busca tendencias, temas relevantes, insights de mercado</p>
-              </div>
-              <div>
-                <h5 class="font-bold text-sm mb-1">Estrategista</h5>
-                <p class="text-xs text-neutral-700 dark:text-neutral-300">Define calendario de conteudo, temas semanais, formatos</p>
-              </div>
-              <div>
-                <h5 class="font-bold text-sm mb-1">Copywriter</h5>
-                <p class="text-xs text-neutral-700 dark:text-neutral-300">Escreve posts alinhados com sua marca e tom</p>
-              </div>
-              <div>
-                <h5 class="font-bold text-sm mb-1">Editor</h5>
-                <p class="text-xs text-neutral-700 dark:text-neutral-300">Revisa, formata, otimiza para engajamento</p>
-              </div>
-              <div>
-                <h5 class="font-bold text-sm mb-1">Auditor</h5>
-                <p class="text-xs text-neutral-700 dark:text-neutral-300">Valida qualidade, consistencia, alinhamento</p>
-              </div>
-              <div>
-                <h5 class="font-bold text-sm mb-1">Analisador</h5>
-                <p class="text-xs text-neutral-700 dark:text-neutral-300">Monitora metricas, identifica padroes, ajusta estrategia</p>
-              </div>
-            </div>
-          </div>
+    def __init__(self, missao: Missao):
+        self.missao = missao
+        self.decisoes_historicas: List[Dict] = []
 
-          <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
-            <h4 class="font-bold text-nivel-3s mb-3">Rotinas Automatizadas</h4>
-            <ul class="text-sm space-y-2 text-neutral-700 dark:text-neutral-300">
-              <li><strong>Diariamente:</strong> Monitora tendencias, coleta insights, ajusta calendario</li>
-              <li><strong>Semanalmente:</strong> Cria 3 posts, agenda publicacoes, envia preview para aprovacao</li>
-              <li><strong>Mensalmente:</strong> Analisa performance, identifica melhores temas, otimiza estrategia</li>
-            </ul>
-          </div>
+    def validar_acao_contra_missao(self, acao: str, impacto: Dict) -&gt; bool:
+        &quot;&quot;&quot;Valida se uma ação está alinhada com a missão&quot;&quot;&quot;
+        validacoes = []
 
-          <div class="bg-neutral-50 dark:bg-neutral-700 p-6 rounded-lg">
-            <h4 class="font-bold text-nivel-3s mb-3">Evolucao Autonoma</h4>
-            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">
-              O sistema aprende ao longo do tempo:
-            </p>
-            <ul class="text-xs space-y-1 text-neutral-700 dark:text-neutral-300">
-              <li>Identifica que posts com estudos de caso geram 3x mais engajamento</li>
-              <li>Descobre que publicar as 9h tem melhor alcance</li>
-              <li>Ajusta tom para ser mais conversacional com base em comentarios</li>
-              <li>Sugere novos formatos (carroseis, videos) baseado em tendencias</li>
-            </ul>
-          </div>
+        # 1. Valida contra propósito principal
+        alinhada_proposito = any(
+            palavra.lower() in acao.lower()
+            for palavra in self.missao.proposito_principal.split()
+        )
+        validacoes.append(alinhada_proposito)
 
-          <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border-2 border-nivel-3s">
-            <h4 class="font-bold text-nivel-3s mb-3">Resultado Final</h4>
-            <p class="text-sm text-neutral-700 dark:text-neutral-300">
-              Voce definiu 1 intencao. O sistema opera por meses, pesquisando, criando, publicando, monitorando, aprendendo e evoluindo. Voce apenas aprova os posts finais e recebe relatorios de performance.
-            </p>
-          </div>
+        # 2. Verifica limites operacionais
+        dentro_limites = all(
+            limite.lower() not in acao.lower()
+            for limite in self.missao.limites_operacionais
+        )
+        validacoes.append(dentro_limites)
 
-        </div>
+        # 3. Avalia impacto esperado contra métricas
+        impacto_positivo = sum(
+            impacto.get(metrica, 0) for metrica in self.missao.metricas_sucesso.keys()
+        ) &gt; 0
+        validacoes.append(impacto_positivo)
+
+        resultado = all(validacoes)
+
+        # Registra decisão
+        self.decisoes_historicas.append({
+            &quot;acao&quot;: acao,
+            &quot;alinhada&quot;: resultado,
+            &quot;timestamp&quot;: datetime.now().isoformat(),
+            &quot;validacoes&quot;: {
+                &quot;proposito&quot;: alinhada_proposito,
+                &quot;limites&quot;: dentro_limites,
+                &quot;impacto&quot;: impacto_positivo
+            }
+        })
+
+        return resultado
+
+    def sugerir_acoes_alinhadas(self) -&gt; List[str]:
+        &quot;&quot;&quot;Sugere ações baseadas na missão&quot;&quot;&quot;
+        sugestoes = []
+
+        # Baseado em objetivos de longo prazo
+        for objetivo in self.missao.objetivos_longo_prazo:
+            sugestoes.append(f&quot;Iniciar projeto: {objetivo}&quot;)
+
+        # Baseado em valores fundamentais
+        for valor in self.missao.valores_fundamentais:
+            sugestoes.append(f&quot;Promover: {valor}&quot;)
+
+        return sugestoes[:5]  # Top 5 sugestões
+
+
+# Exemplo de uso
+missao = Missao(
+    proposito_principal=&quot;Educar profissionais sobre IA moderna&quot;,
+    objetivos_longo_prazo=[
+        &quot;Treinar 10.000 profissionais em 2026&quot;,
+        &quot;Criar biblioteca de 100 casos práticos&quot;,
+        &quot;Estabelecer comunidade ativa&quot;
+    ],
+    valores_fundamentais=[
+        &quot;Qualidade técnica&quot;,
+        &quot;Aplicação prática&quot;,
+        &quot;Atualização constante&quot;
+    ],
+    limites_operacionais=[
+        &quot;Sem conteúdo superficial&quot;,
+        &quot;Sem promessas irreais&quot;,
+        &quot;Sem copiar conteúdo de terceiros&quot;
+    ],
+    metricas_sucesso={
+        &quot;satisfacao_alunos&quot;: 0.9,
+        &quot;aplicacao_pratica&quot;: 0.8,
+        &quot;engajamento&quot;: 0.75
+    }
+)
+
+sistema = SistemaComMissao(missao)
+
+# Testa validação de ações
+acao1 = &quot;Criar curso rápido sobre IA com conteúdo básico&quot;
+acao2 = &quot;Desenvolver programa profundo sobre sistemas autônomos com casos reais&quot;
+
+print(f&quot;Ação 1 alinhada: {sistema.validar_acao_contra_missao(acao1, {'satisfacao_alunos': 0.3})}&quot;)
+print(f&quot;Ação 2 alinhada: {sistema.validar_acao_contra_missao(acao2, {'satisfacao_alunos': 0.95, 'aplicacao_pratica': 0.9})}&quot;)
+
+print(&quot;\nSugestões alinhadas com missão:&quot;)
+for sugestao in sistema.sugerir_acoes_alinhadas():
+    print(f&quot;  • {sugestao}&quot;)
+</code></pre>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">2. Evolução Própria</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">O sistema <strong>aprende e se adapta ao longo do tempo</strong>, melhorando suas estratégias baseado em resultados.</p>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+from typing import Any
+import statistics
+
+class SistemaEvolutivo:
+    &quot;&quot;&quot;Sistema que evolui baseado em resultados&quot;&quot;&quot;
+
+    def __init__(self):
+        self.estrategias: Dict[str, Dict] = {}
+        self.experimentos: List[Dict] = []
+
+    def registrar_estrategia(self, nome: str, parametros: Dict):
+        &quot;&quot;&quot;Registra uma nova estratégia&quot;&quot;&quot;
+        self.estrategias[nome] = {
+            &quot;parametros&quot;: parametros,
+            &quot;execucoes&quot;: [],
+            &quot;performance_media&quot;: 0,
+            &quot;taxa_sucesso&quot;: 0
+        }
+
+    def executar_com_aprendizado(self, estrategia: str, contexto: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Executa estratégia e aprende com resultado&quot;&quot;&quot;
+        if estrategia not in self.estrategias:
+            raise ValueError(f&quot;Estratégia {estrategia} não existe&quot;)
+
+        # Simula execução
+        resultado = {
+            &quot;sucesso&quot;: True,
+            &quot;performance&quot;: 0.85,
+            &quot;metricas&quot;: {
+                &quot;velocidade&quot;: 0.9,
+                &quot;qualidade&quot;: 0.8,
+                &quot;custo&quot;: 0.85
+            }
+        }
+
+        # Registra execução
+        self.estrategias[estrategia][&quot;execucoes&quot;].append(resultado)
+
+        # Atualiza estatísticas
+        execucoes = self.estrategias[estrategia][&quot;execucoes&quot;]
+        performances = [e[&quot;performance&quot;] for e in execucoes]
+
+        self.estrategias[estrategia][&quot;performance_media&quot;] = statistics.mean(performances)
+        self.estrategias[estrategia][&quot;taxa_sucesso&quot;] = sum(
+            1 for e in execucoes if e[&quot;sucesso&quot;]
+        ) / len(execucoes)
+
+        return resultado
+
+    def evoluir_automaticamente(self):
+        &quot;&quot;&quot;Sistema evolui suas estratégias automaticamente&quot;&quot;&quot;
+        evolucoes = []
+
+        for nome, estrategia in self.estrategias.items():
+            if len(estrategia[&quot;execucoes&quot;]) &lt; 5:
+                continue  # Dados insuficientes
+
+            # Analisa performance
+            if estrategia[&quot;performance_media&quot;] &lt; 0.7:
+                # Performance ruim - ajusta parâmetros
+                parametros_antigos = estrategia[&quot;parametros&quot;].copy()
+
+                # Exemplo de ajuste automático
+                if &quot;agressividade&quot; in estrategia[&quot;parametros&quot;]:
+                    estrategia[&quot;parametros&quot;][&quot;agressividade&quot;] *= 0.8
+
+                if &quot;qualidade_minima&quot; in estrategia[&quot;parametros&quot;]:
+                    estrategia[&quot;parametros&quot;][&quot;qualidade_minima&quot;] *= 1.1
+
+                evolucoes.append({
+                    &quot;estrategia&quot;: nome,
+                    &quot;motivo&quot;: f&quot;Performance baixa ({estrategia['performance_media']:.2f})&quot;,
+                    &quot;ajuste&quot;: &quot;Parâmetros otimizados&quot;,
+                    &quot;antes&quot;: parametros_antigos,
+                    &quot;depois&quot;: estrategia[&quot;parametros&quot;]
+                })
+
+            elif estrategia[&quot;performance_media&quot;] &gt; 0.9:
+                # Performance excelente - essa vira padrão
+                evolucoes.append({
+                    &quot;estrategia&quot;: nome,
+                    &quot;motivo&quot;: f&quot;Performance excelente ({estrategia['performance_media']:.2f})&quot;,
+                    &quot;ajuste&quot;: &quot;Promovida a estratégia padrão&quot;
+                })
+
+        return evolucoes
+
+    def comparar_estrategias(self) -&gt; List[tuple]:
+        &quot;&quot;&quot;Compara todas as estratégias e ranqueia&quot;&quot;&quot;
+        ranking = []
+
+        for nome, dados in self.estrategias.items():
+            if len(dados[&quot;execucoes&quot;]) &gt; 0:
+                score = (
+                    dados[&quot;performance_media&quot;] * 0.7 +
+                    dados[&quot;taxa_sucesso&quot;] * 0.3
+                )
+                ranking.append((nome, score, dados))
+
+        return sorted(ranking, key=lambda x: x[1], reverse=True)
+
+
+# Exemplo de uso
+sistema_evo = SistemaEvolutivo()
+
+# Registra estratégias
+sistema_evo.registrar_estrategia(&quot;rapida&quot;, {
+    &quot;agressividade&quot;: 0.9,
+    &quot;qualidade_minima&quot;: 0.6
+})
+
+sistema_evo.registrar_estrategia(&quot;equilibrada&quot;, {
+    &quot;agressividade&quot;: 0.6,
+    &quot;qualidade_minima&quot;: 0.8
+})
+
+sistema_evo.registrar_estrategia(&quot;perfeccionista&quot;, {
+    &quot;agressividade&quot;: 0.3,
+    &quot;qualidade_minima&quot;: 0.95
+})
+
+# Simula múltiplas execuções
+for _ in range(10):
+    sistema_evo.executar_com_aprendizado(&quot;rapida&quot;, {})
+    sistema_evo.executar_com_aprendizado(&quot;equilibrada&quot;, {})
+    sistema_evo.executar_com_aprendizado(&quot;perfeccionista&quot;, {})
+
+# Sistema evolui automaticamente
+evolucoes = sistema_evo.evoluir_automaticamente()
+
+print(&quot;EVOLUÇÕES AUTOMÁTICAS:&quot;)
+for evo in evolucoes:
+    print(f&quot;\n• Estratégia: {evo['estrategia']}&quot;)
+    print(f&quot;  Motivo: {evo['motivo']}&quot;)
+    print(f&quot;  Ajuste: {evo['ajuste']}&quot;)
+
+# Ranking de estratégias
+print(&quot;\n\nRANKING DE ESTRATÉGIAS:&quot;)
+for nome, score, dados in sistema_evo.comparar_estrategias():
+    print(f&quot;{nome}: {score:.2f} (performance: {dados['performance_media']:.2f}, sucesso: {dados['taxa_sucesso']:.1%})&quot;)
+</code></pre>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">3. Monitoramento de Qualidade</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Agentes internos <strong>verificam a própria saída</strong> antes de entregar, garantindo padrões de excelência.</p>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+from enum import Enum
+from typing import Callable
+
+class NivelQualidade(Enum):
+    EXCELENTE = &quot;excelente&quot;
+    BOA = &quot;boa&quot;
+    ACEITAVEL = &quot;aceitavel&quot;
+    INSUFICIENTE = &quot;insuficiente&quot;
+
+class MonitorQualidade:
+    &quot;&quot;&quot;Sistema de monitoramento de qualidade interno&quot;&quot;&quot;
+
+    def __init__(self, criterios_minimos: Dict[str, float]):
+        self.criterios_minimos = criterios_minimos
+        self.historico_avaliacoes: List[Dict] = []
+
+    def avaliar_qualidade(self, saida: Dict) -&gt; tuple[NivelQualidade, Dict]:
+        &quot;&quot;&quot;Avalia qualidade de uma saída&quot;&quot;&quot;
+        scores = {}
+
+        # Avalia cada critério
+        for criterio, minimo in self.criterios_minimos.items():
+            valor_atual = saida.get(criterio, 0)
+            scores[criterio] = {
+                &quot;valor&quot;: valor_atual,
+                &quot;minimo&quot;: minimo,
+                &quot;aprovado&quot;: valor_atual &gt;= minimo,
+                &quot;gap&quot;: valor_atual - minimo
+            }
+
+        # Calcula score geral
+        score_geral = sum(s[&quot;valor&quot;] for s in scores.values()) / len(scores)
+
+        # Determina nível
+        if score_geral &gt;= 0.9:
+            nivel = NivelQualidade.EXCELENTE
+        elif score_geral &gt;= 0.75:
+            nivel = NivelQualidade.BOA
+        elif score_geral &gt;= 0.6:
+            nivel = NivelQualidade.ACEITAVEL
+        else:
+            nivel = NivelQualidade.INSUFICIENTE
+
+        avaliacao = {
+            &quot;nivel&quot;: nivel,
+            &quot;score_geral&quot;: score_geral,
+            &quot;scores_detalhados&quot;: scores,
+            &quot;timestamp&quot;: datetime.now().isoformat()
+        }
+
+        self.historico_avaliacoes.append(avaliacao)
+
+        return nivel, avaliacao
+
+    def sugerir_melhorias(self, avaliacao: Dict) -&gt; List[str]:
+        &quot;&quot;&quot;Sugere melhorias baseado na avaliação&quot;&quot;&quot;
+        sugestoes = []
+
+        for criterio, dados in avaliacao[&quot;scores_detalhados&quot;].items():
+            if not dados[&quot;aprovado&quot;]:
+                sugestoes.append(
+                    f&quot;Melhorar {criterio}: atual {dados['valor']:.2f}, &quot;
+                    f&quot;mínimo {dados['minimo']:.2f} (gap: {abs(dados['gap']):.2f})&quot;
+                )
+
+        return sugestoes
+
+    def gerar_relatorio_qualidade(self) -&gt; Dict:
+        &quot;&quot;&quot;Gera relatório de qualidade ao longo do tempo&quot;&quot;&quot;
+        if not self.historico_avaliacoes:
+            return {&quot;mensagem&quot;: &quot;Sem dados suficientes&quot;}
+
+        scores = [a[&quot;score_geral&quot;] for a in self.historico_avaliacoes]
+
+        return {
+            &quot;total_avaliacoes&quot;: len(self.historico_avaliacoes),
+            &quot;score_medio&quot;: statistics.mean(scores),
+            &quot;score_atual&quot;: scores[-1],
+            &quot;tendencia&quot;: &quot;melhorando&quot; if scores[-1] &gt; scores[0] else &quot;piorando&quot;,
+            &quot;distribuicao_niveis&quot;: {
+                nivel.value: sum(
+                    1 for a in self.historico_avaliacoes
+                    if a[&quot;nivel&quot;] == nivel
+                )
+                for nivel in NivelQualidade
+            }
+        }
+
+
+# Exemplo de uso
+monitor = MonitorQualidade({
+    &quot;completude&quot;: 0.8,
+    &quot;clareza&quot;: 0.75,
+    &quot;precisao&quot;: 0.85,
+    &quot;relevancia&quot;: 0.8
+})
+
+# Simula várias saídas
+saidas = [
+    {&quot;completude&quot;: 0.9, &quot;clareza&quot;: 0.85, &quot;precisao&quot;: 0.9, &quot;relevancia&quot;: 0.88},
+    {&quot;completude&quot;: 0.7, &quot;clareza&quot;: 0.65, &quot;precisao&quot;: 0.75, &quot;relevancia&quot;: 0.7},
+    {&quot;completude&quot;: 0.95, &quot;clareza&quot;: 0.92, &quot;precisao&quot;: 0.94, &quot;relevancia&quot;: 0.93},
+]
+
+for i, saida in enumerate(saidas, 1):
+    nivel, avaliacao = monitor.avaliar_qualidade(saida)
+
+    print(f&quot;\nSAÍDA {i}:&quot;)
+    print(f&quot;Nível: {nivel.value.upper()}&quot;)
+    print(f&quot;Score: {avaliacao['score_geral']:.2f}&quot;)
+
+    sugestoes = monitor.sugerir_melhorias(avaliacao)
+    if sugestoes:
+        print(&quot;Melhorias necessárias:&quot;)
+        for sugestao in sugestoes:
+            print(f&quot;  • {sugestao}&quot;)
+
+print(&quot;\nRELATÓRIO DE QUALIDADE:&quot;)
+relatorio = monitor.gerar_relatorio_qualidade()
+print(f&quot;Total de avaliações: {relatorio['total_avaliacoes']}&quot;)
+print(f&quot;Score médio: {relatorio['score_medio']:.2f}&quot;)
+print(f&quot;Tendência: {relatorio['tendencia']}&quot;)
+</code></pre>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">4. Múltiplos Agentes Internos</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">O sistema opera com <strong>agentes especializados</strong> que colaboram para resolver problemas complexos.</p>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+class SistemaMultiagente:
+    &quot;&quot;&quot;Sistema com múltiplos agentes especializados&quot;&quot;&quot;
+
+    def __init__(self, nome: str):
+        self.nome = nome
+        self.agentes: Dict[str, Any] = {}
+        self.comunicacao_inter_agentes: List[Dict] = []
+
+    def adicionar_agente(self, tipo: str, agente: Any):
+        &quot;&quot;&quot;Adiciona agente especializado ao sistema&quot;&quot;&quot;
+        self.agentes[tipo] = agente
+
+    def coordenar_tarefa_complexa(self, tarefa: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Coordena múltiplos agentes para resolver tarefa complexa&quot;&quot;&quot;
+        resultados_parciais = {}
+
+        # 1. Agente Pesquisador coleta dados
+        if &quot;pesquisador&quot; in self.agentes:
+            resultado_pesquisa = self.agentes[&quot;pesquisador&quot;].executar(tarefa)
+            resultados_parciais[&quot;pesquisa&quot;] = resultado_pesquisa
+
+            self.comunicacao_inter_agentes.append({
+                &quot;de&quot;: &quot;pesquisador&quot;,
+                &quot;para&quot;: &quot;estrategista&quot;,
+                &quot;dados&quot;: resultado_pesquisa,
+                &quot;timestamp&quot;: datetime.now().isoformat()
+            })
+
+        # 2. Agente Estrategista cria plano
+        if &quot;estrategista&quot; in self.agentes:
+            input_estrategia = {
+                **tarefa,
+                &quot;pesquisa&quot;: resultados_parciais.get(&quot;pesquisa&quot;)
+            }
+            resultado_estrategia = self.agentes[&quot;estrategista&quot;].executar(input_estrategia)
+            resultados_parciais[&quot;estrategia&quot;] = resultado_estrategia
+
+            self.comunicacao_inter_agentes.append({
+                &quot;de&quot;: &quot;estrategista&quot;,
+                &quot;para&quot;: &quot;executor&quot;,
+                &quot;dados&quot;: resultado_estrategia,
+                &quot;timestamp&quot;: datetime.now().isoformat()
+            })
+
+        # 3. Agente Executor implementa
+        if &quot;executor&quot; in self.agentes:
+            input_execucao = {
+                **tarefa,
+                &quot;plano&quot;: resultados_parciais.get(&quot;estrategia&quot;)
+            }
+            resultado_execucao = self.agentes[&quot;executor&quot;].executar(input_execucao)
+            resultados_parciais[&quot;execucao&quot;] = resultado_execucao
+
+            self.comunicacao_inter_agentes.append({
+                &quot;de&quot;: &quot;executor&quot;,
+                &quot;para&quot;: &quot;auditor&quot;,
+                &quot;dados&quot;: resultado_execucao,
+                &quot;timestamp&quot;: datetime.now().isoformat()
+            })
+
+        # 4. Agente Auditor valida
+        if &quot;auditor&quot; in self.agentes:
+            input_auditoria = {
+                **tarefa,
+                &quot;resultado&quot;: resultados_parciais.get(&quot;execucao&quot;)
+            }
+            resultado_auditoria = self.agentes[&quot;auditor&quot;].executar(input_auditoria)
+            resultados_parciais[&quot;auditoria&quot;] = resultado_auditoria
+
+        return {
+            &quot;status&quot;: &quot;completo&quot;,
+            &quot;resultado_final&quot;: resultados_parciais,
+            &quot;comunicacoes&quot;: len(self.comunicacao_inter_agentes),
+            &quot;agentes_utilizados&quot;: list(resultados_parciais.keys())
+        }
+
+    def analisar_colaboracao(self) -&gt; Dict:
+        &quot;&quot;&quot;Analisa eficiência da colaboração entre agentes&quot;&quot;&quot;
+        if not self.comunicacao_inter_agentes:
+            return {&quot;mensagem&quot;: &quot;Sem dados de comunicação&quot;}
+
+        # Analisa fluxo de comunicação
+        fluxos = {}
+        for comm in self.comunicacao_inter_agentes:
+            chave = f&quot;{comm['de']} → {comm['para']}&quot;
+            fluxos[chave] = fluxos.get(chave, 0) + 1
+
+        return {
+            &quot;total_comunicacoes&quot;: len(self.comunicacao_inter_agentes),
+            &quot;agentes_ativos&quot;: len(self.agentes),
+            &quot;fluxos_comunicacao&quot;: fluxos,
+            &quot;eficiencia&quot;: &quot;alta&quot; if len(self.comunicacao_inter_agentes) / len(self.agentes) &lt; 3 else &quot;media&quot;
+        }
+</code></pre>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">5-8. Pilares Restantes (Rotinas, Decisões, Falhas, Autonomia)</h3>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+class SistemaIntencion alCompleto:
+    &quot;&quot;&quot;Sistema intencional completo com todos os 8 pilares&quot;&quot;&quot;
+
+    def __init__(self, missao: Missao):
+        self.missao = missao
+        self.rotinas: Dict[str, Callable] = {}
+        self.decisoes_complexas: List[Dict] = []
+        self.falhas_detectadas: List[Dict] = []
+        self.limites_autonomia: Dict[str, Any] = {
+            &quot;valor_maximo_sem_aprovacao&quot;: 1000,
+            &quot;topicos_sensiveis&quot;: [&quot;financeiro&quot;, &quot;legal&quot;, &quot;RH&quot;],
+            &quot;acoes_criticas&quot;: [&quot;deletar&quot;, &quot;publicar&quot;, &quot;contratar&quot;]
+        }
+
+    def adicionar_rotina(self, nome: str, frequencia: str, funcao: Callable):
+        &quot;&quot;&quot;Adiciona rotina recorrente&quot;&quot;&quot;
+        self.rotinas[nome] = {
+            &quot;funcao&quot;: funcao,
+            &quot;frequencia&quot;: frequencia,
+            &quot;ultima_execucao&quot;: None,
+            &quot;proxima_execucao&quot;: None
+        }
+
+    def tomar_decisao_complexa(self, cenario: Dict, opcoes: List[Dict]) -&gt; Dict:
+        &quot;&quot;&quot;Toma decisão complexa baseada em múltiplos critérios&quot;&quot;&quot;
+        # Avalia cada opção
+        avaliacoes = []
+
+        for opcao in opcoes:
+            score_total = 0
+            pesos = {
+                &quot;alinhamento_missao&quot;: 0.4,
+                &quot;custo_beneficio&quot;: 0.3,
+                &quot;risco&quot;: 0.2,
+                &quot;prazo&quot;: 0.1
+            }
+
+            for criterio, peso in pesos.items():
+                score_total += opcao.get(criterio, 0) * peso
+
+            avaliacoes.append({
+                &quot;opcao&quot;: opcao[&quot;descricao&quot;],
+                &quot;score&quot;: score_total,
+                &quot;detalhes&quot;: opcao
+            })
+
+        # Seleciona melhor opção
+        melhor = max(avaliacoes, key=lambda x: x[&quot;score&quot;])
+
+        decisao = {
+            &quot;cenario&quot;: cenario,
+            &quot;opcao_escolhida&quot;: melhor[&quot;opcao&quot;],
+            &quot;score&quot;: melhor[&quot;score&quot;],
+            &quot;timestamp&quot;: datetime.now().isoformat(),
+            &quot;justificativa&quot;: self._gerar_justificativa(melhor, pesos)
+        }
+
+        self.decisoes_complexas.append(decisao)
+        return decisao
+
+    def _gerar_justificativa(self, opcao: Dict, pesos: Dict) -&gt; str:
+        &quot;&quot;&quot;Gera justificativa para decisão&quot;&quot;&quot;
+        criterio_principal = max(pesos.items(), key=lambda x: x[1])[0]
+        return f&quot;Escolhida por melhor {criterio_principal} (score: {opcao['score']:.2f})&quot;
+
+    def detectar_falhas_automaticamente(self, processo: str, metricas: Dict) -&gt; List[Dict]:
+        &quot;&quot;&quot;Detecta falhas antes que causem impacto&quot;&quot;&quot;
+        falhas = []
+
+        # Verifica anomalias
+        for metrica, valor in metricas.items():
+            if valor &lt; 0.5:  # Threshold de alerta
+                falhas.append({
+                    &quot;tipo&quot;: &quot;performance_baixa&quot;,
+                    &quot;processo&quot;: processo,
+                    &quot;metrica&quot;: metrica,
+                    &quot;valor&quot;: valor,
+                    &quot;severidade&quot;: &quot;alta&quot; if valor &lt; 0.3 else &quot;media&quot;
+                })
+
+        # Registra falhas
+        for falha in falhas:
+            self.falhas_detectadas.append({
+                **falha,
+                &quot;timestamp&quot;: datetime.now().isoformat(),
+                &quot;acao_corretiva&quot;: self._sugerir_correcao(falha)
+            })
+
+        return falhas
+
+    def _sugerir_correcao(self, falha: Dict) -&gt; str:
+        &quot;&quot;&quot;Sugere correção automática para falha&quot;&quot;&quot;
+        if falha[&quot;tipo&quot;] == &quot;performance_baixa&quot;:
+            return f&quot;Otimizar {falha['processo']} - revisar {falha['metrica']}&quot;
+        return &quot;Análise manual necessária&quot;
+
+    def verificar_autonomia(self, acao: str, contexto: Dict) -&gt; tuple[bool, str]:
+        &quot;&quot;&quot;Verifica se ação pode ser executada autonomamente&quot;&quot;&quot;
+        # Verifica valor
+        if contexto.get(&quot;valor&quot;, 0) &gt; self.limites_autonomia[&quot;valor_maximo_sem_aprovacao&quot;]:
+            return False, &quot;Valor acima do limite - aprovação necessária&quot;
+
+        # Verifica tópicos sensíveis
+        for topico in self.limites_autonomia[&quot;topicos_sensiveis&quot;]:
+            if topico.lower() in acao.lower():
+                return False, f&quot;Tópico sensível ({topico}) - aprovação necessária&quot;
+
+        # Verifica ações críticas
+        for acao_critica in self.limites_autonomia[&quot;acoes_criticas&quot;]:
+            if acao_critica.lower() in acao.lower():
+                return False, f&quot;Ação crítica ({acao_critica}) - aprovação necessária&quot;
+
+        return True, &quot;Ação autorizada para execução autônoma&quot;
+
+
+# Exemplo completo
+sistema_completo = SistemaIntencion alCompleto(missao)
+
+# Testa decisão complexa
+cenario = {&quot;tipo&quot;: &quot;expansao_produto&quot;}
+opcoes = [
+    {
+        &quot;descricao&quot;: &quot;Lançamento gradual&quot;,
+        &quot;alinhamento_missao&quot;: 0.9,
+        &quot;custo_beneficio&quot;: 0.8,
+        &quot;risco&quot;: 0.7,
+        &quot;prazo&quot;: 0.6
+    },
+    {
+        &quot;descricao&quot;: &quot;Lançamento agressivo&quot;,
+        &quot;alinhamento_missao&quot;: 0.7,
+        &quot;custo_beneficio&quot;: 0.9,
+        &quot;risco&quot;: 0.4,
+        &quot;prazo&quot;: 0.9
+    }
+]
+
+decisao = sistema_completo.tomar_decisao_complexa(cenario, opcoes)
+print(f&quot;DECISÃO: {decisao['opcao_escolhida']}&quot;)
+print(f&quot;Justificativa: {decisao['justificativa']}&quot;)
+
+# Testa detecção de falhas
+falhas = sistema_completo.detectar_falhas_automaticamente(
+    &quot;criacao_conteudo&quot;,
+    {&quot;qualidade&quot;: 0.4, &quot;velocidade&quot;: 0.8, &quot;engajamento&quot;: 0.2}
+)
+
+print(f&quot;\n{len(falhas)} falhas detectadas:&quot;)
+for falha in sistema_completo.falhas_detectadas:
+    print(f&quot;  • {falha['tipo']}: {falha['metrica']} = {falha['valor']}&quot;)
+    print(f&quot;    Ação: {falha['acao_corretiva']}&quot;)
+
+# Testa autonomia
+acao1 = &quot;Publicar post sobre IA&quot;
+acao2 = &quot;Deletar banco de dados de produção&quot;
+acao3 = &quot;Investir R$ 5000 em campanha&quot;
+
+for acao in [acao1, acao2, acao3]:
+    autonomo, motivo = sistema_completo.verificar_autonomia(acao, {&quot;valor&quot;: 5000})
+    print(f&quot;\n{acao}: {'✅ Autônomo' if autonomo else '⚠️ Aprovação'} - {motivo}&quot;)
+</code></pre>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Comparação: Agente vs Sistema Intencional
+        </h2>
+        <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Agente Individual</h3>
+<li class="mb-2">Executa tarefas específicas</li>
+<li class="mb-2">Objetivo de curto prazo</li>
+<li class="mb-2">Trabalha isoladamente</li>
+<li class="mb-2">Precisa de instruções claras</li>
+<li class="mb-2">Não evolui automaticamente</li>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Analogia:</strong> Um funcionário especializado que executa bem uma função específica.</p>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Sistema Intencional</h3>
+<li class="mb-2">Gerencia processos completos</li>
+<li class="mb-2">Missão de longo prazo</li>
+<li class="mb-2">Coordena múltiplos agentes</li>
+<li class="mb-2">Entende intenção macro</li>
+<li class="mb-2">Aprende e se adapta continuamente</li>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Analogia:</strong> Um departamento completo com time especializado, processos definidos e capacidade de evolução contínua.</p>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Conclusão
+        </h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-4">Você entendeu o conceito de Sistemas Intencionais: estruturas complexas que vão muito além de agentes individuais.</p>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">O que você dominou:</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Os 8 pilares de um Sistema Intencional (missão, evolução, monitoramento, múltiplos agentes, rotinas, decisões, detecção de falhas, autonomia)</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Implementação completa de sistema com missão</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Sistema evolutivo que aprende automaticamente</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Monitoramento de qualidade interno</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Coordenação de múltiplos agentes</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Decisões complexas multicriteriais</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Detecção automática de falhas</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Autonomia supervisionada</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ Diferença entre agente individual e sistema completo</p>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Próximo módulo:</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">No Módulo 3, você vai aprender sobre <strong>Agentes Autônomos 2.0 (versão 2026)</strong>: os 6 tipos de agentes especializados que trabalham como um time de elite, incluindo o revolucionário Agente Meta-IA.</p>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">© 2025 FEI - Formação em Engenharia de Intenção</p>
       </div>
 
       <!-- Conclusao -->
       <div class="bg-gradient-to-r from-nivel-3s to-orange-600 text-white rounded-xl p-8">
         <h2 class="text-3xl font-bold mb-4">Conclusao do Modulo</h2>
         <p class="text-lg mb-6">
-          Voce entendeu o conceito de Sistemas Intencionais: nao apenas agentes que executam, mas ecossistemas completos que operam com missao, evolucao e autonomia supervisionada.
+          Voce dominou os conceitos essenciais de O Conceito de Sistemas Intencionais no contexto de sistemas autonomos 2026.
         </p>
-        <div class="bg-white/10 backdrop-blur p-6 rounded-lg mb-6">
-          <h3 class="font-bold text-xl mb-2">O que voce dominou:</h3>
-          <ul class="space-y-2">
-            <li>A diferenca entre agentes simples e sistemas intencionais</li>
-            <li>Os 9 pilares que definem um sistema intencional</li>
-            <li>Como sistemas evoluem e se autocorrigem</li>
-            <li>Exemplos praticos de sistemas em operacao</li>
-            <li>O conceito de autonomia supervisionada</li>
-          </ul>
-        </div>
         <div class="flex gap-4">
-          <a href="nivel-3s-modulo-1.html" class="px-6 py-3 bg-neutral-200 dark:bg-neutral-700 rounded-lg font-semibold">
-            ← Módulo 1
-          </a>
-          <a href="nivel-3s-modulo-3.html" class="px-6 py-3 bg-nivel-3s text-white rounded-lg font-semibold">
-            Módulo 3 →
-          </a>
+          <a href="nivel-3s-modulo-1.html" class="px-6 py-3 bg-white text-nivel-3s rounded-lg font-semibold hover:bg-neutral-100">← Módulo 1</a>
+          <a href="nivel-3s-modulo-3.html" class="px-6 py-3 bg-nivel-3s text-white rounded-lg font-semibold hover:opacity-90">Módulo 3 →</a>
         </div>
       </div>
 
@@ -456,5 +880,13 @@
   </footer>
 
   <script src="../js/app.js"></script>
+  <script>
+    // Initialize syntax highlighting
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+      });
+    });
+  </script>
 </body>
 </html>

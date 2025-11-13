@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 7: Criacao de Agentes com ESIA | FEI Nível 3S</title>
-  <meta name="description" content="Os 8 componentes essenciais de um agente avancado 2026">
+  <title>Módulo 7: Criação de Agentes com ESIA | FEI Nível 3S</title>
+  <meta name="description" content="A diferença entre agente básico e agente profissional está na completude dos componentes.">
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -21,16 +25,40 @@
       }
     }
   </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Highlight.js for syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+
   <style>
-    body { font-family: 'Inter', sans-serif; }
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
   </style>
 </head>
-<body class="bg-neutral-50 dark:bg-neutral-900">
+<body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navigation -->
   <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
-        <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-3s bg-clip-text text-transparent">FEI</a>
+        <div class="flex items-center">
+          <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-3s bg-clip-text text-transparent">
+            FEI - Engenharia de Intencao
+          </a>
+        </div>
         <div class="hidden md:flex items-center space-x-8">
           <a href="../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-3s">Inicio</a>
           <a href="../niveis/nivel-3s.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-3s">Nivel 3S</a>
@@ -47,9 +75,10 @@
     </div>
   </nav>
 
+  <!-- Breadcrumb -->
   <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-      <nav class="flex text-sm">
+      <nav class="flex text-sm" aria-label="Breadcrumb">
         <a href="../index.html" class="text-nivel-3s hover:text-orange-700">Inicio</a>
         <span class="mx-2 text-neutral-400">/</span>
         <a href="../niveis/nivel-3s.html" class="text-nivel-3s hover:text-orange-700">Nivel 3S</a>
@@ -59,52 +88,1281 @@
     </div>
   </div>
 
-  <section class="bg-gradient-to-r from-nivel-3s to-orange-600 py-16 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-nivel-3s to-orange-600 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
       <div class="flex items-center gap-4 mb-4">
-        <span class="px-4 py-2 bg-red-500 rounded-full text-sm font-semibold">Estado da Arte 2026</span>
-        <span class="px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">Modulo 7</span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Modulo 7
+        </span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Nivel 3S - Sistemas Intencionais 2026
+        </span>
+        <span class="inline-block px-4 py-2 bg-white/30 rounded-full text-sm font-semibold">
+          Estado da Arte 2026
+        </span>
       </div>
-      <h1 class="text-4xl lg:text-5xl font-bold mb-4">Criacao de Agentes com ESIA</h1>
-      <p class="text-xl">Os 8 componentes essenciais de um agente avancado 2026</p>
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">
+        Criação de Agentes com ESIA
+      </h1>
+      <p class="text-xl text-white/90">
+        A diferença entre agente básico e agente profissional está na completude dos componentes.
+      </p>
     </div>
   </section>
 
-  <section class="py-12">
+  <!-- Content -->
+  <section class="py-12 bg-neutral-50 dark:bg-neutral-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Download Button -->
       <div class="flex justify-end mb-6">
-        <a href="../downloads/nivel-3s-modulo-7.md" download class="px-6 py-3 bg-nivel-3s text-white rounded-lg font-semibold hover:bg-orange-600">Download MD</a>
+        <a href="../downloads/nivel-3s-modulo-7.md" download class="px-6 py-3 bg-nivel-3s text-white rounded-lg font-semibold hover:bg-orange-600 inline-flex items-center gap-2">
+          <span>Download MD</span>
+        </a>
+      </div>
+
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Os 8 Componentes Essenciais de um Agente Avançado
+        </h2>
+        <p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">A diferença entre agente básico e agente profissional está na completude dos componentes.</p>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">1. Missão Funcional</h3>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">Propósito claro e específico do agente.</p>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+from dataclasses import dataclass
+from typing import Dict, List
+from enum import Enum
+
+class TipoImpacto(Enum):
+    CRIACAO = &quot;criação&quot;
+    TRANSFORMACAO = &quot;transformação&quot;
+    ANALISE = &quot;análise&quot;
+    COORDENACAO = &quot;coordenação&quot;
+    VALIDACAO = &quot;validação&quot;
+
+@dataclass
+class MissaoFuncional:
+    &quot;&quot;&quot;Define o propósito existencial do agente&quot;&quot;&quot;
+    nome_agente: str
+    verbo_principal: str  # criar, analisar, coordenar, etc
+    objeto_trabalho: str  # o que manipula
+    resultado_esperado: str  # output desejado
+    tipo_impacto: TipoImpacto
+    metricas_sucesso: List[str]
+    contexto_atuacao: Dict
+
+    def validar_missao(self) -&gt; Dict:
+        &quot;&quot;&quot;Valida se a missão está bem definida&quot;&quot;&quot;
+        return {
+            &quot;missao_clara&quot;: len(self.verbo_principal) &gt; 0 and len(self.objeto_trabalho) &gt; 0,
+            &quot;resultado_mensuravel&quot;: len(self.metricas_sucesso) &gt;= 2,
+            &quot;contexto_definido&quot;: len(self.contexto_atuacao) &gt;= 3,
+            &quot;especificidade&quot;: self._calcular_especificidade()
+        }
+
+    def _calcular_especificidade(self) -&gt; float:
+        &quot;&quot;&quot;Quanto mais específico, melhor o agente&quot;&quot;&quot;
+        score = 0.0
+        if len(self.resultado_esperado.split()) &gt; 5:
+            score += 0.3
+        if len(self.metricas_sucesso) &gt;= 3:
+            score += 0.4
+        if len(self.contexto_atuacao) &gt;= 5:
+            score += 0.3
+        return score
+
+# Exemplo prático
+missao_copywriter = MissaoFuncional(
+    nome_agente=&quot;Copywriter de Alta Conversão&quot;,
+    verbo_principal=&quot;criar&quot;,
+    objeto_trabalho=&quot;textos persuasivos para produtos digitais&quot;,
+    resultado_esperado=&quot;copy que converte mínimo 3% do tráfego em vendas&quot;,
+    tipo_impacto=TipoImpacto.CRIACAO,
+    metricas_sucesso=[
+        &quot;taxa_conversao &gt;= 3%&quot;,
+        &quot;taxa_leitura &gt;= 60%&quot;,
+        &quot;clareza_mensagem &gt;= 8/10&quot;
+    ],
+    contexto_atuacao={
+        &quot;industria&quot;: &quot;infoprodutos&quot;,
+        &quot;publico&quot;: &quot;empreendedores digitais 25-45 anos&quot;,
+        &quot;plataforma&quot;: &quot;páginas de vendas&quot;,
+        &quot;tom&quot;: &quot;profissional e inspirador&quot;,
+        &quot;restricoes&quot;: &quot;sem promessas falsas&quot;
+    }
+)
+
+print(f&quot;Validação: {missao_copywriter.validar_missao()}&quot;)
+</code></pre>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">2. Intenção Estratégica</h3>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">Objetivos de médio prazo alinhados com missão macro.</p>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+from dataclasses import dataclass, field
+from typing import List, Dict, Optional
+from datetime import datetime, timedelta
+
+@dataclass
+class IntencaoEstrategica:
+    &quot;&quot;&quot;Define o que o agente quer alcançar em 30-90 dias&quot;&quot;&quot;
+    objetivo_principal: str
+    horizonte_temporal: int  # dias
+    sub_objetivos: List[str]
+    kpis: Dict[str, float]
+    alinhamento_missao: str
+    restricoes: List[str]
+    checkpoints: List[Dict] = field(default_factory=list)
+
+    def __post_init__(self):
+        &quot;&quot;&quot;Cria checkpoints automáticos&quot;&quot;&quot;
+        if not self.checkpoints:
+            self.checkpoints = self._gerar_checkpoints()
+
+    def _gerar_checkpoints(self) -&gt; List[Dict]:
+        &quot;&quot;&quot;Divide objetivo em marcos de progresso&quot;&quot;&quot;
+        total_dias = self.horizonte_temporal
+        num_checkpoints = max(3, total_dias // 30)
+
+        checkpoints = []
+        for i in range(num_checkpoints):
+            dia_checkpoint = (total_dias // num_checkpoints) * (i + 1)
+            checkpoints.append({
+                &quot;dia&quot;: dia_checkpoint,
+                &quot;meta&quot;: f&quot;{((i+1)/num_checkpoints)*100:.0f}% do objetivo principal&quot;,
+                &quot;validacao&quot;: f&quot;checkpoint_{i+1}&quot;,
+                &quot;status&quot;: &quot;pendente&quot;
+            })
+        return checkpoints
+
+    def avaliar_progresso(self, dia_atual: int, kpis_atuais: Dict[str, float]) -&gt; Dict:
+        &quot;&quot;&quot;Avalia se está no caminho certo&quot;&quot;&quot;
+        checkpoint_atual = None
+        for cp in self.checkpoints:
+            if dia_atual &gt;= cp[&quot;dia&quot;] and cp[&quot;status&quot;] == &quot;pendente&quot;:
+                checkpoint_atual = cp
+                break
+
+        if not checkpoint_atual:
+            return {&quot;status&quot;: &quot;sem_checkpoint_ativo&quot;}
+
+        # Compara KPIs esperados vs reais
+        progresso_esperado = (dia_atual / self.horizonte_temporal)
+        progresso_real = sum(
+            kpis_atuais.get(k, 0) / v
+            for k, v in self.kpis.items()
+        ) / len(self.kpis)
+
+        return {
+            &quot;checkpoint&quot;: checkpoint_atual,
+            &quot;progresso_esperado&quot;: f&quot;{progresso_esperado*100:.1f}%&quot;,
+            &quot;progresso_real&quot;: f&quot;{progresso_real*100:.1f}%&quot;,
+            &quot;status&quot;: &quot;no_caminho&quot; if progresso_real &gt;= progresso_esperado * 0.8 else &quot;atrasado&quot;,
+            &quot;ajuste_necessario&quot;: progresso_real &lt; progresso_esperado * 0.8
+        }
+
+# Exemplo prático
+intencao_crescimento = IntencaoEstrategica(
+    objetivo_principal=&quot;Tornar-se referência em copy de lançamentos digitais&quot;,
+    horizonte_temporal=90,
+    sub_objetivos=[
+        &quot;Criar 15 páginas de vendas de alta conversão&quot;,
+        &quot;Alcançar taxa média de conversão de 4%&quot;,
+        &quot;Desenvolver 3 templates reutilizáveis&quot;,
+        &quot;Documentar padrões de sucesso&quot;
+    ],
+    kpis={
+        &quot;paginas_criadas&quot;: 15,
+        &quot;conversao_media&quot;: 0.04,
+        &quot;templates_prontos&quot;: 3,
+        &quot;documentacao_completa&quot;: 1.0
+    },
+    alinhamento_missao=&quot;Cada página criada aprimora a capacidade de conversão&quot;,
+    restricoes=[
+        &quot;Manter ética em todas as páginas&quot;,
+        &quot;Não usar gatilhos manipulativos&quot;,
+        &quot;Validar claims com dados reais&quot;
+    ]
+)
+
+# Simula progresso no dia 45
+progresso = intencao_crescimento.avaliar_progresso(
+    dia_atual=45,
+    kpis_atuais={
+        &quot;paginas_criadas&quot;: 6,
+        &quot;conversao_media&quot;: 0.035,
+        &quot;templates_prontos&quot;: 1,
+        &quot;documentacao_completa&quot;: 0.4
+    }
+)
+print(f&quot;Avaliação dia 45: {progresso}&quot;)
+</code></pre>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">3. Domínio de Responsabilidade</h3>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">Escopo claro de atuação e autoridade.</p>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+from dataclasses import dataclass
+from typing import List, Dict, Set
+from enum import Enum
+
+class NivelAutoridade(Enum):
+    EXECUCAO = &quot;pode executar sem aprovação&quot;
+    SUGESTAO = &quot;sugere, mas requer aprovação&quot;
+    CONSULTA = &quot;apenas fornece informação&quot;
+    VETO = &quot;pode bloquear ações&quot;
+
+@dataclass
+class DominioResponsabilidade:
+    &quot;&quot;&quot;Define fronteiras claras do que o agente controla&quot;&quot;&quot;
+    areas_autoridade: Dict[str, NivelAutoridade]
+    recursos_controlados: List[str]
+    decisoes_autonomas: Set[str]
+    decisoes_requerem_aprovacao: Set[str]
+    areas_proibidas: Set[str]
+    interfaces_externas: Dict[str, str]
+
+    def pode_executar(self, acao: str) -&gt; Dict:
+        &quot;&quot;&quot;Verifica se pode executar determinada ação&quot;&quot;&quot;
+        # Verifica se está em área proibida
+        if acao in self.areas_proibidas:
+            return {
+                &quot;permitido&quot;: False,
+                &quot;razao&quot;: &quot;ação em área proibida&quot;,
+                &quot;nivel&quot;: None
+            }
+
+        # Verifica nível de autoridade
+        if acao in self.decisoes_autonomas:
+            return {
+                &quot;permitido&quot;: True,
+                &quot;razao&quot;: &quot;decisão autônoma&quot;,
+                &quot;nivel&quot;: NivelAutoridade.EXECUCAO
+            }
+
+        if acao in self.decisoes_requerem_aprovacao:
+            return {
+                &quot;permitido&quot;: False,
+                &quot;razao&quot;: &quot;requer aprovação externa&quot;,
+                &quot;nivel&quot;: NivelAutoridade.SUGESTAO,
+                &quot;proximo_passo&quot;: &quot;solicitar aprovação do supervisor&quot;
+            }
+
+        # Se não está definido, assume consulta
+        return {
+            &quot;permitido&quot;: False,
+            &quot;razao&quot;: &quot;ação não mapeada no domínio&quot;,
+            &quot;nivel&quot;: NivelAutoridade.CONSULTA,
+            &quot;proximo_passo&quot;: &quot;consultar supervisor sobre escopo&quot;
+        }
+
+    def gerar_relatorio_fronteiras(self) -&gt; Dict:
+        &quot;&quot;&quot;Documenta claramente as fronteiras do agente&quot;&quot;&quot;
+        return {
+            &quot;total_areas&quot;: len(self.areas_autoridade),
+            &quot;autonomia_completa&quot;: len(self.decisoes_autonomas),
+            &quot;requer_aprovacao&quot;: len(self.decisoes_requerem_aprovacao),
+            &quot;areas_proibidas&quot;: len(self.areas_proibidas),
+            &quot;recursos_controlados&quot;: len(self.recursos_controlados),
+            &quot;indice_autonomia&quot;: len(self.decisoes_autonomas) /
+                (len(self.decisoes_autonomas) + len(self.decisoes_requerem_aprovacao))
+        }
+
+# Exemplo prático
+dominio_copywriter = DominioResponsabilidade(
+    areas_autoridade={
+        &quot;escrita_copy&quot;: NivelAutoridade.EXECUCAO,
+        &quot;escolha_headlines&quot;: NivelAutoridade.EXECUCAO,
+        &quot;estrutura_pagina&quot;: NivelAutoridade.EXECUCAO,
+        &quot;precificacao&quot;: NivelAutoridade.SUGESTAO,
+        &quot;aprovacao_final&quot;: NivelAutoridade.CONSULTA,
+        &quot;publicacao&quot;: NivelAutoridade.CONSULTA
+    },
+    recursos_controlados=[
+        &quot;banco_headlines&quot;,
+        &quot;templates_copy&quot;,
+        &quot;biblioteca_gatilhos&quot;,
+        &quot;historico_testes&quot;
+    ],
+    decisoes_autonomas={
+        &quot;criar_variacao_headline&quot;,
+        &quot;ajustar_tom_texto&quot;,
+        &quot;reorganizar_secoes&quot;,
+        &quot;adicionar_prova_social&quot;,
+        &quot;revisar_gramatica&quot;
+    },
+    decisoes_requerem_aprovacao={
+        &quot;mudar_preco_produto&quot;,
+        &quot;alterar_oferta_principal&quot;,
+        &quot;publicar_pagina&quot;,
+        &quot;fazer_claims_especificos&quot;,
+        &quot;usar_imagem_cliente&quot;
+    },
+    areas_proibidas={
+        &quot;acesso_dados_pessoais&quot;,
+        &quot;envio_emails&quot;,
+        &quot;modificar_codigo_backend&quot;,
+        &quot;acessar_meios_pagamento&quot;
+    },
+    interfaces_externas={
+        &quot;supervisor&quot;: &quot;aprovar decisões críticas&quot;,
+        &quot;designer&quot;: &quot;solicitar assets visuais&quot;,
+        &quot;analista&quot;: &quot;obter dados de conversão&quot;
+    }
+)
+
+# Testa permissões
+teste1 = dominio_copywriter.pode_executar(&quot;criar_variacao_headline&quot;)
+teste2 = dominio_copywriter.pode_executar(&quot;publicar_pagina&quot;)
+teste3 = dominio_copywriter.pode_executar(&quot;acesso_dados_pessoais&quot;)
+
+print(f&quot;Criar headline: {teste1}&quot;)
+print(f&quot;Publicar: {teste2}&quot;)
+print(f&quot;Acessar dados: {teste3}&quot;)
+print(f&quot;\nRelatório: {dominio_copywriter.gerar_relatorio_fronteiras()}&quot;)
+</code></pre>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">4. Limites Claros</h3>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">O que pode e não pode fazer autonomamente.</p>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+from dataclasses import dataclass
+from typing import Dict, List, Callable, Any
+from enum import Enum
+
+class TipoLimite(Enum):
+    FINANCEIRO = &quot;limite de valor monetário&quot;
+    TEMPORAL = &quot;limite de tempo de execução&quot;
+    QUALITATIVO = &quot;limite de qualidade mínima&quot;
+    VOLUMETRICO = &quot;limite de quantidade&quot;
+    SEGURANCA = &quot;limite de segurança e privacidade&quot;
+
+@dataclass
+class SistemaLimites:
+    &quot;&quot;&quot;Define cercas de segurança para autonomia&quot;&quot;&quot;
+    limites_quantitativos: Dict[str, float]
+    limites_qualitativos: Dict[str, Callable]
+    acoes_criticas: List[str]
+    validacoes_obrigatorias: Dict[str, List[str]]
+    escalation_rules: Dict[str, str]
+
+    def validar_acao(self, acao: str, parametros: Dict[str, Any]) -&gt; Dict:
+        &quot;&quot;&quot;Valida se ação respeita todos os limites&quot;&quot;&quot;
+        violacoes = []
+        warnings = []
+
+        # Valida limites quantitativos
+        for limite, valor_max in self.limites_quantitativos.items():
+            if limite in parametros:
+                if parametros[limite] &gt; valor_max:
+                    violacoes.append(f&quot;{limite} excede limite de {valor_max}&quot;)
+                elif parametros[limite] &gt; valor_max * 0.8:
+                    warnings.append(f&quot;{limite} próximo do limite ({valor_max})&quot;)
+
+        # Valida limites qualitativos
+        for criterio, funcao_validacao in self.limites_qualitativos.items():
+            if not funcao_validacao(parametros):
+                violacoes.append(f&quot;Falha no critério qualitativo: {criterio}&quot;)
+
+        # Verifica se é ação crítica
+        if acao in self.acoes_criticas:
+            warnings.append(f&quot;Ação '{acao}' é crítica - requer atenção extra&quot;)
+
+        # Verifica validações obrigatórias
+        if acao in self.validacoes_obrigatorias:
+            for validacao in self.validacoes_obrigatorias[acao]:
+                if validacao not in parametros:
+                    violacoes.append(f&quot;Validação obrigatória ausente: {validacao}&quot;)
+
+        return {
+            &quot;permitido&quot;: len(violacoes) == 0,
+            &quot;violacoes&quot;: violacoes,
+            &quot;warnings&quot;: warnings,
+            &quot;requer_escalation&quot;: len(violacoes) &gt; 0 and acao in self.escalation_rules,
+            &quot;escalar_para&quot;: self.escalation_rules.get(acao, None)
+        }
+
+    def registrar_violacao(self, acao: str, violacao: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Registra tentativa de violação de limite&quot;&quot;&quot;
+        return {
+            &quot;timestamp&quot;: &quot;2025-11-13T10:30:00&quot;,
+            &quot;acao_bloqueada&quot;: acao,
+            &quot;motivo&quot;: violacao[&quot;violacoes&quot;],
+            &quot;acao_tomada&quot;: &quot;bloqueio automático&quot;,
+            &quot;notificacao_enviada&quot;: violacao.get(&quot;escalar_para&quot;, &quot;supervisor&quot;)
+        }
+
+# Funções de validação qualitativa
+def validar_qualidade_texto(params: Dict) -&gt; bool:
+    &quot;&quot;&quot;Texto deve ter qualidade mínima&quot;&quot;&quot;
+    texto = params.get(&quot;texto&quot;, &quot;&quot;)
+    return len(texto) &gt;= 100 and len(texto.split()) &gt;= 20
+
+def validar_conversao_minima(params: Dict) -&gt; bool:
+    &quot;&quot;&quot;Histórico de conversão deve ser positivo&quot;&quot;&quot;
+    return params.get(&quot;conversao_esperada&quot;, 0) &gt;= 0.02
+
+# Exemplo prático
+limites_copywriter = SistemaLimites(
+    limites_quantitativos={
+        &quot;palavras_headline&quot;: 15,
+        &quot;secoes_pagina&quot;: 12,
+        &quot;tempo_producao_horas&quot;: 8,
+        &quot;revisoes_maximas&quot;: 5
+    },
+    limites_qualitativos={
+        &quot;qualidade_texto&quot;: validar_qualidade_texto,
+        &quot;conversao_minima&quot;: validar_conversao_minima
+    },
+    acoes_criticas=[
+        &quot;publicar_pagina&quot;,
+        &quot;alterar_oferta&quot;,
+        &quot;modificar_preco&quot;
+    ],
+    validacoes_obrigatorias={
+        &quot;publicar_pagina&quot;: [&quot;revisao_gramatical&quot;, &quot;validacao_claims&quot;, &quot;aprovacao_legal&quot;],
+        &quot;alterar_oferta&quot;: [&quot;analise_impacto&quot;, &quot;aprovacao_comercial&quot;],
+        &quot;usar_testemunho&quot;: [&quot;autorizacao_cliente&quot;, &quot;validacao_veracidade&quot;]
+    },
+    escalation_rules={
+        &quot;publicar_pagina&quot;: &quot;gerente_marketing&quot;,
+        &quot;alterar_oferta&quot;: &quot;diretor_comercial&quot;,
+        &quot;usar_testemunho&quot;: &quot;juridico&quot;
+    }
+)
+
+# Testa validações
+teste_ok = limites_copywriter.validar_acao(
+    &quot;criar_copy&quot;,
+    {
+        &quot;palavras_headline&quot;: 12,
+        &quot;texto&quot;: &quot;Este é um texto de exemplo com mais de cem caracteres e pelo menos vinte palavras para passar na validação de qualidade mínima estabelecida.&quot;,
+        &quot;conversao_esperada&quot;: 0.03
+    }
+)
+
+teste_violacao = limites_copywriter.validar_acao(
+    &quot;publicar_pagina&quot;,
+    {
+        &quot;palavras_headline&quot;: 20,  # Excede limite
+        &quot;texto&quot;: &quot;Texto curto&quot;  # Não passa validação qualitativa
+    }
+)
+
+print(f&quot;Teste OK: {teste_ok}&quot;)
+print(f&quot;\nTeste Violação: {teste_violacao}&quot;)
+</code></pre>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">5. Plano de Raciocínio Interno</h3>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">Como o agente pensa e toma decisões.</p>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+from dataclasses import dataclass
+from typing import List, Dict, Callable, Any
+from enum import Enum
+
+class TipoRaciocinio(Enum):
+    ANALITICO = &quot;quebra problema em partes&quot;
+    CRIATIVO = &quot;gera múltiplas alternativas&quot;
+    AVALIATIVO = &quot;compara opções com critérios&quot;
+    DEDUTIVO = &quot;aplica regras conhecidas&quot;
+    INDUTIVO = &quot;identifica padrões&quot;
+
+@dataclass
+class PlanoRaciocinio:
+    &quot;&quot;&quot;Define como o agente pensa internamente&quot;&quot;&quot;
+    etapas_pensamento: List[Dict[str, Any]]
+    criterios_decisao: Dict[str, float]
+    heuristicas: List[Callable]
+    padroes_conhecidos: Dict[str, Any]
+
+    def executar_raciocinio(self, problema: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Executa cadeia de raciocínio completa&quot;&quot;&quot;
+        historico_pensamento = []
+        estado_atual = problema
+
+        for etapa in self.etapas_pensamento:
+            resultado_etapa = self._executar_etapa(etapa, estado_atual)
+            historico_pensamento.append({
+                &quot;etapa&quot;: etapa[&quot;nome&quot;],
+                &quot;tipo&quot;: etapa[&quot;tipo&quot;],
+                &quot;entrada&quot;: estado_atual,
+                &quot;saida&quot;: resultado_etapa,
+                &quot;confianca&quot;: resultado_etapa.get(&quot;confianca&quot;, 1.0)
+            })
+            estado_atual = resultado_etapa
+
+        # Decisão final
+        decisao = self._tomar_decisao(estado_atual)
+
+        return {
+            &quot;decisao_final&quot;: decisao,
+            &quot;raciocinio_completo&quot;: historico_pensamento,
+            &quot;confianca_final&quot;: self._calcular_confianca_geral(historico_pensamento),
+            &quot;explicacao&quot;: self._gerar_explicacao(historico_pensamento, decisao)
+        }
+
+    def _executar_etapa(self, etapa: Dict, entrada: Any) -&gt; Dict:
+        &quot;&quot;&quot;Executa uma etapa do raciocínio&quot;&quot;&quot;
+        tipo = etapa[&quot;tipo&quot;]
+        funcao = etapa[&quot;funcao&quot;]
+
+        if tipo == TipoRaciocinio.ANALITICO:
+            return funcao(entrada, self.padroes_conhecidos)
+        elif tipo == TipoRaciocinio.CRIATIVO:
+            return funcao(entrada, num_alternativas=5)
+        elif tipo == TipoRaciocinio.AVALIATIVO:
+            return funcao(entrada, self.criterios_decisao)
+        else:
+            return funcao(entrada)
+
+    def _tomar_decisao(self, estado_final: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Toma decisão baseada no raciocínio completo&quot;&quot;&quot;
+        opcoes = estado_final.get(&quot;opcoes&quot;, [])
+        if not opcoes:
+            return {&quot;erro&quot;: &quot;nenhuma opção gerada&quot;}
+
+        # Aplica critérios de decisão
+        scores = []
+        for opcao in opcoes:
+            score = sum(
+                opcao.get(criterio, 0) * peso
+                for criterio, peso in self.criterios_decisao.items()
+            )
+            scores.append((score, opcao))
+
+        melhor_score, melhor_opcao = max(scores, key=lambda x: x[0])
+
+        return {
+            &quot;opcao_escolhida&quot;: melhor_opcao,
+            &quot;score&quot;: melhor_score,
+            &quot;alternativas&quot;: [opt for _, opt in sorted(scores, reverse=True)[1:3]]
+        }
+
+    def _calcular_confianca_geral(self, historico: List[Dict]) -&gt; float:
+        &quot;&quot;&quot;Calcula confiança geral do raciocínio&quot;&quot;&quot;
+        if not historico:
+            return 0.0
+        confiancas = [etapa[&quot;confianca&quot;] for etapa in historico]
+        return sum(confiancas) / len(confiancas)
+
+    def _gerar_explicacao(self, historico: List[Dict], decisao: Dict) -&gt; str:
+        &quot;&quot;&quot;Gera explicação textual do raciocínio&quot;&quot;&quot;
+        partes = [&quot;Raciocínio completo:&quot;]
+        for i, etapa in enumerate(historico, 1):
+            partes.append(f&quot;{i}. {etapa['etapa']} ({etapa['tipo'].value})&quot;)
+        partes.append(f&quot;\nDecisão: {decisao['opcao_escolhida'].get('nome', 'N/A')}&quot;)
+        return &quot;\n&quot;.join(partes)
+
+# Funções de raciocínio
+def analisar_requisitos(entrada: Dict, padroes: Dict) -&gt; Dict:
+    &quot;&quot;&quot;Etapa analítica&quot;&quot;&quot;
+    return {
+        &quot;objetivo&quot;: entrada.get(&quot;objetivo&quot;),
+        &quot;restricoes&quot;: entrada.get(&quot;restricoes&quot;, []),
+        &quot;padroes_aplicaveis&quot;: [p for p in padroes if p in str(entrada)],
+        &quot;confianca&quot;: 0.9
+    }
+
+def gerar_alternativas(entrada: Dict, num_alternativas: int) -&gt; Dict:
+    &quot;&quot;&quot;Etapa criativa&quot;&quot;&quot;
+    return {
+        &quot;opcoes&quot;: [
+            {&quot;nome&quot;: f&quot;Alternativa {i}&quot;, &quot;viabilidade&quot;: 0.8, &quot;impacto&quot;: 0.7}
+            for i in range(num_alternativas)
+        ],
+        &quot;confianca&quot;: 0.85
+    }
+
+def avaliar_opcoes(entrada: Dict, criterios: Dict) -&gt; Dict:
+    &quot;&quot;&quot;Etapa avaliativa&quot;&quot;&quot;
+    return entrada  # Simplificado para exemplo
+
+# Exemplo prático
+plano_copywriter = PlanoRaciocinio(
+    etapas_pensamento=[
+        {
+            &quot;nome&quot;: &quot;Analisar brief do cliente&quot;,
+            &quot;tipo&quot;: TipoRaciocinio.ANALITICO,
+            &quot;funcao&quot;: analisar_requisitos
+        },
+        {
+            &quot;nome&quot;: &quot;Gerar headlines alternativas&quot;,
+            &quot;tipo&quot;: TipoRaciocinio.CRIATIVO,
+            &quot;funcao&quot;: gerar_alternativas
+        },
+        {
+            &quot;nome&quot;: &quot;Avaliar headlines por critérios&quot;,
+            &quot;tipo&quot;: TipoRaciocinio.AVALIATIVO,
+            &quot;funcao&quot;: avaliar_opcoes
+        }
+    ],
+    criterios_decisao={
+        &quot;clareza&quot;: 0.3,
+        &quot;urgencia&quot;: 0.2,
+        &quot;especificidade&quot;: 0.25,
+        &quot;beneficio&quot;: 0.25
+    },
+    heuristicas=[],
+    padroes_conhecidos={
+        &quot;numeros_funcionam&quot;: True,
+        &quot;beneficio_antes_feature&quot;: True,
+        &quot;urgencia_aumenta_conversao&quot;: True
+    }
+)
+
+# Executa raciocínio
+resultado = plano_copywriter.executar_raciocinio({
+    &quot;objetivo&quot;: &quot;criar headline para curso de Python&quot;,
+    &quot;restricoes&quot;: [&quot;máximo 12 palavras&quot;, &quot;incluir benefício claro&quot;]
+})
+
+print(f&quot;Resultado: {resultado['decisao_final']}&quot;)
+print(f&quot;\nConfiança: {resultado['confianca_final']:.2f}&quot;)
+print(f&quot;\n{resultado['explicacao']}&quot;)
+</code></pre>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">6. Protocolos de Comunicação</h3>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">Como interage com outros agentes e usuários.</p>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+from dataclasses import dataclass
+from typing import Dict, List, Optional, Callable
+from enum import Enum
+from datetime import datetime
+
+class TipoMensagem(Enum):
+    SOLICITACAO = &quot;pede ação ou informação&quot;
+    RESPOSTA = &quot;responde solicitação&quot;
+    NOTIFICACAO = &quot;informa evento&quot;
+    VALIDACAO = &quot;pede confirmação&quot;
+    ERRO = &quot;reporta problema&quot;
+
+class FormatoSaida(Enum):
+    JSON = &quot;json estruturado&quot;
+    MARKDOWN = &quot;markdown formatado&quot;
+    TEXTO = &quot;texto puro&quot;
+    RELATORIO = &quot;relatório executivo&quot;
+
+@dataclass
+class ProtocoloComunicacao:
+    &quot;&quot;&quot;Define como agente se comunica&quot;&quot;&quot;
+    formato_entrada: FormatoSaida
+    formato_saida: FormatoSaida
+    canais_comunicacao: Dict[str, str]
+    templates_mensagem: Dict[TipoMensagem, str]
+    regras_escalacao: List[Dict]
+    frequencia_updates: Dict[str, int]  # em minutos
+
+    def enviar_mensagem(
+        self,
+        destinatario: str,
+        tipo: TipoMensagem,
+        conteudo: Dict,
+        prioridade: str = &quot;normal&quot;
+    ) -&gt; Dict:
+        &quot;&quot;&quot;Envia mensagem seguindo protocolo&quot;&quot;&quot;
+
+        # Seleciona canal baseado em destinatário
+        canal = self.canais_comunicacao.get(destinatario, &quot;default&quot;)
+
+        # Formata mensagem usando template
+        mensagem_formatada = self._formatar_mensagem(tipo, conteudo)
+
+        # Verifica se precisa escalar
+        precisa_escalar = self._verificar_escalacao(tipo, conteudo, prioridade)
+
+        return {
+            &quot;destinatario&quot;: destinatario,
+            &quot;canal&quot;: canal,
+            &quot;tipo&quot;: tipo.value,
+            &quot;mensagem&quot;: mensagem_formatada,
+            &quot;prioridade&quot;: prioridade,
+            &quot;timestamp&quot;: datetime.now().isoformat(),
+            &quot;escalado&quot;: precisa_escalar,
+            &quot;formato&quot;: self.formato_saida.value
+        }
+
+    def _formatar_mensagem(self, tipo: TipoMensagem, conteudo: Dict) -&gt; str:
+        &quot;&quot;&quot;Formata mensagem usando template apropriado&quot;&quot;&quot;
+        template = self.templates_mensagem.get(tipo, &quot;{conteudo}&quot;)
+
+        if self.formato_saida == FormatoSaida.JSON:
+            return str(conteudo)
+        elif self.formato_saida == FormatoSaida.MARKDOWN:
+            return self._formatar_markdown(tipo, conteudo)
+        else:
+            return template.format(**conteudo)
+
+    def _formatar_markdown(self, tipo: TipoMensagem, conteudo: Dict) -&gt; str:
+        &quot;&quot;&quot;Formata em markdown profissional&quot;&quot;&quot;
+        if tipo == TipoMensagem.SOLICITACAO:
+            return f&quot;### Solicitação\n\n{conteudo.get('descricao', '')}\n\n**Prazo:** {conteudo.get('prazo', 'não especificado')}&quot;
+        elif tipo == TipoMensagem.ERRO:
+            return f&quot;⚠️ **Erro Detectado**\n\n```\n{conteudo.get('erro', '')}\n```\n\n**Ação:** {conteudo.get('acao', '')}&quot;
+        else:
+            return str(conteudo)
+
+    def _verificar_escalacao(self, tipo: TipoMensagem, conteudo: Dict, prioridade: str) -&gt; bool:
+        &quot;&quot;&quot;Verifica se mensagem deve ser escalada&quot;&quot;&quot;
+        for regra in self.regras_escalacao:
+            if (regra[&quot;tipo&quot;] == tipo and
+                regra.get(&quot;prioridade&quot;, &quot;normal&quot;) == prioridade):
+                return True
+        return False
+
+    def gerar_relatorio_status(self, atividades: List[Dict]) -&gt; Dict:
+        &quot;&quot;&quot;Gera relatório de status automático&quot;&quot;&quot;
+        return {
+            &quot;periodo&quot;: &quot;últimas 24h&quot;,
+            &quot;total_atividades&quot;: len(atividades),
+            &quot;completadas&quot;: len([a for a in atividades if a.get(&quot;status&quot;) == &quot;completo&quot;]),
+            &quot;em_andamento&quot;: len([a for a in atividades if a.get(&quot;status&quot;) == &quot;andamento&quot;]),
+            &quot;bloqueadas&quot;: len([a for a in atividades if a.get(&quot;status&quot;) == &quot;bloqueado&quot;]),
+            &quot;proximos_passos&quot;: self._identificar_proximos_passos(atividades),
+            &quot;formato&quot;: self.formato_saida.value
+        }
+
+    def _identificar_proximos_passos(self, atividades: List[Dict]) -&gt; List[str]:
+        &quot;&quot;&quot;Identifica próximas ações necessárias&quot;&quot;&quot;
+        passos = []
+        for ativ in atividades:
+            if ativ.get(&quot;status&quot;) == &quot;bloqueado&quot;:
+                passos.append(f&quot;Resolver bloqueio: {ativ.get('nome')}&quot;)
+            elif ativ.get(&quot;status&quot;) == &quot;andamento&quot; and ativ.get(&quot;progresso&quot;, 0) &gt; 0.8:
+                passos.append(f&quot;Finalizar: {ativ.get('nome')}&quot;)
+        return passos[:5]  # Top 5
+
+# Exemplo prático
+protocolo_copywriter = ProtocoloComunicacao(
+    formato_entrada=FormatoSaida.JSON,
+    formato_saida=FormatoSaida.MARKDOWN,
+    canais_comunicacao={
+        &quot;supervisor&quot;: &quot;slack_dm&quot;,
+        &quot;designer&quot;: &quot;slack_canal_projetos&quot;,
+        &quot;analista&quot;: &quot;email&quot;,
+        &quot;cliente&quot;: &quot;plataforma_gestao&quot;
+    },
+    templates_mensagem={
+        TipoMensagem.SOLICITACAO: &quot;Preciso de: {recurso}\nPara: {finalidade}\nAté: {prazo}&quot;,
+        TipoMensagem.RESPOSTA: &quot;Concluído: {tarefa}\nResultado: {resultado}&quot;,
+        TipoMensagem.NOTIFICACAO: &quot;Atualização: {evento}&quot;,
+        TipoMensagem.ERRO: &quot;Problema: {descricao}\nAção tomada: {acao}&quot;
+    },
+    regras_escalacao=[
+        {&quot;tipo&quot;: TipoMensagem.ERRO, &quot;prioridade&quot;: &quot;alta&quot;, &quot;escalar_para&quot;: &quot;supervisor&quot;},
+        {&quot;tipo&quot;: TipoMensagem.VALIDACAO, &quot;conteudo_critico&quot;: True, &quot;escalar_para&quot;: &quot;cliente&quot;}
+    ],
+    frequencia_updates={
+        &quot;supervisor&quot;: 1440,  # 1x por dia
+        &quot;cliente&quot;: 10080  # 1x por semana
+    }
+)
+
+# Testa comunicação
+msg1 = protocolo_copywriter.enviar_mensagem(
+    destinatario=&quot;designer&quot;,
+    tipo=TipoMensagem.SOLICITACAO,
+    conteudo={
+        &quot;descricao&quot;: &quot;Preciso de imagem hero para página de vendas&quot;,
+        &quot;prazo&quot;: &quot;2 dias&quot;,
+        &quot;especificacoes&quot;: &quot;1200x600px, tom profissional&quot;
+    }
+)
+
+msg2 = protocolo_copywriter.enviar_mensagem(
+    destinatario=&quot;supervisor&quot;,
+    tipo=TipoMensagem.ERRO,
+    conteudo={
+        &quot;erro&quot;: &quot;Taxa de conversão abaixo de 2% em teste A/B&quot;,
+        &quot;acao&quot;: &quot;Revisei headline e CTA, nova versão em análise&quot;
+    },
+    prioridade=&quot;alta&quot;
+)
+
+print(f&quot;Mensagem Designer:\n{msg1['mensagem']}\n&quot;)
+print(f&quot;\nMensagem Supervisor:\n{msg2['mensagem']}\n&quot;)
+print(f&quot;Escalado: {msg2['escalado']}&quot;)
+</code></pre>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">7. Critérios de Auditoria Interna</h3>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">Como valida qualidade da própria saída.</p>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+from dataclasses import dataclass
+from typing import Dict, List, Callable, Any
+from enum import Enum
+
+class NivelSeveridade(Enum):
+    CRITICO = &quot;bloqueia publicação&quot;
+    ALTO = &quot;requer correção&quot;
+    MEDIO = &quot;recomenda revisão&quot;
+    BAIXO = &quot;sugestão de melhoria&quot;
+
+@dataclass
+class CriterioAuditoria:
+    &quot;&quot;&quot;Um critério de qualidade&quot;&quot;&quot;
+    nome: str
+    descricao: str
+    funcao_validacao: Callable
+    severidade: NivelSeveridade
+    score_minimo: float
+
+@dataclass
+class SistemaAuditoriaInterna:
+    &quot;&quot;&quot;Sistema de validação de qualidade&quot;&quot;&quot;
+    criterios: List[CriterioAuditoria]
+    score_minimo_publicacao: float
+    checklists: Dict[str, List[str]]
+
+    def auditar_saida(self, output: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Executa auditoria completa da saída&quot;&quot;&quot;
+        resultados = []
+        score_total = 0
+        problemas_criticos = []
+        warnings = []
+        sugestoes = []
+
+        for criterio in self.criterios:
+            resultado = criterio.funcao_validacao(output)
+            score = resultado.get(&quot;score&quot;, 0)
+            passou = score &gt;= criterio.score_minimo
+
+            resultado_criterio = {
+                &quot;criterio&quot;: criterio.nome,
+                &quot;score&quot;: score,
+                &quot;passou&quot;: passou,
+                &quot;severidade&quot;: criterio.severidade.value,
+                &quot;detalhes&quot;: resultado.get(&quot;detalhes&quot;, &quot;&quot;)
+            }
+
+            resultados.append(resultado_criterio)
+            score_total += score
+
+            if not passou:
+                if criterio.severidade == NivelSeveridade.CRITICO:
+                    problemas_criticos.append(criterio.nome)
+                elif criterio.severidade == NivelSeveridade.ALTO:
+                    warnings.append(criterio.nome)
+                else:
+                    sugestoes.append(criterio.nome)
+
+        score_medio = score_total / len(self.criterios) if self.criterios else 0
+        aprovado = (score_medio &gt;= self.score_minimo_publicacao and
+                   len(problemas_criticos) == 0)
+
+        return {
+            &quot;aprovado&quot;: aprovado,
+            &quot;score_geral&quot;: score_medio,
+            &quot;score_minimo&quot;: self.score_minimo_publicacao,
+            &quot;resultados_detalhados&quot;: resultados,
+            &quot;problemas_criticos&quot;: problemas_criticos,
+            &quot;warnings&quot;: warnings,
+            &quot;sugestoes&quot;: sugestoes,
+            &quot;acao_recomendada&quot;: self._recomendar_acao(aprovado, problemas_criticos, score_medio)
+        }
+
+    def _recomendar_acao(self, aprovado: bool, criticos: List, score: float) -&gt; str:
+        &quot;&quot;&quot;Recomenda próxima ação&quot;&quot;&quot;
+        if not aprovado and criticos:
+            return f&quot;BLOQUEADO: Corrigir {len(criticos)} problema(s) crítico(s)&quot;
+        elif not aprovado:
+            return f&quot;Melhorar score de {score:.2f} para {self.score_minimo_publicacao:.2f}&quot;
+        elif score &lt; 0.9:
+            return &quot;Aprovado, mas há espaço para melhorias&quot;
+        else:
+            return &quot;Excelente qualidade, aprovado para publicação&quot;
+
+    def executar_checklist(self, tipo_saida: str, output: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Executa checklist específico&quot;&quot;&quot;
+        checklist = self.checklists.get(tipo_saida, [])
+        if not checklist:
+            return {&quot;erro&quot;: f&quot;Checklist '{tipo_saida}' não encontrado&quot;}
+
+        resultados = []
+        for item in checklist:
+            # Verifica se item está presente/válido no output
+            check_passou = item.lower().replace(&quot; &quot;, &quot;_&quot;) in str(output).lower()
+            resultados.append({
+                &quot;item&quot;: item,
+                &quot;status&quot;: &quot;OK&quot; if check_passou else &quot;PENDENTE&quot;
+            })
+
+        total_ok = len([r for r in resultados if r[&quot;status&quot;] == &quot;OK&quot;])
+
+        return {
+            &quot;tipo&quot;: tipo_saida,
+            &quot;total_itens&quot;: len(checklist),
+            &quot;concluidos&quot;: total_ok,
+            &quot;percentual&quot;: (total_ok / len(checklist)) * 100 if checklist else 0,
+            &quot;detalhes&quot;: resultados
+        }
+
+# Funções de validação
+def validar_clareza_mensagem(output: Dict) -&gt; Dict:
+    &quot;&quot;&quot;Mensagem deve ser clara&quot;&quot;&quot;
+    texto = output.get(&quot;texto&quot;, &quot;&quot;)
+    palavras = texto.split()
+
+    # Métricas de clareza
+    palavras_complexas = len([p for p in palavras if len(p) &gt; 12])
+    frases = texto.split(&quot;.&quot;)
+    tamanho_medio_frase = len(palavras) / len(frases) if frases else 0
+
+    # Score: penaliza complexidade excessiva
+    score = 1.0
+    if palavras_complexas &gt; len(palavras) * 0.2:
+        score -= 0.3
+    if tamanho_medio_frase &gt; 20:
+        score -= 0.2
+
+    return {
+        &quot;score&quot;: max(0, score),
+        &quot;detalhes&quot;: f&quot;{palavras_complexas} palavras complexas, média {tamanho_medio_frase:.1f} palavras/frase&quot;
+    }
+
+def validar_conversao_esperada(output: Dict) -&gt; Dict:
+    &quot;&quot;&quot;Elementos de conversão presentes&quot;&quot;&quot;
+    elementos = output.get(&quot;elementos&quot;, [])
+    elementos_essenciais = {&quot;headline&quot;, &quot;cta&quot;, &quot;beneficios&quot;, &quot;prova_social&quot;}
+    presentes = set(elementos) &amp; elementos_essenciais
+
+    score = len(presentes) / len(elementos_essenciais)
+
+    return {
+        &quot;score&quot;: score,
+        &quot;detalhes&quot;: f&quot;{len(presentes)}/4 elementos essenciais presentes&quot;
+    }
+
+def validar_etica(output: Dict) -&gt; Dict:
+    &quot;&quot;&quot;Não usa táticas antiéticas&quot;&quot;&quot;
+    texto = output.get(&quot;texto&quot;, &quot;&quot;).lower()
+    palavras_proibidas = [&quot;garantido&quot;, &quot;milagre&quot;, &quot;segredo&quot;, &quot;hack&quot;]
+    violacoes = [p for p in palavras_proibidas if p in texto]
+
+    score = 1.0 if not violacoes else 0.0
+
+    return {
+        &quot;score&quot;: score,
+        &quot;detalhes&quot;: f&quot;Violações éticas: {violacoes}&quot; if violacoes else &quot;Ética OK&quot;
+    }
+
+# Exemplo prático
+auditoria_copywriter = SistemaAuditoriaInterna(
+    criterios=[
+        CriterioAuditoria(
+            nome=&quot;Clareza da Mensagem&quot;,
+            descricao=&quot;Texto deve ser claro e direto&quot;,
+            funcao_validacao=validar_clareza_mensagem,
+            severidade=NivelSeveridade.ALTO,
+            score_minimo=0.7
+        ),
+        CriterioAuditoria(
+            nome=&quot;Elementos de Conversão&quot;,
+            descricao=&quot;Deve ter headline, CTA, benefícios e prova social&quot;,
+            funcao_validacao=validar_conversao_esperada,
+            severidade=NivelSeveridade.CRITICO,
+            score_minimo=0.75
+        ),
+        CriterioAuditoria(
+            nome=&quot;Ética e Transparência&quot;,
+            descricao=&quot;Não usa promessas falsas ou manipulação&quot;,
+            funcao_validacao=validar_etica,
+            severidade=NivelSeveridade.CRITICO,
+            score_minimo=1.0
+        )
+    ],
+    score_minimo_publicacao=0.8,
+    checklists={
+        &quot;pagina_vendas&quot;: [
+            &quot;Headline impactante&quot;,
+            &quot;Subheadline explicativa&quot;,
+            &quot;Benefícios claros (mínimo 3)&quot;,
+            &quot;Prova social (depoimentos)&quot;,
+            &quot;CTA visível e claro&quot;,
+            &quot;Garantia explícita&quot;,
+            &quot;FAQ respondendo objeções&quot;
+        ]
+    }
+)
+
+# Testa auditoria
+output_teste = {
+    &quot;texto&quot;: &quot;Aprenda Python em 30 dias. Curso completo com projetos reais. Mais de 1000 alunos aprovam.&quot;,
+    &quot;elementos&quot;: [&quot;headline&quot;, &quot;cta&quot;, &quot;beneficios&quot;, &quot;prova_social&quot;]
+}
+
+resultado = auditoria_copywriter.auditar_saida(output_teste)
+print(f&quot;Auditoria: {resultado['acao_recomendada']}&quot;)
+print(f&quot;Score: {resultado['score_geral']:.2f}&quot;)
+print(f&quot;Problemas críticos: {resultado['problemas_criticos']}&quot;)
+
+checklist = auditoria_copywriter.executar_checklist(&quot;pagina_vendas&quot;, output_teste)
+print(f&quot;\nChecklist: {checklist['concluidos']}/{checklist['total_itens']} ({checklist['percentual']:.0f}%)&quot;)
+</code></pre>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">8. Modo de Falha e Recuperação</h3>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">Como detecta problemas e se recupera.</p>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-python">
+from dataclasses import dataclass, field
+from typing import Dict, List, Optional, Callable
+from enum import Enum
+from datetime import datetime
+
+class TipoFalha(Enum):
+    ENTRADA_INVALIDA = &quot;dados de entrada incorretos&quot;
+    TIMEOUT = &quot;operação excedeu tempo limite&quot;
+    RECURSO_INDISPONIVEL = &quot;dependência não disponível&quot;
+    QUALIDADE_BAIXA = &quot;saída abaixo do padrão&quot;
+    ERRO_LOGICA = &quot;erro na execução&quot;
+
+class EstrategiaRecuperacao(Enum):
+    RETRY = &quot;tentar novamente&quot;
+    FALLBACK = &quot;usar alternativa&quot;
+    DEGRADACAO = &quot;modo degradado&quot;
+    ESCALACAO = &quot;pedir ajuda humana&quot;
+    ABORT = &quot;cancelar operação&quot;
+
+@dataclass
+class PlanoRecuperacao:
+    &quot;&quot;&quot;Define como lidar com cada tipo de falha&quot;&quot;&quot;
+    tipo_falha: TipoFalha
+    estrategia: EstrategiaRecuperacao
+    max_tentativas: int
+    timeout_retry: int  # segundos
+    acao_fallback: Optional[Callable]
+    condicao_escalacao: Callable
+
+@dataclass
+class SistemaFalhaRecuperacao:
+    &quot;&quot;&quot;Sistema completo de detecção e recuperação&quot;&quot;&quot;
+    planos_recuperacao: Dict[TipoFalha, PlanoRecuperacao]
+    historico_falhas: List[Dict] = field(default_factory=list)
+    modo_degradado: bool = False
+
+    def detectar_e_recuperar(self, operacao: Callable, contexto: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Executa operação com detecção e recuperação automática&quot;&quot;&quot;
+        tentativas = 0
+        max_tentativas = 3
+        ultima_falha = None
+
+        while tentativas &lt; max_tentativas:
+            try:
+                # Tenta executar operação
+                resultado = operacao(contexto)
+
+                # Valida qualidade
+                if not self._validar_qualidade(resultado):
+                    raise Exception(&quot;Qualidade abaixo do padrão&quot;)
+
+                # Sucesso!
+                if tentativas &gt; 0:
+                    self._registrar_recuperacao_sucesso(ultima_falha, tentativas)
+
+                return {
+                    &quot;sucesso&quot;: True,
+                    &quot;resultado&quot;: resultado,
+                    &quot;tentativas&quot;: tentativas + 1,
+                    &quot;modo_degradado&quot;: self.modo_degradado
+                }
+
+            except Exception as e:
+                tentativas += 1
+                tipo_falha = self._classificar_falha(e)
+                ultima_falha = tipo_falha
+
+                self._registrar_falha(tipo_falha, contexto, str(e))
+
+                # Tenta recuperar
+                if tentativas &lt; max_tentativas:
+                    recuperado = self._tentar_recuperacao(tipo_falha, contexto, tentativas)
+                    if not recuperado:
+                        break
+                else:
+                    # Esgotou tentativas
+                    return self._lidar_com_falha_final(tipo_falha, contexto)
+
+        return {
+            &quot;sucesso&quot;: False,
+            &quot;erro&quot;: &quot;Não foi possível recuperar&quot;,
+            &quot;tentativas&quot;: tentativas,
+            &quot;ultima_falha&quot;: ultima_falha.value if ultima_falha else &quot;desconhecida&quot;
+        }
+
+    def _classificar_falha(self, erro: Exception) -&gt; TipoFalha:
+        &quot;&quot;&quot;Classifica tipo de falha&quot;&quot;&quot;
+        msg_erro = str(erro).lower()
+        if &quot;timeout&quot; in msg_erro:
+            return TipoFalha.TIMEOUT
+        elif &quot;qualidade&quot; in msg_erro:
+            return TipoFalha.QUALIDADE_BAIXA
+        elif &quot;indisponível&quot; in msg_erro:
+            return TipoFalha.RECURSO_INDISPONIVEL
+        elif &quot;inválido&quot; in msg_erro:
+            return TipoFalha.ENTRADA_INVALIDA
+        else:
+            return TipoFalha.ERRO_LOGICA
+
+    def _tentar_recuperacao(self, tipo_falha: TipoFalha, contexto: Dict, tentativa: int) -&gt; bool:
+        &quot;&quot;&quot;Tenta recuperar da falha&quot;&quot;&quot;
+        plano = self.planos_recuperacao.get(tipo_falha)
+        if not plano:
+            return False
+
+        if plano.estrategia == EstrategiaRecuperacao.RETRY:
+            # Aguarda antes de tentar novamente
+            return True
+
+        elif plano.estrategia == EstrategiaRecuperacao.FALLBACK:
+            if plano.acao_fallback:
+                plano.acao_fallback(contexto)
+            return True
+
+        elif plano.estrategia == EstrategiaRecuperacao.DEGRADACAO:
+            self.modo_degradado = True
+            return True
+
+        elif plano.estrategia == EstrategiaRecuperacao.ESCALACAO:
+            if plano.condicao_escalacao(contexto, tentativa):
+                self._escalar_para_humano(tipo_falha, contexto)
+            return False
+
+        else:  # ABORT
+            return False
+
+    def _validar_qualidade(self, resultado: Any) -&gt; bool:
+        &quot;&quot;&quot;Valida se resultado tem qualidade mínima&quot;&quot;&quot;
+        if isinstance(resultado, dict):
+            return resultado.get(&quot;score&quot;, 0) &gt;= 0.7
+        return True
+
+    def _registrar_falha(self, tipo: TipoFalha, contexto: Dict, erro: str):
+        &quot;&quot;&quot;Registra falha no histórico&quot;&quot;&quot;
+        self.historico_falhas.append({
+            &quot;timestamp&quot;: datetime.now().isoformat(),
+            &quot;tipo&quot;: tipo.value,
+            &quot;contexto&quot;: contexto,
+            &quot;erro&quot;: erro
+        })
+
+    def _registrar_recuperacao_sucesso(self, tipo_falha: TipoFalha, tentativas: int):
+        &quot;&quot;&quot;Registra recuperação bem-sucedida&quot;&quot;&quot;
+        if self.historico_falhas:
+            self.historico_falhas[-1][&quot;recuperado&quot;] = True
+            self.historico_falhas[-1][&quot;tentativas_ate_sucesso&quot;] = tentativas
+
+    def _lidar_com_falha_final(self, tipo_falha: TipoFalha, contexto: Dict) -&gt; Dict:
+        &quot;&quot;&quot;Lida com falha após esgotar tentativas&quot;&quot;&quot;
+        plano = self.planos_recuperacao.get(tipo_falha)
+
+        if plano and plano.estrategia == EstrategiaRecuperacao.ESCALACAO:
+            return {
+                &quot;sucesso&quot;: False,
+                &quot;acao&quot;: &quot;escalado_para_humano&quot;,
+                &quot;tipo_falha&quot;: tipo_falha.value,
+                &quot;contexto&quot;: contexto
+            }
+
+        return {
+            &quot;sucesso&quot;: False,
+            &quot;acao&quot;: &quot;operacao_cancelada&quot;,
+            &quot;tipo_falha&quot;: tipo_falha.value
+        }
+
+    def _escalar_para_humano(self, tipo_falha: TipoFalha, contexto: Dict):
+        &quot;&quot;&quot;Escala problema para supervisão humana&quot;&quot;&quot;
+        print(f&quot;🚨 ESCALAÇÃO: {tipo_falha.value}&quot;)
+        print(f&quot;Contexto: {contexto}&quot;)
+
+    def gerar_relatorio_saude(self) -&gt; Dict:
+        &quot;&quot;&quot;Gera relatório de saúde do agente&quot;&quot;&quot;
+        total_falhas = len(self.historico_falhas)
+        recuperadas = len([f for f in self.historico_falhas if f.get(&quot;recuperado&quot;)])
+
+        falhas_por_tipo = {}
+        for falha in self.historico_falhas:
+            tipo = falha[&quot;tipo&quot;]
+            falhas_por_tipo[tipo] = falhas_por_tipo.get(tipo, 0) + 1
+
+        return {
+            &quot;total_falhas&quot;: total_falhas,
+            &quot;recuperacoes_sucesso&quot;: recuperadas,
+            &quot;taxa_recuperacao&quot;: (recuperadas / total_falhas * 100) if total_falhas &gt; 0 else 100,
+            &quot;modo_degradado&quot;: self.modo_degradado,
+            &quot;falhas_por_tipo&quot;: falhas_por_tipo,
+            &quot;saude_geral&quot;: &quot;boa&quot; if total_falhas &lt; 5 else &quot;requer_atencao&quot;
+        }
+
+# Exemplo prático
+sistema_recuperacao = SistemaFalhaRecuperacao(
+    planos_recuperacao={
+        TipoFalha.TIMEOUT: PlanoRecuperacao(
+            tipo_falha=TipoFalha.TIMEOUT,
+            estrategia=EstrategiaRecuperacao.RETRY,
+            max_tentativas=3,
+            timeout_retry=5,
+            acao_fallback=None,
+            condicao_escalacao=lambda ctx, t: t &gt; 3
+        ),
+        TipoFalha.QUALIDADE_BAIXA: PlanoRecuperacao(
+            tipo_falha=TipoFalha.QUALIDADE_BAIXA,
+            estrategia=EstrategiaRecuperacao.RETRY,
+            max_tentativas=2,
+            timeout_retry=0,
+            acao_fallback=lambda ctx: ctx.update({&quot;modo_simples&quot;: True}),
+            condicao_escalacao=lambda ctx, t: t &gt; 2
+        ),
+        TipoFalha.RECURSO_INDISPONIVEL: PlanoRecuperacao(
+            tipo_falha=TipoFalha.RECURSO_INDISPONIVEL,
+            estrategia=EstrategiaRecuperacao.DEGRADACAO,
+            max_tentativas=1,
+            timeout_retry=0,
+            acao_fallback=None,
+            condicao_escalacao=lambda ctx, t: True
+        )
+    }
+)
+
+# Simula operação com falha e recuperação
+def operacao_copy_instavel(contexto: Dict) -&gt; Dict:
+    &quot;&quot;&quot;Simula criação de copy que pode falhar&quot;&quot;&quot;
+    import random
+    if random.random() &lt; 0.3:  # 30% chance de sucesso
+        return {&quot;texto&quot;: &quot;Copy criado&quot;, &quot;score&quot;: 0.85}
+    raise Exception(&quot;Qualidade abaixo do padrão&quot;)
+
+resultado = sistema_recuperacao.detectar_e_recuperar(
+    operacao_copy_instavel,
+    {&quot;produto&quot;: &quot;Curso Python&quot;, &quot;publico&quot;: &quot;iniciantes&quot;}
+)
+
+print(f&quot;Resultado: {resultado}&quot;)
+print(f&quot;\nSaúde do sistema: {sistema_recuperacao.gerar_relatorio_saude()}&quot;)
+</code></pre>
       </div>
 
       <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
-        <h2 class="text-3xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">Conteudo do Modulo 7</h2>
-        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
-          Este modulo cobre <strong>Criacao de Agentes com ESIA</strong> - um dos pilares fundamentais da Engenharia de Sistemas Intencionais Autonomos (ESIA) em 2026.
-        </p>
-        <div class="bg-nivel-3s/10 border-l-4 border-nivel-3s p-6 rounded-lg">
-          <h3 class="font-bold text-nivel-3s mb-2">O que voce vai dominar:</h3>
-          <p class="text-neutral-700 dark:text-neutral-300">Os 8 componentes essenciais de um agente avancado 2026</p>
-        </div>
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Conclusão: O Checklist do Agente Completo
+        </h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-4">Antes de publicar um agente em produção, valide os 8 componentes:</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ <strong>Missão Funcional</strong> - Sabe exatamente o que faz e por quê</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ <strong>Intenção Estratégica</strong> - Tem objetivos de médio prazo claros</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ <strong>Domínio de Responsabilidade</strong> - Sabe onde atua e onde não atua</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ <strong>Limites Claros</strong> - Conhece suas cercas de segurança</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ <strong>Plano de Raciocínio</strong> - Pensa de forma estruturada e explicável</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ <strong>Protocolos de Comunicação</strong> - Sabe como se comunicar com todos</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ <strong>Auditoria Interna</strong> - Valida qualidade da própria saída</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">✅ <strong>Recuperação de Falhas</strong> - Sabe detectar e corrigir problemas</p>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">Isso é padrão 2026.</p>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">© 2025 FEI - Formação em Engenharia de Intenção</p>
       </div>
 
+      <!-- Conclusao -->
       <div class="bg-gradient-to-r from-nivel-3s to-orange-600 text-white rounded-xl p-8">
         <h2 class="text-3xl font-bold mb-4">Conclusao do Modulo</h2>
         <p class="text-lg mb-6">
-          Voce dominou os conceitos essenciais de Criacao de Agentes com ESIA no contexto de sistemas autonomos 2026.
+          Voce dominou os conceitos essenciais de Criação de Agentes com ESIA no contexto de sistemas autonomos 2026.
         </p>
         <div class="flex gap-4">
-          <a href="nivel-3s-modulo-6.html" class="px-6 py-3 bg-neutral-200 dark:bg-neutral-700 rounded-lg font-semibold">
-            ← Módulo 6
-          </a>
-          <a href="nivel-3s-modulo-8.html" class="px-6 py-3 bg-nivel-3s text-white rounded-lg font-semibold">
-            Módulo 8 →
-          </a>
+          <a href="nivel-3s-modulo-6.html" class="px-6 py-3 bg-white text-nivel-3s rounded-lg font-semibold hover:bg-neutral-100">← Módulo 6</a>
+          <a href="nivel-3s-modulo-8.html" class="px-6 py-3 bg-nivel-3s text-white rounded-lg font-semibold hover:opacity-90">Módulo 8 →</a>
         </div>
       </div>
 
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-3 gap-8">
@@ -115,10 +1373,10 @@
         <div>
           <h4 class="font-semibold text-white mb-4">Niveis</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="../niveis/nivel-1.html" class="hover:text-white">Nivel 1</a></li>
-            <li><a href="../niveis/nivel-2.html" class="hover:text-white">Nivel 2</a></li>
-            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Nivel 3A</a></li>
-            <li><a href="../niveis/nivel-3s.html" class="hover:text-white">Nivel 3S</a></li>
+            <li><a href="../niveis/nivel-1.html" class="hover:text-white">Nivel 1: Fundamentos</a></li>
+            <li><a href="../niveis/nivel-2.html" class="hover:text-white">Nivel 2: Programa Completo</a></li>
+            <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Nivel 3A: Agentes</a></li>
+            <li><a href="../niveis/nivel-3s.html" class="hover:text-white">Nivel 3S: Sistemas 2026</a></li>
           </ul>
         </div>
         <div>
@@ -136,5 +1394,13 @@
   </footer>
 
   <script src="../js/app.js"></script>
+  <script>
+    // Initialize syntax highlighting
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+      });
+    });
+  </script>
 </body>
 </html>
