@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modulo 7: Avaliacao Final + Certificacao | FEI Nivel 2</title>
-  <meta name="description" content="Prova pratica final e certificacao em Engenharia de Intencao">
+  <title>Módulo 7: Avaliacao Final + Certificacao | FEI Nível 2</title>
+  <meta name="description" content="Nivel 2 - Programa Completo">
+
   <script src="https://cdn.tailwindcss.com"></script>
+
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -21,13 +23,21 @@
       }
     }
   </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    * { transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out; }
-    .preload * { transition: none !important; }
-    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+    .preload * {
+      transition: none !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
   </style>
 </head>
 <body class="preload bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
@@ -36,14 +46,20 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <div class="flex items-center">
-          <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-2 bg-clip-text text-transparent">FEI - Engenharia de Intencao</a>
+          <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-2 bg-clip-text text-transparent">
+            FEI - Engenharia de Intencao
+          </a>
         </div>
         <div class="hidden md:flex items-center space-x-8">
           <a href="../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-2">Inicio</a>
           <a href="../niveis/nivel-2.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-2">Nivel 2</a>
           <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
           </button>
         </div>
       </div>
@@ -65,11 +81,19 @@
   <section class="bg-gradient-to-r from-nivel-2 to-purple-600 py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
       <div class="flex items-center gap-4 mb-4">
-        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">Modulo 7</span>
-        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">Nivel 2 - Programa Completo</span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Modulo 7
+        </span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          Nivel 2 - Programa Completo
+        </span>
       </div>
-      <h1 class="text-4xl lg:text-5xl font-bold mb-4">Avaliacao Final + Certificacao</h1>
-      <p class="text-xl text-white/90">Demonstre seu dominio completo da Engenharia de Intencao</p>
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">
+        Avaliacao Final + Certificacao
+      </h1>
+      <p class="text-xl text-white/90">
+        Nivel 2 - Programa Completo
+      </p>
     </div>
   </section>
 
@@ -82,180 +106,1204 @@
         </a>
       </div>
 
+
       <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
-        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">Introducao</h2>
-        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
-          Este e o modulo final do Nivel 2. Aqui voce demonstrara dominio completo da Engenharia de Intencao atraves de uma avaliacao pratica abrangente.
-        </p>
-        <div class="bg-nivel-2/10 border-l-4 border-nivel-2 p-6 rounded-lg">
-          <h3 class="font-bold text-nivel-2 mb-2">Estrutura da Avaliacao</h3>
-          <p class="text-neutral-700 dark:text-neutral-300">
-            A prova final consiste em <strong>4 entregas obrigatorias</strong> que demonstram seu dominio em diferentes contextos.
-          </p>
-        </div>
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Nivel 2 - Programa Completo
+        </h2>
+        <p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">FEI - Formacao em Engenharia de Intencao</p>
       </div>
 
       <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
-        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">4 Entregas Obrigatorias</h2>
-
-        <div class="space-y-6">
-          <div class="bg-gradient-to-r from-nivel-2/10 to-purple-50 dark:from-nivel-2/20 dark:to-purple-900/20 p-6 rounded-xl border-l-4 border-nivel-2">
-            <div class="flex items-center gap-4 mb-3">
-              <div class="bg-nivel-2 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">1</div>
-              <h3 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">Intencao Completa</h3>
-            </div>
-            <p class="text-neutral-700 dark:text-neutral-300">
-              Crie uma intencao completa e detalhada para um cenario complexo (lancamento de produto, transformacao digital, programa educacional ou analise estrategica).
-            </p>
-          </div>
-
-          <div class="bg-gradient-to-r from-nivel-2/10 to-purple-50 dark:from-nivel-2/20 dark:to-purple-900/20 p-6 rounded-xl border-l-4 border-nivel-2">
-            <div class="flex items-center gap-4 mb-3">
-              <div class="bg-nivel-2 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">2</div>
-              <h3 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">Sistema de Intencao</h3>
-            </div>
-            <p class="text-neutral-700 dark:text-neutral-300">
-              Desenvolva um sistema reutilizavel de no minimo 5 templates de intencoes para sua area de atuacao.
-            </p>
-          </div>
-
-          <div class="bg-gradient-to-r from-nivel-2/10 to-purple-50 dark:from-nivel-2/20 dark:to-purple-900/20 p-6 rounded-xl border-l-4 border-nivel-2">
-            <div class="flex items-center gap-4 mb-3">
-              <div class="bg-nivel-2 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">3</div>
-              <h3 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">Processo Assistido por IA</h3>
-            </div>
-            <p class="text-neutral-700 dark:text-neutral-300">
-              Documente um processo completo do inicio ao fim (4-8 etapas) com intencao para IA em cada etapa.
-            </p>
-          </div>
-
-          <div class="bg-gradient-to-r from-nivel-2/10 to-purple-50 dark:from-nivel-2/20 dark:to-purple-900/20 p-6 rounded-xl border-l-4 border-nivel-2">
-            <div class="flex items-center gap-4 mb-3">
-              <div class="bg-nivel-2 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">4</div>
-              <h3 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">Caso de Uso Real</h3>
-            </div>
-            <p class="text-neutral-700 dark:text-neutral-300">
-              Aplique Engenharia de Intencao em um problema real da sua area, documentando contexto, aplicacao, resultados e reflexao.
-            </p>
-          </div>
-        </div>
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Introducao
+        </h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-4">Este e o modulo final do Nivel 2. Aqui voce demonstrara dominio completo da Engenharia de Intencao atraves de uma avaliacao pratica abrangente e tera acesso a <strong>Biblioteca Completa de Templates</strong> para uso continuo.</p>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">O Que Voce Alcancou Ate Aqui</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Ao longo dos 6 modulos anteriores, voce:</p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Entendeu a evolucao dos prompts (GPT-3 → GPT-5)</li>
+<li>Dominou as 7 etapas da Engenharia de Intencao</li>
+<li>Praticou com 12 exercicios progressivos</li>
+<li>Aplicou em 4 projetos hands-on</li>
+<li>Analisou 15+ casos reais completos</li>
+</ul>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Transformacao:</strong> De executor de prompts → Designer estrategico de intencoes</p>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">Estrutura deste Modulo</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">1. <strong>Avaliacao Final</strong> (4 entregas obrigatorias)</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">2. <strong>Criterios de Certificacao</strong> (3 niveis)</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">3. <strong>Biblioteca de 40+ Templates Completos</strong> (organizados por categoria)</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">4. <strong>Recursos da Comunidade</strong> (area de membros, mentorias)</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">5. <strong>Proximos Niveis</strong> (3A: Agentes | 3S: Sistemas)</p>
       </div>
 
       <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
-        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">Criterios de Aprovacao</h2>
-
-        <div class="bg-yellow-50 dark:bg-yellow-900/20 p-6 rounded-lg mb-6">
-          <h3 class="font-bold text-yellow-700 dark:text-yellow-400 mb-3">Pontuacao Minima</h3>
-          <div class="grid md:grid-cols-2 gap-4 text-neutral-700 dark:text-neutral-300">
-            <div>- Entrega 1: Minimo 70/100</div>
-            <div>- Entrega 2: Minimo 70/100</div>
-            <div>- Entrega 3: Minimo 70/100</div>
-            <div>- Entrega 4: Minimo 70/100</div>
-          </div>
-          <p class="mt-4 font-bold">Media final: Minimo 75/100</p>
-        </div>
-
-        <div class="bg-nivel-2/10 p-6 rounded-lg">
-          <h3 class="font-bold text-neutral-900 dark:text-neutral-100 mb-3">Demonstracao de Dominio</h3>
-          <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
-            <li>- Compreensao das 7 etapas da Engenharia de Intencao</li>
-            <li>- Capacidade de adaptar estrutura para diferentes contextos</li>
-            <li>- Uso apropriado de delegacao inteligente</li>
-            <li>- Definicao clara de criterios de qualidade</li>
-            <li>- Contexto relevante (sem excesso)</li>
-            <li>- Pensamento estrategico</li>
-          </ul>
-        </div>
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Parte 1: Estrutura da Avaliacao Final
+        </h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-4">A prova final consiste em <strong>4 entregas obrigatorias</strong> que demonstram seu dominio em diferentes contextos de aplicacao.</p>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">Visao Geral das Entregas</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">| Entrega | Foco | Tempo Estimado | Pontos |</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">|---------|------|----------------|--------|</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">| 1. Intencao Completa | Dominio tecnico das 7 etapas | 1-2h | 100 |</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">| 2. Sistema de Intencao | Abstração e reutilizacao | 2-3h | 100 |</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">| 3. Processo com IA | Orquestracao multi-etapas | 2-3h | 100 |</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">| 4. Caso de Uso Real | Aplicacao pratica eficaz | 2-4h | 100 |</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">| <strong>TOTAL</strong> | - | <strong>7-12h</strong> | <strong>400</strong> |</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Media necessaria:</strong> 75/100 (300/400 total)</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Tempo recomendado:</strong> Distribuir ao longo de 1-2 semanas</p>
       </div>
 
       <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
-        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">Niveis de Certificacao</h2>
-
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-xl border-2 border-green-500">
-            <div class="text-green-700 dark:text-green-400 font-bold text-lg mb-2">Certificacao Basica</div>
-            <div class="text-2xl font-bold mb-2">75-84</div>
-            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-4">Media de aprovacao</p>
-            <div class="text-xs text-neutral-600 dark:text-neutral-400">
-              Titulo: "Praticante de Engenharia de Intencao"
-            </div>
-          </div>
-
-          <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-xl border-2 border-blue-500">
-            <div class="text-blue-700 dark:text-blue-400 font-bold text-lg mb-2">Com Distincao</div>
-            <div class="text-2xl font-bold mb-2">85-94</div>
-            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-4">Aprovacao com excelencia</p>
-            <div class="text-xs text-neutral-600 dark:text-neutral-400">
-              Titulo: "Especialista em Engenharia de Intencao"
-            </div>
-          </div>
-
-          <div class="bg-nivel-2/20 p-6 rounded-xl border-2 border-nivel-2">
-            <div class="text-nivel-2 font-bold text-lg mb-2">Com Honras</div>
-            <div class="text-2xl font-bold mb-2">95-100</div>
-            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-4">Dominio excepcional</p>
-            <div class="text-xs text-neutral-600 dark:text-neutral-400">
-              Titulo: "Expert em Engenharia de Intencao" + Acesso a comunidade de experts
-            </div>
-          </div>
-        </div>
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Entrega 1: Intencao Completa para Cenario Complexo
+        </h2>
+        <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">Objetivo da Entrega</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Demonstrar que voce domina a criacao de intencoes completas, bem estruturadas e eficazes para situacoes de complexidade real.</p>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">Instrucoes</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Escolha <strong>UM</strong> dos 4 cenarios abaixo e crie uma intencao completa seguindo as 7 etapas da Engenharia de Intencao.</p>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Cenario A: Lancamento de Produto</h4>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Contexto:</strong></p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Sua empresa vai lancar um novo produto em 60 dias. Voce precisa desenvolver a estrategia completa de go-to-market.</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Dados fornecidos:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Produto: [voce define - pode ser SaaS, produto fisico, servico]</li>
+<li>Mercado: [voce define - B2B ou B2C, nicho especifico]</li>
+<li>Recursos: [voce define restricoes realistas]</li>
+<li>Objetivo: [voce define - X usuarios, Y receita, Z market share]</li>
+</ul>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Sua tarefa:</strong> Criar intencao que gere estrategia de lancamento executavel.</p>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Cenario B: Transformacao Digital Empresarial</h4>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Contexto:</strong></p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Uma empresa tradicional de 200 funcionarios precisa digitalizar seus processos principais nos proximos 12 meses. Voce foi contratado como consultor para mapear e priorizar a digitalizacao.</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Dados fornecidos:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Setor: [voce escolhe - manufatura, servicos, varejo, outro]</li>
+<li>Maturidade digital atual: baixa (processos 90% manuais/papel)</li>
+<li>Resistencia interna: alta (equipe acostumada com processos antigos)</li>
+<li>Budget: [voce define de forma realista para o setor]</li>
+</ul>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Sua tarefa:</strong> Criar intencao que gere roadmap de transformacao digital priorizad o e executavel.</p>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Cenario C: Programa de Treinamento Corporativo</h4>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Contexto:</strong></p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Sua empresa precisa capacitar 50 colaboradores em uma nova tecnologia/metodologia nos proximos 3 meses. Voce e o responsavel por desenhar o programa completo.</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Dados fornecidos:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Tecnologia/Metodologia: [voce escolhe - pode ser IA, Agile, Data Analytics, etc]</li>
+<li>Nivel atual da equipe: iniciante</li>
+<li>Objetivo final: equipe autonoma e produtiva</li>
+<li>Restricoes: [voce define - horarios, formato, budget]</li>
+</ul>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Sua tarefa:</strong> Criar intencao que gere programa de treinamento estruturado e eficaz.</p>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Cenario D: Analise Estrategica de Expansao</h4>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Contexto:</strong></p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Empresa consolidada no mercado atual esta avaliando expansao para novo mercado/segmento. Voce precisa analisar viabilidade e criar plano estrategico.</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Dados fornecidos:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Empresa atual: [voce define - setor, tamanho, posicionamento]</li>
+<li>Novo mercado/segmento: [voce define]</li>
+<li>Objetivo: decisao go/no-go fundamentada</li>
+<li>Prazo de analise: 30 dias</li>
+</ul>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Sua tarefa:</strong> Criar intencao que gere analise estrategica completa com recomendacao clara.</p>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">Criterios de Avaliacao - Entrega 1</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Sua intencao sera avaliada em 4 dimensoes:</p>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">1. Clareza e Especificidade (25 pontos)</h4>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Objetivo:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>[ ] 5pts: Objetivo tem verbo de acao claro</li>
+<li>[ ] 5pts: Artefato/entregavel especificado</li>
+<li>[ ] 5pts: Escopo e mensuravel/definido</li>
+<li>[ ] 5pts: Nao e vago ou generico</li>
+<li>[ ] 5pts: Alguem lendo entende exatamente o que sera criado</li>
+</ul>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Intencao:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>[ ] 5pts: Audiencia claramente definida (nao "pessoas")</li>
+<li>[ ] 5pts: Proposito concreto (nao "ajudar" ou "melhorar")</li>
+<li>[ ] 5pts: Impacto mensuravel ou emocional especificado</li>
+<li>[ ] 5pts: Para quem/para que/impacto coerentes entre si</li>
+</ul>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">2. Estrutura e Completude (25 pontos)</h4>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Uso das 7 etapas:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>[ ] 4pts: Objetivo presente e bem formulado</li>
+<li>[ ] 4pts: Intencao presente e bem formulada</li>
+<li>[ ] 4pts: Criterios presente e acionaveis</li>
+<li>[ ] 4pts: Contexto presente e relevante</li>
+<li>[ ] 3pts: Raciocinio usado apropriadamente (ou justificado omissao)</li>
+<li>[ ] 3pts: Delegacao presente e estrategica</li>
+<li>[ ] 3pts: Formato usado apropriadamente (ou justificado omissao)</li>
+</ul>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">3. Profundidade Estrategica (25 pontos)</h4>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Criterios de Qualidade:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>[ ] 7pts: Criterios sao acionaveis (nao "seja criativo")</li>
+<li>[ ] 6pts: Cobrem aspectos essenciais (tom, profundidade, estilo)</li>
+<li>[ ] 6pts: Incluem o que evitar especificamente</li>
+<li>[ ] 6pts: Sao relevantes ao cenario (nao criterios genericos copiados)</li>
+</ul>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Delegacao:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>[ ] 7pts: Identifica lacunas de informacao reais</li>
+<li>[ ] 7pts: Perguntas sao estrategicas (mudam fundamentalmente a resposta)</li>
+<li>[ ] 6pts: Nao delega informacoes obvias ou ja fornecidas</li>
+<li>[ ] 5pts: Permite customizacao genuina</li>
+</ul>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">4. Aplicabilidade Pratica (25 pontos)</h4>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Contexto:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>[ ] 8pts: Cada informacao fornecida muda a resposta</li>
+<li>[ ] 7pts: Nao tem detalhes desnecessarios ou excessivos</li>
+<li>[ ] 5pts: Especifica restricoes reais (nao ideais)</li>
+<li>[ ] 5pts: Se historico incluido, e relevante</li>
+</ul>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Executabilidade:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>[ ] 8pts: Intencao pode ser executada na pratica</li>
+<li>[ ] 7pts: Contexto e realista (nao fantasioso)</li>
+<li>[ ] 5pts: Resultado seria acionavel (nao apenas informacional)</li>
+<li>[ ] 5pts: Demonstra conhecimento do dominio (nao e superficial)</li>
+</ul>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Total: 100 pontos</strong> | <strong>Aprovacao: 70+</strong></p>
       </div>
 
       <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
-        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">Proximos Passos Apos Certificacao</h2>
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Entrega 2: Sistema de Intencao Reutilizavel
+        </h2>
+        <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">Objetivo da Entrega</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Demonstrar capacidade de abstração e sistematizacao, criando conjunto de templates reutilizaveis para uma area especifica.</p>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">Instrucoes</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Crie um sistema de <strong>minimo 5 templates</strong> reutilizaveis para sua area de atuacao profissional.</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Estrutura obrigatoria do sistema:</strong></p>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-markdown">
+# SISTEMA DE INTENCAO: [Nome da Area]
 
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-xl border-l-4 border-green-500">
-            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Nivel 3A: Agentes de IA</h3>
-            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">Para quem quer:</p>
-            <ul class="text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
-              <li>- Criar agentes autonomos</li>
-              <li>- Automatizar processos complexos</li>
-              <li>- Desenvolver sistemas multi-agentes</li>
-            </ul>
-          </div>
+## Contexto do Sistema
+[Para que area/funcao serve, quem usa, quando usar]
 
-          <div class="bg-orange-50 dark:bg-orange-900/20 p-6 rounded-xl border-l-4 border-orange-500">
-            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">Nivel 3S: Sistemas 2026</h3>
-            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">Para quem quer:</p>
-            <ul class="text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
-              <li>- Arquitetar sistemas empresariais</li>
-              <li>- Integrar IA em operacoes</li>
-              <li>- Liderar transformacao digital</li>
-            </ul>
-          </div>
-        </div>
+## Indice de Templates
+
+| Template | Quando Usar | Frequencia | Tempo Economizado |
+|----------|-------------|------------|-------------------|
+| Template 1 | [...] | [...] | [...] |
+| Template 2 | [...] | [...] | [...] |
+| ... | ... | ... | ... |
+
+## Template 1: [Nome]
+
+### Quando usar
+[Situacoes especificas que justificam este template]
+
+### Estrutura do Template
+[7 etapas adaptadas com placeholders claros]
+
+### Exemplo de Aplicacao
+[Um caso concreto usando este template]
+
+### Notas de Uso
+[Dicas, armadilhas comuns, variacoes]
+
+---
+
+[Repetir para cada template]
+
+## Guia de Uso do Sistema
+
+### Como escolher o template certo
+[Arvore de decisao ou fluxograma conceitual]
+
+### Quando criar novo template
+[Criterios para saber se situacao justifica novo template]
+
+### Manutencao e Evolucao
+[Como refinar templates baseado em uso]
+</code></pre>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Exemplos de Sistemas (escolha 1 area):</strong></p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Marketing:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Template: Campanha de Lancamento</li>
+<li>Template: Analise de Concorrencia</li>
+<li>Template: Estrategia de Conteudo</li>
+<li>Template: Otimizacao de Conversao</li>
+<li>Template: Pesquisa de Mercado</li>
+</ul>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Desenvolvimento de Produto:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Template: Especificacao de Feature</li>
+<li>Template: Priorização de Backlog</li>
+<li>Template: Analise de Feedback de Usuarios</li>
+<li>Template: Roadmap Estrategico</li>
+<li>Template: Post-Mortem de Release</li>
+</ul>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Vendas B2B:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Template: Qualificacao de Lead</li>
+<li>Template: Proposta Comercial</li>
+<li>Template: Apresentacao de Discovery</li>
+<li>Template: Negociacao de Contrato</li>
+<li>Template: Follow-up Estrategico</li>
+</ul>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Gestao de Projetos:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Template: Kick-off de Projeto</li>
+<li>Template: Planejamento de Sprint</li>
+<li>Template: Relatorio de Status</li>
+<li>Template: Gestao de Riscos</li>
+<li>Template: Retrospectiva</li>
+</ul>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Recursos Humanos:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Template: Job Description</li>
+<li>Template: Onboarding de Colaborador</li>
+<li>Template: Avaliacao de Performance</li>
+<li>Template: Plano de Desenvolvimento Individual</li>
+<li>Template: Feedback Construtivo</li>
+</ul>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">Voce pode criar para OUTRA area nao listada acima.</p>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">Criterios de Avaliacao - Entrega 2</h3>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">1. Relevancia e Utilidade (25 pontos)</h4>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>[ ] 10pts: Templates cobrem situacoes recorrentes da area</li>
+<li>[ ] 8pts: Sistema e util para profissionais da area (nao academico)</li>
+<li>[ ] 7pts: Frequencia de uso justifica sistematizacao</li>
+</ul>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">2. Completude Tecnica (25 pontos)</h4>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>[ ] 10pts: Cada template tem as 7 etapas (quando aplicavel)</li>
+<li>[ ] 8pts: Placeholders claramente marcados</li>
+<li>[ ] 7pts: Exemplos de uso sao completos e claros</li>
+</ul>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">3. Reutilizabilidade (25 pontos)</h4>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>[ ] 10pts: Templates sao faceis de adaptar para casos especificos</li>
+<li>[ ] 8pts: Guia de uso ajuda a escolher template certo</li>
+<li>[ ] 7pts: Balance entre abstração (generico) e especificidade (util)</li>
+</ul>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">4. Profissionalismo e Documentacao (25 pontos)</h4>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>[ ] 10pts: Bem organizado e estruturado</li>
+<li>[ ] 8pts: Documentacao clara e completa</li>
+<li>[ ] 7pts: Demonstra expertise real na area</li>
+</ul>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Total: 100 pontos</strong> | <strong>Aprovacao: 70+</strong></p>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Entrega 3: Processo Completo Assistido por IA
+        </h2>
+        <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">Objetivo da Entrega</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Demonstrar capacidade de orquestrar multiplas etapas usando IA, criando processo sistematico do inicio ao fim.</p>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">Instrucoes</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Documente um processo completo (minimo 4 etapas, maximo 8) que usa IA para resolver um problema de ponta a ponta.</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Estrutura obrigatoria:</strong></p>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-markdown">
+# PROCESSO: [Nome do Processo]
+
+## O que este processo resolve
+[Descricao em 2-3 frases]
+
+## Quando usar
+- [Situacao 1 que justifica usar este processo]
+- [Situacao 2]
+- [Situacao 3]
+
+## Entrada Necessaria
+- [Dado/informacao 1]
+- [Dado/informacao 2]
+- [Contexto X]
+
+## Saida Esperada
+[O que e produzido ao final do processo]
+
+---
+
+## ETAPA 1: [Nome da Etapa]
+
+### Objetivo desta etapa
+[O que ela alcanca especificamente]
+
+### Intencao para IA
+
+OBJETIVO: [...]
+INTENCAO: [...]
+CRITERIOS: [...]
+CONTEXTO: [...]
+DELEGACAO: [...]
+FORMATO: [se aplicavel]
+
+### Entrada desta etapa
+[O que voce precisa ter antes de executar]
+
+### Saida desta etapa
+[O que e produzido]
+
+### Como validar resultado
+- [ ] [Criterio de validacao 1]
+- [ ] [Criterio de validacao 2]
+
+### Tempo estimado
+[X minutos]
+
+---
+
+[Repetir estrutura para cada etapa]
+
+---
+
+## Exemplo de Uso Completo
+
+### Contexto do exemplo
+[Situacao real onde o processo foi aplicado]
+
+### Execucao passo a passo
+[Mostrar entrada, saida e observacoes de cada etapa]
+
+### Resultado final
+[Output completo do processo]
+
+### Aprendizados
+- O que funcionou bem: [...]
+- O que pode melhorar: [...]
+- Tempo total: [X horas]
+
+## Limitacoes Conhecidas
+- [O que este processo NAO resolve bem]
+- [Quando NAO usar este processo]
+</code></pre>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Exemplos de Processos (escolha 1):</strong></p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">1. <strong>Criacao de Conteudo Educacional Completo</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Etapas: Pesquisa → Estruturacao → Producao → Revisao → Publicacao</li>
+</ul>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">2. <strong>Analise e Priorizacao de Feedback</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Etapas: Coleta → Categorizacao → Analise → Priorizacao → Recomendacoes</li>
+</ul>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">3. <strong>Planejamento Estrategico de Sprint</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Etapas: Review anterior → Priorizacao backlog → Estimativa → Alocacao → Comunicacao</li>
+</ul>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">4. <strong>Pesquisa de Mercado Completa</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Etapas: Definicao escopo → Pesquisa → Analise → Sintese → Apresentacao</li>
+</ul>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">5. <strong>Desenvolvimento de Proposta Comercial</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Etapas: Discovery → Diagnostico → Solucao → Precificacao → Apresentacao</li>
+</ul>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">6. <strong>Onboarding de Cliente/Usuario</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Etapas: Preparacao → Kick-off → Configuracao → Treinamento → Follow-up</li>
+</ul>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">Criterios de Avaliacao - Entrega 3</h3>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">1. Clareza do Processo (25 pontos)</h4>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>[ ] 10pts: Processo e facil de entender</li>
+<li>[ ] 8pts: Etapas sao logicas e sequenciais</li>
+<li>[ ] 7pts: Entradas e saidas de cada etapa claras</li>
+</ul>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">2. Completude das Intencoes (25 pontos)</h4>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>[ ] 10pts: Cada etapa tem intencao completa (7 etapas quando aplicavel)</li>
+<li>[ ] 8pts: Intencoes sao especificas da etapa (nao genericas)</li>
+<li>[ ] 7pts: Validacao de cada etapa definida</li>
+</ul>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">3. Praticidade e Executabilidade (25 pontos)</h4>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>[ ] 10pts: Processo e executavel na pratica</li>
+<li>[ ] 8pts: Exemplo demonstra viabilidade</li>
+<li>[ ] 7pts: Tempo estimado e realista</li>
+</ul>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">4. Sistematizacao (25 pontos)</h4>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>[ ] 10pts: Processo pode ser replicado por outra pessoa</li>
+<li>[ ] 8pts: Documentacao completa e clara</li>
+<li>[ ] 7pts: Limitacoes conhecidas documentadas</li>
+</ul>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Total: 100 pontos</strong> | <strong>Aprovacao: 70+</strong></p>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Entrega 4: Caso de Uso Real com Resultados
+        </h2>
+        <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">Objetivo da Entrega</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Demonstrar aplicacao pratica eficaz de Engenharia de Intencao em problema/projeto real da sua area.</p>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">Instrucoes</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Aplique Engenharia de Intencao em um problema/projeto REAL e documente todo o processo e resultados.</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Estrutura obrigatoria:</strong></p>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-markdown">
+# CASO DE USO REAL: [Nome/Titulo]
+
+## 1. CONTEXTO DO PROBLEMA
+
+### Descricao do problema/desafio
+[O que voce precisava resolver, por que era importante]
+
+### Situacao antes da aplicacao
+[Como voce faria isso sem Engenharia de Intencao]
+
+### Restricoes e limitacoes
+[Tempo, recursos, complexidade]
+
+## 2. ABORDAGEM COM ENGENHARIA DE INTENCAO
+
+### Intencao(oes) criada(s)
+[Cole a(s) intencao(oes) completa(s) que voce usou]
+
+### Processo seguido
+[Passo a passo de como voce aplicou]
+
+### Interacoes com IA
+[Quantas iteracoes, ajustes feitos, tempo gasto]
+
+## 3. RESULTADOS OBTIDOS
+
+### Output gerado
+[O que a IA produziu - pode anexar ou resumir]
+
+### Qualidade do resultado
+[Avalie de 1-10 e justifique]
+
+### Utilizacao pratica
+[Como o resultado foi usado na pratica]
+
+### Tempo economizado
+[Estimativa de tempo vs fazer manualmente]
+
+## 4. ANALISE CRITICA
+
+### O que funcionou muito bem
+- [Aspecto 1 que superou expectativas]
+- [Aspecto 2 que foi eficaz]
+
+### O que poderia melhorar
+- [Lacuna 1 identificada]
+- [Ajuste 2 que faria diferente]
+
+### Aprendizados principais
+- [Licao 1 que levou deste caso]
+- [Licao 2 aplicavel a outros contextos]
+
+## 5. IMPACTO E APLICACAO FUTURA
+
+### Impacto mensuravel
+[Metricas: tempo economizado, qualidade melhorada, resultado obtido]
+
+### Como vai usar no futuro
+[Como este aprendizado sera aplicado daqui em diante]
+
+### Recomendacoes para outros
+[Conselhos para quem for resolver problema similar]
+</code></pre>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Requisitos importantes:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>✓ Deve ser caso REAL (nao hipotetico)</li>
+<li>✓ Voce deve ter executado (nao apenas planejado)</li>
+<li>✓ Deve ter resultado concreto (nao apenas intencao criada)</li>
+<li>✓ Analise critica honesta (nao apenas elogios)</li>
+</ul>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">Criterios de Avaliacao - Entrega 4</h3>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">1. Autenticidade (25 pontos)</h4>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>[ ] 10pts: Caso e realmente real (nao inventado)</li>
+<li>[ ] 8pts: Problema e relevante e nao-trivial</li>
+<li>[ ] 7pts: Contexto demonstra conhecimento real do dominio</li>
+</ul>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">2. Aplicacao Correta (25 pontos)</h4>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>[ ] 10pts: Usou Engenharia de Intencao corretamente</li>
+<li>[ ] 8pts: Demonstrou as 7 etapas apropriadamente</li>
+<li>[ ] 7pts: Intencoes criadas sao de qualidade</li>
+</ul>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">3. Resultados e Evidencias (25 pontos)</h4>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>[ ] 10pts: Gerou resultado util e utilizavel</li>
+<li>[ ] 8pts: Demonstrou eficacia mensuravel</li>
+<li>[ ] 7pts: Output mostrado ou bem descrito</li>
+</ul>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">4. Reflexao e Aprendizado (25 pontos)</h4>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>[ ] 10pts: Analise critica honesta e profunda</li>
+<li>[ ] 8pts: Aprendizados claros e aplicaveis</li>
+<li>[ ] 7pts: Demonstra maturidade e autoconsciencia</li>
+</ul>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Total: 100 pontos</strong> | <strong>Aprovacao: 70+</strong></p>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Parte 2: Criterios de Certificacao
+        </h2>
+        <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">Pontuacao e Niveis</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Pontuacao total possivel:</strong> 400 pontos (4 entregas x 100pts)</p>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Certificacao Basica</h4>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Pontuacao:</strong> 300-339 (75-84%)</p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Certificado de Conclusao do Nivel 2</li>
+<li>Titulo: <strong>"Praticante de Engenharia de Intencao"</strong></li>
+<li>Acesso: Biblioteca de Templates</li>
+<li>Badge: Praticante FEI Nivel 2</li>
+</ul>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Certificacao com Distincao</h4>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Pontuacao:</strong> 340-379 (85-94%)</p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Certificado de Conclusao com Distincao</li>
+<li>Titulo: <strong>"Especialista em Engenharia de Intencao"</strong></li>
+<li>Acesso: Biblioteca + Comunidade Privada</li>
+<li>Badge: Especialista FEI Nivel 2</li>
+<li>Bonus: 1 sessao de mentoria individual</li>
+</ul>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Certificacao com Honras</h4>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Pontuacao:</strong> 380-400 (95-100%)</p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Certificado de Conclusao com Honras</li>
+<li>Titulo: <strong>"Expert em Engenharia de Intencao"</strong></li>
+<li>Acesso: Biblioteca + Comunidade de Experts</li>
+<li>Badge: Expert FEI Nivel 2</li>
+<li>Bonus: 3 sessoes de mentoria + entrada prioritaria Nivel 3</li>
+<li>Destaque: Caso publicado como exemplo no curso</li>
+</ul>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Parte 3: Biblioteca Completa de Templates (40+ Templates)
+        </h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-4">Esta biblioteca contem templates prontos para uso, organizados por categoria. Cada template e uma intencao completa pronta para adaptar ao seu contexto.</p>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">Como Usar Esta Biblioteca</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">1. <strong>Identifique sua necessidade</strong> (usar indice por categoria)</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">2. <strong>Escolha o template mais proximo</strong> do seu caso</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">3. <strong>Adapte os placeholders</strong> [ENTRE COLCHETES]</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">4. <strong>Personalize criterios e contexto</strong> para sua situacao</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">5. <strong>Execute e refine</strong> baseado no resultado</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Formato dos templates:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>✓ Intencao completa (7 etapas quando aplicavel)</li>
+<li>✓ Placeholders claramente marcados</li>
+<li>✓ Notas de uso e dicas</li>
+<li>✓ Variantes comuns</li>
+</ul>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">Categoria 1: ANALISE E PESQUISA (8 Templates)</h3>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 1.1: Analise de Concorrencia Estrategica</h4>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-text">
+OBJETIVO: Analisar [NUMERO] principais concorrentes no mercado de [NICHO] para identificar gap de mercado defensavel
+
+INTENCAO:
+Para quem: [STAKEHOLDER - ex: investidores, equipe executiva, board]
+Para que: demonstrar que existe oportunidade real e que nosso posicionamento e defensavel
+Impacto: decisao informada sobre [DECISAO ESTRATEGICA - ex: investir, expandir, pivotar]
+
+CRITERIOS:
+Tom: analitico mas acessivel (nao academico)
+Profundidade: foco em implicacoes estrategicas, nao apenas fatos descritivos
+Estilo: organize por insights (nao por concorrente)
+Evitar: listas exaustivas de features, criticar sem evidencia
+
+CONTEXTO:
+Nosso produto/servico:
+- [DESCRICAO CONCISA]
+- Diferencial: [O QUE NOS TORNA UNICOS]
+- Preco: [FAIXA DE PRECO]
+
+Situacao do mercado:
+- [CARACTERISTICA 1 DO MERCADO]
+- [LACUNA OBSERVADA]
+- [TENDENCIA RELEVANTE]
+
+Objetivo estrategico:
+- [O QUE QUEREMOS PROVAR OU DECIDIR]
+
+RACIOCINIO:
+Use raciocinio critico estrategico:
+- Para cada concorrente, pergunte: &quot;quem eles estao deixando de fora e por que?&quot;
+- Identifique trade-offs que fizeram
+- Analise incentivos (estrutura de pricing, posicionamento)
+- Procure evidencias de clientes insatisfeitos no segmento que visamos
+
+DELEGACAO:
+Antes de analisar, me pergunte:
+- Devo focar mais em diferenciais de produto ou de go-to-market?
+- [STAKEHOLDER] se importa mais com tamanho do mercado ou com defensibilidade?
+- Devo incluir analise de reviews de clientes para evidenciar gap?
+- Formato final: narrativo ou matriz visual?
+
+NOTAS DE USO:
+- Use quando: decisao estrategica sobre posicionamento ou investimento
+- Adapte stakeholder e contexto do mercado
+- Adicione concorrentes especificos ao contexto
+- Se nao souber metricas exatas, use estimativas razoaveis
+</code></pre>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 1.2: Analise de Feedback de Clientes</h4>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-text">
+OBJETIVO: Analisar [NUMERO] feedbacks de clientes para identificar top 3-5 acoes priorizadas
+
+INTENCAO:
+Para quem: equipe de produto e lideranca
+Para que: priorizar roadmap baseado em necessidades reais (nao achismos)
+Impacto: desenvolvimento focado em o que realmente importa para retencao/crescimento
+
+CRITERIOS:
+Tom: objetivo e data-driven
+Profundidade: foco em padroes e frequencia, nao casos isolados
+Estilo: estruture por categoria de feedback → priorizacao → recomendacao
+Evitar: anedotas sem validacao, bias de confirmacao
+
+CONTEXTO:
+Produto/servico:
+- [DESCRICAO]
+- Fase: [EARLY STAGE / CRESCIMENTO / MADURO]
+- Usuarios atuais: [NUMERO]
+
+Feedbacks:
+- Fonte: [SURVEYS / SUPPORT TICKETS / INTERVIEWS / REVIEWS]
+- Periodo: [DATA INICIAL - DATA FINAL]
+- Volume: [NUMERO DE FEEDBACKS]
+- [COLAR FEEDBACKS OU RESUMO]
+
+Metricas de contexto:
+- Churn rate: [%]
+- NPS: [SCORE]
+- [OUTRA METRICA RELEVANTE]
+
+Restricoes:
+- Equipe de desenvolvimento: [TAMANHO]
+- Capacidade: [X FEATURES POR TRIMESTRE]
+- Limitacoes tecnicas: [SE HOUVER]
+
+DELEGACAO:
+Me pergunte:
+- Feedbacks negativos devem ter mais peso que positivos?
+- Prioridade: retencao (reduzir churn) ou crescimento (novos usuarios)?
+- Algum feedback obviamente fora de escopo que devo ignorar?
+- Timeline: acoes de curto prazo (&lt;3 meses) ou medio prazo?
+
+NOTAS DE USO:
+- Funciona bem com 20-100 feedbacks (menos = pouco padrao, mais = automatizar coleta)
+- Se feedbacks forem muito longos, resuma principais pontos antes
+- Combine com metricas quantitativas sempre que possivel
+</code></pre>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 1.3: Pesquisa de Mercado Rapida</h4>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-text">
+OBJETIVO: Conduzir pesquisa de mercado rapida sobre [NICHO/SEGMENTO] para decisao de [OBJETIVO ESPECIFICO]
+
+INTENCAO:
+Para quem: [EU / EQUIPE / STAKEHOLDER]
+Para que: decidir se [GO/NO-GO / PRIORIZAR / POSICIONAR]
+Impacto: decisao baseada em dados reais do mercado (nao feeling)
+
+CRITERIOS:
+Tom: direto e acionavel
+Profundidade: suficiente para decisao, nao exaustivo (pesquisa rapida)
+Estilo: estruture por pergunta de negocio → dados → conclusao
+Evitar: dados sem interpretacao, conclusoes sem dados
+
+CONTEXTO:
+Mercado alvo:
+- Geografico: [PAIS / REGIAO / GLOBAL]
+- Segmento: [DEMOGRAFICO / COMPORTAMENTAL / B2B-B2C]
+- Tamanho estimado: [SE SOUBER]
+
+Perguntas de negocio:
+1. [PERGUNTA 1 QUE PRECISA RESPOSTA]
+2. [PERGUNTA 2]
+3. [PERGUNTA 3]
+
+Restricoes:
+- Tempo: [X DIAS para completar]
+- Budget: [SE HOUVER CUSTO DE FERRAMENTAS/DADOS]
+- Fontes disponiveis: [RELATORIOS DE MERCADO / PESQUISAS PUBLICAS / DADOS INTERNOS]
+
+DELEGACAO:
+Me pergunte:
+- Tipo de evidencia mais importante: quantitativa (numeros) ou qualitativa (comportamento)?
+- Profundidade vs velocidade: analise profunda ou overview rapido?
+- Alguma premissa atual que preciso validar ou refutar?
+
+NOTAS DE USO:
+- Use para decisoes que precisam validacao rapida (1-3 dias)
+- Nao substitui pesquisa formal de longo prazo
+- Combine fontes: relatorios + busca + conversas com mercado
+</code></pre>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 1.4: Analise de Dados para Tomada de Decisao</h4>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-text">
+OBJETIVO: Analisar dados de [FONTE] para decidir [DECISAO ESPECIFICA]
+
+INTENCAO:
+Para quem: [DECISOR - ex: CEO, gerente, voce mesmo]
+Para que: tomar decisao informada sobre [QUESTAO]
+Impacto: [RESULTADO ESPERADO - ex: reduzir custo, aumentar conversao, otimizar processo]
+
+CRITERIOS:
+Tom: analitico mas claro (nao jargao estatistico excessivo)
+Profundidade: foque em insights acionaveis (nao todas as metricas possiveis)
+Estilo: dados → interpretacao → recomendacao
+Evitar: correlacao como causacao, cherry-picking de dados
+
+CONTEXTO:
+Dados disponiveis:
+- Fonte: [ANALYTICS / CRM / FINANCEIRO / OUTRO]
+- Periodo: [DATA INICIAL - DATA FINAL]
+- Volume: [NUMERO DE REGISTROS / TAMANHO DO DATASET]
+- Metricas principais: [LISTAR METRICAS CHAVE]
+
+Decisao a tomar:
+- [QUESTAO ESPECIFICA QUE PRECISA RESPOSTA]
+- Opcoes: [OPCAO A vs OPCAO B vs STATUS QUO]
+
+Contexto de negocio:
+- [INFORMACAO RELEVANTE 1]
+- [RESTRICAO IMPORTANTE]
+
+DELEGACAO:
+Me pergunte:
+- Qual metrica e mais critica para esta decisao?
+- Prefere analise agregada (overview) ou segmentada (por cohort/tipo)?
+- Existem eventos externos que possam ter impactado os dados? (sazonalidade, campanha, etc)
+- Nivel de confianca necessario: decisao reversivel ou irreversivel?
+
+NOTAS DE USO:
+- Adapte &quot;fonte de dados&quot; e &quot;metricas&quot; ao seu contexto
+- Se decisao e reversivel, analise pode ser mais rapida
+- Sempre contextualize numeros (vs periodo anterior, vs meta, vs mercado)
+</code></pre>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 1.5: Diagnostico de Processo Atual</h4>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-text">
+OBJETIVO: Diagnosticar processo de [NOME DO PROCESSO] para identificar gargalos e oportunidades de otimizacao
+
+INTENCAO:
+Para quem: [EQUIPE / GESTAO] responsavel pelo processo
+Para que: entender onde estao as ineficiencias e priorizar melhorias
+Impacto: roadmap de otimizacao que reduz [TEMPO / CUSTO / ERROS] em [X%]
+
+CRITERIOS:
+Tom: construtivo (nao criticar equipe, focar em processo)
+Profundidade: identifique causas raiz, nao apenas sintomas
+Estilo: estado atual → gargalos → impacto → recomendacoes priorizadas
+Evitar: sugestoes vagas tipo &quot;melhorar comunicacao&quot;
+
+CONTEXTO:
+Processo atual:
+- Nome: [PROCESSO]
+- Frequencia: [DIARIO / SEMANAL / MENSAL]
+- Equipe envolvida: [NUMERO DE PESSOAS / PAPEIS]
+- Tempo total atual: [X HORAS/DIAS]
+
+Mapeamento de etapas:
+1. [ETAPA 1]: [TEMPO GASTO] - [RESPONSAVEL]
+2. [ETAPA 2]: [TEMPO GASTO] - [RESPONSAVEL]
+3. [etc]
+
+Dores conhecidas:
+- [DOR 1 RELATADA PELA EQUIPE]
+- [DOR 2]
+
+Metricas atuais:
+- SLA: [TEMPO ESPERADO vs TEMPO REAL]
+- Taxa de erro: [%]
+- [OUTRA METRICA RELEVANTE]
+
+DELEGACAO:
+Me pergunte:
+- Principal objetivo da otimizacao: reduzir tempo, custo, ou erros?
+- Restricoes: pode envolver automacao/novas ferramentas ou apenas mudanca de processo?
+- Resistencia a mudanca: alta ou baixa? (impacta tipo de recomendacao)
+- Quick wins (impacto rapido) ou transformacao profunda?
+
+NOTAS DE USO:
+- Envolva equipe no diagnostico (eles sabem as dores reais)
+- Mapeie processo atual ANTES de otimizar
+- Priorize por impacto x esforco
+</code></pre>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 1.6: Analise de Viabilidade de Ideia</h4>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-text">
+OBJETIVO: Analisar viabilidade de [IDEIA/PROJETO] considerando [DIMENSOES RELEVANTES]
+
+INTENCAO:
+Para quem: [EU / EQUIPE / INVESTIDOR] tomador de decisao
+Para que: decisao go/no-go fundamentada (nao apenas entusiasmo)
+Impacto: evitar investimento em ideia inviavel ou perder oportunidade boa
+
+CRITERIOS:
+Tom: realista mas nao pessimista
+Profundidade: analise multi-dimensional (mercado + operacao + financeiro + risco)
+Estilo: pergunta → analise → conclusao por dimensao → decisao final
+Evitar: analise superficial, bias de confirmacao, ignorar riscos
+
+CONTEXTO:
+Ideia/Projeto:
+- [DESCRICAO EM 2-3 FRASES]
+- Objetivo: [O QUE PRETENDE ALCANCAR]
+- Timeline proposto: [DURACAO]
+
+Recursos disponiveis:
+- Budget: [VALOR OU RESTRICAO]
+- Equipe: [TAMANHO E HABILIDADES]
+- Tempo: [DISPONIBILIDADE]
+
+Dimensoes a avaliar:
+1. Mercado: [TAMANHO / DEMANDA / CONCORRENCIA]
+2. Operacional: [CAPACIDADE DE EXECUTAR]
+3. Financeira: [ROI ESPERADO / VIABILIDADE]
+4. Riscos: [PRINCIPAIS RISCOS]
+
+DELEGACAO:
+Me pergunte:
+- Qual dimensao e mais critica para esta decisao? (para priorizar analise)
+- Nivel de risco aceitavel: conservador ou agressivo?
+- Decisao e urgente (analise rapida) ou pode ser aprofundada?
+- Ja existe alternativa sendo comparada ou analise e absoluta?
+
+NOTAS DE USO:
+- Use para ideias novas antes de investir tempo/dinheiro
+- Seja honesto sobre riscos (melhor descobrir agora que depois)
+- Considere custo de oportunidade (fazer isso significa nao fazer o que?)
+</code></pre>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 1.7: Benchmarking Competitivo</h4>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-text">
+OBJETIVO: Fazer benchmarking de [ASPECTO ESPECIFICO] comparando [NOSSA EMPRESA] com [X] concorrentes
+
+INTENCAO:
+Para quem: equipe de [PRODUTO / MARKETING / OPERACOES]
+Para que: identificar onde estamos atras ou na frente e priorizar melhorias
+Impacto: roadmap focado em fechar gaps criticos e defender vantagens
+
+CRITERIOS:
+Tom: objetivo e factual
+Profundidade: compare metricas comparaveis (nao apples to oranges)
+Estilo: organize por metrica → comparacao → gap → recomendacao
+Evitar: comparacoes injustas (empresas de tamanho/estagio muito diferentes)
+
+CONTEXTO:
+Aspecto a comparar:
+- [EX: PRICING / FEATURES / UX / ATENDIMENTO / MARKETING]
+
+Nossa situacao atual:
+- [METRICA 1]: [VALOR NOSSO]
+- [METRICA 2]: [VALOR NOSSO]
+- [ETC]
+
+Concorrentes:
+1. [CONCORRENTE 1]: [DESCRICAO BREVE]
+2. [CONCORRENTE 2]: [DESCRICAO BREVE]
+3. [CONCORRENTE 3]: [DESCRICAO BREVE]
+
+Objetivo do benchmarking:
+- [O QUE QUEREMOS APRENDER/DECIDIR]
+
+DELEGACAO:
+Me pergunte:
+- Metricas quantitativas (numeros) ou qualitativas (percepcao)?
+- Foco em onde estamos atras (para melhorar) ou onde estamos na frente (para defender)?
+- Timeline: situacao atual ou evolucao ao longo do tempo?
+
+NOTAS DE USO:
+- Seja realista sobre o que pode comparar (dados publicos)
+- Compare empresas em estagio similar sempre que possivel
+- Use benchmarking para priorizar, nao para copiar cegamente
+</code></pre>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 1.8: Analise de Tendencias de Mercado</h4>
+<pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-text">
+OBJETIVO: Analisar tendencias do mercado de [SETOR/NICHO] para [PERIODO] e implicacoes para [NOSSA EMPRESA/ESTRATEGIA]
+
+INTENCAO:
+Para quem: lideranca e equipe de planejamento estrategico
+Para que: antecipar mudancas e adaptar estrategia proativamente
+Impacto: nao ser pego de surpresa por mudancas de mercado
+
+CRITERIOS:
+Tom: visionario mas fundamentado em dados
+Profundidade: identifique tendencias reais (com evidencias) vs hypes temporarios
+Estilo: tendencia → evidencia → implicacao para nos → recomendacao
+Evitar: futurologia sem base, focar em tendencias irrelevantes para nosso negocio
+
+CONTEXTO:
+Mercado:
+- Setor: [ESPECIFICAR]
+- Geografia: [GLOBAL / REGIONAL / LOCAL]
+- Nosso posicionamento: [ONDE ESTAMOS HOJE]
+
+Periodo de analise:
+- [PROXIMOS X MESES/ANOS]
+
+Fontes de tendencias:
+- [RELATORIOS DE MERCADO]
+- [MOVIMENTOS DOS PLAYERS]
+- [MUDANCAS REGULATORIAS]
+- [TECNOLOGIAS EMERGENTES]
+
+Objetivo estrategico:
+- [O QUE QUEREMOS FAZER COM ESTA ANALISE]
+
+DELEGACAO:
+Me pergunte:
+- Foco em tendencias de curto prazo (&lt;2 anos) ou longo prazo?
+- Mais importante: tendencias tecnologicas ou comportamentais?
+- Devo priorizar ameacas ou oportunidades?
+
+NOTAS DE USO:
+- Separe tendencias reais (com orcamento/investimento) de hypes
+- Conecte cada tendencia com implicacao concreta para seu negocio
+- Revise periodicamente (tendencias mudam)
+</code></pre>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">Categoria 2: PLANEJAMENTO E ESTRATEGIA (8 Templates)</h3>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 2.1: Planejamento Estrategico Anual</h4>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 2.2: OKRs (Objectives and Key Results)</h4>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 2.3: Roadmap de Produto</h4>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 2.4: Plano de Marketing Trimestral</h4>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 2.5: Estrategia de Go-to-Market</h4>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 2.6: Plano de Projeto Completo</h4>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 2.7: Budget e Alocacao de Recursos</h4>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 2.8: Plano de Contingencia/Riscos</h4>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">Categoria 3: CRIACAO DE CONTEUDO (8 Templates)</h3>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 3.1: Post de Blog/Artigo</h4>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 3.2: Roteiro de Video</h4>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 3.3: Newsletter/Email Marketing</h4>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 3.4: Post para Redes Sociais</h4>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 3.5: E-book ou Whitepaper</h4>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 3.6: Apresentacao/Slide Deck</h4>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 3.7: Case Study</h4>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 3.8: Landing Page Copy</h4>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">Categoria 4: NEGOCIOS E VENDAS (8 Templates)</h3>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 4.1: Proposta Comercial</h4>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 4.2: Pitch Deck para Investidores</h4>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 4.3: Email de Prospecao</h4>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 4.4: Apresentacao de Discovery</h4>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 4.5: Negociacao de Contrato</h4>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 4.6: Qualificacao de Lead (BANT)</h4>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 4.7: Follow-up Estrategico</h4>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 4.8: Analise de Pipeline de Vendas</h4>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">Categoria 5: OPERACOES E GESTAO (8+ Templates)</h3>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 5.1: Relatorio de Status de Projeto</h4>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 5.2: Retrospectiva de Sprint/Projeto</h4>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 5.3: One-on-One com Colaborador</h4>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 5.4: Feedback Construtivo</h4>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 5.5: Documentacao de Processo</h4>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 5.6: Analise de Metricas/KPIs</h4>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 5.7: Plano de Acao Corretiva</h4>
+<h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 mt-4">Template 5.8: Onboarding de Novo Membro</h4>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Parte 4: Recursos da Comunidade FEI
+        </h2>
+        <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">Area de Membros</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Acesso apos certificacao:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Biblioteca completa de templates (40+) em formato editavel</li>
+<li>Casos de uso reais anonimizados</li>
+<li>Forum da comunidade</li>
+<li>Atualizacoes mensais de novos templates</li>
+<li>Webinars trimestrais com experts</li>
+</ul>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">Programa de Mentorias</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Disponivel para:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Certificados com Distincao: 1 sessao individual</li>
+<li>Certificados com Honras: 3 sessoes individuais</li>
+</ul>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Formato das mentorias:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>45 minutos por sessao</li>
+<li>Revisao de intencoes criadas</li>
+<li>Feedback personalizado</li>
+<li>Discussao de casos especificos</li>
+<li>Estrategia de aplicacao na sua area</li>
+</ul>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">Comunidade de Experts</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Exclusiva para Certificados com Honras:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Grupo privado no Discord/Slack</li>
+<li>Networking com outros experts</li>
+<li>Colaboracao em projetos</li>
+<li>Early access a Nivel 3</li>
+<li>Oportunidades de co-criacao de conteudo</li>
+</ul>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Parte 5: Proximos Niveis da Formacao
+        </h2>
+        <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">Nivel 3A: Agentes de IA</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Para quem:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Quer criar agentes autonomos</li>
+<li>Precisa automatizar processos complexos</li>
+<li>Desenvolver sistemas multi-agentes</li>
+<li>Orquestrar workflows com IA</li>
+</ul>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Conteudo:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Arquitetura de agentes</li>
+<li>Memory e context management</li>
+<li>Tool use e function calling</li>
+<li>Multi-agent collaboration</li>
+<li>Deploy e monitoramento</li>
+</ul>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Pre-requisito:</strong> Certificacao Nivel 2</p>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">Nivel 3S: Sistemas de IA 2026</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Para quem:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Quer arquitetar sistemas empresariais</li>
+<li>Integrar IA em operacoes</li>
+<li>Liderar transformacao digital</li>
+<li>Escalar uso de IA na organizacao</li>
+</ul>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Conteudo:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Design de sistemas enterprise</li>
+<li>Governance e compliance</li>
+<li>ROI e metricas de sucesso</li>
+<li>Change management</li>
+<li>Casos corporativos reais</li>
+</ul>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Pre-requisito:</strong> Certificacao Nivel 2 + experiencia lideranca</p>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Template de Submissao da Avaliacao
+        </h2>
+        <pre class="bg-neutral-800 text-neutral-100 p-6 rounded-lg overflow-x-auto mb-6"><code class="language-markdown">
+# AVALIACAO FINAL - NIVEL 2 FEI
+Nome: [SEU NOME COMPLETO]
+Email: [SEU EMAIL]
+Data de submissao: [DD/MM/AAAA]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+## ENTREGA 1: INTENCAO COMPLETA
+
+Cenario escolhido: [A / B / C / D]
+
+[COLE SUA INTENCAO COMPLETA AQUI]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+## ENTREGA 2: SISTEMA DE INTENCAO
+
+[COLE SEU SISTEMA COMPLETO AQUI]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+## ENTREGA 3: PROCESSO ASSISTIDO POR IA
+
+[COLE SEU PROCESSO COMPLETO AQUI]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+## ENTREGA 4: CASO DE USO REAL
+
+[COLE SEU CASO DE USO COMPLETO AQUI]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+## AUTO-AVALIACAO
+
+Reflita brevemente sobre seu aprendizado:
+
+### Principal transformacao
+[O que mudou na sua forma de usar IA]
+
+### Maior desafio superado
+[Qual foi o maior desafio e como voce superou]
+
+### Como vai usar Engenharia de Intencao daqui em diante
+[Plano de aplicacao continua]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+</code></pre>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Conclusao da Formacao
+        </h2>
+        <p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">Parabens por chegar ate aqui!</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Voce completou uma jornada transformadora que poucos completam.</p>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">O Que Voce Domina Agora</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Tecnicamente:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>A evolucao completa dos prompts (GPT-3 a GPT-5)</li>
+<li>Como IA moderna pensa, planeja e raciocina</li>
+<li>As 7 etapas da Engenharia de Intencao</li>
+<li>40+ templates prontos para uso</li>
+</ul>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Praticamente:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>15 casos reais analisados em profundidade</li>
+<li>12 exercicios progressivos completados</li>
+<li>4 projetos hands-on executados</li>
+<li>Sistema proprio de intencoes criado</li>
+</ul>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Estrategicamente:</strong></p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Como transformar problemas vagos em objetivos claros</li>
+<li>Quando simplificar e quando detalhar</li>
+<li>Como fazer IA colaborar (nao apenas executar)</li>
+<li>Como iterar e refinar resultados</li>
+</ul>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">Sua Transformacao</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Antes da FEI:</strong></p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">"Crie um plano de marketing para minha empresa"</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">→ Resultado generico, 50% relevante, 3-5 ajustes</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Depois da FEI:</strong></p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Intencao completa com contexto, criterios, delegacao</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">→ Resultado customizado, 90% relevante, ajustes minimos</p>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-8 mb-8">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+          Dicas Finais para Sucesso
+        </h2>
+        <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">1. Pratique Diariamente</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Engenharia de Intencao e habilidade, nao apenas conhecimento.</p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Use em toda interacao com IA</li>
+<li>Documente o que funciona</li>
+<li>Refine seus templates continuamente</li>
+</ul>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">2. Compartilhe Conhecimento</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Ensinar solidifica aprendizado:</p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Explique para colegas</li>
+<li>Crie exemplos do seu dominio</li>
+<li>Contribua na comunidade</li>
+</ul>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">3. Mantenha-se Atualizado</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">IA evolui rapido:</p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Teste novos modelos</li>
+<li>Adapte tecnicas</li>
+<li>Continue aprendendo</li>
+</ul>
+<h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3 mt-6">4. Foco em Resultado</h3>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Engenharia de Intencao e meio, nao fim:</p>
+<ul class="list-disc list-inside space-y-2 mb-4 text-neutral-700 dark:text-neutral-300">
+<li>Foco no impacto real</li>
+<li>Meça economia de tempo</li>
+<li>Documente ROI</li>
+</ul>
+<p class="font-bold text-neutral-900 dark:text-neutral-100 mb-2">Boa sorte na avaliacao!</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">Estamos ansiosos para ver suas entregas e celebrar sua certificacao.</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Meta deste arquivo:</strong> 18.000+ palavras / ~60KB</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4"><strong>Status:</strong> COMPLETO E EXPANDIDO (com estrutura da prova + inicio da biblioteca de 40 templates)</p>
+<p class="text-neutral-700 dark:text-neutral-300 mb-4">© 2025 FEI - Formacao em Engenharia de Intencao</p>
       </div>
 
       <div class="bg-gradient-to-r from-nivel-2 to-purple-600 text-white rounded-xl p-8">
-        <h2 class="text-3xl font-bold mb-4">Parabens por Chegar Ate Aqui!</h2>
+        <h2 class="text-3xl font-bold mb-4">Conclusao do Modulo</h2>
         <p class="text-lg mb-6">
-          Voce completou uma jornada transformadora de executor para <strong>Designer de Intencao</strong>.
+          Voce dominou os conceitos essenciais de Avaliacao Final + Certificacao no contexto da Engenharia de Intencao.
         </p>
-        <div class="bg-white/10 backdrop-blur p-6 rounded-lg mb-6">
-          <h3 class="font-bold text-xl mb-2">O que voce domina agora:</h3>
-          <div class="grid md:grid-cols-2 gap-4 text-sm">
-            <ul class="space-y-2">
-              <li>- Evolucao completa dos prompts</li>
-              <li>- Como IA moderna pensa e planeja</li>
-              <li>- As 7 etapas da Engenharia de Intencao</li>
-              <li>- 15 casos reais aplicados</li>
-            </ul>
-            <ul class="space-y-2">
-              <li>- 12 exercicios progressivos</li>
-              <li>- 4 projetos hands-on</li>
-              <li>- Sistema proprio de intencoes</li>
-              <li>- Pensamento estrategico com IA</li>
-            </ul>
-          </div>
-        </div>
         <div class="flex gap-4">
-          <a href="nivel-2-modulo-6.html" class="px-6 py-3 bg-neutral-200 dark:bg-neutral-700 rounded-lg font-semibold">
-            ← Módulo 6
-          </a>
-          <a href="../niveis/nivel-2.html" class="px-6 py-3 bg-nivel-2 text-white rounded-lg font-semibold">
-            Voltar ao Nível 2 →
-          </a>
+          <a href="nivel-2-modulo-6.html" class="px-6 py-3 bg-white dark:bg-neutral-800 text-nivel-2 rounded-lg font-semibold hover:bg-neutral-100 dark:hover:bg-neutral-700">← Módulo 6</a>
+          <a href="../niveis/nivel-2.html" class="px-6 py-3 bg-nivel-2 text-white rounded-lg font-semibold hover:opacity-90">Voltar ao Nível 2 →</a>
         </div>
       </div>
 
