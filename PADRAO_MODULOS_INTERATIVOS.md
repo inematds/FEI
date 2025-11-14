@@ -194,6 +194,50 @@ Cada módulo deve ter **mínimo 5 a 10 tópicos** principais:
 - `[Ícone]` = emoji relevante ao tópico
 - `[Nome do Tópico]` = título do tópico
 
+### ⚠️ REGRAS PARA TÍTULOS DOS TÓPICOS
+
+**OBRIGATÓRIO: Títulos devem ser CURTOS e diretos (1 linha)**
+
+**Formato:**
+```
+[Emoji] [Título curto e objetivo]
+```
+
+**Tamanho máximo:**
+- 3 a 6 palavras no máximo
+- Deve caber em 1 linha em telas de celular
+- Objetivo e direto ao ponto
+
+**✅ Exemplos CORRETOS:**
+
+- `🔥 Exemplo: Criar um plano de marketing`
+- `📅 A história completa: De GPT-3 a GPT-5`
+- `🧠 O que mudou nos modelos modernos`
+- `❌ Técnicas obsoletas que não funcionam`
+- `📊 Agentes de Informação (3 tipos)`
+- `🎯 Elemento 1: Objetivo Primário`
+- `💻 Seus Primeiros Agentes na Prática`
+- `🚀 Multiagentes > Agente Único`
+
+**❌ Exemplos ERRADOS (muito longos):**
+
+- ❌ `A Evolução da IA: Do Respondente ao Autônomo` (muito longo!)
+- ❌ `Taxonomia: Chatbots vs Assistentes vs Agentes vs Sistemas` (muito longo!)
+- ❌ `Por Que Especialização Importa em Sistemas de Agentes` (muito longo!)
+- ❌ `Elementos 4-8: Validação, Ações, Comunicação com Usuário e Comunicação Inter-agentes` (muito longo!)
+
+**Regra de ouro:** Se o título tem mais de 50 caracteres, está muito longo. Encurte!
+
+**Dica:** Use abreviações, símbolos ou agrupe conceitos:
+- Em vez de: "A Evolução da IA: Do Respondente ao Autônomo"
+- Use: "📅 Da IA Respondente à IA Autônoma"
+
+- Em vez de: "Taxonomia: Chatbots vs Assistentes vs Agentes"
+- Use: "🏷️ Chatbots vs Assistentes vs Agentes"
+
+- Em vez de: "Por Que Especialização Importa em Sistemas"
+- Use: "🎭 Especialista vs Generalista"
+
 ### Cores de Fundo da Explicação
 
 **Para cada nível, use:**
