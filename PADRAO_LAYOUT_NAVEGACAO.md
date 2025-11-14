@@ -30,7 +30,7 @@ Use esta especificação para manter **consistência visual e funcional** em tod
 - 🔵 Nível 1: `#3B82F6` (azul)
 - 🟣 Nível 2: `#9b59b6` (roxo)
 - 🟢 Nível 3A: `#10B981` (verde)
-- 🟠 Nível 3S: `#F59E0B` (laranja)
+- 🟠 Nível 4S: `#F59E0B` (laranja)
 
 ---
 
@@ -223,7 +223,7 @@ Toda página deve seguir esta estrutura:
 - Nível 1: `from-nivel-1 to-blue-600`
 - Nível 2: `from-nivel-2 to-purple-700`
 - Nível 3A: `from-nivel-3a to-green-600`
-- Nível 3S: `from-nivel-3s to-orange-600`
+- Nível 4S: `from-nivel-4s to-orange-600`
 
 **Elementos obrigatórios:**
 - ✅ Gradiente de cor
@@ -289,7 +289,7 @@ Toda página deve seguir esta estrutura:
           <li><a href="/niveis/nivel-1.html" class="hover:text-white">Nível 1: Fundamentos</a></li>
           <li><a href="/niveis/nivel-2.html" class="hover:text-white">Nível 2: Programa Completo</a></li>
           <li><a href="/niveis/nivel-3a.html" class="hover:text-white">Nível 3A: Agentes</a></li>
-          <li><a href="/niveis/nivel-3s.html" class="hover:text-white">Nível 3S: Sistemas 2026</a></li>
+          <li><a href="/niveis/nivel-4s.html" class="hover:text-white">Nível 4S: Sistemas 2026</a></li>
         </ul>
       </div>
 
@@ -332,7 +332,7 @@ colors: {
   'nivel-1': '#3B82F6',    // Azul
   'nivel-2': '#9b59b6',    // Roxo
   'nivel-3a': '#10B981',   // Verde
-  'nivel-3s': '#F59E0B',   // Laranja
+  'nivel-4s': '#F59E0B',   // Laranja
   'success': '#22C55E',    // Verde sucesso
   'warning': '#F59E0B',    // Laranja aviso
   'error': '#EF4444',      // Vermelho erro
@@ -574,7 +574,7 @@ themeToggle.addEventListener('click', function() {
           'nivel-1': '#3B82F6',
           'nivel-2': '#9b59b6',
           'nivel-3a': '#10B981',
-          'nivel-3s': '#F59E0B',
+          'nivel-4s': '#F59E0B',
           success: '#22C55E',
           warning: '#F59E0B',
           error: '#EF4444',
@@ -626,7 +626,7 @@ projeto/
 │   ├── nivel-1.html        # Página do Nível 1
 │   ├── nivel-2.html        # Página do Nível 2
 │   ├── nivel-3a.html       # Página do Nível 3A
-│   └── nivel-3s.html       # Página do Nível 3S
+│   └── nivel-4s.html       # Página do Nível 4S
 ├── modulos/
 │   ├── nivel-1-modulo-1.html
 │   ├── nivel-2-modulo-1.html
