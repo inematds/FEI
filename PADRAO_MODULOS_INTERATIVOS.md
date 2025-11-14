@@ -12,6 +12,21 @@ Este documento define o **padrão completo** para criar páginas de módulos edu
 
 Use esta especificação sempre que precisar criar uma página de nível/curso com múltiplos módulos.
 
+## 📌 Resumo Executivo (TL;DR)
+
+**Na página do nível (ex: nivel-2.html) - Cada módulo DEVE ter:**
+- ✅ 3 botões: Modal (resumo), Completo (página full), Download (MD)
+- ✅ 5-10 tópicos clicáveis expandíveis
+- ✅ Cada tópico: 3 respostas (O que é, Por que, Conceitos)
+- ✅ 1 modal com resumo de 300-500 palavras
+
+**Na página completa do módulo (ex: nivel-2-modulo-1.html) - DEVE ter:**
+- ✅ Navbar no topo (com link para início e nível)
+- ✅ Breadcrumb (Início / Nível X / Módulo Y)
+- ✅ Botão "Download MD" no topo do conteúdo
+- ✅ Navegação no rodapé: "← Voltar ao Nível" + "Próximo Módulo →"
+- ✅ Footer com links para todos os níveis
+
 ---
 
 ## 📐 Estrutura de Cards de Módulos
@@ -366,6 +381,160 @@ document.addEventListener('keydown', function(e) {
   }
 });
 ```
+
+---
+
+## 🧭 Navegação nas Páginas Completas dos Módulos
+
+Cada página completa de módulo (ex: `nivel-2-modulo-1.html`) DEVE ter navegação completa.
+
+### 1. Navbar no Topo
+
+```html
+<nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex items-center">
+        <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-nivel-1 to-nivel-2 bg-clip-text text-transparent">
+          FEI - Engenharia de Intencao
+        </a>
+      </div>
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-2">Inicio</a>
+        <a href="../niveis/nivel-2.html" class="text-neutral-700 dark:text-neutral-300 hover:text-nivel-2">Nivel 2</a>
+        <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700">
+          <!-- SVG icons -->
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+```
+
+**Obrigatório:**
+- Link para `../index.html` (Início)
+- Link para `../niveis/nivel-X.html` (Nível atual)
+- Botão de dark mode toggle
+- Sticky no topo (position sticky)
+
+### 2. Breadcrumb (Migalhas de Pão)
+
+```html
+<div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <nav class="flex text-sm" aria-label="Breadcrumb">
+      <a href="../index.html" class="text-nivel-2 hover:text-purple-700">Inicio</a>
+      <span class="mx-2 text-neutral-400">/</span>
+      <a href="../niveis/nivel-2.html" class="text-nivel-2 hover:text-purple-700">Nivel 2</a>
+      <span class="mx-2 text-neutral-400">/</span>
+      <span class="text-neutral-600 dark:text-neutral-400">Modulo X</span>
+    </nav>
+  </div>
+</div>
+```
+
+**Caminho obrigatório:**
+1. Início (clicável)
+2. Nível X (clicável)
+3. Módulo Y (não clicável - página atual)
+
+### 3. Botão de Download no Topo do Conteúdo
+
+Logo após o hero/cabeçalho do módulo:
+
+```html
+<div class="flex justify-end mb-6">
+  <a href="../downloads/nivel-2-modulo-1.md" download class="px-6 py-3 bg-nivel-2 text-white rounded-lg font-semibold hover:bg-purple-600 inline-flex items-center gap-2">
+    <span>Download MD</span>
+  </a>
+</div>
+```
+
+**Posicionamento:** Canto superior direito, antes do conteúdo principal
+
+### 4. Navegação Entre Módulos (Rodapé do Conteúdo)
+
+Após todo o conteúdo, antes do footer:
+
+```html
+<div class="bg-gradient-to-r from-nivel-2 to-purple-600 text-white rounded-xl p-8">
+  <h2 class="text-3xl font-bold mb-4">Conclusao do Modulo</h2>
+  <p class="text-lg mb-6">
+    Voce dominou os conceitos essenciais de [Título do Módulo].
+  </p>
+  <div class="flex gap-4">
+    <a href="../niveis/nivel-2.html" class="px-6 py-3 bg-white dark:bg-neutral-800 text-nivel-2 rounded-lg font-semibold hover:bg-neutral-100 dark:hover:bg-neutral-700">
+      ← Voltar ao Nível 2
+    </a>
+    <a href="nivel-2-modulo-2.html" class="px-6 py-3 bg-nivel-2 text-white rounded-lg font-semibold hover:opacity-90">
+      Módulo 2 →
+    </a>
+  </div>
+</div>
+```
+
+**Regras de navegação:**
+
+**Para o primeiro módulo (módulo 1):**
+- Botão esquerdo: "← Voltar ao Nível X" (link para página do nível)
+- Botão direito: "Módulo 2 →" (próximo módulo)
+
+**Para módulos intermediários (2 até N-1):**
+- Botão esquerdo: "← Módulo X" (módulo anterior)
+- Botão direito: "Módulo Y →" (próximo módulo)
+
+**Para o último módulo (módulo N):**
+- Botão esquerdo: "← Módulo X" (módulo anterior)
+- Botão direito: "Voltar ao Nível →" (link para página do nível)
+
+### 5. Footer com Links para Todos os Níveis
+
+```html
+<footer class="bg-neutral-900 dark:bg-black text-neutral-300 py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="text-xl font-bold text-white mb-4">FEI - Engenharia de Intencao</h3>
+        <p class="text-sm">Formacao completa para dominar a nova era da IA</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white mb-4">Niveis</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="../niveis/nivel-1.html" class="hover:text-white">Nivel 1: Fundamentos</a></li>
+          <li><a href="../niveis/nivel-2.html" class="hover:text-white">Nivel 2: Programa Completo</a></li>
+          <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Nivel 3A: Agentes</a></li>
+          <li><a href="../niveis/nivel-3s.html" class="hover:text-white">Nivel 3S: Sistemas 2026</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white mb-4">Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="../index.html" class="hover:text-white">Inicio</a></li>
+          <li><a href="../niveis/nivel-X.html" class="hover:text-white">Voltar ao Nivel X</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-neutral-800 mt-8 pt-8 text-center text-sm">
+      <p>&copy; 2025 FEI - Formacao em Engenharia de Intencao.</p>
+    </div>
+  </div>
+</footer>
+```
+
+**Obrigatório:**
+- Links para TODOS os níveis do curso
+- Link "Voltar ao Nível X" específico
+- Copyright e ano atual
+
+### Resumo dos Pontos de Navegação
+
+Uma página completa de módulo tem **5 pontos de navegação**:
+
+1. **Navbar** → Início + Nível atual
+2. **Breadcrumb** → Início / Nível / Módulo
+3. **Download MD** → Download do conteúdo
+4. **Navegação entre módulos** → Anterior ← | → Próximo
+5. **Footer** → Links para todos os níveis
 
 ---
 
