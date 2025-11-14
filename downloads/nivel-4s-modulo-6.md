@@ -1,6 +1,6 @@
 # Módulo 6: Sistemas Multiagentes (2026)
 
-## Nível 3S - Sistemas Intencionais 2026
+## Nível 4S - Sistemas Intencionais 2026
 
 ---
 

@@ -1,6 +1,6 @@
 # Módulo 2: O Conceito de Sistemas Intencionais
 
-## Nível 3S - Sistemas Intencionais 2026
+## Nível 4S - Sistemas Intencionais 2026
 **Estado da Arte 2026**
 
 ---

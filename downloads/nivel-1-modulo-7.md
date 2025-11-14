@@ -200,7 +200,7 @@ Aprofunde-se em técnicas avançadas e cases complexos
 ### Nível 3A: Agentes
 Domine a criação e orquestração de agentes autônomos
 
-### Nível 3S: Sistemas 2026
+### Nível 4S: Sistemas 2026
 Construa sistemas completos de IA para o futuro
 
 ---

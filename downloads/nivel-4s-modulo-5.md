@@ -1,6 +1,6 @@
 # Módulo 5: Intenção Composta e Persistente
 
-## Nível 3S - Sistemas Intencionais 2026
+## Nível 4S - Sistemas Intencionais 2026
 
 ---
 

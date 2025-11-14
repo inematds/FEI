@@ -1139,7 +1139,7 @@ NOTAS DE USO:
 
 ---
 
-### Nivel 3S: Sistemas de IA 2026
+### Nivel 4S: Sistemas de IA 2026
 
 **Para quem:**
 - Quer arquitetar sistemas empresariais

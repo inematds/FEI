@@ -1,6 +1,6 @@
 # Módulo 4: Loops Evolutivos de Agentes
 
-## Nível 3S - Sistemas Intencionais 2026
+## Nível 4S - Sistemas Intencionais 2026
 
 ---
 

@@ -56,7 +56,7 @@ Cada módulo deve ser apresentado como um **card completo** com:
 - Nível 1: `hover:border-nivel-1` (#3B82F6 - azul)
 - Nível 2: `hover:border-nivel-2` (#9b59b6 - roxo)
 - Nível 3A: `hover:border-nivel-3a` (#10B981 - verde)
-- Nível 3S: `hover:border-nivel-3s` (#F59E0B - laranja)
+- Nível 4S: `hover:border-nivel-4s` (#F59E0B - laranja)
 
 ---
 
@@ -83,7 +83,7 @@ Cada card deve ter:
 ```
 
 **Substitua `[COR]` pela cor do nível:**
-- `nivel-1`, `nivel-2`, `nivel-3a`, ou `nivel-3s`
+- `nivel-1`, `nivel-2`, `nivel-3a`, ou `nivel-4s`
 
 ---
 
@@ -244,7 +244,7 @@ Cada módulo deve ter **mínimo 5 a 10 tópicos** principais:
 - Nível 1: `bg-blue-50 dark:bg-blue-900/20` + `border-nivel-1`
 - Nível 2: `bg-purple-50 dark:bg-purple-900/20` + `border-nivel-2`
 - Nível 3A: `bg-green-50 dark:bg-green-900/20` + `border-nivel-3a`
-- Nível 3S: `bg-orange-50 dark:bg-orange-900/20` + `border-nivel-3s`
+- Nível 4S: `bg-orange-50 dark:bg-orange-900/20` + `border-nivel-4s`
 
 ### Conteúdo Obrigatório em Cada Tópico
 
@@ -547,7 +547,7 @@ Após todo o conteúdo, antes do footer:
           <li><a href="../niveis/nivel-1.html" class="hover:text-white">Nivel 1: Fundamentos</a></li>
           <li><a href="../niveis/nivel-2.html" class="hover:text-white">Nivel 2: Programa Completo</a></li>
           <li><a href="../niveis/nivel-3a.html" class="hover:text-white">Nivel 3A: Agentes</a></li>
-          <li><a href="../niveis/nivel-3s.html" class="hover:text-white">Nivel 3S: Sistemas 2026</a></li>
+          <li><a href="../niveis/nivel-4s.html" class="hover:text-white">Nivel 4S: Sistemas 2026</a></li>
         </ul>
       </div>
       <div>
@@ -595,7 +595,7 @@ tailwind.config = {
         'nivel-1': '#3B82F6',
         'nivel-2': '#9b59b6',
         'nivel-3a': '#10B981',
-        'nivel-3s': '#F59E0B',
+        'nivel-4s': '#F59E0B',
         success: '#22C55E',
         warning: '#F59E0B',
         error: '#EF4444',

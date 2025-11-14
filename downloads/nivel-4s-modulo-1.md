@@ -1,6 +1,6 @@
 # Módulo 1: A Nova Arquitetura da IA em 2026
 
-## Nível 3S - Sistemas Intencionais 2026
+## Nível 4S - Sistemas Intencionais 2026
 **Estado da Arte 2026**
 
 ---

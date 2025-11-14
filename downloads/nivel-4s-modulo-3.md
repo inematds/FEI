@@ -1,6 +1,6 @@
 # Módulo 3: Agentes Autônomos 2.0 (versão 2026)
 
-## Nível 3S - Sistemas Intencionais 2026
+## Nível 4S - Sistemas Intencionais 2026
 
 ---
 
